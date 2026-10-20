@@ -1,0 +1,158 @@
+{
+  "task_id": "task_20251223_101136_983_1d219d93_d1ba6c2d",
+  "score": 0.8333333333333334,
+  "solved": false,
+  "n_passed": 5,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Checking creation of new location",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Adding cisco configuration item ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Adding configuration item dell",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Updating configuration item",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Adding knowlege articles",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Updating the user to manager",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_2224d566ea4440c3",
+    "task_id": "task_20251223_101136_983_1d219d93_d1ba6c2d",
+    "overall_success": false,
+    "pass_rate": 0.8333333333333334,
+    "n_passed": 5,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Checking creation of new location",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Adding cisco configuration item ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Adding configuration item dell",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Updating configuration item",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Adding knowlege articles",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Updating the user to manager",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 188.933522939682,
+  "total_tokens": 221079,
+  "n_steps": 10,
+  "trace_path": "command-agent/tasks/eog-task_20251223_101136_983_1d219d93_d1ba6c2d-e820451b/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-20T00:50:44.505803+00:00",
+  "source": "checkpointed_evaluation"
+}

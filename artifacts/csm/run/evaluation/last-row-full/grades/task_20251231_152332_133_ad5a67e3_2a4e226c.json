@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20251231_152332_133_ad5a67e3_2a4e226c",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Link published KB",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Updating knowledge state",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_d24570822de44c92",
+    "task_id": "task_20251231_152332_133_ad5a67e3_2a4e226c",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 1,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Link published KB",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Updating knowledge state",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 123.37772989273071,
+  "total_tokens": 126659,
+  "n_steps": 9,
+  "trace_path": "command-agent/tasks/eog-task_20251231_152332_133_ad5a67e3_2a4e226c-3ef36d81/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T13:08:09.730197+00:00",
+  "source": "checkpointed_evaluation"
+}

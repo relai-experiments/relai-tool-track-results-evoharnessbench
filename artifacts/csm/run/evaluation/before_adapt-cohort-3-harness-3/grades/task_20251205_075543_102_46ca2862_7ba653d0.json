@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20251205_075543_102_46ca2862_7ba653d0",
+  "score": 0.6,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "update_knowledge",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "link_case_knowledge",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "add_new_user_group",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "add_new_group_member",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_de0ec8a65cfb4f8c",
+    "task_id": "task_20251205_075543_102_46ca2862_7ba653d0",
+    "overall_success": false,
+    "pass_rate": 0.6,
+    "n_passed": 3,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "update_knowledge",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "link_case_knowledge",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "add_new_user_group",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "add_new_group_member",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 294.08443689346313,
+  "total_tokens": 286313,
+  "n_steps": 18,
+  "trace_path": "command-agent/tasks/eog-task_20251205_075543_102_46ca2862_7ba653d0-cdb7f5b0/output/trace.json",
+  "agent_commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+  "graded_at": "2026-10-14T22:56:19.178978+00:00",
+  "source": "checkpointed_evaluation"
+}

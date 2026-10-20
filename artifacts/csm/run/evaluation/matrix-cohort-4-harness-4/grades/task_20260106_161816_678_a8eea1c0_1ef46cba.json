@@ -1,0 +1,180 @@
+{
+  "task_id": "task_20260106_161816_678_a8eea1c0_1ef46cba",
+  "score": 0.7142857142857143,
+  "solved": false,
+  "n_passed": 5,
+  "n_total": 7,
+  "per_verifier": [
+    {
+      "name": "product_changes",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "user_changes",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "sla_changes",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "membership_changes",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "case_changes",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "group_changes",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "all_changes",
+      "passed": false,
+      "score": 0.0,
+      "expected": 8,
+      "actual": 7,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_db8badce66d34875",
+    "task_id": "task_20260106_161816_678_a8eea1c0_1ef46cba",
+    "overall_success": false,
+    "pass_rate": 0.7142857142857143,
+    "n_passed": 5,
+    "n_total": 7,
+    "per_verifier": [
+      {
+        "name": "product_changes",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "user_changes",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "sla_changes",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "membership_changes",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "case_changes",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "group_changes",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "all_changes",
+        "passed": false,
+        "score": 0.0,
+        "expected": 8,
+        "actual": 7,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 490.5648193359375,
+  "total_tokens": 551262,
+  "n_steps": 23,
+  "trace_path": "command-agent/tasks/eog-task_20260106_161816_678_a8eea1c0_1ef46cba-52cf8a17/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T07:06:36.877310+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20251204_122816_238_13762b97_cd4a8a4f",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 8,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "Archive Copy Has Audit Description",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Original Technical Spec Description Updated with Migration Note",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Technical Spec Moved to Engineering Drive Root",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Technical Spec No Longer in Project Documents Folder",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Archive Copy Created with Correct Name",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Archive Copy Starred",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Migration Log Document Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Migration Log Has Content",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_d6cbe0284ff74c87",
+    "task_id": "task_20251204_122816_238_13762b97_cd4a8a4f",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 8,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "Archive Copy Has Audit Description",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Original Technical Spec Description Updated with Migration Note",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Technical Spec Moved to Engineering Drive Root",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Technical Spec No Longer in Project Documents Folder",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Archive Copy Created with Correct Name",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Archive Copy Starred",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Migration Log Document Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Migration Log Has Content",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 434.4997458457947,
+  "total_tokens": 326062,
+  "n_steps": 16,
+  "trace_path": "command-agent/tasks/eog-task_20251204_122816_238_13762b97_cd4a8a4f-871a1ecf/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T14:00:04.357345+00:00",
+  "source": "checkpointed_evaluation"
+}

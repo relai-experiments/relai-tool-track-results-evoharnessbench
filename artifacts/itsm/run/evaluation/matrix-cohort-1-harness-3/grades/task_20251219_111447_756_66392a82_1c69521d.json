@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251219_111447_756_66392a82_1c69521d",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 3,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Users created with correct roles and active/inactive flags",
+      "passed": true,
+      "score": 1.0,
+      "expected": 4,
+      "actual": 4,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "India Service Desk group created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "All four users are members of \"India Service Desk\"",
+      "passed": true,
+      "score": 1.0,
+      "expected": 4,
+      "actual": 4,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_e5d06010f64f4d29",
+    "task_id": "task_20251219_111447_756_66392a82_1c69521d",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 3,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Users created with correct roles and active/inactive flags",
+        "passed": true,
+        "score": 1.0,
+        "expected": 4,
+        "actual": 4,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "India Service Desk group created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "All four users are members of \"India Service Desk\"",
+        "passed": true,
+        "score": 1.0,
+        "expected": 4,
+        "actual": 4,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 120.47283005714417,
+  "total_tokens": 134137,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20251219_111447_756_66392a82_1c69521d-06d2d78e/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T21:16:21.113313+00:00",
+  "source": "checkpointed_evaluation"
+}

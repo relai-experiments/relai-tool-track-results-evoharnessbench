@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260106_161324_272_c4ad7a70_4b3980fc",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 4,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Case CS-0000071 is escalated as VIP for Acme Systems SUSE boot issue",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Case ownership moved to Tabitha Bullock in the correct support group",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Tabitha is now a member of the Installed Base Support_2 group",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Case is still correctly tied to Michael Ward’s contact for Acme Systems",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_c6ab971e25a24689",
+    "task_id": "task_20260106_161324_272_c4ad7a70_4b3980fc",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 4,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Case CS-0000071 is escalated as VIP for Acme Systems SUSE boot issue",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Case ownership moved to Tabitha Bullock in the correct support group",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Tabitha is now a member of the Installed Base Support_2 group",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Case is still correctly tied to Michael Ward’s contact for Acme Systems",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 490.5306339263916,
+  "total_tokens": 277732,
+  "n_steps": 15,
+  "trace_path": "command-agent/tasks/eog-task_20260106_161324_272_c4ad7a70_4b3980fc-e7174926/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T16:08:00.612835+00:00",
+  "source": "checkpointed_evaluation"
+}

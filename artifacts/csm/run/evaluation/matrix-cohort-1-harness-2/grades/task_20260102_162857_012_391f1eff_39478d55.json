@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20260102_162857_012_391f1eff_39478d55",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "New case",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Link kb",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_f740c630f52640f7",
+    "task_id": "task_20260102_162857_012_391f1eff_39478d55",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 1,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "New case",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Link kb",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 174.01662373542786,
+  "total_tokens": 116661,
+  "n_steps": 10,
+  "trace_path": "command-agent/tasks/eog-task_20260102_162857_012_391f1eff_39478d55-96dae0e2/output/trace.json",
+  "agent_commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+  "graded_at": "2026-10-14T20:38:09.752826+00:00",
+  "source": "checkpointed_evaluation"
+}

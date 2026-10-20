@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "title": "Verify state after mutations"
+    }
+  ],
+  "title": "Add post-mutation safety verification",
+  "summary": "Improve mutation safety in the active MCP agent loop.\n\n- Adds guidance and a one-time verification turn after mutations.\n- Updates focused tests for prompts, corrective calls, tracing, and step limits.\n- Tests were not run, as instructed.",
+  "inconsistency": ""
+}

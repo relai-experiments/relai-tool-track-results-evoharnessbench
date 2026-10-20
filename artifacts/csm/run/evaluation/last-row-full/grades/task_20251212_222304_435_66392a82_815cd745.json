@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20251212_222304_435_66392a82_815cd745",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 5,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Tabitha Bullock Deactivated",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "All Active Tabitha Cases Reassigned To Lisa",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Lisa Is Member Of Case Assignment_3",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Notification Sent To Brandon",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Notification Sent To David",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_9ea8819ae19b4bde",
+    "task_id": "task_20251212_222304_435_66392a82_815cd745",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 5,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Tabitha Bullock Deactivated",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "All Active Tabitha Cases Reassigned To Lisa",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Lisa Is Member Of Case Assignment_3",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Notification Sent To Brandon",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Notification Sent To David",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 318.4958600997925,
+  "total_tokens": 407979,
+  "n_steps": 23,
+  "trace_path": "command-agent/tasks/eog-task_20251212_222304_435_66392a82_815cd745-3565789e/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T12:13:44.780751+00:00",
+  "source": "checkpointed_evaluation"
+}

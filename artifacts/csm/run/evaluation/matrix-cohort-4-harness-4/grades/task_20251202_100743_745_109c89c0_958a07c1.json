@@ -1,0 +1,158 @@
+{
+  "task_id": "task_20251202_100743_745_109c89c0_958a07c1",
+  "score": 0.6666666666666666,
+  "solved": false,
+  "n_passed": 4,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Verify entitlement update",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify second entitlement update",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Contract extension",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify entitlement update",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify second entitlement update",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Contract extension",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_58708bd3dc894262",
+    "task_id": "task_20251202_100743_745_109c89c0_958a07c1",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 4,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Verify entitlement update",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify second entitlement update",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Contract extension",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify entitlement update",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify second entitlement update",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Contract extension",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 570.3993060588837,
+  "total_tokens": 418550,
+  "n_steps": 18,
+  "trace_path": "command-agent/tasks/eog-task_20251202_100743_745_109c89c0_958a07c1-53732a20/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T09:28:30.914593+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20251218_082708_201_99ba2325_51726f9c",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 2,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Verify Incident Creation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify CMDB creation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_bdd48275fbc34aa3",
+    "task_id": "task_20251218_082708_201_99ba2325_51726f9c",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 2,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Verify Incident Creation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify CMDB creation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 222.107088804245,
+  "total_tokens": 209048,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20251218_082708_201_99ba2325_51726f9c-1841edae/output/trace.json",
+  "agent_commit": "7180ebdea71247bffb1ccea42d1384d1e43d670e",
+  "graded_at": "2026-10-19T12:35:12.116295+00:00",
+  "source": "checkpointed_evaluation"
+}

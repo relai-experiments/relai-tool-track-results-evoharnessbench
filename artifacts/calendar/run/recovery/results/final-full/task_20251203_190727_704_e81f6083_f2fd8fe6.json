@@ -1,0 +1,250 @@
+{
+  "task_id": "task_20251203_190727_704_e81f6083_f2fd8fe6",
+  "cohort": "full",
+  "at_stage": "full",
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-04T05:11:42.162680+00:00",
+  "pass_rate": 0.1,
+  "overall_success": false,
+  "n_passed": 1,
+  "n_total": 10,
+  "per_verifier": [
+    {
+      "name": "verify_october_training_event",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_november_training_event",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_december_training_event",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_adrian_attendee_all_sessions",
+      "passed": false,
+      "score": 0.0,
+      "expected": 3,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_alicia_attendee_all_sessions",
+      "passed": false,
+      "score": 0.0,
+      "expected": 3,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_24hour_email_reminders",
+      "passed": false,
+      "score": 0.0,
+      "expected": 3,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_1hour_email_reminders",
+      "passed": false,
+      "score": 0.0,
+      "expected": 3,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_conflicting_events_cancelled",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_event_watch_channel_created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_total_training_events_created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 3,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_69306789465c4a04",
+    "task_id": "task_20251203_190727_704_e81f6083_f2fd8fe6",
+    "overall_success": false,
+    "pass_rate": 0.1,
+    "n_passed": 1,
+    "n_total": 10,
+    "per_verifier": [
+      {
+        "name": "verify_october_training_event",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_november_training_event",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_december_training_event",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_adrian_attendee_all_sessions",
+        "passed": false,
+        "score": 0.0,
+        "expected": 3,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_alicia_attendee_all_sessions",
+        "passed": false,
+        "score": 0.0,
+        "expected": 3,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_24hour_email_reminders",
+        "passed": false,
+        "score": 0.0,
+        "expected": 3,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_1hour_email_reminders",
+        "passed": false,
+        "score": 0.0,
+        "expected": 3,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_conflicting_events_cancelled",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_event_watch_channel_created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_total_training_events_created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 3,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 1185.0798530578613,
+  "total_tokens": 1423397,
+  "n_steps": 39,
+  "trace_path": "command-agent/tasks/eog-task_20251203_190727_704_e81f6083_f2fd8fe6-475f1aee/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

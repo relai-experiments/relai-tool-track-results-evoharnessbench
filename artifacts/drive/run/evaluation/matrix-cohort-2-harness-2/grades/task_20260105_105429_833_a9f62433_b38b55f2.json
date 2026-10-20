@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260105_105429_833_a9f62433_b38b55f2",
+  "score": 0.6,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Verify comments added",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify that description is added",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify file downloaded",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify folder is starred ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Intern has permission to project documents",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_6f32f0b8a56b4c9d",
+    "task_id": "task_20260105_105429_833_a9f62433_b38b55f2",
+    "overall_success": false,
+    "pass_rate": 0.6,
+    "n_passed": 3,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Verify comments added",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify that description is added",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify file downloaded",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify folder is starred ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Intern has permission to project documents",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 265.1703040599823,
+  "total_tokens": 290737,
+  "n_steps": 14,
+  "trace_path": "command-agent/tasks/eog-task_20260105_105429_833_a9f62433_b38b55f2-25e74675/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T16:16:48.300415+00:00",
+  "source": "checkpointed_evaluation"
+}

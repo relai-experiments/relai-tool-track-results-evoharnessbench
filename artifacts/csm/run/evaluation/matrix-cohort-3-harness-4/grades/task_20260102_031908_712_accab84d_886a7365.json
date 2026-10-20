@@ -1,0 +1,224 @@
+{
+  "task_id": "task_20260102_031908_712_accab84d_886a7365",
+  "score": 0.7777777777777778,
+  "solved": false,
+  "n_passed": 7,
+  "n_total": 9,
+  "per_verifier": [
+    {
+      "name": "User added to the new group",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "User added to the assignment group",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Case assigned to the user",
+      "passed": true,
+      "score": 1.0,
+      "expected": 803,
+      "actual": 803,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "User Amelia added to the network",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "New SLA has been linked to the case",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Case-32 has been updated",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Case-30 has been updated ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Case-47 has been updated",
+      "passed": true,
+      "score": 1.0,
+      "expected": "closed",
+      "actual": "closed",
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "check entitlement details",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_1004fe0d89f14809",
+    "task_id": "task_20260102_031908_712_accab84d_886a7365",
+    "overall_success": false,
+    "pass_rate": 0.7777777777777778,
+    "n_passed": 7,
+    "n_total": 9,
+    "per_verifier": [
+      {
+        "name": "User added to the new group",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "User added to the assignment group",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Case assigned to the user",
+        "passed": true,
+        "score": 1.0,
+        "expected": 803,
+        "actual": 803,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "User Amelia added to the network",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "New SLA has been linked to the case",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Case-32 has been updated",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Case-30 has been updated ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Case-47 has been updated",
+        "passed": true,
+        "score": 1.0,
+        "expected": "closed",
+        "actual": "closed",
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "check entitlement details",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 666.4776759147644,
+  "total_tokens": 736532,
+  "n_steps": 31,
+  "trace_path": "command-agent/tasks/eog-task_20260102_031908_712_accab84d_886a7365-2a828ae6/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T05:18:03.296783+00:00",
+  "source": "checkpointed_evaluation"
+}

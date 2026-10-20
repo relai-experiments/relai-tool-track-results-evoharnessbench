@@ -1,0 +1,224 @@
+{
+  "task_id": "task_20260115_143541_964_fa1836dc_dc6652fd",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 9,
+  "n_total": 9,
+  "per_verifier": [
+    {
+      "name": "Check if \"Online Card Payments\" service exists with correct properties",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Count the core service offerings that exist under \"Online Card Payments\" with correct properties",
+      "passed": true,
+      "score": 1.0,
+      "expected": 3,
+      "actual": 3,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if criticality of \"Credit Card Authorization\" is \"less-critical\"",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if criticality of \"Fraud Screening is \"somewhat-critical\"",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if criticality of \"Payment Settlement is \"critical\"",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Count conflicting legacy services that are downgraded",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Count conflicting legacy service offerings that are downgraded",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Count the development services that are promoted",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Count the development service offerings that are promoted",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_3704cda092ae478e",
+    "task_id": "task_20260115_143541_964_fa1836dc_dc6652fd",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 9,
+    "n_total": 9,
+    "per_verifier": [
+      {
+        "name": "Check if \"Online Card Payments\" service exists with correct properties",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Count the core service offerings that exist under \"Online Card Payments\" with correct properties",
+        "passed": true,
+        "score": 1.0,
+        "expected": 3,
+        "actual": 3,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if criticality of \"Credit Card Authorization\" is \"less-critical\"",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if criticality of \"Fraud Screening is \"somewhat-critical\"",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if criticality of \"Payment Settlement is \"critical\"",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Count conflicting legacy services that are downgraded",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Count conflicting legacy service offerings that are downgraded",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Count the development services that are promoted",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Count the development service offerings that are promoted",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 198.59216904640198,
+  "total_tokens": 215784,
+  "n_steps": 12,
+  "trace_path": "command-agent/tasks/eog-task_20260115_143541_964_fa1836dc_dc6652fd-ca83c9cb/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T05:13:00.044259+00:00",
+  "source": "checkpointed_evaluation"
+}

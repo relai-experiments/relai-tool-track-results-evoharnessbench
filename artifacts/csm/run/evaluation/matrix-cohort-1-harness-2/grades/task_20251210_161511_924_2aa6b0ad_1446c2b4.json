@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251210_161511_924_2aa6b0ad_1446c2b4",
+  "score": 0.6666666666666666,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Validating case update. ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating group membership.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": " Validating report notification status. ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_0ef8f1b1e9e5451e",
+    "task_id": "task_20251210_161511_924_2aa6b0ad_1446c2b4",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 2,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Validating case update. ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating group membership.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": " Validating report notification status. ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 135.97483706474304,
+  "total_tokens": 112428,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20251210_161511_924_2aa6b0ad_1446c2b4-71a61afb/output/trace.json",
+  "agent_commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+  "graded_at": "2026-10-14T20:11:57.959939+00:00",
+  "source": "checkpointed_evaluation"
+}

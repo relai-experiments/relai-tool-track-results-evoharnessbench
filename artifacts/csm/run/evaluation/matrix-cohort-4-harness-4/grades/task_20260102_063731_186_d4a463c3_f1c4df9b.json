@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20260102_063731_186_d4a463c3_f1c4df9b",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 3,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Verify no knowledge linkage",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case Escalation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Interaction",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_d9d801cb4d0045ca",
+    "task_id": "task_20260102_063731_186_d4a463c3_f1c4df9b",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 3,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Verify no knowledge linkage",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case Escalation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Interaction",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 373.5360929965973,
+  "total_tokens": 354366,
+  "n_steps": 20,
+  "trace_path": "command-agent/tasks/eog-task_20260102_063731_186_d4a463c3_f1c4df9b-df903ebc/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T06:58:24.834118+00:00",
+  "source": "checkpointed_evaluation"
+}

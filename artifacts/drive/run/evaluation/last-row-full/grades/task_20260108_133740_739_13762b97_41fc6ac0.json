@@ -1,0 +1,180 @@
+{
+  "task_id": "task_20260108_133740_739_13762b97_41fc6ac0",
+  "score": 0.8571428571428571,
+  "solved": false,
+  "n_passed": 6,
+  "n_total": 7,
+  "per_verifier": [
+    {
+      "name": "1. Unresolved Comment Now Resolved",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Audit Reply Added to Unresolved Comment",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Confirmation Reply Added to First Resolved Comment",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Confirmation Reply Added to Second Resolved Comment",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Q4 Comment Audit Report Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Audit Report Has Content",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Mike Chen Has Commenter Access to Report",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_5417914dc2814d12",
+    "task_id": "task_20260108_133740_739_13762b97_41fc6ac0",
+    "overall_success": false,
+    "pass_rate": 0.8571428571428571,
+    "n_passed": 6,
+    "n_total": 7,
+    "per_verifier": [
+      {
+        "name": "1. Unresolved Comment Now Resolved",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Audit Reply Added to Unresolved Comment",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Confirmation Reply Added to First Resolved Comment",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Confirmation Reply Added to Second Resolved Comment",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Q4 Comment Audit Report Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Audit Report Has Content",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Mike Chen Has Commenter Access to Report",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 194.57678198814392,
+  "total_tokens": 287241,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20260108_133740_739_13762b97_41fc6ac0-b15ae6e6/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T04:09:41.078002+00:00",
+  "source": "checkpointed_evaluation"
+}

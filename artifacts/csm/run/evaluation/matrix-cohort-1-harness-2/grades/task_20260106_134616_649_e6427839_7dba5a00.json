@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20260106_134616_649_e6427839_7dba5a00",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 2,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Verify if case is updated or not.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if KB article linked correctly.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_63501b7ba3264019",
+    "task_id": "task_20260106_134616_649_e6427839_7dba5a00",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 2,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Verify if case is updated or not.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if KB article linked correctly.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 286.49445486068726,
+  "total_tokens": 193463,
+  "n_steps": 16,
+  "trace_path": "command-agent/tasks/eog-task_20260106_134616_649_e6427839_7dba5a00-25ee21de/output/trace.json",
+  "agent_commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+  "graded_at": "2026-10-14T20:43:42.196855+00:00",
+  "source": "checkpointed_evaluation"
+}

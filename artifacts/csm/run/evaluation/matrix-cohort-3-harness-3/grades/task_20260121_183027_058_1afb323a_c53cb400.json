@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260121_183027_058_1afb323a_c53cb400",
+  "score": 0.8,
+  "solved": false,
+  "n_passed": 4,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "New Agent Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Location Created and Linked",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Group Membership Added",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Cases Reassigned Correctly",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Offboarding Complete",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_75255d30ee9f4ec0",
+    "task_id": "task_20260121_183027_058_1afb323a_c53cb400",
+    "overall_success": false,
+    "pass_rate": 0.8,
+    "n_passed": 4,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "New Agent Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Location Created and Linked",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Group Membership Added",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Cases Reassigned Correctly",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Offboarding Complete",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 409.14565110206604,
+  "total_tokens": 362013,
+  "n_steps": 24,
+  "trace_path": "command-agent/tasks/eog-task_20260121_183027_058_1afb323a_c53cb400-e4381aa1/output/trace.json",
+  "agent_commit": "e16f4716aa3c543c8bcc7891e11e0481b3ff96e4",
+  "graded_at": "2026-10-15T13:27:01.178026+00:00",
+  "source": "checkpointed_evaluation"
+}

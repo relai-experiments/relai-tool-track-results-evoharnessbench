@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260102_155148_014_accab84d_910b176a",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "High priority case created for Perry Watts",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify KB article is linked to the case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify SLA Definition (Response - High) Exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify SLA Definition (Resolution - High) Exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_128fc577a2ba4f5c",
+    "task_id": "task_20260102_155148_014_accab84d_910b176a",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "High priority case created for Perry Watts",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify KB article is linked to the case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify SLA Definition (Response - High) Exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify SLA Definition (Resolution - High) Exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 319.49696588516235,
+  "total_tokens": 222944,
+  "n_steps": 13,
+  "trace_path": "command-agent/tasks/eog-task_20260102_155148_014_accab84d_910b176a-61a7f912/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T10:53:49.056952+00:00",
+  "source": "checkpointed_evaluation"
+}

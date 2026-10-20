@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260101_111750_695_30600918_80637585",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify case status and assignment",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Notification ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify SLA cancel",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify SLA tag",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_c635d655161d4cb8",
+    "task_id": "task_20260101_111750_695_30600918_80637585",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 2,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify case status and assignment",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Notification ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify SLA cancel",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify SLA tag",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 654.9784500598907,
+  "total_tokens": 263697,
+  "n_steps": 18,
+  "trace_path": "command-agent/tasks/eog-task_20260101_111750_695_30600918_80637585-93a4f3eb/output/trace.json",
+  "agent_commit": "81dd0ccee6cbbf7fdafed8043afd4b59db4a53d3",
+  "graded_at": "2026-10-13T03:23:45.355232+00:00",
+  "source": "checkpointed_evaluation"
+}

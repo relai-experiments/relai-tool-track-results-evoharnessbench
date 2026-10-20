@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260108_101953_397_be6c9105_0ebb2503",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 5,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Archive Copy Created with Archival Metadata",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "External Auditor Has Reader Access to Archive",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Legal Review Comment Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Sarah Johnson Permission Upgraded to Writer",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Documentation Comments Created on Both Files",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_8543fc14074e4721",
+    "task_id": "task_20260108_101953_397_be6c9105_0ebb2503",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 5,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Archive Copy Created with Archival Metadata",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "External Auditor Has Reader Access to Archive",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Legal Review Comment Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Sarah Johnson Permission Upgraded to Writer",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Documentation Comments Created on Both Files",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 228.06104016304016,
+  "total_tokens": 111155,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20260108_101953_397_be6c9105_0ebb2503-a28bece2/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T14:20:27.799643+00:00",
+  "source": "checkpointed_evaluation"
+}

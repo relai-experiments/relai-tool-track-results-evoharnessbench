@@ -1,0 +1,184 @@
+{
+  "task_id": "task_20260106_153404_124_79b3b025_914e7207",
+  "cohort": "full",
+  "at_stage": "full",
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-04T06:00:57.050669+00:00",
+  "pass_rate": 0.8571428571428571,
+  "overall_success": false,
+  "n_passed": 6,
+  "n_total": 7,
+  "per_verifier": [
+    {
+      "name": "Verify Bulk Invitation Lockdown",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Bob Smith Downgrade",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Carol White Removal",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Location Update",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Guests Visibility",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Extended Property",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Total Events Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 6,
+      "actual": 6,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_48b7efece6e84afa",
+    "task_id": "task_20260106_153404_124_79b3b025_914e7207",
+    "overall_success": false,
+    "pass_rate": 0.8571428571428571,
+    "n_passed": 6,
+    "n_total": 7,
+    "per_verifier": [
+      {
+        "name": "Verify Bulk Invitation Lockdown",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Bob Smith Downgrade",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Carol White Removal",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Location Update",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Guests Visibility",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Extended Property",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Total Events Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 6,
+        "actual": 6,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 488.63968682289124,
+  "total_tokens": 400974,
+  "n_steps": 15,
+  "trace_path": "command-agent/tasks/eog-task_20260106_153404_124_79b3b025_914e7207-3281c5f8/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

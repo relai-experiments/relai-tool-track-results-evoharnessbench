@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20251126_145836_025_be6c9105_3b572b98",
+  "score": 0.25,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "John Access Removed",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Access Proposal Approved for External Auditor",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Auditor Permission Created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Audit Metadata and Description Updated",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "John Access Removed",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Access Proposal Approved for External Auditor",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Auditor Permission Created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Audit Metadata and Description Updated",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_ce3c53b6eddc4d64",
+    "task_id": "task_20251126_145836_025_be6c9105_3b572b98",
+    "overall_success": false,
+    "pass_rate": 0.25,
+    "n_passed": 2,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "John Access Removed",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Access Proposal Approved for External Auditor",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Auditor Permission Created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Audit Metadata and Description Updated",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "John Access Removed",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Access Proposal Approved for External Auditor",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Auditor Permission Created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Audit Metadata and Description Updated",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 322.92632603645325,
+  "total_tokens": 157823,
+  "n_steps": 9,
+  "trace_path": "command-agent/tasks/eog-task_20251126_145836_025_be6c9105_3b572b98-89e1c654/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T14:31:21.071761+00:00",
+  "source": "checkpointed_evaluation"
+}

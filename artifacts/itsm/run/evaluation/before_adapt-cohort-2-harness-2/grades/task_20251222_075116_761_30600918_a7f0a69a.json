@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20251222_075116_761_30600918_a7f0a69a",
+  "score": 0.25,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "SLA Cancel",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Incident",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "SLA tagg in paused stage",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the Reminder email",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "SLA Cancel",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Incident",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "SLA tagg in paused stage",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the Reminder email",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_30bb18f84840441a",
+    "task_id": "task_20251222_075116_761_30600918_a7f0a69a",
+    "overall_success": false,
+    "pass_rate": 0.25,
+    "n_passed": 2,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "SLA Cancel",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Incident",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "SLA tagg in paused stage",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the Reminder email",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "SLA Cancel",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Incident",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "SLA tagg in paused stage",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the Reminder email",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 104.34503316879272,
+  "total_tokens": 137830,
+  "n_steps": 7,
+  "trace_path": "command-agent/tasks/eog-task_20251222_075116_761_30600918_a7f0a69a-62ad19f0/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T07:41:28.243686+00:00",
+  "source": "checkpointed_evaluation"
+}

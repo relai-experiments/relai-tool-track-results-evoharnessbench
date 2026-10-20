@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "title": "Improve truncated tool-result recovery"
+    }
+  ],
+  "title": "Improve agent recovery from truncated results",
+  "summary": "Added explicit truncation markers and safe, read-only recovery guidance so agents paginate or partition discovery instead of repeating equivalent requests or mutating state. Focused tests were updated, and regression evaluation improved while the motivating environment remained unchanged. Tests were not run as instructed.",
+  "inconsistency": ""
+}

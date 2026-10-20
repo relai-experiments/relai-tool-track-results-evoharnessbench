@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260114_134336_659_e6427839_91142068",
+  "score": 0.8,
+  "solved": false,
+  "n_passed": 4,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Deactivating old warehouse",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Adding new location",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Updating the configuration items to the new location ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 5,
+      "actual": 5,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Checking creation of new incident",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Checking notification",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_3e2320a7ce5a4a8a",
+    "task_id": "task_20260114_134336_659_e6427839_91142068",
+    "overall_success": false,
+    "pass_rate": 0.8,
+    "n_passed": 4,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Deactivating old warehouse",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Adding new location",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Updating the configuration items to the new location ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 5,
+        "actual": 5,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Checking creation of new incident",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Checking notification",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 153.44120597839355,
+  "total_tokens": 331099,
+  "n_steps": 15,
+  "trace_path": "command-agent/tasks/eog-task_20260114_134336_659_e6427839_91142068-d0d7405d/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T23:43:32.400091+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20251217_205244_161_764e5ead_20429ef8",
+  "score": 0.875,
+  "solved": false,
+  "n_passed": 7,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "verify_three_group_members_added",
+      "passed": true,
+      "score": 1.0,
+      "expected": 3,
+      "actual": 3,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_berlin_location_created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_sarah_mueller_created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_three_agents_created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 3,
+      "actual": 3,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_berlin_support_team_created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_sarah_is_group_manager",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_two_cis_registered",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_server_in_maintenance",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_4188f65fcec44b6f",
+    "task_id": "task_20251217_205244_161_764e5ead_20429ef8",
+    "overall_success": false,
+    "pass_rate": 0.875,
+    "n_passed": 7,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "verify_three_group_members_added",
+        "passed": true,
+        "score": 1.0,
+        "expected": 3,
+        "actual": 3,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_berlin_location_created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_sarah_mueller_created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_three_agents_created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 3,
+        "actual": 3,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_berlin_support_team_created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_sarah_is_group_manager",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_two_cis_registered",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_server_in_maintenance",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 103.12461519241333,
+  "total_tokens": 205847,
+  "n_steps": 9,
+  "trace_path": "command-agent/tasks/eog-task_20251217_205244_161_764e5ead_20429ef8-fb6cec94/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T22:11:41.598445+00:00",
+  "source": "checkpointed_evaluation"
+}

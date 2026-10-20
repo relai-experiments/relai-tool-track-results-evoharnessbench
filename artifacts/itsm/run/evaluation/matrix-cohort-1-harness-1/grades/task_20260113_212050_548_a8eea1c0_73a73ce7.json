@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260113_212050_548_a8eea1c0_73a73ce7",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 4,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "ci_011_status_update_to_maintenance_verifier",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "ci_011_to_inc_001_link_creation_verifier",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "complete_workflow_state_verifier",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "no_duplicate_ci_011_inc_001_links_verifier",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_c2274b8578e242c2",
+    "task_id": "task_20260113_212050_548_a8eea1c0_73a73ce7",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 4,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "ci_011_status_update_to_maintenance_verifier",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "ci_011_to_inc_001_link_creation_verifier",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "complete_workflow_state_verifier",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "no_duplicate_ci_011_inc_001_links_verifier",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 127.22082495689392,
+  "total_tokens": 99627,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20260113_212050_548_a8eea1c0_73a73ce7-61c94665/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T05:30:31.693439+00:00",
+  "source": "checkpointed_evaluation"
+}

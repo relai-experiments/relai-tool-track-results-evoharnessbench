@@ -1,0 +1,158 @@
+{
+  "task_id": "task_20251204_115902_743_13762b97_19892db1",
+  "score": 0.3333333333333333,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Marketing Presentation No Longer Published",
+      "passed": false,
+      "score": 0.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "No External Comments on Marketing Presentation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Internal Comments Preserved",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Client Version Copy Created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Emily Davis Has Editor Access to Client Version",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Documentation Comment Added to Original",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_0a07062e3efa4560",
+    "task_id": "task_20251204_115902_743_13762b97_19892db1",
+    "overall_success": false,
+    "pass_rate": 0.3333333333333333,
+    "n_passed": 2,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Marketing Presentation No Longer Published",
+        "passed": false,
+        "score": 0.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "No External Comments on Marketing Presentation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Internal Comments Preserved",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Client Version Copy Created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Emily Davis Has Editor Access to Client Version",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Documentation Comment Added to Original",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 301.9740209579468,
+  "total_tokens": 422418,
+  "n_steps": 15,
+  "trace_path": "command-agent/tasks/eog-task_20251204_115902_743_13762b97_19892db1-048a7672/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T14:08:51.495556+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251211_021838_048_accab84d_a511ee6e",
+  "score": 0.6666666666666666,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Susan Garcia is now inactive",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Case CS-0000001 now owned by Stephanie in CSM Tier 1 with Critical priority",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Stephanie has no other group memberships",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_3a38315b150f4d04",
+    "task_id": "task_20251211_021838_048_accab84d_a511ee6e",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 2,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Susan Garcia is now inactive",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Case CS-0000001 now owned by Stephanie in CSM Tier 1 with Critical priority",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Stephanie has no other group memberships",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 847.9921972751617,
+  "total_tokens": 414504,
+  "n_steps": 25,
+  "trace_path": "command-agent/tasks/eog-task_20251211_021838_048_accab84d_a511ee6e-c4160b50/output/trace.json",
+  "agent_commit": "e16f4716aa3c543c8bcc7891e11e0481b3ff96e4",
+  "graded_at": "2026-10-15T11:45:04.317818+00:00",
+  "source": "checkpointed_evaluation"
+}

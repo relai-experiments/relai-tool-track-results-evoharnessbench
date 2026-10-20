@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251128_123035_919_64a4ebb9_8b93bf99",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 3,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Verify Folder Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Archived File Exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Comment",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_d7d8b5fa1d1f484d",
+    "task_id": "task_20251128_123035_919_64a4ebb9_8b93bf99",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 3,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Verify Folder Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Archived File Exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Comment",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 231.57417917251587,
+  "total_tokens": 391612,
+  "n_steps": 13,
+  "trace_path": "command-agent/tasks/eog-task_20251128_123035_919_64a4ebb9_8b93bf99-f931463f/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T13:57:10.818981+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20260106_185201_238_00364ece_8ab4fd80",
+  "score": 0.3333333333333333,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Validating whether the new high-priority case has been created. ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating assignment policy. ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating report notification. ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_4686ce717a644fb8",
+    "task_id": "task_20260106_185201_238_00364ece_8ab4fd80",
+    "overall_success": false,
+    "pass_rate": 0.3333333333333333,
+    "n_passed": 1,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Validating whether the new high-priority case has been created. ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating assignment policy. ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating report notification. ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 441.432893037796,
+  "total_tokens": 290775,
+  "n_steps": 21,
+  "trace_path": "command-agent/tasks/eog-task_20260106_185201_238_00364ece_8ab4fd80-9403eeef/output/trace.json",
+  "agent_commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+  "graded_at": "2026-10-14T20:19:20.995326+00:00",
+  "source": "checkpointed_evaluation"
+}

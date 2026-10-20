@@ -1,0 +1,162 @@
+{
+  "task_id": "task_20260105_124102_961_e0ac0c6d_0b196906",
+  "cohort": "full",
+  "at_stage": "full",
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-04T04:05:58.851776+00:00",
+  "pass_rate": 1.0,
+  "overall_success": true,
+  "n_passed": 6,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Calendar List Retrieved",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Project Management Calendar Visible and Selected",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Calendar Description Updated",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Q4 Planning Kickoff Event Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Sprint Review Meeting Event Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Quarterly Retrospective Event Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_95b09cd201614ec8",
+    "task_id": "task_20260105_124102_961_e0ac0c6d_0b196906",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 6,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Calendar List Retrieved",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Project Management Calendar Visible and Selected",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Calendar Description Updated",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Q4 Planning Kickoff Event Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Sprint Review Meeting Event Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Quarterly Retrospective Event Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 117.33205199241638,
+  "total_tokens": 92769,
+  "n_steps": 5,
+  "trace_path": "command-agent/tasks/eog-task_20260105_124102_961_e0ac0c6d_0b196906-2b358d1f/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

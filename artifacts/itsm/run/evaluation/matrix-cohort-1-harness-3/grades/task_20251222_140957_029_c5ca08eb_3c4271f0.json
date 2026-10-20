@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20251222_140957_029_c5ca08eb_3c4271f0",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify Service Status",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Service Offering Status",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Incident Record",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Incident Record",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_97ed332c98d8433e",
+    "task_id": "task_20251222_140957_029_c5ca08eb_3c4271f0",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 2,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify Service Status",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Service Offering Status",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Incident Record",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Incident Record",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 112.72610306739807,
+  "total_tokens": 103939,
+  "n_steps": 5,
+  "trace_path": "command-agent/tasks/eog-task_20251222_140957_029_c5ca08eb_3c4271f0-a31f3f28/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T20:48:23.146625+00:00",
+  "source": "checkpointed_evaluation"
+}

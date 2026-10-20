@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20251223_081019_100_d4a463c3_f8774fe4",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Verfiy Change Update",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Problem Update",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_efbc805460f747b8",
+    "task_id": "task_20251223_081019_100_d4a463c3_f8774fe4",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 1,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Verfiy Change Update",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Problem Update",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 102.30518984794617,
+  "total_tokens": 103594,
+  "n_steps": 5,
+  "trace_path": "command-agent/tasks/eog-task_20251223_081019_100_d4a463c3_f8774fe4-2e4398a2/output/trace.json",
+  "agent_commit": "7180ebdea71247bffb1ccea42d1384d1e43d670e",
+  "graded_at": "2026-10-19T15:08:41.631795+00:00",
+  "source": "checkpointed_evaluation"
+}

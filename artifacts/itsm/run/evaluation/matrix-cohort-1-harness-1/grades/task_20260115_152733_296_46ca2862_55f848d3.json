@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260115_152733_296_46ca2862_55f848d3",
+  "score": 0.6,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "New service created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Open incidents moved to new service and service offering",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Old service is retired",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Old service offering retired",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "New service offering is created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_b29b325f43fd4830",
+    "task_id": "task_20260115_152733_296_46ca2862_55f848d3",
+    "overall_success": false,
+    "pass_rate": 0.6,
+    "n_passed": 3,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "New service created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Open incidents moved to new service and service offering",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Old service is retired",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Old service offering retired",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "New service offering is created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 114.7371461391449,
+  "total_tokens": 128980,
+  "n_steps": 8,
+  "trace_path": "command-agent/tasks/eog-task_20260115_152733_296_46ca2862_55f848d3-8f95c874/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T05:23:09.821814+00:00",
+  "source": "checkpointed_evaluation"
+}

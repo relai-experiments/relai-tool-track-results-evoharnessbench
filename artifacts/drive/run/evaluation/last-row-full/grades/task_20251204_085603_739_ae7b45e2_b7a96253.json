@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20251204_085603_739_ae7b45e2_b7a96253",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 4,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "Verify Comment Added to Important Notes",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Technical Spec File Exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Reply Added to Mike Chen Comment",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Technical Spec Description Updated",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Alex Rodriguez Permission Downgraded",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Access Proposal Denied",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Product Photo Labels Applied",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Budget Spreadsheet Revision Deleted",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_1351d484f1cb42a1",
+    "task_id": "task_20251204_085603_739_ae7b45e2_b7a96253",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 4,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "Verify Comment Added to Important Notes",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Technical Spec File Exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Reply Added to Mike Chen Comment",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Technical Spec Description Updated",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Alex Rodriguez Permission Downgraded",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Access Proposal Denied",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Product Photo Labels Applied",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Budget Spreadsheet Revision Deleted",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 132.2148780822754,
+  "total_tokens": 219355,
+  "n_steps": 9,
+  "trace_path": "command-agent/tasks/eog-task_20251204_085603_739_ae7b45e2_b7a96253-fca62fd5/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T03:59:00.423340+00:00",
+  "source": "checkpointed_evaluation"
+}

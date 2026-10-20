@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260106_161859_265_00364ece_0e836ce8",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Validate new high priority case created. ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating group membership. ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating successful notification. ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify that knowledge is linked",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_ee85ca45505d45a3",
+    "task_id": "task_20260106_161859_265_00364ece_0e836ce8",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Validate new high priority case created. ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating group membership. ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating successful notification. ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify that knowledge is linked",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 615.631404876709,
+  "total_tokens": 408294,
+  "n_steps": 20,
+  "trace_path": "command-agent/tasks/eog-task_20260106_161859_265_00364ece_0e836ce8-fec9e55c/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T14:01:03.428565+00:00",
+  "source": "checkpointed_evaluation"
+}

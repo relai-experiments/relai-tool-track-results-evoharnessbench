@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20251210_145940_356_accab84d_c16e9916",
+  "score": 0.6,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Case 5 escalated to critical with impact reason and updated description",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Knowledge 227 linked to case 5 as suggested",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Critical response SLA linked to case 5",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Notification with KB article sent to Elizabeth",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Critical resolution SLA linked to case 5",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_c4196ce20d5a4253",
+    "task_id": "task_20251210_145940_356_accab84d_c16e9916",
+    "overall_success": false,
+    "pass_rate": 0.6,
+    "n_passed": 3,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Case 5 escalated to critical with impact reason and updated description",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Knowledge 227 linked to case 5 as suggested",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Critical response SLA linked to case 5",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Notification with KB article sent to Elizabeth",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Critical resolution SLA linked to case 5",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 313.82934975624084,
+  "total_tokens": 184485,
+  "n_steps": 14,
+  "trace_path": "command-agent/tasks/eog-task_20251210_145940_356_accab84d_c16e9916-04d09d07/output/trace.json",
+  "agent_commit": "81dd0ccee6cbbf7fdafed8043afd4b59db4a53d3",
+  "graded_at": "2026-10-12T21:28:15.413090+00:00",
+  "source": "checkpointed_evaluation"
+}

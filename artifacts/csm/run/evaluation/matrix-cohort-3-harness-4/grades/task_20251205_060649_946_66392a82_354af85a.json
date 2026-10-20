@@ -1,0 +1,158 @@
+{
+  "task_id": "task_20251205_060649_946_66392a82_354af85a",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 6,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "December 2026 contract extended correctly(first)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "December 2026 contract extended correctly(Second)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "December 2027 contract extended correctly(first)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "December 2027 contract extended correctly(second)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "December 2026 contract extended correctly(third)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "December 2026 contract extended correctly(fourth )",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_cfc8268717c24304",
+    "task_id": "task_20251205_060649_946_66392a82_354af85a",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 6,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "December 2026 contract extended correctly(first)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "December 2026 contract extended correctly(Second)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "December 2027 contract extended correctly(first)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "December 2027 contract extended correctly(second)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "December 2026 contract extended correctly(third)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "December 2026 contract extended correctly(fourth )",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 484.24574995040894,
+  "total_tokens": 913977,
+  "n_steps": 35,
+  "trace_path": "command-agent/tasks/eog-task_20251205_060649_946_66392a82_354af85a-620f0ae0/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T06:20:11.414120+00:00",
+  "source": "checkpointed_evaluation"
+}

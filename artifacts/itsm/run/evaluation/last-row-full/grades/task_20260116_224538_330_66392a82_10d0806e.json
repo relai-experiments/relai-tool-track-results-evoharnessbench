@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260116_224538_330_66392a82_10d0806e",
+  "score": 0.8,
+  "solved": false,
+  "n_passed": 4,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Email Exchange CI Status Updated to In Use",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "VPN Gateway Serial Number Updated",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "FileShare CI Retired and Reassigned to Karen",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Incident status set to on_hold",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "USER_052 is notified",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_def63846f17c4d42",
+    "task_id": "task_20260116_224538_330_66392a82_10d0806e",
+    "overall_success": false,
+    "pass_rate": 0.8,
+    "n_passed": 4,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Email Exchange CI Status Updated to In Use",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "VPN Gateway Serial Number Updated",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "FileShare CI Retired and Reassigned to Karen",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Incident status set to on_hold",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "USER_052 is notified",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 332.877760887146,
+  "total_tokens": 627566,
+  "n_steps": 17,
+  "trace_path": "command-agent/tasks/eog-task_20260116_224538_330_66392a82_10d0806e-f7a337dc/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-20T01:06:41.795301+00:00",
+  "source": "checkpointed_evaluation"
+}

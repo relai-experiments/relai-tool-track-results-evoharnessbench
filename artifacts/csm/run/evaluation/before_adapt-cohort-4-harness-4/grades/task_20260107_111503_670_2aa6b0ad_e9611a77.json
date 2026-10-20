@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260107_111503_670_2aa6b0ad_e9611a77",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify that new case is created without product in repair status added.",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify that contact is created.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify that the previous case is cancelled.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify KB article is added correctly.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_1fcc3e2974304fdf",
+    "task_id": "task_20260107_111503_670_2aa6b0ad_e9611a77",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify that new case is created without product in repair status added.",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify that contact is created.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify that the previous case is cancelled.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify KB article is added correctly.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 640.8059582710266,
+  "total_tokens": 309903,
+  "n_steps": 16,
+  "trace_path": "command-agent/tasks/eog-task_20260107_111503_670_2aa6b0ad_e9611a77-e742b67c/output/trace.json",
+  "agent_commit": "e16f4716aa3c543c8bcc7891e11e0481b3ff96e4",
+  "graded_at": "2026-10-15T14:22:30.726079+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,43 @@
+{
+  "stage": 3,
+  "commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "optimizer_result": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261019T013854Z-06abfff3/state/adapt-results/stage-3-5ae1d44232ca411e934fcc10a0c24f1b.json",
+  "selected_tasks": [
+    "eog-tools::itsm/v1/task_20251218_055646_898_97d7df7d_be7218cc",
+    "eog-tools::itsm/v1/task_20251218_063226_501_97d7df7d_8fd400d1",
+    "eog-tools::itsm/v1/task_20251218_132315_968_66392a82_d610f253",
+    "eog-tools::itsm/v1/task_20251218_143555_095_97d7df7d_ece487bd",
+    "eog-tools::itsm/v1/task_20251218_171924_336_ad5a67e3_af252cf6",
+    "eog-tools::itsm/v1/task_20251218_193035_592_391f1eff_5293f595",
+    "eog-tools::itsm/v1/task_20251219_081545_939_99ba2325_887f5580",
+    "eog-tools::itsm/v1/task_20251219_111409_528_c5ca08eb_db61cf35",
+    "eog-tools::itsm/v1/task_20251220_074606_220_0be70e35_6bb33392",
+    "eog-tools::itsm/v1/task_20251221_222834_884_97d7df7d_c088062a",
+    "eog-tools::itsm/v1/task_20251222_084449_326_66392a82_cadddb04",
+    "eog-tools::itsm/v1/task_20251223_044459_066_97d7df7d_6de880ec",
+    "eog-tools::itsm/v1/task_20251223_153021_454_66392a82_0d6d8897",
+    "eog-tools::itsm/v1/task_20251223_224508_138_97d7df7d_b4505336",
+    "eog-tools::itsm/v1/task_20260112_181636_272_c4ad7a70_c9cdfa29",
+    "eog-tools::itsm/v1/task_20260113_151550_104_a8eea1c0_7e9733a5",
+    "eog-tools::itsm/v1/task_20260113_153008_006_46ca2862_c5083638",
+    "eog-tools::itsm/v1/task_20260115_064627_351_66392a82_cd4009dd",
+    "eog-tools::itsm/v1/task_20260115_201951_323_391f1eff_659b9dae",
+    "eog-tools::itsm/v1/task_20260116_091935_817_d4a463c3_3f20bdca",
+    "eog-tools::itsm/v2/task_20251217_183416_700_764e5ead_4c46beb0",
+    "eog-tools::itsm/v2/task_20251218_114039_038_66392a82_c66d4f22",
+    "eog-tools::itsm/v2/task_20251221_191123_397_97d7df7d_7196ef19",
+    "eog-tools::itsm/v2/task_20260114_085016_654_e6427839_ca9119ec",
+    "eog-tools::itsm/v2/task_20260115_125430_649_fa1836dc_e02d5824",
+    "eog-tools::itsm/v3/task_20251217_030654_663_99ba2325_f931fd42",
+    "eog-tools::itsm/v3/task_20251217_211242_026_391f1eff_27934d6b",
+    "eog-tools::itsm/v3/task_20251221_231733_401_66392a82_514cea3c",
+    "eog-tools::itsm/v3/task_20251223_064932_736_01395ded_eff85dae",
+    "eog-tools::itsm/v3/task_20260115_034527_380_66392a82_a172d90d"
+  ],
+  "training_pool": "cumulative",
+  "selected_task_counts_by_stage": {
+    "1": 20,
+    "2": 5,
+    "3": 5
+  }
+}

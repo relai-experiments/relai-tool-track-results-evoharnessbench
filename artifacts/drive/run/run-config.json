@@ -1,0 +1,11 @@
+{
+  "domain": "drive",
+  "limit": null,
+  "matrix": true,
+  "total_rollouts": 50,
+  "training_pool": "cumulative",
+  "optimize_timeout_minutes": 1440,
+  "adapt_timeout_minutes": 1470,
+  "task_timeout_minutes": 30,
+  "historical_scores": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261007T124934Z-54148b3e/historical-scores.json"
+}

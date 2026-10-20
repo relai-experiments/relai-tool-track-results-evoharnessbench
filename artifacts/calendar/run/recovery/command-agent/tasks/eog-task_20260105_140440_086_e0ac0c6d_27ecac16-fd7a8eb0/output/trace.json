@@ -1,0 +1,2698 @@
+{
+  "task_id": "task_20260105_140440_086_e0ac0c6d_27ecac16",
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "agent": {
+    "status": "done",
+    "error": null,
+    "steps": 5,
+    "input_tokens": 83044,
+    "output_tokens": 9025,
+    "total_tokens": 92069,
+    "latency_s": 135.6520485477522,
+    "final_message": "Audit results based solely on tool evidence:\n\nRequested operation: Ensure “Project Management” calendar is visible and selected\n- Discovered eligible resources (calendar list with minAccessRole=writer, showHidden=true):\n  - alice-projects (summary: Project Management)\n- Completed-and-verified set:\n  - alice-projects — get_calendar_from_list shows hidden=false, selected=true\n- Result: Already visible and selected; no update needed. All eligible resources accounted for (only one matching calendar found).\n\nRequested operation: Update Project Management calendar description to mention focus on Q4 hiring milestones and team coordination\n- Action taken: patch_calendar on alice-projects with description “Project meetings, deadlines, and milestones. Now focused on Q4 hiring milestones and team coordination.”\n- Verification: get_calendar_from_list for alice-projects shows the updated description exactly as requested.\n- Result: Persisted and verified.\n\nRequested operation: Create three new events on Project Management (America/New_York)\nTemporal anchor resolution (relative phrases):\n- Operation timestamps in event responses are 2026-10-03T22:00Z; “next Tuesday” from Sat 2026-10-03 is Tue 2026-10-06; “next Friday” is Fri 2026-10-09. Persisted event starts match these anchors.\n\nEvents created and verified (get_event, timeZone=America/New_York):\n- Q4 Hiring Kickoff – Engineering & UX\n  - Start: 2026-10-06T09:00:00 America/New_York\n  - End: 2026-10-06T10:00:00 America/New_York\n  - Status: confirmed\n- Technical Screen Planning Session\n  - Start: 2026-10-06T14:00:00 America/New_York\n  - End: 2026-10-06T15:00:00 America/New_York\n  - Status: confirmed\n- Hiring Pipeline Review\n  - Start: 2026-10-09T15:00:00 America/New_York\n  - End: 2026-10-09T16:00:00 America/New_York\n  - Status: confirmed\n\nField/default checks:\n- Event time zones: Persisted in start.timeZone and end.timeZone as “America/New_York” for all three events.\n- Lifecycle/status: All events show status=confirmed.\n- Reminders: Persisted as useDefault=false, overrides=[] (server defaults); no custom reminders were requested.\n- No duplicates or error-like responses observed. No destructive actions pending.\n\nCoverage conclusion:\n- Calendar visibility/selection: 1 eligible resource discovered, 1 verified — covered.\n- Calendar description update: Targeted resource verified — covered.\n- Event creations: All three specified events exist with correct titles, dates, times, and time zone — covered.\n\nAll requested operations are complete and verified. If you’d like, I can now add attendees, conferencing links, or custom reminders to any of these events.",
+    "initial_messages": [
+      {
+        "role": "system",
+        "content": "You are a highly capable and intelligent AI assistant designed to help users by executing tasks. You have access to a variety of tools and are expected to use them to answer questions and fulfill requests.\n\n**Your Thought Process:**\n\n1. **Analyze the Request:** Carefully analyze the user's latest message to understand their intent.\n\n2. **Plan Your Actions:** If the request requires information or action that you cannot perform directly, identify the appropriate tool(s) from the provided list.\n\n3. **Execute Tools:** Make one or more tool calls in a structured format. You can call multiple tools in parallel if needed.\n\n4. **Observe the Results:** After I execute the tools for you, I will provide the results in a structured format.\n\n5. **Formulate the Final Answer:** Use the tool results to construct a comprehensive, accurate, and helpful final answer to the user. If a tool fails, inform the user and ask for clarification if necessary.\n\n**Constraints:**\n\n-  **Respond Only to the Latest Message:** The conversation history is for context only. Focus on resolving the user's most recent request.\n\n-  **Use Tools When Necessary:** Do not try to guess information that a tool can provide. If you need to know something, use a tool.\n\n-  **Stick to Available Tools:** Only use the tools provided to you in the tool list. Do not invent tools.\n\n-  **Final Response:** Once all necessary tool calls are complete and you have the information you need, provide a final, user-facing response without any further tool calls.\n\nTool results may include explicit incomplete previews. A preview is not evidence that omitted fields or resources are absent. When omitted content could affect the task, use read_tool_result to inspect the stored result before making an absence claim or a dependent mutation.\n\nWhen copying or transforming a resource, preserve every requested field that the available tools support, including writable lifecycle fields such as status or state. If validation rejects one field, repair only that field and retain unrelated source fields rather than silently dropping them. Treat an error-like mutation result as ambiguous because the write may have persisted. Before retrying the same mutation, inspect relevant persisted state with an available read tool; if no such read path exists, do not blindly retry and state the uncertainty. Keep references and destructive actions anchored to entities verified in tool results. Before acting, classify each requested operation's scope as an explicitly named entity, a primary or default entity, a quantified collection, or an account- or ownership-wide category. From observed tool evidence, maintain a compact coverage ledger for each operation containing the discovered eligible resource identifiers, action status, and verification status. Reconcile every discovered eligible resource for collection- or account-scoped operations; selecting a primary or default alias accounts only for that entity when discovery shows others. If an account-level setting is unavailable but the same control exists per owned resource, cover the discovered owned-resource set unless the request explicitly limits the operation to one resource. Never silently narrow the requested scope. For scalar text mutations, preserve the observed original text verbatim and honor any explicit placement or formatting instructions. Otherwise, use only the minimal separator needed for continuation; do not invent paragraph breaks or list formatting. Before mutating, compare the complete candidate value with the observed original and requested addition, including whitespace and punctuation. Mutation arguments show what was requested, not what persisted; inspect mutation results and read back consequential writes when needed before claiming success. Successful storage is insufficient if persisted text differs from the intended composition; issue a corrective mutation when necessary. Before any date-bearing mutation, inventory explicit numeric years, yearless dates, relative-time phrases, and the operation or entity each one scopes. Preserve explicit years; do not replace them with wall-clock defaults. For a yearless date, use task and entity context before choosing a year. A single wall-clock-derived interpretation followed by an empty date-filtered discovery is not sufficient evidence that matching resources are absent. Before skipping dependent operations, make one bounded recovery query: use a contextual anchor when available; otherwise test one adjacent-year interval or the smallest useful range broadening supported by the tool. Do not repeatedly widen the search. If multiple populated interpretations remain materially plausible, request clarification when permitted and do not make consequential mutations unless the execution policy explicitly requires proceeding. An explicit year tied to the same destination or operation outranks a generic next-future-occurrence default. When the execution policy requires proceeding, use the most specific explicit anchor and state that interpretation rather than silently choosing the next future occurrence. When a consequential tool argument is numeric and derived from a date range, duration, or time-unit conversion, call calculate_time_interval first and use its validated result. Treat words such as 'through' and 'including' as inclusive endpoint semantics only when they scope calendar dates, not elapsed datetime intervals."
+      },
+      {
+        "role": "user",
+        "content": "I'm organizing my calendars for the Q4 hiring push. First, make sure my Project Management calendar is visible and selected. Then update its description to mention that it's now focused on Q4 hiring milestones and team coordination. I also need you to create several new events on my Project Management calendar: \"Q4 Hiring Kickoff – Engineering & UX\" for next Tuesday morning at 9:00 AM, \"Technical Screen Planning Session\" for next Tuesday afternoon at 2:00 PM, and \"Hiring Pipeline Review\" for next Friday afternoon at 3:00 PM. All times should be in America/New_York timezone. Thanks!\n"
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "create_calendar",
+          "description": "Create a new secondary calendar.\n\n        Creates a new calendar following Google Calendar API v3 structure. This endpoint\n        strictly creates a secondary calendar. It does not create or promote a primary calendar.\n        The user must already exist; otherwise a 404 is returned.\n\n        Request Body Requirements:\n          - summary: Required. Calendar title (1-255 characters)\n          - description: Optional. Calendar description (max 1000 characters)\n          - location: Optional. Geographic location (max 500 characters)\n          - timeZone: Optional. Calendar timezone in IANA format (default: UTC)\n          - conferenceProperties: Optional. Conference solution settings\n\n        Notes:\n          - This operation cannot create a primary calendar. Use account provisioning or separate tooling to ensure a primary exists.\n\n        Response Structure:\n          - Returns the created calendar with Google Calendar API v3 format:\n            * kind: \"calendar#calendar\"\n            * etag: ETag of the resou",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "summary": {
+                "type": "string",
+                "description": "Calendar title (1-255 characters)",
+                "minLength": 1,
+                "maxLength": 255
+              },
+              "description": {
+                "type": "string",
+                "description": "Calendar description (max 1000 characters)",
+                "maxLength": 1000
+              },
+              "location": {
+                "type": "string",
+                "description": "Geographic location (max 500 characters)",
+                "maxLength": 500
+              },
+              "timeZone": {
+                "type": "string",
+                "description": "Calendar timezone in IANA format (default: UTC)",
+                "default": "UTC"
+              },
+              "conferenceProperties": {
+                "type": "object",
+                "description": "Conference solution settings",
+                "properties": {
+                  "allowedConferenceSolutionTypes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "eventHangout",
+                        "eventNamedHangout",
+                        "hangoutsMeet"
+                      ]
+                    },
+                    "description": "Allowed conference solution types"
+                  }
+                }
+              }
+            },
+            "required": [
+              "summary"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "patch_calendar",
+          "description": "Partially update calendar metadata (cannot change which calendar is primary).\n\n        Partially updates calendar metadata following Google Calendar API v3 structure.\n        Only provided fields will be updated, others remain unchanged.\n        You can update both primary and secondary calendars.\n        Supports using the special keyword 'primary' as the calendar identifier.\n\n        Request Body Requirements:\n          - calendarId: Required. Unique calendar identifier (UUID) or the keyword 'primary'\n\n        Request Body (all optional):\n          - summary: Calendar title (1-255 characters)\n          - description: Calendar description (max 1000 characters)\n          - location: Geographic location (max 500 characters)\n          - timeZone: Calendar timezone in IANA format\n          - conferenceProperties: Conference solution settings\n\n        Restrictions:\n          - Cannot modify which calendar is primary (the is_primary flag is immutable via PATCH)\n          - At least one field must be provided for u",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Unique calendar identifier (UUID) or the keyword 'primary'",
+                "minLength": 1
+              },
+              "summary": {
+                "type": "string",
+                "description": "Calendar title (1-255 characters)",
+                "minLength": 1,
+                "maxLength": 255
+              },
+              "description": {
+                "type": "string",
+                "description": "Calendar description (max 1000 characters)",
+                "maxLength": 1000
+              },
+              "location": {
+                "type": "string",
+                "description": "Geographic location (max 500 characters)",
+                "maxLength": 500
+              },
+              "timeZone": {
+                "type": "string",
+                "description": "Calendar timezone in IANA format"
+              },
+              "conferenceProperties": {
+                "type": "object",
+                "description": "Conference solution settings",
+                "properties": {
+                  "allowedConferenceSolutionTypes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "eventHangout",
+                        "eventNamedHangout",
+                        "hangoutsMeet"
+                      ]
+                    },
+                    "description": "Allowed conference solution types"
+                  }
+                }
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "update_calendar",
+          "description": "Fully update calendar metadata (cannot change which calendar is primary).\n\n        Completely updates calendar metadata following Google Calendar API v3 structure.\n        All provided fields replace existing values. Optional fields omitted will remain unchanged\n        in the current implementation. You can update both primary and secondary calendars.\n        Primary calendar status (which calendar is primary) cannot be modified via this endpoint.\n        Supports using the special keyword 'primary' as the calendar identifier.\n\n        Request Body Requirements:\n          - calendarId: Required. Unique calendar identifier (UUID) or the keyword 'primary'\n\n        Request Body (all optional; null clears for description/location/conferenceProperties):\n          - summary: Calendar title (1-255 characters)\n          - description: Calendar description (max 1000 characters) - null to clear\n          - location: Geographic location (max 500 characters) - null to clear\n          - timeZone: Calendar timezone in IAN",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Unique calendar identifier (UUID) or the keyword 'primary'",
+                "minLength": 1
+              },
+              "summary": {
+                "type": "string",
+                "description": "Calendar title (1-255 characters)",
+                "minLength": 1,
+                "maxLength": 255
+              },
+              "description": {
+                "type": "string",
+                "description": "Calendar description (max 1000 characters)",
+                "maxLength": 1000
+              },
+              "location": {
+                "type": "string",
+                "description": "Geographic location (max 500 characters)",
+                "maxLength": 500
+              },
+              "timeZone": {
+                "type": "string",
+                "description": "Calendar timezone in IANA format"
+              },
+              "conferenceProperties": {
+                "type": "object",
+                "description": "Conference solution settings",
+                "properties": {
+                  "allowedConferenceSolutionTypes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "eventHangout",
+                        "eventNamedHangout",
+                        "hangoutsMeet"
+                      ]
+                    },
+                    "description": "Allowed conference solution types"
+                  }
+                }
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "delete_calendar",
+          "description": "Delete a secondary calendar (cannot delete primary calendar).\n\n        Deletes a calendar following Google Calendar API v3 behavior.\n        Primary calendars cannot be deleted - use clear operation instead.\n\n        Request Body Requirements:\n          - calendarId: Required. Unique calendar identifier (UUID)\n\n        Primary Calendar Protection:\n          - Primary calendars cannot be deleted\n          - Attempting to delete primary calendar returns 400 Bad Request\n          - Use clear_calendar tool to remove events from primary calendar\n\n        Cascade Behavior:\n          - Deleting a calendar also deletes all associated events\n          - This operation is irreversible\n\n        Response Structure:\n          - Returns 204 No Content on successful deletion\n          - No response body as per Google Calendar API v3\n\n        Status Codes:\n          - 204: No Content - Calendar deleted successfully\n          - 400: Bad Request - Attempted to delete primary calendar\n          - 404: Not Found - Calendar not f",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Unique calendar identifier (UUID)",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "clear_calendar",
+          "description": "Clear all events from a calendar (useful for primary calendars).\n\n        Clears all events from a calendar following Google Calendar API v3 behavior.\n        This is the recommended way to \"reset\" a primary calendar since primary calendars cannot be deleted.\n\n        Request Body Requirements:\n          - calendarId: Required. Unique calendar identifier (UUID)\n\n        Operation Details:\n          - Removes all events from the specified calendar\n          - Calendar metadata remains unchanged\n          - Useful for primary calendars that cannot be deleted\n          - Can be used on any calendar (primary or secondary)\n\n        Response:\n          - Returns 204 No Content on successful clear (no response body)\n\n        Status Codes:\n          - 204: No Content - Calendar cleared successfully\n          - 404: Not Found - Calendar not found\n          - 500: Internal Server Error",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Unique calendar identifier (UUID)",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_calendar_list",
+          "description": "Returns the calendars on the user's calendar list.\n        \n        Lists all calendars in the user's calendar list with their display settings and access permissions.\n        Returns calendars with user-specific customizations like colors, visibility, and notification settings.\n        Supports pagination through pageToken and incremental synchronization through syncToken.\n        \n        Request Body Requirements:\n          - maxResults: Optional. Maximum number of entries returned (pagination). If 0, returns no items.\n          - minAccessRole: Optional. Minimum access role filter (freeBusyReader, reader, writer, owner)\n          - pageToken: Optional. Token specifying which result page to return (for pagination)\n          - showDeleted: Optional. Include deleted calendars in results (default: false)\n          - showHidden: Optional. Include hidden calendars in results (default: false)\n          - syncToken: Optional. Token for incremental synchronization (returns only changed entries)\n        \n        Pa",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "maxResults": {
+                "type": "integer",
+                "description": "Maximum number of entries returned. If 0, returns no items.",
+                "minimum": 0,
+                "maximum": 250,
+                "default": 100
+              },
+              "minAccessRole": {
+                "type": "string",
+                "description": "Minimum access role filter",
+                "enum": [
+                  "freeBusyReader",
+                  "reader",
+                  "writer",
+                  "owner"
+                ]
+              },
+              "pageToken": {
+                "type": "string",
+                "description": "Token specifying which result page to return (for pagination)"
+              },
+              "showDeleted": {
+                "type": "boolean",
+                "description": "Include deleted calendars in results",
+                "default": false
+              },
+              "showHidden": {
+                "type": "boolean",
+                "description": "Include hidden calendars in results",
+                "default": false
+              },
+              "syncToken": {
+                "type": "string",
+                "description": "Token for incremental synchronization (returns only changed entries since last sync)"
+              }
+            },
+            "required": []
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_calendar_from_list",
+          "description": "Returns a calendar from the user's calendar list.\n        \n        Retrieves a specific calendar entry from the user's calendar list with all user-specific settings.\n        Shows how the calendar appears in the user's list with customizations and access permissions.\n        \n        Request Body Requirements:\n          - calendarId: Required. Unique calendar identifier (UUID) or the keyword 'primary' to refer to the user's primary calendar\n        \n        Response Structure:\n          - Returns CalendarListEntry with Google Calendar API v3 format:\n            * kind: \"calendar#calendarListEntry\"\n            * etag: ETag of the resource\n            * id: Calendar identifier\n            * summary: Display title (with summaryOverride if set)\n            * description: Calendar description\n            * location: Calendar location\n            * timeZone: Calendar timezone\n            * summaryOverride: Custom title override for this user\n            * colorId: Calendar color ID\n            * backgroundColor: Ba",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Unique calendar identifier (UUID)",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "add_calendar_to_list",
+          "description": "Inserts an existing calendar into the user's calendar list.\n        \n        Adds an existing calendar to the user's calendar list with custom display settings.\n        The calendar must already exist - this endpoint only adds it to the user's list with personalization.\n        \n        Request Body Requirements:\n          - id: Required. Calendar ID to add to user's list\n          - summaryOverride: Optional. Custom calendar title override\n          - colorId: Optional. Calendar color ID\n          - backgroundColor: Optional. Background color (hex format like #FF5733)\n          - foregroundColor: Optional. Foreground color (hex format like #FFFFFF)\n          - hidden: Optional. Whether calendar is hidden from list (default: false)\n          - selected: Optional. Whether calendar is selected in UI (default: true)\n          - defaultReminders: Optional. Array of default reminder settings\n          - notificationSettings: Optional. Notification preferences\n        \n        Calendar Must Exist:\n          - The c",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Calendar ID to add to user's list (UUID)",
+                "minLength": 1
+              },
+              "colorRgbFormat": {
+                "type": "boolean",
+                "description": "Query param: if true, allows writing backgroundColor/foregroundColor",
+                "default": false
+              },
+              "summaryOverride": {
+                "type": "string",
+                "description": "Custom calendar title override",
+                "maxLength": 255
+              },
+              "colorId": {
+                "type": "string",
+                "description": "Calendar color ID",
+                "maxLength": 50
+              },
+              "backgroundColor": {
+                "type": "string",
+                "description": "Background color (hex format like #FF5733)",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "foregroundColor": {
+                "type": "string",
+                "description": "Foreground color (hex format like #FFFFFF)",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "hidden": {
+                "type": "boolean",
+                "description": "Whether calendar is hidden from list",
+                "default": false
+              },
+              "selected": {
+                "type": "boolean",
+                "description": "Whether calendar is selected in UI",
+                "default": true
+              },
+              "defaultReminders": {
+                "type": "array",
+                "description": "Default reminder settings",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "method": {
+                      "type": "string",
+                      "enum": [
+                        "email",
+                        "popup"
+                      ],
+                      "description": "Reminder delivery method"
+                    },
+                    "minutes": {
+                      "type": "integer",
+                      "description": "Minutes before event to trigger reminder",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "method",
+                    "minutes"
+                  ]
+                }
+              },
+              "notificationSettings": {
+                "type": "object",
+                "description": "Notification preferences",
+                "properties": {
+                  "notifications": {
+                    "type": "array",
+                    "description": "List of notification settings",
+                    "items": {
+                      "type": "object",
+                      "description": "Individual notification setting",
+                      "properties": {
+                        "method": {
+                          "type": "string",
+                          "enum": [
+                            "email"
+                          ],
+                          "description": "Notification delivery method (only 'email' supported)"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "eventCreation",
+                            "eventChange",
+                            "eventCancellation",
+                            "eventResponse",
+                            "agenda"
+                          ],
+                          "description": "Notification type"
+                        }
+                      },
+                      "required": [
+                        "method",
+                        "type"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "update_calendar_in_list",
+          "description": "Updates an entry on the user's calendar list (partial update).\n        \n        Partially updates calendar list entry settings. Only provided fields will be updated,\n        others remain unchanged. This allows fine-grained control over calendar display settings.\n        \n        Request Body Requirements:\n          - calendarId: Required. Unique calendar identifier (UUID) or 'primary'\n        \n        Request Body (all optional):\n          - summaryOverride: Custom calendar title override\n          - colorId: Calendar color ID\n          - backgroundColor: Background color (hex format like #FF5733)\n          - foregroundColor: Foreground color (hex format like #FFFFFF)\n          - hidden: Whether calendar is hidden from list\n          - selected: Whether calendar is selected in UI\n          - defaultReminders: Array of default reminder settings\n          - notificationSettings: Notification preferences\n        \n        Partial Update Behavior:\n          - Only fields provided in request body are updated\n     ",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Unique calendar identifier (UUID)",
+                "minLength": 1
+              },
+              "colorRgbFormat": {
+                "type": "boolean",
+                "description": "Query param: if true, allows writing backgroundColor/foregroundColor",
+                "default": false
+              },
+              "summaryOverride": {
+                "type": "string",
+                "description": "Custom calendar title override",
+                "maxLength": 255
+              },
+              "colorId": {
+                "type": "string",
+                "description": "Calendar color ID",
+                "maxLength": 50
+              },
+              "backgroundColor": {
+                "type": "string",
+                "description": "Background color (hex format like #FF5733)",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "foregroundColor": {
+                "type": "string",
+                "description": "Foreground color (hex format like #FFFFFF)",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "hidden": {
+                "type": "boolean",
+                "description": "Whether calendar is hidden from list",
+                "default": false
+              },
+              "selected": {
+                "type": "boolean",
+                "description": "Whether calendar is selected in UI",
+                "default": true
+              },
+              "defaultReminders": {
+                "type": "array",
+                "description": "Default reminder settings",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "method": {
+                      "type": "string",
+                      "enum": [
+                        "email",
+                        "popup"
+                      ],
+                      "description": "Reminder delivery method"
+                    },
+                    "minutes": {
+                      "type": "integer",
+                      "description": "Minutes before event to trigger reminder",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "method",
+                    "minutes"
+                  ]
+                }
+              },
+              "notificationSettings": {
+                "type": "object",
+                "description": "Notification preferences",
+                "properties": {
+                  "notifications": {
+                    "type": "array",
+                    "description": "List of notification settings",
+                    "items": {
+                      "type": "object",
+                      "description": "Individual notification setting",
+                      "properties": {
+                        "method": {
+                          "type": "string",
+                          "enum": [
+                            "email"
+                          ],
+                          "description": "Notification delivery method (only 'email' supported)"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "eventCreation",
+                            "eventChange",
+                            "eventCancellation",
+                            "eventResponse",
+                            "agenda"
+                          ],
+                          "description": "Notification type"
+                        }
+                      },
+                      "required": [
+                        "method",
+                        "type"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "remove_calendar_from_list",
+          "description": "Removes a calendar from the user's calendar list.\n        \n        Removes a calendar from the user's calendar list (soft delete).\n        The calendar itself remains in the database but is no longer visible in the user's list.\n        Primary calendars cannot be removed from the calendar list.\n        \n        Request Body Requirements:\n          - calendarId: Required. Unique calendar identifier (UUID)\n        \n        Primary Calendar Protection:\n          - Primary calendars cannot be removed from the calendar list\n          - Attempting to remove primary calendar returns 400 Bad Request\n          - Primary calendars are always part of the user's list\n        \n        Operation Details:\n          - Calendar is soft-deleted (marked as deleted, not physically removed)\n          - Calendar data remains in database but is hidden from list\n          - Calendar can potentially be re-added to list later\n          - Does not affect the underlying calendar data or events\n        \n        Response Structure:\n      ",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Unique calendar identifier (UUID)",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "watch_calendar_list",
+          "description": "Watch for changes to CalendarList resources.\n        \n        Sets up webhook notifications (Channel) for changes to the user's calendar list.\n        Monitors for additions, removals, and updates to calendar list entries.\n        \n        Request Body (Channel):\n          - id: Required. Unique channel identifier for this watch\n          - type: Channel type (only \"web_hook\" (or \"webhook\") supported)\n          - address: Required. HTTPS URL where notifications will be sent\n          - token: Optional. Verification token for webhook security\n        \n        Webhook Notifications (simplified):\n          - Server will send POST requests to the specified address\n          - Notifications triggered by calendar list changes:\n            * Calendar added to or removed from list\n            * Calendar list entry settings updated\n            * Calendar permissions changed\n        \n        Channel Response:\n          - Returns Channel object with fields: kind, id, resourceId, resourceUri, token, expiration, type, add",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique channel identifier for this watch",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "description": "Channel type (only web_hook supported; 'webhook' accepted as alias)",
+                "enum": [
+                  "web_hook",
+                  "webhook"
+                ],
+                "default": "web_hook"
+              },
+              "address": {
+                "type": "string",
+                "description": "HTTPS URL where notifications will be sent",
+                "format": "uri",
+                "minLength": 1
+              },
+              "token": {
+                "type": "string",
+                "description": "Verification token for webhook security",
+                "maxLength": 256
+              },
+              "params": {
+                "type": "object",
+                "description": "Optional parameters (Google spec supports 'ttl' in seconds as string)",
+                "properties": {
+                  "ttl": {
+                    "type": "string",
+                    "description": "Time to live in seconds (string). Server computes expiration = now + ttl"
+                  }
+                }
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "address"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_events",
+          "description": "List events on the specified calendar.\n        \n        Returns events from a calendar following Google Calendar API v3 structure.\n        Supports filtering by time range, search terms, and other parameters to retrieve relevant events.\n        \n        Request Body Requirements:\n          - calendarId: Required. Calendar identifier to list events from\n        \n        Optional Parameters:\n          - eventTypes: Event types to return (string: default, birthday, focusTime, fromGmail, outOfOffice, workingLocation)\n          - iCalUID: Specifies an event ID in the iCalendar format to retrieve (string)\n          - maxAttendees: Maximum number of attendees to include in response (integer)\n          - maxResults: Maximum number of events returned (1-2500, default 250)\n          - orderBy: Order of events returned (startTime or updated)\n          - pageToken: Token for pagination\n          - privateExtendedProperty: Extended properties constraint for private properties (string, format: propertyName=value)\n         ",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Calendar identifier"
+              },
+              "eventTypes": {
+                "type": "string",
+                "description": "Event types to return. Possible values are: 'default' - Events that don't match any of the events below, 'outOfOffice' - Out of office events, 'focusTime' - Focus time events, 'workingLocation' - Working location events, 'fromGmail' - Events from Gmail (deprecated), 'birthday' - Birthday events. Optional. Multiple event types can be provided using repeated parameter instances"
+              },
+              "iCalUID": {
+                "type": "string",
+                "description": "Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID. Mutually exclusive with q. Optional."
+              },
+              "maxAttendees": {
+                "type": "integer",
+                "description": "The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
+              },
+              "maxResults": {
+                "type": "integer",
+                "description": "Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.",
+                "minimum": 1,
+                "maximum": 2500
+              },
+              "orderBy": {
+                "type": "string",
+                "description": "The order of the events returned in the result. Optional. The default is an unspecified, stable order.",
+                "enum": [
+                  "startTime",
+                  "updated"
+                ]
+              },
+              "pageToken": {
+                "type": "string",
+                "description": "Token specifying which result page to return. Optional."
+              },
+              "privateExtendedProperty": {
+                "type": "string",
+                "description": "Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints."
+              },
+              "q": {
+                "type": "string",
+                "description": "Free text search terms to find events that match these terms in any field, except for extended properties. Optional."
+              },
+              "sharedExtendedProperty": {
+                "type": "string",
+                "description": "Extended properties constraint specified as propertyName=value. Matches only shared properties. This parameter might be repeated multiple times to return events that match all given constraints."
+              },
+              "showDeleted": {
+                "type": "boolean",
+                "description": "Whether to include deleted events (with status equals 'cancelled') in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False."
+              },
+              "showHiddenInvitations": {
+                "type": "boolean",
+                "description": "Whether to include hidden invitations in the result. Optional. The default is False."
+              },
+              "singleEvents": {
+                "type": "boolean",
+                "description": "Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False."
+              },
+              "syncToken": {
+                "type": "string",
+                "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All events deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False. There are several query parameters that cannot be specified together with nextSyncToken to ensure consistency of the client state."
+              },
+              "timeMax": {
+                "type": "string",
+                "description": "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin."
+              },
+              "timeMin": {
+                "type": "string",
+                "description": "Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be less than timeMax."
+              },
+              "timeZone": {
+                "type": "string",
+                "description": "Time zone used in the response. Optional. The default is the time zone of the calendar."
+              },
+              "updatedMin": {
+                "type": "string",
+                "description": "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "create_event",
+          "description": "Create a new event in the specified calendar following Google Calendar API v3 specification.\n        \n        Creates a new event with full Google Calendar API v3 compatibility. Supports all standard event properties\n        including attendees, attachments, conference data, reminders, and event type-specific properties.\n        \n        Required Properties:\n          - calendarId: Calendar identifier where event will be created\n          - end: Event end time (dateTime/date object with optional timeZone)\n          - start: Event start time (dateTime/date object with optional timeZone)\n        \n        Optional Properties (Google Calendar API v3 compliant):\n          - attachments: File attachments for the event\n          - attendees: List of event attendees with email, displayName, responseStatus\n          - colorId: Color ID of the event (1-11 for event colors)\n          - conferenceData: Conference/meeting data for video calls\n          - description: Event description text\n          - eventType: Event typ",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Calendar identifier where event will be created"
+              },
+              "end": {
+                "type": "object",
+                "description": "Event end time (required)",
+                "properties": {
+                  "dateTime": {
+                    "type": "string",
+                    "description": "RFC3339 timestamp with timezone for timed events"
+                  },
+                  "date": {
+                    "type": "string",
+                    "description": "Date in YYYY-MM-DD format for all-day events"
+                  },
+                  "timeZone": {
+                    "type": "string",
+                    "description": "IANA timezone identifier"
+                  }
+                }
+              },
+              "start": {
+                "type": "object",
+                "description": "Event start time (required)",
+                "properties": {
+                  "dateTime": {
+                    "type": "string",
+                    "description": "RFC3339 timestamp with timezone for timed events"
+                  },
+                  "date": {
+                    "type": "string",
+                    "description": "Date in YYYY-MM-DD format for all-day events"
+                  },
+                  "timeZone": {
+                    "type": "string",
+                    "description": "IANA timezone identifier"
+                  }
+                }
+              },
+              "attachments": {
+                "type": "array",
+                "description": "File attachments for the event",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fileUrl": {
+                      "type": "string",
+                      "description": "URL of attached file"
+                    }
+                  },
+                  "required": [
+                    "fileUrl"
+                  ]
+                }
+              },
+              "attendees": {
+                "type": "array",
+                "description": "List of event attendees",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "description": "Attendee email address"
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "description": "Attendee display name"
+                    },
+                    "optional": {
+                      "type": "boolean",
+                      "default": false,
+                      "description": "Whether attendee is optional"
+                    },
+                    "resource": {
+                      "type": "boolean",
+                      "default": false,
+                      "description": "Whether attendee is a resource"
+                    },
+                    "responseStatus": {
+                      "type": "string",
+                      "description": "Response status: needsAction, declined, tentative, accepted"
+                    },
+                    "comment": {
+                      "type": "string",
+                      "description": "Attendee comment"
+                    },
+                    "additionalGuests": {
+                      "type": "integer",
+                      "description": "Number of additional guests"
+                    }
+                  },
+                  "required": [
+                    "email"
+                  ]
+                }
+              },
+              "colorId": {
+                "type": "string",
+                "description": "Color ID of the event (1-11 for event colors)"
+              },
+              "conferenceData": {
+                "type": "object",
+                "description": "Conference/meeting data for video calls",
+                "properties": {
+                  "conferenceId": {
+                    "type": "string",
+                    "description": "Conference ID"
+                  },
+                  "conferenceSolution": {
+                    "type": "object",
+                    "description": "Conference solution details",
+                    "properties": {
+                      "iconUri": {
+                        "type": "string",
+                        "description": "Icon URI for the conference solution"
+                      },
+                      "key": {
+                        "type": "object",
+                        "description": "Conference solution key",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "Conference solution type"
+                          }
+                        }
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the conference solution"
+                      }
+                    }
+                  },
+                  "createRequest": {
+                    "type": "object",
+                    "description": "Conference create request details",
+                    "properties": {
+                      "conferenceSolutionKey": {
+                        "type": "object",
+                        "description": "Conference solution for the create request",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "Conference solution key type"
+                          }
+                        }
+                      },
+                      "requestId": {
+                        "type": "string",
+                        "description": "Request ID for creating the conference"
+                      }
+                    }
+                  },
+                  "entryPoints": {
+                    "type": "array",
+                    "description": "Conference entry points",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "accessCode": {
+                          "type": "string",
+                          "description": "Access code for the conference"
+                        },
+                        "entryPointType": {
+                          "type": "string",
+                          "description": "Type of entry point"
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "Label for the entry point"
+                        },
+                        "meetingCode": {
+                          "type": "string",
+                          "description": "Meeting code for the conference"
+                        },
+                        "passcode": {
+                          "type": "string",
+                          "description": "Passcode for the conference"
+                        },
+                        "password": {
+                          "type": "string",
+                          "description": "Password for the conference"
+                        },
+                        "pin": {
+                          "type": "string",
+                          "description": "PIN for the conference"
+                        },
+                        "uri": {
+                          "type": "string",
+                          "description": "URI for the conference entry point"
+                        }
+                      }
+                    }
+                  },
+                  "notes": {
+                    "type": "string",
+                    "description": "Conference notes"
+                  },
+                  "signature": {
+                    "type": "string",
+                    "description": "Conference signature"
+                  }
+                }
+              },
+              "description": {
+                "type": "string",
+                "description": "Event description text"
+              },
+              "birthdayProperties": {
+                "type": "object",
+                "description": "Birthday properties for birthday events",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "birthday"
+                    ],
+                    "description": "Type of birthday event, must be 'birthday'. Cannot be changed after event creation."
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "eventType": {
+                "type": "string",
+                "description": "Event type: default, birthday, outOfOffice, focusTime, workingLocation",
+                "enum": [
+                  "default",
+                  "birthday",
+                  "outOfOffice",
+                  "focusTime",
+                  "workingLocation"
+                ]
+              },
+              "extendedProperties": {
+                "type": "object",
+                "description": "Extended properties",
+                "properties": {
+                  "private": {
+                    "type": "object",
+                    "description": "Private extended properties"
+                  },
+                  "shared": {
+                    "type": "object",
+                    "description": "Shared extended properties"
+                  }
+                }
+              },
+              "focusTimeProperties": {
+                "type": "object",
+                "description": "Focus time properties for focusTime events",
+                "properties": {
+                  "autoDeclineMode": {
+                    "type": "string",
+                    "description": "Whether to decline meeting invitations which overlap Focus Time events",
+                    "enum": [
+                      "declineNone",
+                      "declineAllConflictingInvitations",
+                      "declineOnlyNewConflictingInvitations"
+                    ]
+                  },
+                  "chatStatus": {
+                    "type": "string",
+                    "description": "The status to mark the user in Chat and related products",
+                    "enum": [
+                      "available",
+                      "doNotDisturb"
+                    ]
+                  },
+                  "declineMessage": {
+                    "type": "string",
+                    "description": "Response message to set if an existing event or new invitation is automatically declined by Calendar"
+                  }
+                }
+              },
+              "guestsCanInviteOthers": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether guests can invite others"
+              },
+              "guestsCanModify": {
+                "type": "boolean",
+                "default": false,
+                "description": "Whether guests can modify the event"
+              },
+              "guestsCanSeeOtherGuests": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether guests can see other guests"
+              },
+              "iCalUID": {
+                "type": "string",
+                "description": "iCalendar UID for external integration"
+              },
+              "location": {
+                "type": "string",
+                "description": "Geographic location of the event"
+              },
+              "originalStartTime": {
+                "type": "object",
+                "description": "Original start time for recurring event instances (must match start field values)",
+                "properties": {
+                  "dateTime": {
+                    "type": "string",
+                    "description": "RFC3339 timestamp with timezone for timed events"
+                  },
+                  "date": {
+                    "type": "string",
+                    "description": "Date in YYYY-MM-DD format for all-day events"
+                  },
+                  "timeZone": {
+                    "type": "string",
+                    "description": "IANA timezone identifier"
+                  }
+                }
+              },
+              "outOfOfficeProperties": {
+                "type": "object",
+                "description": "Out of office properties for outOfOffice events",
+                "properties": {
+                  "autoDeclineMode": {
+                    "type": "string",
+                    "description": "Whether to decline meeting invitations which overlap Focus Time events",
+                    "enum": [
+                      "declineNone",
+                      "declineAllConflictingInvitations",
+                      "declineOnlyNewConflictingInvitations"
+                    ]
+                  },
+                  "declineMessage": {
+                    "type": "string",
+                    "description": "Response message to set if an existing event or new invitation is automatically declined by Calendar"
+                  }
+                }
+              },
+              "recurrence": {
+                "type": "array",
+                "description": "List of RRULE, EXRULE, RDATE and EXDATE lines for recurring events following RFC 5545 (iCalendar) standard.\n                    \n                    Supported Recurrence Types:\n                    \n                    RRULE (Recurrence Rule) - Defines the pattern for recurring events:\n                    • FREQ: Frequency (DAILY, WEEKLY, MONTHLY, YEARLY)\n                    • INTERVAL: Interval between occurrences (e.g., INTERVAL=2 for every 2 weeks)\n                    • COUNT: Maximum number of occurrences\n                    • UNTIL: End date (format: YYYYMMDDTHHMMSSZ)\n                    • BYDAY: Days of week (MO, TU, WE, TH, FR, SA, SU)\n                    • BYMONTHDAY: Days of month (1-31)\n                    • BYMONTH: Months (1-12)\n                    • BYSETPOS: Position in set (e.g., 1st, 2nd, -1 for last)\n                    \n                    EXDATE (Exception Dates) - Exclude specific occurrences:\n                    • Format: EXDATE:YYYYMMDDTHHMMSSZ or EXDATE;VALUE=DATE:YYYYMMDD\n                    • Use timezone format for timed events, date format for all-day events\n                    \n                    RDATE (Recurrence Dates) - Add specific occurrences:\n                    • Format: RDATE:YYYYMMDDTHHMMSSZ or RDATE;VALUE=DATE:YYYYMMDD\n                    \n                    Common Examples:\n                    • Daily: [\"RRULE:FREQ=DAILY\"]\n                    • Every weekday: [\"RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR\"]\n                    • Weekly on specific days: [\"RRULE:FREQ=WEEKLY;BYDAY=TU,TH\"]\n                    • Monthly on specific date: [\"RRULE:FREQ=MONTHLY;BYMONTHDAY=15\"]\n                    • First Monday of month: [\"RRULE:FREQ=MONTHLY;BYDAY=1MO\"]\n                    • Last Friday of month: [\"RRULE:FREQ=MONTHLY;BYDAY=-1FR\"]\n                    • Yearly: [\"RRULE:FREQ=YEARLY\"]\n                    • Every 2 weeks: [\"RRULE:FREQ=WEEKLY;INTERVAL=2\"]\n                    • 10 times only: [\"RRULE:FREQ=WEEKLY;COUNT=10\"]\n                    • Until specific date: [\"RRULE:FREQ=DAILY;UNTIL=20231231T235959Z\"]\n                    \n                    Complex Examples:\n                    • Weekly with exceptions: [\"RRULE:FREQ=WEEKLY;BYDAY=TU,TH\", \"EXDATE:20231024T100000Z\"]\n                    • Monthly with additional dates: [\"RRULE:FREQ=MONTHLY;BYMONTHDAY=1\", \"RDATE:20231215T100000Z\"]\n                    • Every other month on 2nd Tuesday: [\"RRULE:FREQ=MONTHLY;INTERVAL=2;BYDAY=2TU\"]\n                    \n                    All-Day Event Examples:\n                    • Daily all-day: [\"RRULE:FREQ=DAILY\"]\n                    • Weekly all-day with exceptions: [\"RRULE:FREQ=WEEKLY;BYDAY=MO\", \"EXDATE;VALUE=DATE:20231030\"]\n                    \n                    Note: For all-day events, use VALUE=DATE format for EXDATE/RDATE. For timed events, use full timestamp format.",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reminders": {
+                "type": "object",
+                "description": "Reminder settings",
+                "properties": {
+                  "useDefault": {
+                    "type": "boolean",
+                    "description": "Whether to use default reminders"
+                  },
+                  "overrides": {
+                    "type": "array",
+                    "description": "Custom reminder overrides",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "method": {
+                          "type": "string",
+                          "enum": [
+                            "email",
+                            "popup"
+                          ],
+                          "description": "Reminder method"
+                        },
+                        "minutes": {
+                          "type": "integer",
+                          "description": "Minutes before event"
+                        }
+                      },
+                      "required": [
+                        "method",
+                        "minutes"
+                      ]
+                    }
+                  }
+                }
+              },
+              "sequence": {
+                "type": "integer",
+                "description": "iCalendar sequence number"
+              },
+              "source": {
+                "type": "object",
+                "description": "Source from which the event was created",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Source URL"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Source title"
+                  }
+                }
+              },
+              "status": {
+                "type": "string",
+                "description": "Event status: confirmed, tentative, cancelled",
+                "enum": [
+                  "confirmed",
+                  "tentative",
+                  "cancelled"
+                ]
+              },
+              "summary": {
+                "type": "string",
+                "description": "Event title/summary"
+              },
+              "transparency": {
+                "type": "string",
+                "description": "Whether event blocks time: opaque, transparent",
+                "enum": [
+                  "opaque",
+                  "transparent"
+                ]
+              },
+              "visibility": {
+                "type": "string",
+                "description": "Event visibility: default, public, private, confidential",
+                "enum": [
+                  "default",
+                  "public",
+                  "private",
+                  "confidential"
+                ]
+              },
+              "workingLocationProperties": {
+                "type": "object",
+                "description": "Working location properties for workingLocation events",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "homeOffice",
+                      "officeLocation",
+                      "customLocation"
+                    ],
+                    "description": "Type of the working location. Required when adding working location properties"
+                  },
+                  "customLocation": {
+                    "type": "object",
+                    "description": "If present, specifies that the user is working from a custom location",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "description": "An optional extra label for additional information"
+                      }
+                    }
+                  },
+                  "homeOffice": {
+                    "type": "object",
+                    "description": "If present, specifies that the user is working at home",
+                    "properties": {
+                      "address_1": {
+                        "type": "string",
+                        "description": "Home Office address 1"
+                      },
+                      "address_2": {
+                        "type": "string",
+                        "description": "Home Office address 2"
+                      },
+                      "city": {
+                        "type": "string",
+                        "description": "City located"
+                      },
+                      "state": {
+                        "type": "string",
+                        "description": "State of the home office"
+                      },
+                      "postal_code": {
+                        "type": "string",
+                        "description": "Postal code of the home office"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "officeLocation": {
+                    "type": "object",
+                    "description": "If present, specifies that the user is working from an office",
+                    "properties": {
+                      "buildingId": {
+                        "type": "string",
+                        "description": "An optional building identifier. This should reference a building ID in the organization's Resources database"
+                      },
+                      "deskId": {
+                        "type": "string",
+                        "description": "An optional desk identifier"
+                      },
+                      "floorId": {
+                        "type": "string",
+                        "description": "An optional floor identifier"
+                      },
+                      "floorSectionId": {
+                        "type": "string",
+                        "description": "An optional floor section identifier"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "The office name that's displayed in Calendar Web and Mobile clients. We recommend you reference a building name in the organization's Resources database"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "conferenceDataVersion": {
+                "type": "integer",
+                "description": "Conference data version supported (0-1)",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "maxAttendees": {
+                "type": "integer",
+                "description": "Maximum number of attendees to include in response"
+              },
+              "sendUpdates": {
+                "type": "string",
+                "description": "Guests who should receive notifications: all, externalOnly, none",
+                "enum": [
+                  "all",
+                  "externalOnly",
+                  "none"
+                ]
+              },
+              "supportsAttachments": {
+                "type": "boolean",
+                "default": false,
+                "description": "Whether client supports event attachments"
+              }
+            },
+            "required": [
+              "calendarId",
+              "end",
+              "start"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_event",
+          "description": "Retrieve a specific event by its ID from the specified calendar.\n        \n        Returns event details following Google Calendar API v3 structure.\n        Provides complete event information including attendees, reminders, and recurrence settings.\n        \n        Request Body Requirements:\n          - calendarId: Required. Calendar identifier\n          - eventId: Required. Event identifier\n          - timeZone: Optional. Time zone for returned times (IANA timezone)\n        \n        Response Structure:\n          - Returns event with Google Calendar API v3 format:\n            * kind: \"calendar#event\"\n            * etag: ETag of the resource\n            * id: Unique event identifier\n            * summary: Event title\n            * description: Event description (if present)\n            * location: Event location (if present)\n            * start: Event start time with timezone\n            * end: Event end time with timezone\n            * recurrence: Recurrence rules (if recurring)\n            * status: Event st",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Calendar identifier"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "Event identifier"
+              },
+              "timeZone": {
+                "type": "string",
+                "description": "Time zone for returned times (IANA timezone)"
+              },
+              "maxAttendees": {
+                "type": "integer",
+                "description": "Maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional."
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "patch_event",
+          "description": "Partially update an event (only specified fields are modified) following Google Calendar API v3.\n        \n        Updates an event with partial data using Google Calendar API v3 structure.\n        Only provided fields will be updated, others remain unchanged.\n        Use for incremental updates without affecting other event properties.\n        \n        Request Body Requirements:\n          - calendarId: Required. Calendar identifier\n          - eventId: Required. Event identifier\n        \n        Optional Update Fields (Google Calendar API v3 compliant):\n          - attachments: File attachments for the event\n          - attendees: List of event attendees with email, displayName, responseStatus\n          - colorId: Color ID of the event (1-11 for event colors)\n          - conferenceData: Conference/meeting data for video calls\n          - description: Event description text\n          - end: Event end time (dateTime/date object with optional timeZone)\n          - eventType: Event type (default, outOfOffice, foc",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Calendar identifier"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "Event identifier"
+              },
+              "summary": {
+                "type": "string",
+                "description": "Event title"
+              },
+              "description": {
+                "type": "string",
+                "description": "Event description"
+              },
+              "location": {
+                "type": "string",
+                "description": "Event location"
+              },
+              "attachments": {
+                "type": "array",
+                "description": "File attachments for the event",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fileUrl": {
+                      "type": "string",
+                      "description": "URL of attached file"
+                    }
+                  }
+                }
+              },
+              "attendees": {
+                "type": "array",
+                "description": "List of event attendees",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "description": "Attendee email address"
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "description": "Attendee display name"
+                    },
+                    "optional": {
+                      "type": "boolean",
+                      "description": "Whether attendee is optional"
+                    },
+                    "resource": {
+                      "type": "boolean",
+                      "default": false,
+                      "description": "Whether attendee is a resource"
+                    },
+                    "responseStatus": {
+                      "type": "string",
+                      "description": "Response status"
+                    },
+                    "comment": {
+                      "type": "string",
+                      "description": "Attendee comment"
+                    },
+                    "additionalGuests": {
+                      "type": "integer",
+                      "description": "Number of additional guests"
+                    }
+                  },
+                  "required": [
+                    "email"
+                  ]
+                }
+              },
+              "colorId": {
+                "type": "string",
+                "description": "Color ID of the event(1-11 for event colors)"
+              },
+              "conferenceData": {
+                "type": "object",
+                "description": "Conference/meeting data for video calls",
+                "properties": {
+                  "conferenceId": {
+                    "type": "string",
+                    "description": "Conference ID"
+                  },
+                  "conferenceSolution": {
+                    "type": "object",
+                    "description": "Conference solution details",
+                    "properties": {
+                      "iconUri": {
+                        "type": "string",
+                        "description": "Icon URI for the conference solution"
+                      },
+                      "key": {
+                        "type": "object",
+                        "description": "Conference solution key",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "Conference solution type"
+                          }
+                        }
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the conference solution"
+                      }
+                    }
+                  },
+                  "createRequest": {
+                    "type": "object",
+                    "description": "Conference create request details",
+                    "properties": {
+                      "conferenceSolutionKey": {
+                        "type": "object",
+                        "description": "Conference solution for the create request",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "Conference solution key type"
+                          }
+                        }
+                      },
+                      "requestId": {
+                        "type": "string",
+                        "description": "Request ID for creating the conference"
+                      }
+                    }
+                  },
+                  "entryPoints": {
+                    "type": "array",
+                    "description": "Conference entry points",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "accessCode": {
+                          "type": "string",
+                          "description": "Access code for the conference"
+                        },
+                        "entryPointType": {
+                          "type": "string",
+                          "description": "Type of entry point"
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "Label for the entry point"
+                        },
+                        "meetingCode": {
+                          "type": "string",
+                          "description": "Meeting code for the conference"
+                        },
+                        "passcode": {
+                          "type": "string",
+                          "description": "Passcode for the conference"
+                        },
+                        "password": {
+                          "type": "string",
+                          "description": "Password for the conference"
+                        },
+                        "pin": {
+                          "type": "string",
+                          "description": "PIN for the conference"
+                        },
+                        "uri": {
+                          "type": "string",
+                          "description": "URI for the conference entry point"
+                        }
+                      }
+                    }
+                  },
+                  "notes": {
+                    "type": "string",
+                    "description": "Conference notes"
+                  },
+                  "signature": {
+                    "type": "string",
+                    "description": "Conference signature"
+                  }
+                }
+              },
+              "birthdayProperties": {
+                "type": "object",
+                "description": "Birthday properties for birthday events",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "birthday"
+                    ],
+                    "description": "Type of birthday event, must be 'birthday'. Cannot be changed after event creation."
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "end": {
+                "type": "object",
+                "description": "Event end time",
+                "properties": {
+                  "dateTime": {
+                    "type": "string",
+                    "description": "RFC3339 timestamp"
+                  },
+                  "date": {
+                    "type": "string",
+                    "description": "Date in YYYY-MM-DD format"
+                  },
+                  "timeZone": {
+                    "type": "string",
+                    "description": "IANA timezone"
+                  }
+                }
+              },
+              "eventType": {
+                "type": "string",
+                "description": "Event type",
+                "enum": [
+                  "default",
+                  "birthday",
+                  "outOfOffice",
+                  "focusTime",
+                  "workingLocation"
+                ]
+              },
+              "extendedProperties": {
+                "type": "object",
+                "description": "Extended properties",
+                "properties": {
+                  "private": {
+                    "type": "object",
+                    "description": "Private extended properties"
+                  },
+                  "shared": {
+                    "type": "object",
+                    "description": "Shared extended properties"
+                  }
+                }
+              },
+              "focusTimeProperties": {
+                "type": "object",
+                "description": "Focus time properties for focusTime events",
+                "properties": {
+                  "autoDeclineMode": {
+                    "type": "string",
+                    "description": "Whether to decline meeting invitations which overlap Focus Time events",
+                    "enum": [
+                      "declineNone",
+                      "declineAllConflictingInvitations",
+                      "declineOnlyNewConflictingInvitations"
+                    ]
+                  },
+                  "chatStatus": {
+                    "type": "string",
+                    "description": "The status to mark the user in Chat and related products",
+                    "enum": [
+                      "available",
+                      "doNotDisturb"
+                    ]
+                  },
+                  "declineMessage": {
+                    "type": "string",
+                    "description": "Response message to set if an existing event or new invitation is automatically declined by Calendar"
+                  }
+                }
+              },
+              "guestsCanInviteOthers": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether guests can invite others"
+              },
+              "guestsCanModify": {
+                "type": "boolean",
+                "default": false,
+                "description": "Whether guests can modify the event"
+              },
+              "guestsCanSeeOtherGuests": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether guests can see other guests"
+              },
+              "hangoutLink": {
+                "type": "string",
+                "description": "Hangout link"
+              },
+              "iCalUID": {
+                "type": "string",
+                "description": "iCalendar UID"
+              },
+              "outOfOfficeProperties": {
+                "type": "object",
+                "description": "Out of office properties for outOfOffice events",
+                "properties": {
+                  "autoDeclineMode": {
+                    "type": "string",
+                    "description": "Whether to decline meeting invitations which overlap Focus Time events",
+                    "enum": [
+                      "declineNone",
+                      "declineAllConflictingInvitations",
+                      "declineOnlyNewConflictingInvitations"
+                    ]
+                  },
+                  "declineMessage": {
+                    "type": "string",
+                    "description": "Response message to set if an existing event or new invitation is automatically declined by Calendar"
+                  }
+                }
+              },
+              "locked": {
+                "type": "boolean",
+                "description": "Whether event is locked"
+              },
+              "privateCopy": {
+                "type": "boolean",
+                "description": "Whether this is a private copy"
+              },
+              "recurrence": {
+                "type": "array",
+                "description": "List of RRULE, EXRULE, RDATE and EXDATE lines for recurring events following RFC 5545 (iCalendar) standard.\n                    \n                    Supported Recurrence Types:\n                    \n                    RRULE (Recurrence Rule) - Defines the pattern for recurring events:\n                    • FREQ: Frequency (DAILY, WEEKLY, MONTHLY, YEARLY)\n                    • INTERVAL: Interval between occurrences (e.g., INTERVAL=2 for every 2 weeks)\n                    • COUNT: Maximum number of occurrences\n                    • UNTIL: End date (format: YYYYMMDDTHHMMSSZ)\n                    • BYDAY: Days of week (MO, TU, WE, TH, FR, SA, SU)\n                    • BYMONTHDAY: Days of month (1-31)\n                    • BYMONTH: Months (1-12)\n                    • BYSETPOS: Position in set (e.g., 1st, 2nd, -1 for last)\n                    \n                    EXDATE (Exception Dates) - Exclude specific occurrences:\n                    • Format: EXDATE:YYYYMMDDTHHMMSSZ or EXDATE;VALUE=DATE:YYYYMMDD\n                    • Use timezone format for timed events, date format for all-day events\n                    \n                    RDATE (Recurrence Dates) - Add specific occurrences:\n                    • Format: RDATE:YYYYMMDDTHHMMSSZ or RDATE;VALUE=DATE:YYYYMMDD\n                    \n                    Common Examples:\n                    • Daily: [\"RRULE:FREQ=DAILY\"]\n                    • Every weekday: [\"RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR\"]\n                    • Weekly on specific days: [\"RRULE:FREQ=WEEKLY;BYDAY=TU,TH\"]\n                    • Monthly on specific date: [\"RRULE:FREQ=MONTHLY;BYMONTHDAY=15\"]\n                    • First Monday of month: [\"RRULE:FREQ=MONTHLY;BYDAY=1MO\"]\n                    • Last Friday of month: [\"RRULE:FREQ=MONTHLY;BYDAY=-1FR\"]\n                    • Yearly: [\"RRULE:FREQ=YEARLY\"]\n                    • Every 2 weeks: [\"RRULE:FREQ=WEEKLY;INTERVAL=2\"]\n                    • 10 times only: [\"RRULE:FREQ=WEEKLY;COUNT=10\"]\n                    • Until specific date: [\"RRULE:FREQ=DAILY;UNTIL=20231231T235959Z\"]\n                    \n                    Complex Examples:\n                    • Weekly with exceptions: [\"RRULE:FREQ=WEEKLY;BYDAY=TU,TH\", \"EXDATE:20231024T100000Z\"]\n                    • Monthly with additional dates: [\"RRULE:FREQ=MONTHLY;BYMONTHDAY=1\", \"RDATE:20231215T100000Z\"]\n                    • Every other month on 2nd Tuesday: [\"RRULE:FREQ=MONTHLY;INTERVAL=2;BYDAY=2TU\"]\n                    \n                    All-Day Event Examples:\n                    • Daily all-day: [\"RRULE:FREQ=DAILY\"]\n                    • Weekly all-day with exceptions: [\"RRULE:FREQ=WEEKLY;BYDAY=MO\", \"EXDATE;VALUE=DATE:20231030\"]\n                    \n                    Note: For all-day events, use VALUE=DATE format for EXDATE/RDATE. For timed events, use full timestamp format.",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reminders": {
+                "type": "object",
+                "description": "Reminder settings",
+                "properties": {
+                  "useDefault": {
+                    "type": "boolean",
+                    "description": "Whether to use default reminders"
+                  },
+                  "overrides": {
+                    "type": "array",
+                    "description": "Custom reminder overrides",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "method": {
+                          "type": "string",
+                          "enum": [
+                            "email",
+                            "popup"
+                          ],
+                          "description": "Reminder method"
+                        },
+                        "minutes": {
+                          "type": "integer",
+                          "description": "Minutes before event"
+                        }
+                      },
+                      "required": [
+                        "method",
+                        "minutes"
+                      ]
+                    }
+                  }
+                }
+              },
+              "sequence": {
+                "type": "integer",
+                "description": "Sequence number"
+              },
+              "source": {
+                "type": "object",
+                "description": "Source from which the event was created",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Source URL"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Source title"
+                  }
+                }
+              },
+              "start": {
+                "type": "object",
+                "description": "Event start time",
+                "properties": {
+                  "dateTime": {
+                    "type": "string",
+                    "description": "RFC3339 timestamp"
+                  },
+                  "date": {
+                    "type": "string",
+                    "description": "Date in YYYY-MM-DD format"
+                  },
+                  "timeZone": {
+                    "type": "string",
+                    "description": "IANA timezone"
+                  }
+                }
+              },
+              "status": {
+                "type": "string",
+                "description": "Event status: confirmed, tentative, cancelled",
+                "enum": [
+                  "confirmed",
+                  "tentative",
+                  "cancelled"
+                ]
+              },
+              "transparency": {
+                "type": "string",
+                "description": "Event transparency",
+                "enum": [
+                  "opaque",
+                  "transparent"
+                ]
+              },
+              "visibility": {
+                "type": "string",
+                "description": "Event visibility",
+                "enum": [
+                  "default",
+                  "public",
+                  "private",
+                  "confidential"
+                ]
+              },
+              "workingLocationProperties": {
+                "type": "object",
+                "description": "Working location properties for workingLocation events",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "homeOffice",
+                      "officeLocation",
+                      "customLocation"
+                    ],
+                    "description": "Type of the working location. Required when adding working location properties"
+                  },
+                  "customLocation": {
+                    "type": "object",
+                    "description": "If present, specifies that the user is working from a custom location",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "description": "An optional extra label for additional information"
+                      }
+                    }
+                  },
+                  "homeOffice": {
+                    "type": "object",
+                    "description": "If present, specifies that the user is working at home",
+                    "properties": {
+                      "address_1": {
+                        "type": "string",
+                        "description": "Home Office address 1"
+                      },
+                      "address_2": {
+                        "type": "string",
+                        "description": "Home Office address 2"
+                      },
+                      "city": {
+                        "type": "string",
+                        "description": "City located"
+                      },
+                      "state": {
+                        "type": "string",
+                        "description": "State of the home office"
+                      },
+                      "postal_code": {
+                        "type": "string",
+                        "description": "Postal code of the home office"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "officeLocation": {
+                    "type": "object",
+                    "description": "If present, specifies that the user is working from an office",
+                    "properties": {
+                      "buildingId": {
+                        "type": "string",
+                        "description": "An optional building identifier. This should reference a building ID in the organization's Resources database"
+                      },
+                      "deskId": {
+                        "type": "string",
+                        "description": "An optional desk identifier"
+                      },
+                      "floorId": {
+                        "type": "string",
+                        "description": "An optional floor identifier"
+                      },
+                      "floorSectionId": {
+                        "type": "string",
+                        "description": "An optional floor section identifier"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "The office name that's displayed in Calendar Web and Mobile clients. We recommend you reference a building name in the organization's Resources database"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "conferenceDataVersion": {
+                "type": "integer",
+                "description": "Conference data version supported (0-1)",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "maxAttendees": {
+                "type": "integer",
+                "description": "Maximum number of attendees to include in response"
+              },
+              "sendUpdates": {
+                "type": "string",
+                "description": "Guests who should receive notifications",
+                "enum": [
+                  "all",
+                  "externalOnly",
+                  "none"
+                ]
+              },
+              "supportsAttachments": {
+                "type": "boolean",
+                "default": false,
+                "description": "Whether client supports event attachments"
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "delete_event",
+          "description": "Delete an event from the specified calendar.\n        \n        Permanently deletes an event following Google Calendar API v3 behavior.\n        This action cannot be undone. Use with caution.\n        \n        Request Body Requirements:\n          - calendarId: Required. Calendar identifier\n          - eventId: Required. Event identifier to delete\n          - sendUpdates: Optional. Guests who should receive notifications (all, externalOnly, none)\n        \n        Deletion Behavior:\n          - Event is permanently removed from the calendar\n          - This operation is irreversible\n          - Notifications can be sent to attendees if specified\n        \n        Response Structure:\n          - Returns 204 No Content on successful deletion\n          - No response body as per Google Calendar API v3\n        \n        Status Codes:\n          - 204: No Content - Event deleted successfully\n          - 404: Not Found - Event or calendar not found\n          - 500: Internal Server Error",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Calendar identifier"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "Event identifier to delete"
+              },
+              "sendUpdates": {
+                "type": "string",
+                "description": "Guests who should receive notifications: all, externalOnly, none"
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "move_event",
+          "description": "Move an event from one calendar to another.\n        \n        Moves an event between calendars following Google Calendar API v3 behavior.\n        The event retains its properties but changes calendar ownership.\n        \n        Request Body Requirements:\n          - calendarId: Required. Source calendar identifier\n          - eventId: Required. Event identifier to move\n          - destination: Required. Target calendar identifier where event will be moved\n          - sendUpdates: Optional. Guests who should receive notifications (all, externalOnly, none)\n        \n        Move Operation:\n          - Event is transferred from source to destination calendar\n          - Event properties (title, time, attendees, etc.) remain unchanged\n          - Event ID may change during the move operation\n          - Original event is removed from source calendar\n        \n        Response Structure:\n          - Returns moved event with Google Calendar API v3 format\n          - Event will have the same content but potentially new",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Source calendar identifier"
+              },
+              "eventId": {
+                "type": "string",
+                "description": "Event identifier to move"
+              },
+              "destination": {
+                "type": "string",
+                "description": "Target calendar identifier where event will be moved"
+              },
+              "sendUpdates": {
+                "type": "string",
+                "description": "Guests who should receive notifications: all, externalOnly, none"
+              }
+            },
+            "required": [
+              "calendarId",
+              "eventId",
+              "destination"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "quick_add_event",
+          "description": "Create an event using natural language text parsing.\n        \n        Creates an event from natural language text following Google Calendar API v3 structure.\n        Automatically extracts date, time, and other details from the provided text.\n        Similar to Quick Add feature in Google Calendar.\n        \n        Request Body Requirements:\n          - calendarId: Required. Calendar identifier where event will be created\n        \n        Required Query Parameters:\n          - text: Required. Natural language text describing the event (e.g., 'Meeting tomorrow at 2pm')\n\n        Request Body Requirements:\n          - sendUpdates: Optional. Guests who should receive notifications (all, externalOnly, none)\n        \n        Text Parsing:\n          - Automatically extracts event title from text\n          - Identifies date and time information\n          - Recognizes common patterns like 'tomorrow', 'next week', 'at 3pm'\n          - May identify location if mentioned in text\n          - Creates a properly formatted e",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Calendar identifier where event will be created"
+              },
+              "text": {
+                "type": "string",
+                "description": "Natural language text describing the event (e.g., 'Meeting tomorrow at 2pm')"
+              },
+              "sendUpdates": {
+                "type": "string",
+                "description": "Guests who should receive notifications: all, externalOnly, none"
+              }
+            },
+            "required": [
+              "calendarId",
+              "text"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "watch_events",
+          "description": "Set up a webhook to receive notifications when events change.\n        \n        Sets up webhook notifications for event changes following Google Calendar API v3 structure.\n        Returns a channel for managing the watch. Monitors events in the specified calendar for changes.\n        \n        Request Body Requirements:\n          - calendarId: Required. Calendar identifier to watch for changes\n\n        Optional Query Parameters:\n          - eventTypes(string): Acceptable values are:\n                    \"birthday\": Special all-day events with an annual recurrence.\n                    \"default\": Regular events.\n                    \"focusTime\": Focus time events.\n                    \"fromGmail\": Events from Gmail.\n                    \"outOfOffice\": Out of office events.\n                    \"workingLocation\": Working location events. \n        \n        Request Body Requirements:\n          - id: Required. Unique channel identifier\n          - address: Required. Webhook URL to receive notifications\n          - type: O",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "description": "Calendar identifier to watch for changes"
+              },
+              "id": {
+                "type": "string",
+                "description": "Unique channel identifier"
+              },
+              "type": {
+                "type": "string",
+                "description": "Channel type (web_hook)"
+              },
+              "address": {
+                "type": "string",
+                "description": "Webhook URL to receive notifications"
+              },
+              "token": {
+                "type": "string",
+                "description": "Optional token for webhook authentication"
+              },
+              "params": {
+                "type": "object",
+                "description": "Additional channel parameters",
+                "properties": {
+                  "ttl": {
+                    "type": "string",
+                    "description": "Time to live in seconds (string)."
+                  }
+                }
+              },
+              "eventTypes": {
+                "type": "string",
+                "description": "Event types of resources to watch. Optional. This parameter can be repeated multiple times to watch resources of different types. If unset, returns all event types. Acceptable values are: 'birthday' - Special all-day events with an annual recurrence, 'default' - Regular events, 'focusTime' - Focus time events, 'fromGmail' - Events from Gmail, 'outOfOffice' - Out of office events, 'workingLocation' - Working location events."
+              }
+            },
+            "required": [
+              "calendarId",
+              "id",
+              "type",
+              "address"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_colors",
+          "description": "Retrieve the color definitions for calendars and events.\n        \n        Returns the global palette of color definitions used by Google Calendar.\n        This endpoint provides static color data and does not require authentication \n        or user context as it returns predefined color schemes.\n        \n        Color Structure:\n          - calendar: Object mapping color IDs to calendar color definitions\n          - event: Object mapping color IDs to event color definitions\n          \n        Each color definition contains:\n          - background: The background color (hex format)\n          - foreground: The foreground color for text (hex format)\n          \n        Available Calendar Colors: 24 predefined colors (IDs 1-24)\n        Available Event Colors: 11 predefined colors (IDs 1-11)\n        \n        Usage Examples:\n          - Get all available colors for UI color pickers\n          - Validate color IDs before setting calendar/event colors\n          - Display color options to users\n          \n        Respon",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_user_by_email",
+          "description": "Get user details by email address\n\nThis tool retrieves complete user information using their email address, including user ID, name, and other profile details.\n\n**API Endpoint:** GET /users/email/{email}\n\n**Parameters:**\n- email (required): The email address to lookup\n\n**Returns:**\nComplete user information including id, name, given_name, family_name, picture, locale, timezone, is_active, is_verified, etc.\n\n**Example:**\n```json\n{\n  \"email\": \"user@example.com\"\n}\n```",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string",
+                "description": "Email address to lookup"
+              }
+            },
+            "required": [
+              "email"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_settings",
+          "description": "List all visible user settings.\n\n        Retrieves all settings that are visible to the authenticated user.\n        Follows the structure of Google Calendar API v3 `/settings` endpoint.\n\n        No request body required.\n\n        Response Structure:\n          - kind: \"calendar#settings\"\n          - etag: ETag for the entire settings collection\n          - items: Array of setting resources, each containing:\n            * kind: \"calendar#setting\"\n            * etag: ETag of the setting\n            * id: Unique identifier of the setting (e.g., \"timezone\")\n            * value: Current value of the setting\n\n        Status Codes:\n          - 200: Success - List of settings returned\n          - 500: Internal Server Error",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_acl_rules",
+          "description": "List ACL rules for a calendar with pagination and filtering support.\n\n        Returns access control rules for the given calendar with support for pagination and incremental synchronization.\n        Follows the structure of Google Calendar API v3 `/calendars/{calendarId}/acl`.\n\n        Required Parameters:\n          - calendarId: Calendar identifier\n\n        Optional Parameters:\n          - maxResults: Maximum number of entries returned on one result page (1-250, default 100)\n          - pageToken: Token specifying which result page to return\n          - showDeleted: Whether to include deleted ACLs (role=\"none\") in the result (default False)\n          - syncToken: Token for incremental synchronization, returns only entries changed since token\n\n        Response Structure:\n          - kind: \"calendar#acl\"\n          - etag: ETag of the ACL collection\n          - items: Array of ACL rules\n          - nextPageToken: Token for next page (if more results available)\n          - nextSyncToken: Token for next sync oper",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "maxResults": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 250,
+                "default": 100,
+                "description": "Maximum number of entries returned on one result page"
+              },
+              "pageToken": {
+                "type": "string",
+                "description": "Token specifying which result page to return"
+              },
+              "showDeleted": {
+                "type": "boolean",
+                "default": false,
+                "description": "Whether to include deleted ACLs in the result"
+              },
+              "syncToken": {
+                "type": "string",
+                "description": "Token for incremental synchronization"
+              }
+            },
+            "required": [
+              "calendarId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "insert_acl_rule",
+          "description": "Insert a new access control rule.\n\n        Adds a new ACL rule to the specified calendar.\n        Equivalent to: POST /calendars/{calendarId}/acl\n\n        Required Parameters:\n          - calendarId: Calendar identifier\n          - rule: ACL rule input (scope, role)\n\n        Optional Parameters:\n          - sendNotifications: Whether to send notifications about the calendar sharing change (default: True)\n\n        Response Structure:\n          - kind: \"calendar#aclRule\"\n          - etag: ETag\n          - id: ACL rule ID\n          - scope: { type, value }\n          - role: ACL role\n\n        Status Codes:\n          - 201: Created\n          - 400: Bad Request\n          - 500: Internal Server Error",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sendNotifications": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether to send notifications about the calendar sharing change"
+              }
+            },
+            "required": [
+              "calendarId",
+              "scope",
+              "role"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "patch_acl_rule",
+          "description": "Partially update an ACL rule.\n\n        Allows modifying select fields of an ACL rule.\n        Equivalent to: PATCH /calendars/{calendarId}/acl/{ruleId}\n\n        Required Parameters:\n          - calendarId: Calendar identifier\n          - ruleId: ACL rule ID\n          - rule: Partial updates (any of: scope, role)\n\n        Optional Parameters:\n          - sendNotifications: Whether to send notifications about the calendar sharing change (default: True)\n\n        Response:\n          - Updated ACL rule object\n\n        Status Codes:\n          - 200: Success\n          - 404: Not Found\n          - 500: Internal Server Error",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ruleId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              },
+              "role": {
+                "type": "string"
+              },
+              "sendNotifications": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether to send notifications about the calendar sharing change"
+              }
+            },
+            "required": [
+              "calendarId",
+              "ruleId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "delete_acl_rule",
+          "description": "Delete an ACL rule.\n\n        Deletes a specific ACL rule from the calendar.\n        Equivalent to: DELETE /calendars/{calendarId}/acl/{ruleId}\n\n        Required Parameters:\n          - calendarId: Calendar identifier\n          - ruleId: ACL rule ID\n\n        Response:\n          - No content (204) on success\n\n        Status Codes:\n          - 204: No Content\n          - 404: Not Found\n          - 500: Internal Server Error",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ruleId": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "calendarId",
+              "ruleId"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "watch_acl",
+          "description": "Set up a webhook to receive notifications when ACL rules change.\n\n        Sets up webhook notifications for ACL rule changes following Google Calendar API v3 structure.\n        Returns a channel for managing the watch. Monitors ACL rules in the specified calendar for changes.\n\n        Equivalent to: POST /calendars/{calendarId}/acl/watch\n\n        Required Parameters:\n          - calendarId: Calendar identifier to watch for ACL changes\n          - id: Unique channel identifier\n          - address: Webhook URL to receive notifications\n          - type: Channel type (default: \"web_hook\")\n          \n\n        Optional Parameters:\n          - token: Optional token for webhook authentication\n          - params: Additional channel parameters\n\n        Response Structure:\n          - Returns Channel resource with Google Calendar API v3 format:\n            * kind: \"api#channel\"\n            * id: Channel identifier\n            * resourceId: Resource being watched\n            * resourceUri: Resource URI path\n            *",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "calendarId": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Calendar identifier to watch for ACL changes"
+              },
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Unique channel identifier"
+              },
+              "type": {
+                "type": "string",
+                "default": "web_hook",
+                "description": "Channel type (only 'web_hook' supported)"
+              },
+              "address": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Webhook URL to receive notifications"
+              },
+              "token": {
+                "type": "string",
+                "description": "Optional token for webhook authentication"
+              },
+              "params": {
+                "type": "object",
+                "description": "Additional channel parameters",
+                "properties": {
+                  "ttl": {
+                    "type": "string",
+                    "description": "Time to live in seconds (string)."
+                  }
+                }
+              }
+            },
+            "required": [
+              "calendarId",
+              "id",
+              "type",
+              "address"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "query_freebusy",
+          "description": "Query free/busy information for a set of calendars.\n        \n        Returns free/busy information for specified calendars following Google Calendar API v3 structure.\n        Shows busy time periods when calendars have confirmed events that block time.\n        Essential for scheduling meetings and finding available time slots.\n        \n        Request Body Requirements:\n          - timeMin: Required. Lower bound for the query (RFC3339 timestamp)\n          - timeMax: Required. Upper bound for the query (RFC3339 timestamp)\n          - items: Required. List of calendar identifiers to query\n        \n        Optional Parameters:\n          - timeZone: Time zone for the query (default: UTC)\n          - groupExpansionMax: Maximum number of calendars to expand for groups\n          - calendarExpansionMax: Maximum number of events to expand for calendars\n        \n        Time Period Handling:\n          - Only confirmed events block time (status = \"confirmed\")\n          - Transparent events do not block time\n          - ",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "timeMin": {
+                "type": "string",
+                "description": "Lower bound for the query (RFC3339 timestamp)"
+              },
+              "timeMax": {
+                "type": "string",
+                "description": "Upper bound for the query (RFC3339 timestamp)"
+              },
+              "timeZone": {
+                "type": "string",
+                "description": "Time zone for the query (IANA timezone, default: UTC)"
+              },
+              "groupExpansionMax": {
+                "type": "integer",
+                "description": "Maximum number of calendars to expand for groups"
+              },
+              "calendarExpansionMax": {
+                "type": "integer",
+                "description": "Maximum number of events to expand for calendars"
+              },
+              "items": {
+                "type": "array",
+                "description": "List of calendar identifiers to query",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Calendar identifier"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "timeMin",
+              "timeMax",
+              "items"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "read_tool_result",
+          "description": "Read a bounded chunk of an oversized tool result from this run. Use the opaque handle and offsets supplied in an incomplete preview.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "handle": {
+                "type": "string",
+                "description": "Opaque handle from an incomplete tool-result preview."
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Zero-based character offset in the serialized result."
+              },
+              "length": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 4000,
+                "description": "Maximum number of characters to return."
+              }
+            },
+            "required": [
+              "handle",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "calculate_time_interval",
+          "description": "Calculate and validate an ISO date or timezone-aware datetime interval before using a date-derived numeric value in a consequential tool call.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "description": "ISO 8601 calendar date or timezone-aware datetime."
+              },
+              "end": {
+                "type": "string",
+                "description": "ISO 8601 calendar date or timezone-aware datetime."
+              },
+              "endpoint_semantics": {
+                "type": "string",
+                "enum": [
+                  "inclusive_calendar_dates",
+                  "end_exclusive"
+                ],
+                "description": "Use inclusive_calendar_dates for date wording such as through or including; use end_exclusive for elapsed intervals."
+              },
+              "output_unit": {
+                "type": "string",
+                "enum": [
+                  "days",
+                  "hours",
+                  "minutes",
+                  "seconds"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "endpoint_semantics",
+              "output_unit"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    ],
+    "events": [
+      {
+        "step": 1,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_X6SY0s99Of0LsVHqSLT8umJw",
+              "function": {
+                "arguments": "{\"minAccessRole\":\"writer\",\"showHidden\":true,\"maxResults\":250}",
+                "name": "get_calendar_list"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 1636,
+          "prompt_tokens": 13590,
+          "total_tokens": 15226,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 1600,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_X6SY0s99Of0LsVHqSLT8umJw",
+            "name": "get_calendar_list",
+            "arguments": {
+              "minAccessRole": "writer",
+              "showHidden": true,
+              "maxResults": 250
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#calendarList\\\",\\n  \\\"etag\\\": \\\"etag-list-db_1791064775828_bt48c0o7n\\\",\\n  \\\"nextPageToken\\\": null,\\n  \\\"nextSyncToken\\\": \\\"MjAyNi0xMC0wM1QyMjowMDoyMi4wOTY3ODY=\\\",\\n  \\\"items\\\": [\\n    {\\n      \\\"kind\\\": \\\"calendar#calendarListEntry\\\",\\n      \\\"etag\\\": \\\"etag-list-alice-primary-2026-10-03T21:59:35\\\",\\n      \\\"id\\\": \\\"alice-primary\\\",\\n      \\\"summary\\\": \\\"Alice Johnson\\\",\\n      \\\"description\\\": \\\"Primary calendar for Alice Johnson - Project Manager\\\",\\n      \\\"location\\\": null,\\n      \\\"timeZone\\\": \\\"America/New_York\\\",\\n      \\\"summaryOverride\\\": null,\\n      \\\"colorId\\\": \\\"1\\\",\\n      \\\"backgroundColor\\\": null,\\n      \\\"foregroundColor\\\": null,\\n      \\\"hidden\\\": false,\\n      \\\"selected\\\": true,\\n      \\\"accessRole\\\": \\\"owner\\\",\\n      \\\"defaultReminders\\\": null,\\n      \\\"notificationSettings\\\": null,\\n      \\\"primary\\\": true,\\n      \\\"deleted\\\": false,\\n      \\\"conferenceProperties\\\": {\\n        \\\"allowedConferenceSolutionTypes\\\": []\\n      }\\n    },\\n    {\\n      \\\"kind\\\": \\\"calendar#calendarListEntry\\\",\\n      \\\"etag\\\": \\\"etag-list-alice-projects-2026-10-03T21:59:35\\\",\\n      \\\"id\\\": \\\"alice-projects\\\",\\n      \\\"summary\\\": \\\"Project Management\\\",\\n      \\\"description\\\": \\\"Project meetings, deadlines, and milestones\\\",\\n      \\\"location\\\": null,\\n      \\\"timeZone\\\": \\\"America/New_York\\\",\\n      \\\"summaryOverride\\\": null,\\n      \\\"colorId\\\": \\\"7\\\",\\n      \\\"backgroundColor\\\": null,\\n      \\\"foregroundColor\\\": null,\\n      \\\"hidden\\\": false,\\n      \\\"selected\\\": true,\\n      \\\"accessRole\\\": \\\"owner\\\",\\n      \\\"defaultReminders\\\": null,\\n      \\\"notificationSettings\\\": null,\\n      \\\"primary\\\": false,\\n      \\\"deleted\\\": false,\\n      \\\"conferenceProperties\\\": {\\n        \\\"allowedConferenceSolutionTypes\\\": []\\n      }\\n    },\\n    {\\n      \\\"kind\\\": \\\"calendar#calendarListEntry\\\",\\n      \\\"etag\\\": \\\"etag-list-alice-team-2026-10-03T21:59:35\\\",\\n      \\\"id\\\": \\\"alice-team\\\",\\n      \\\"summary\\\": \\\"Team Coordination\\\",\\n      \\\"description\\\": \\\"Team meetings, 1-on-1s, and team events\\\",\\n      \\\"location\\\": null,\\n      \\\"timeZone\\\": \\\"America/New_York\\\",\\n      \\\"summaryOverride\\\": null,\\n      \\\"colorId\\\": \\\"11\\\",\\n      \\\"backgroundColor\\\": null,\\n      \\\"foregroundColor\\\": null,\\n      \\\"hidden\\\": false,\\n      \\\"selected\\\": true,\\n      \\\"accessRole\\\": \\\"owner\\\",\\n      \\\"defaultReminders\\\": null,\\n      \\\"notificationSettings\\\": null,\\n      \\\"primary\\\": false,\\n      \\\"deleted\\\": false,\\n      \\\"conferenceProperties\\\": {\\n        \\\"allowedConferenceSolutionTypes\\\": []\\n      }\\n    }\\n  ]\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_WuG4nFTy9pstjr6uglIpa4Ju",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\", \"description\": \"Project meetings, deadlines, and milestones. Now focused on Q4 hiring milestones and team coordination.\"}",
+                "name": "patch_calendar"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_anTbiLQyFHi4me9M2AgHIOlZ",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\", \"summary\": \"Q4 Hiring Kickoff – Engineering & UX\", \"start\": {\"dateTime\": \"2026-10-06T09:00:00\", \"timeZone\": \"America/New_York\"}, \"end\": {\"dateTime\": \"2026-10-06T10:00:00\", \"timeZone\": \"America/New_York\"}, \"timeZone\": \"America/New_York\"}",
+                "name": "create_event"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_TnzY1wMoOuT5M2Hk6DkPRjgY",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\", \"summary\": \"Technical Screen Planning Session\", \"start\": {\"dateTime\": \"2026-10-06T14:00:00\", \"timeZone\": \"America/New_York\"}, \"end\": {\"dateTime\": \"2026-10-06T15:00:00\", \"timeZone\": \"America/New_York\"}, \"timeZone\": \"America/New_York\"}",
+                "name": "create_event"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_yt5phIJt6RI3qfqM5PsVwtpw",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\", \"summary\": \"Hiring Pipeline Review\", \"start\": {\"dateTime\": \"2026-10-09T15:00:00\", \"timeZone\": \"America/New_York\"}, \"end\": {\"dateTime\": \"2026-10-09T16:00:00\", \"timeZone\": \"America/New_York\"}, \"timeZone\": \"America/New_York\"}",
+                "name": "create_event"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2054,
+          "prompt_tokens": 14375,
+          "total_tokens": 16429,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 1728,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 13440
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_WuG4nFTy9pstjr6uglIpa4Ju",
+            "name": "patch_calendar",
+            "arguments": {
+              "calendarId": "alice-projects",
+              "description": "Project meetings, deadlines, and milestones. Now focused on Q4 hiring milestones and team coordination."
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#calendar\\\",\\n  \\\"etag\\\": \\\"etag-alice-projects-2026-10-03T22:00:53.473626\\\",\\n  \\\"id\\\": \\\"alice-projects\\\",\\n  \\\"summary\\\": \\\"Project Management\\\",\\n  \\\"description\\\": \\\"Project meetings, deadlines, and milestones. Now focused on Q4 hiring milestones and team coordination.\\\",\\n  \\\"location\\\": null,\\n  \\\"timeZone\\\": \\\"America/New_York\\\",\\n  \\\"conferenceProperties\\\": null\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          },
+          {
+            "call_id": "call_anTbiLQyFHi4me9M2AgHIOlZ",
+            "name": "create_event",
+            "arguments": {
+              "calendarId": "alice-projects",
+              "summary": "Q4 Hiring Kickoff – Engineering & UX",
+              "start": {
+                "dateTime": "2026-10-06T09:00:00",
+                "timeZone": "America/New_York"
+              },
+              "end": {
+                "dateTime": "2026-10-06T10:00:00",
+                "timeZone": "America/New_York"
+              },
+              "timeZone": "America/New_York"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#event\\\",\\n  \\\"etag\\\": \\\"\\\\\\\"1791064853.838793\\\\\\\"\\\",\\n  \\\"id\\\": \\\"9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe\\\",\\n  \\\"status\\\": \\\"confirmed\\\",\\n  \\\"htmlLink\\\": \\\"https://calendar.google.com/event?eid=9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe\\\",\\n  \\\"created\\\": \\\"2026-10-03T22:00:53.838791\\\",\\n  \\\"updated\\\": \\\"2026-10-03T22:00:53.838793\\\",\\n  \\\"summary\\\": \\\"Q4 Hiring Kickoff \\\\u2013 Engineering & UX\\\",\\n  \\\"description\\\": null,\\n  \\\"location\\\": null,\\n  \\\"colorId\\\": null,\\n  \\\"creator\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"organizer\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"start\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T09:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"end\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T10:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"endTimeUnspecified\\\": false,\\n  \\\"recurrence\\\": [],\\n  \\\"recurringEventId\\\": null,\\n  \\\"originalStartTime\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T09:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"transparency\\\": \\\"opaque\\\",\\n  \\\"visibility\\\": \\\"default\\\",\\n  \\\"iCalUID\\\": \\\"9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe@calendar.google.com\\\",\\n  \\\"sequence\\\": 0,\\n  \\\"attendees\\\": [],\\n  \\\"attendeesOmitted\\\": false,\\n  \\\"extendedProperties\\\": null,\\n  \\\"hangoutLink\\\": null,\\n  \\\"conferenceData\\\": null,\\n  \\\"guestsCanInviteOthers\\\": true,\\n  \\\"guestsCanModify\\\": false,\\n  \\\"guestsCanSeeOtherGuests\\\": true,\\n  \\\"privateCopy\\\": false,\\n  \\\"locked\\\": false,\\n  \\\"reminders\\\": {\\n    \\\"overrides\\\": [],\\n    \\\"useDefault\\\": false\\n  },\\n  \\\"source\\\": null,\\n  \\\"attachments\\\": [],\\n  \\\"eventType\\\": \\\"default\\\",\\n  \\\"birthdayProperties\\\": null,\\n  \\\"focusTimeProperties\\\": null,\\n  \\\"outOfOfficeProperties\\\": null,\\n  \\\"workingLocationProperties\\\": null\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          },
+          {
+            "call_id": "call_TnzY1wMoOuT5M2Hk6DkPRjgY",
+            "name": "create_event",
+            "arguments": {
+              "calendarId": "alice-projects",
+              "summary": "Technical Screen Planning Session",
+              "start": {
+                "dateTime": "2026-10-06T14:00:00",
+                "timeZone": "America/New_York"
+              },
+              "end": {
+                "dateTime": "2026-10-06T15:00:00",
+                "timeZone": "America/New_York"
+              },
+              "timeZone": "America/New_York"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#event\\\",\\n  \\\"etag\\\": \\\"\\\\\\\"1791064854.9713\\\\\\\"\\\",\\n  \\\"id\\\": \\\"16979985-cfb0-460f-bdb9-62fc57cf79d7\\\",\\n  \\\"status\\\": \\\"confirmed\\\",\\n  \\\"htmlLink\\\": \\\"https://calendar.google.com/event?eid=16979985-cfb0-460f-bdb9-62fc57cf79d7\\\",\\n  \\\"created\\\": \\\"2026-10-03T22:00:54.971297\\\",\\n  \\\"updated\\\": \\\"2026-10-03T22:00:54.971300\\\",\\n  \\\"summary\\\": \\\"Technical Screen Planning Session\\\",\\n  \\\"description\\\": null,\\n  \\\"location\\\": null,\\n  \\\"colorId\\\": null,\\n  \\\"creator\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"organizer\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"start\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T14:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"end\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T15:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"endTimeUnspecified\\\": false,\\n  \\\"recurrence\\\": [],\\n  \\\"recurringEventId\\\": null,\\n  \\\"originalStartTime\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T14:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"transparency\\\": \\\"opaque\\\",\\n  \\\"visibility\\\": \\\"default\\\",\\n  \\\"iCalUID\\\": \\\"16979985-cfb0-460f-bdb9-62fc57cf79d7@calendar.google.com\\\",\\n  \\\"sequence\\\": 0,\\n  \\\"attendees\\\": [],\\n  \\\"attendeesOmitted\\\": false,\\n  \\\"extendedProperties\\\": null,\\n  \\\"hangoutLink\\\": null,\\n  \\\"conferenceData\\\": null,\\n  \\\"guestsCanInviteOthers\\\": true,\\n  \\\"guestsCanModify\\\": false,\\n  \\\"guestsCanSeeOtherGuests\\\": true,\\n  \\\"privateCopy\\\": false,\\n  \\\"locked\\\": false,\\n  \\\"reminders\\\": {\\n    \\\"overrides\\\": [],\\n    \\\"useDefault\\\": false\\n  },\\n  \\\"source\\\": null,\\n  \\\"attachments\\\": [],\\n  \\\"eventType\\\": \\\"default\\\",\\n  \\\"birthdayProperties\\\": null,\\n  \\\"focusTimeProperties\\\": null,\\n  \\\"outOfOfficeProperties\\\": null,\\n  \\\"workingLocationProperties\\\": null\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          },
+          {
+            "call_id": "call_yt5phIJt6RI3qfqM5PsVwtpw",
+            "name": "create_event",
+            "arguments": {
+              "calendarId": "alice-projects",
+              "summary": "Hiring Pipeline Review",
+              "start": {
+                "dateTime": "2026-10-09T15:00:00",
+                "timeZone": "America/New_York"
+              },
+              "end": {
+                "dateTime": "2026-10-09T16:00:00",
+                "timeZone": "America/New_York"
+              },
+              "timeZone": "America/New_York"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#event\\\",\\n  \\\"etag\\\": \\\"\\\\\\\"1791064855.127223\\\\\\\"\\\",\\n  \\\"id\\\": \\\"a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0\\\",\\n  \\\"status\\\": \\\"confirmed\\\",\\n  \\\"htmlLink\\\": \\\"https://calendar.google.com/event?eid=a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0\\\",\\n  \\\"created\\\": \\\"2026-10-03T22:00:55.127221\\\",\\n  \\\"updated\\\": \\\"2026-10-03T22:00:55.127223\\\",\\n  \\\"summary\\\": \\\"Hiring Pipeline Review\\\",\\n  \\\"description\\\": null,\\n  \\\"location\\\": null,\\n  \\\"colorId\\\": null,\\n  \\\"creator\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"organizer\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"start\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-09T15:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"end\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-09T16:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"endTimeUnspecified\\\": false,\\n  \\\"recurrence\\\": [],\\n  \\\"recurringEventId\\\": null,\\n  \\\"originalStartTime\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-09T15:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"transparency\\\": \\\"opaque\\\",\\n  \\\"visibility\\\": \\\"default\\\",\\n  \\\"iCalUID\\\": \\\"a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0@calendar.google.com\\\",\\n  \\\"sequence\\\": 0,\\n  \\\"attendees\\\": [],\\n  \\\"attendeesOmitted\\\": false,\\n  \\\"extendedProperties\\\": null,\\n  \\\"hangoutLink\\\": null,\\n  \\\"conferenceData\\\": null,\\n  \\\"guestsCanInviteOthers\\\": true,\\n  \\\"guestsCanModify\\\": false,\\n  \\\"guestsCanSeeOtherGuests\\\": true,\\n  \\\"privateCopy\\\": false,\\n  \\\"locked\\\": false,\\n  \\\"reminders\\\": {\\n    \\\"overrides\\\": [],\\n    \\\"useDefault\\\": false\\n  },\\n  \\\"source\\\": null,\\n  \\\"attachments\\\": [],\\n  \\\"eventType\\\": \\\"default\\\",\\n  \\\"birthdayProperties\\\": null,\\n  \\\"focusTimeProperties\\\": null,\\n  \\\"outOfOfficeProperties\\\": null,\\n  \\\"workingLocationProperties\\\": null\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "finish_reason": "stop",
+        "assistant": {
+          "content": "All set!\n\n- Project Management calendar visibility/selection: It was already visible and selected, so no change needed.\n- Description updated to: “Project meetings, deadlines, and milestones. Now focused on Q4 hiring milestones and team coordination.”\n\nEvents created on Project Management (America/New_York):\n- Tue, Oct 6, 2026, 9:00–10:00 AM — Q4 Hiring Kickoff – Engineering & UX\n  Link: https://calendar.google.com/event?eid=9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe\n- Tue, Oct 6, 2026, 2:00–3:00 PM — Technical Screen Planning Session\n  Link: https://calendar.google.com/event?eid=16979985-cfb0-460f-bdb9-62fc57cf79d7\n- Fri, Oct 9, 2026, 3:00–4:00 PM — Hiring Pipeline Review\n  Link: https://calendar.google.com/event?eid=a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0\n\nWould you like me to add attendees, conferencing links, or reminders to any of these?",
+          "role": "assistant",
+          "annotations": []
+        },
+        "usage": {
+          "completion_tokens": 1238,
+          "prompt_tokens": 17082,
+          "total_tokens": 18320,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 960,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 14208
+          }
+        },
+        "tool_results": [],
+        "finalization_checkpoint": {
+          "activated": true,
+          "content": "Before finalizing, audit the work against the user's request using only observed tool evidence. For each requested operation, compare its discovered eligible-resource set with the completed-and-verified set in the coverage ledger. A primary or default resource does not satisfy a collection- or account-scoped operation when other eligible resources were discovered. Do not finalize while any eligible resource is unaccounted for; issue corrective MCP calls for uncovered resources now. Map every requested operation to a result, inspect mutation responses for dropped or defaulted fields, including lifecycle status or state, and read back consequential writes when persisted state is not established. Compare persisted start dates, end dates, and time zones with the original explicit years, yearless dates, relative-time phrases, and their operation or entity scope. Resolve unfinished destructive actions, identity mismatches, and temporal-anchor mismatches. After retried creates, inspect destination state and patch or delete duplicate resources produced during this run before claiming success. Audit empty date-filtered retrievals that caused requested downstream operations to be skipped. If such a retrieval used an ambiguous yearless date and no bounded recovery was attempted, make one contextual, adjacent-year, or minimally broadened recovery call before accepting absence; do not repeatedly widen the search or override an explicit year. Compare every date-derived numeric mutation argument with the result from calculate_time_interval and the endpoint semantics requested by the user. If anything is missing or uncertain, issue corrective tool calls now; otherwise provide the final answer."
+        }
+      },
+      {
+        "step": 4,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_sAjqzfTCuVCSLQfyGzQxO1w9",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\"}",
+                "name": "get_calendar_from_list"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_SEDJnKS3DMC76tsErIKlONTd",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\", \"eventId\": \"9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe\", \"timeZone\": \"America/New_York\"}",
+                "name": "get_event"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_Rb4Jdw0nx78QRPmaVAppqUAW",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\", \"eventId\": \"16979985-cfb0-460f-bdb9-62fc57cf79d7\", \"timeZone\": \"America/New_York\"}",
+                "name": "get_event"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_DEWRyEfqqSTQCTW782POdVZt",
+              "function": {
+                "arguments": "{\"calendarId\": \"alice-projects\", \"eventId\": \"a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0\", \"timeZone\": \"America/New_York\"}",
+                "name": "get_event"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 1547,
+          "prompt_tokens": 17655,
+          "total_tokens": 19202,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 1344,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 16896
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_sAjqzfTCuVCSLQfyGzQxO1w9",
+            "name": "get_calendar_from_list",
+            "arguments": {
+              "calendarId": "alice-projects"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#calendarListEntry\\\",\\n  \\\"etag\\\": \\\"etag-list-alice-projects-2026-10-03T22:00:53.473626\\\",\\n  \\\"id\\\": \\\"alice-projects\\\",\\n  \\\"summary\\\": \\\"Project Management\\\",\\n  \\\"description\\\": \\\"Project meetings, deadlines, and milestones. Now focused on Q4 hiring milestones and team coordination.\\\",\\n  \\\"location\\\": null,\\n  \\\"timeZone\\\": \\\"America/New_York\\\",\\n  \\\"summaryOverride\\\": null,\\n  \\\"colorId\\\": \\\"7\\\",\\n  \\\"backgroundColor\\\": null,\\n  \\\"foregroundColor\\\": null,\\n  \\\"hidden\\\": false,\\n  \\\"selected\\\": true,\\n  \\\"accessRole\\\": \\\"owner\\\",\\n  \\\"defaultReminders\\\": null,\\n  \\\"notificationSettings\\\": null,\\n  \\\"primary\\\": false,\\n  \\\"deleted\\\": false,\\n  \\\"conferenceProperties\\\": {\\n    \\\"allowedConferenceSolutionTypes\\\": []\\n  }\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          },
+          {
+            "call_id": "call_SEDJnKS3DMC76tsErIKlONTd",
+            "name": "get_event",
+            "arguments": {
+              "calendarId": "alice-projects",
+              "eventId": "9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe",
+              "timeZone": "America/New_York"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#event\\\",\\n  \\\"etag\\\": \\\"\\\\\\\"1791064853.838793\\\\\\\"\\\",\\n  \\\"id\\\": \\\"9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe\\\",\\n  \\\"status\\\": \\\"confirmed\\\",\\n  \\\"htmlLink\\\": \\\"https://calendar.google.com/event?eid=9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe\\\",\\n  \\\"created\\\": \\\"2026-10-03T22:00:53.838791\\\",\\n  \\\"updated\\\": \\\"2026-10-03T22:00:53.838793\\\",\\n  \\\"summary\\\": \\\"Q4 Hiring Kickoff \\\\u2013 Engineering & UX\\\",\\n  \\\"description\\\": null,\\n  \\\"location\\\": null,\\n  \\\"colorId\\\": null,\\n  \\\"creator\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"organizer\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"start\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T09:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"end\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T10:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"endTimeUnspecified\\\": false,\\n  \\\"recurrence\\\": [],\\n  \\\"recurringEventId\\\": null,\\n  \\\"originalStartTime\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T09:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"transparency\\\": \\\"opaque\\\",\\n  \\\"visibility\\\": \\\"default\\\",\\n  \\\"iCalUID\\\": \\\"9c8d52b4-5a59-4a4a-88fb-ac06ce8163fe@calendar.google.com\\\",\\n  \\\"sequence\\\": 0,\\n  \\\"attendees\\\": [],\\n  \\\"attendeesOmitted\\\": false,\\n  \\\"extendedProperties\\\": null,\\n  \\\"hangoutLink\\\": null,\\n  \\\"conferenceData\\\": null,\\n  \\\"guestsCanInviteOthers\\\": true,\\n  \\\"guestsCanModify\\\": false,\\n  \\\"guestsCanSeeOtherGuests\\\": true,\\n  \\\"privateCopy\\\": false,\\n  \\\"locked\\\": false,\\n  \\\"reminders\\\": {\\n    \\\"overrides\\\": [],\\n    \\\"useDefault\\\": false\\n  },\\n  \\\"source\\\": null,\\n  \\\"attachments\\\": [],\\n  \\\"eventType\\\": \\\"default\\\",\\n  \\\"birthdayProperties\\\": null,\\n  \\\"focusTimeProperties\\\": null,\\n  \\\"outOfOfficeProperties\\\": null,\\n  \\\"workingLocationProperties\\\": null\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          },
+          {
+            "call_id": "call_Rb4Jdw0nx78QRPmaVAppqUAW",
+            "name": "get_event",
+            "arguments": {
+              "calendarId": "alice-projects",
+              "eventId": "16979985-cfb0-460f-bdb9-62fc57cf79d7",
+              "timeZone": "America/New_York"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#event\\\",\\n  \\\"etag\\\": \\\"\\\\\\\"1791064854.9713\\\\\\\"\\\",\\n  \\\"id\\\": \\\"16979985-cfb0-460f-bdb9-62fc57cf79d7\\\",\\n  \\\"status\\\": \\\"confirmed\\\",\\n  \\\"htmlLink\\\": \\\"https://calendar.google.com/event?eid=16979985-cfb0-460f-bdb9-62fc57cf79d7\\\",\\n  \\\"created\\\": \\\"2026-10-03T22:00:54.971297\\\",\\n  \\\"updated\\\": \\\"2026-10-03T22:00:54.971300\\\",\\n  \\\"summary\\\": \\\"Technical Screen Planning Session\\\",\\n  \\\"description\\\": null,\\n  \\\"location\\\": null,\\n  \\\"colorId\\\": null,\\n  \\\"creator\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"organizer\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"start\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T14:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"end\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T15:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"endTimeUnspecified\\\": false,\\n  \\\"recurrence\\\": [],\\n  \\\"recurringEventId\\\": null,\\n  \\\"originalStartTime\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-06T14:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"transparency\\\": \\\"opaque\\\",\\n  \\\"visibility\\\": \\\"default\\\",\\n  \\\"iCalUID\\\": \\\"16979985-cfb0-460f-bdb9-62fc57cf79d7@calendar.google.com\\\",\\n  \\\"sequence\\\": 0,\\n  \\\"attendees\\\": [],\\n  \\\"attendeesOmitted\\\": false,\\n  \\\"extendedProperties\\\": null,\\n  \\\"hangoutLink\\\": null,\\n  \\\"conferenceData\\\": null,\\n  \\\"guestsCanInviteOthers\\\": true,\\n  \\\"guestsCanModify\\\": false,\\n  \\\"guestsCanSeeOtherGuests\\\": true,\\n  \\\"privateCopy\\\": false,\\n  \\\"locked\\\": false,\\n  \\\"reminders\\\": {\\n    \\\"overrides\\\": [],\\n    \\\"useDefault\\\": false\\n  },\\n  \\\"source\\\": null,\\n  \\\"attachments\\\": [],\\n  \\\"eventType\\\": \\\"default\\\",\\n  \\\"birthdayProperties\\\": null,\\n  \\\"focusTimeProperties\\\": null,\\n  \\\"outOfOfficeProperties\\\": null,\\n  \\\"workingLocationProperties\\\": null\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          },
+          {
+            "call_id": "call_DEWRyEfqqSTQCTW782POdVZt",
+            "name": "get_event",
+            "arguments": {
+              "calendarId": "alice-projects",
+              "eventId": "a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0",
+              "timeZone": "America/New_York"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"content\": [{\"type\": \"text\", \"text\": \"{\\n  \\\"kind\\\": \\\"calendar#event\\\",\\n  \\\"etag\\\": \\\"\\\\\\\"1791064855.127223\\\\\\\"\\\",\\n  \\\"id\\\": \\\"a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0\\\",\\n  \\\"status\\\": \\\"confirmed\\\",\\n  \\\"htmlLink\\\": \\\"https://calendar.google.com/event?eid=a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0\\\",\\n  \\\"created\\\": \\\"2026-10-03T22:00:55.127221\\\",\\n  \\\"updated\\\": \\\"2026-10-03T22:00:55.127223\\\",\\n  \\\"summary\\\": \\\"Hiring Pipeline Review\\\",\\n  \\\"description\\\": null,\\n  \\\"location\\\": null,\\n  \\\"colorId\\\": null,\\n  \\\"creator\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"organizer\\\": {\\n    \\\"id\\\": \\\"alice_manager\\\",\\n    \\\"email\\\": \\\"alice.manager@techcorp.com\\\",\\n    \\\"displayName\\\": \\\"Alice Johnson\\\",\\n    \\\"self\\\": true\\n  },\\n  \\\"start\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-09T15:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"end\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-09T16:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"endTimeUnspecified\\\": false,\\n  \\\"recurrence\\\": [],\\n  \\\"recurringEventId\\\": null,\\n  \\\"originalStartTime\\\": {\\n    \\\"dateTime\\\": \\\"2026-10-09T15:00:00\\\",\\n    \\\"date\\\": null,\\n    \\\"timeZone\\\": \\\"America/New_York\\\"\\n  },\\n  \\\"transparency\\\": \\\"opaque\\\",\\n  \\\"visibility\\\": \\\"default\\\",\\n  \\\"iCalUID\\\": \\\"a3b0bf1b-c407-46d8-9e40-0d7d638a7aa0@calendar.google.com\\\",\\n  \\\"sequence\\\": 0,\\n  \\\"attendees\\\": [],\\n  \\\"attendeesOmitted\\\": false,\\n  \\\"extendedProperties\\\": null,\\n  \\\"hangoutLink\\\": null,\\n  \\\"conferenceData\\\": null,\\n  \\\"guestsCanInviteOthers\\\": true,\\n  \\\"guestsCanModify\\\": false,\\n  \\\"guestsCanSeeOtherGuests\\\": true,\\n  \\\"privateCopy\\\": false,\\n  \\\"locked\\\": false,\\n  \\\"reminders\\\": {\\n    \\\"overrides\\\": [],\\n    \\\"useDefault\\\": false\\n  },\\n  \\\"source\\\": null,\\n  \\\"attachments\\\": [],\\n  \\\"eventType\\\": \\\"default\\\",\\n  \\\"birthdayProperties\\\": null,\\n  \\\"focusTimeProperties\\\": null,\\n  \\\"outOfOfficeProperties\\\": null,\\n  \\\"workingLocationProperties\\\": null\\n}\"}], \"isError\": false}}",
+            "truncated": false,
+            "local": false,
+            "error_like": false
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "finish_reason": "stop",
+        "assistant": {
+          "content": "Audit results based solely on tool evidence:\n\nRequested operation: Ensure “Project Management” calendar is visible and selected\n- Discovered eligible resources (calendar list with minAccessRole=writer, showHidden=true):\n  - alice-projects (summary: Project Management)\n- Completed-and-verified set:\n  - alice-projects — get_calendar_from_list shows hidden=false, selected=true\n- Result: Already visible and selected; no update needed. All eligible resources accounted for (only one matching calendar found).\n\nRequested operation: Update Project Management calendar description to mention focus on Q4 hiring milestones and team coordination\n- Action taken: patch_calendar on alice-projects with description “Project meetings, deadlines, and milestones. Now focused on Q4 hiring milestones and team coordination.”\n- Verification: get_calendar_from_list for alice-projects shows the updated description exactly as requested.\n- Result: Persisted and verified.\n\nRequested operation: Create three new events on Project Management (America/New_York)\nTemporal anchor resolution (relative phrases):\n- Operation timestamps in event responses are 2026-10-03T22:00Z; “next Tuesday” from Sat 2026-10-03 is Tue 2026-10-06; “next Friday” is Fri 2026-10-09. Persisted event starts match these anchors.\n\nEvents created and verified (get_event, timeZone=America/New_York):\n- Q4 Hiring Kickoff – Engineering & UX\n  - Start: 2026-10-06T09:00:00 America/New_York\n  - End: 2026-10-06T10:00:00 America/New_York\n  - Status: confirmed\n- Technical Screen Planning Session\n  - Start: 2026-10-06T14:00:00 America/New_York\n  - End: 2026-10-06T15:00:00 America/New_York\n  - Status: confirmed\n- Hiring Pipeline Review\n  - Start: 2026-10-09T15:00:00 America/New_York\n  - End: 2026-10-09T16:00:00 America/New_York\n  - Status: confirmed\n\nField/default checks:\n- Event time zones: Persisted in start.timeZone and end.timeZone as “America/New_York” for all three events.\n- Lifecycle/status: All events show status=confirmed.\n- Reminders: Persisted as useDefault=false, overrides=[] (server defaults); no custom reminders were requested.\n- No duplicates or error-like responses observed. No destructive actions pending.\n\nCoverage conclusion:\n- Calendar visibility/selection: 1 eligible resource discovered, 1 verified — covered.\n- Calendar description update: Targeted resource verified — covered.\n- Event creations: All three specified events exist with correct titles, dates, times, and time zone — covered.\n\nAll requested operations are complete and verified. If you’d like, I can now add attendees, conferencing links, or custom reminders to any of these events.",
+          "role": "assistant",
+          "annotations": []
+        },
+        "usage": {
+          "completion_tokens": 2550,
+          "prompt_tokens": 20342,
+          "total_tokens": 22892,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 1920,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 17536
+          }
+        },
+        "tool_results": []
+      }
+    ]
+  }
+}

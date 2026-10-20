@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260112_183416_157_a8eea1c0_0d6acfd0",
+  "score": 0.4,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "knowledge_article_creation_verifier",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "incident_creation_verifier",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "knowledge_incident_link_verifier",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "combined_state_changes_verifier",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "referenced_data_integrity_verifier",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_aabe256d72d7414c",
+    "task_id": "task_20260112_183416_157_a8eea1c0_0d6acfd0",
+    "overall_success": false,
+    "pass_rate": 0.4,
+    "n_passed": 2,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "knowledge_article_creation_verifier",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "incident_creation_verifier",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "knowledge_incident_link_verifier",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "combined_state_changes_verifier",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "referenced_data_integrity_verifier",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 180.90913915634155,
+  "total_tokens": 138392,
+  "n_steps": 8,
+  "trace_path": "command-agent/tasks/eog-task_20260112_183416_157_a8eea1c0_0d6acfd0-b9f886dc/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T06:42:32.568305+00:00",
+  "source": "checkpointed_evaluation"
+}

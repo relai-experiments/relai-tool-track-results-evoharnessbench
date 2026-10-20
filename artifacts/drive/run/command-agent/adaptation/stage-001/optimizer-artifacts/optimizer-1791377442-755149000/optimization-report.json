@@ -1,0 +1,22 @@
+{
+  "changes": [
+    {
+      "title": "Enforce typed tool use and mutation verification"
+    },
+    {
+      "title": "Recover truncated MCP results"
+    },
+    {
+      "title": "Preserve copy types and validate MIME values"
+    },
+    {
+      "title": "Audit MCP calls before finalization"
+    },
+    {
+      "title": "Handle resource-search fallbacks and ambiguity"
+    }
+  ],
+  "title": "Strengthen ReactAgent tool use and recovery",
+  "summary": "Improved ReactAgent’s reliability across tool-driven tasks.\n\n- Added stronger type, mutation, MIME, and field-selection guidance.\n- Added recovery for truncated results and finalization audits after MCP calls.\n- Added resource-search fallback and ambiguity handling.\n\nThese changes improved evaluated outcomes without lowering the reported comparison scores. Focused tests were updated but not run, as instructed.",
+  "inconsistency": "For the fifth change, the motivating environment was unchanged while the environment labeled as a regression improved."
+}

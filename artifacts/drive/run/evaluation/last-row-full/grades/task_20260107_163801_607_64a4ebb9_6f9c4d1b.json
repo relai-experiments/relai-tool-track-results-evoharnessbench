@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260107_163801_607_64a4ebb9_6f9c4d1b",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 4,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify Archive Folder",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Archived File Metadata",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify QA Comment",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Original Trashed",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_6dc123ce46304e86",
+    "task_id": "task_20260107_163801_607_64a4ebb9_6f9c4d1b",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 4,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify Archive Folder",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Archived File Metadata",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify QA Comment",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Original Trashed",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 167.24550986289978,
+  "total_tokens": 249239,
+  "n_steps": 10,
+  "trace_path": "command-agent/tasks/eog-task_20260107_163801_607_64a4ebb9_6f9c4d1b-d0c5347c/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T12:58:53.756993+00:00",
+  "source": "checkpointed_evaluation"
+}

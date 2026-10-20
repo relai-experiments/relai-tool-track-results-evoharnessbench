@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20251128_204735_353_66392a82_3f8ef4a1",
+  "score": 0.4,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Verify Carrillo Jira variant 77 Case Created Correctly",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Carrillo Jira variant 77 Case Knowledge Linkage",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Notification sent",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Response SLA linked to case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Resolution SLA linked to case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_b2bd4c083f054776",
+    "task_id": "task_20251128_204735_353_66392a82_3f8ef4a1",
+    "overall_success": false,
+    "pass_rate": 0.4,
+    "n_passed": 2,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Verify Carrillo Jira variant 77 Case Created Correctly",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Carrillo Jira variant 77 Case Knowledge Linkage",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Notification sent",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Response SLA linked to case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Resolution SLA linked to case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 241.97560381889343,
+  "total_tokens": 238613,
+  "n_steps": 13,
+  "trace_path": "command-agent/tasks/eog-task_20251128_204735_353_66392a82_3f8ef4a1-b8f793ee/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T17:40:21.665000+00:00",
+  "source": "checkpointed_evaluation"
+}

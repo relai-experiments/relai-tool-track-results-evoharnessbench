@@ -1,0 +1,16 @@
+{
+  "changes": [
+    {
+      "title": "Clarify tool-use and finalization policies"
+    },
+    {
+      "title": "Reconcile normalized tool results"
+    },
+    {
+      "title": "Normalize grading scalars"
+    }
+  ],
+  "title": "Harden agent execution and grading",
+  "summary": "Improved agent reliability and grading consistency while preserving regression outcomes.\n\n- Clarified tool-use and finalization policies to prevent unsupported restrictions and obligations.\n- Added bounded result normalization and reconciliation checkpoints so final audits reflect returned state.\n- Normalized grading scalars and recomputed aggregates for accurate adapter results.\n\nFocused tests were added or updated but not run, as instructed.",
+  "inconsistency": ""
+}

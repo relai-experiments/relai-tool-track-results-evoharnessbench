@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251221_233237_652_66392a82_c1a599bb",
+  "score": 0.3333333333333333,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "New Office Location Added",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Kumar Mehta's account is added at Lucknow office location",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Arpit Singh's account is added at Lucknow office location",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_ba11ac8098bd4cbb",
+    "task_id": "task_20251221_233237_652_66392a82_c1a599bb",
+    "overall_success": false,
+    "pass_rate": 0.3333333333333333,
+    "n_passed": 1,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "New Office Location Added",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Kumar Mehta's account is added at Lucknow office location",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Arpit Singh's account is added at Lucknow office location",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 124.38616394996643,
+  "total_tokens": 50236,
+  "n_steps": 3,
+  "trace_path": "command-agent/tasks/eog-task_20251221_233237_652_66392a82_c1a599bb-0f4268e6/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T06:56:00.628304+00:00",
+  "source": "checkpointed_evaluation"
+}

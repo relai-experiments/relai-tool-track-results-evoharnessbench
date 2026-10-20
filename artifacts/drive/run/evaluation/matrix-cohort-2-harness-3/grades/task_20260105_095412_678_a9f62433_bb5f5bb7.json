@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20260105_095412_678_a9f62433_bb5f5bb7",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 8,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "Verify that comment has been added",
+      "passed": true,
+      "score": 1.0,
+      "expected": true,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify that comment has been added",
+      "passed": true,
+      "score": 1.0,
+      "expected": true,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify user has permission ",
+      "passed": true,
+      "score": 1.0,
+      "expected": true,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify that the technical spec has critical priority label",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "File created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify comment exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Mike has permissions on Archive pdf",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Sarah has permissions on Archive pdf",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_ea99844160624292",
+    "task_id": "task_20260105_095412_678_a9f62433_bb5f5bb7",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 8,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "Verify that comment has been added",
+        "passed": true,
+        "score": 1.0,
+        "expected": true,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify that comment has been added",
+        "passed": true,
+        "score": 1.0,
+        "expected": true,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify user has permission ",
+        "passed": true,
+        "score": 1.0,
+        "expected": true,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify that the technical spec has critical priority label",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "File created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify comment exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Mike has permissions on Archive pdf",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Sarah has permissions on Archive pdf",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 213.84471011161804,
+  "total_tokens": 311093,
+  "n_steps": 9,
+  "trace_path": "command-agent/tasks/eog-task_20260105_095412_678_a9f62433_bb5f5bb7-04567688/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T03:00:43.146291+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,288 @@
+"""A local GPT-5 ReAct loop over an EvoHarnessBench task's MCP tools."""
+
+from __future__ import annotations
+
+import json
+import re
+import time
+from dataclasses import asdict, dataclass, field
+from typing import Any
+
+
+MUTATION_FIDELITY_GUIDANCE = """Execution fidelity protocol:
+- Treat the environment policy above as authoritative.
+- Treat safe, read-only MCP searches and record reads as validation steps, not mutations, and perform them before refusing because identifiers, names, relationships, or requester context are missing.
+- Resolve descriptive references with the available read-only tools using supplied attributes such as assignee, subject, state, reporter, and record relationships; never require an ID when those descriptors can identify the record. If a search is empty, progressively remove inferred or conjunctive filters, try supplied descriptors independently across schema-supported fields, avoid equivalent retries, and use a bounded minimally constrained listing when the schema permits it.
+- Ambiguity is a post-lookup condition. Refuse or report candidate matches only after progressive discovery, including a minimally constrained search when available, returns no match or multiple unresolved matches, or after an authoritative permission denial or absence of a required discovery tool.
+- Apply requester-role requirements using identity or authorization context supplied in the task or verified by tools. If no requester identity is exposed, do not invent a missing-role blocker; rely on the tool's access controls and halt on an authoritative denial.
+- Before acting, form and retain a closed-world scope ledger with separate entries for: explicitly requested mutation targets and changes; explicit exclusions; policy-required additions, including every deterministic policy-derived postcondition or coupled field; and discovered-but-unapproved candidates.
+- Broad searches are permitted for discovery, but discovery does not authorize mutation. Omit related, adjacent, synonym-matched, or continuity-beneficial entities unless the request or environment policy independently places them in an authorized ledger entry.
+- Before each state-changing tool call, reread the original request and environment policy, then map every mutation target and argument to its authorizing ledger entry. Keep role or assignee selection separate from membership and other unrelated mutations.
+- If category wording remains ambiguous after discovery, mutate only the conservative supported subset and report the ambiguity; do not expand scope through synonyms, inferred relationships, or nearby categories.
+- When policy determines a dependent value and the tool schema makes that field writable, include it in the mutation instead of assuming a backend default or delayed recalculation.
+- Compare every state-changing tool result with all intended postconditions. If the result is incomplete or inconsistent, use the normal MCP tools for a corrective mutation or authoritative read-back before finishing.
+- Do not claim success or speculate about backend timing while a required postcondition is visibly unmet. Report failure only when the normal tools do not support the correction or reject it.
+- Preserve every materially distinct fact, qualifier, relationship, and requested outcome in structured and free-text fields; do not collapse distinct clauses merely because a paraphrase seems equivalent.
+- Do not invent requirements, copy wording unnecessarily, or optimize for hidden evaluators; include only details supported by the request and environment policy."""
+
+
+def _to_openai_tools(mcp_tools: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    from simple_agentic_evals import to_openai_tools
+
+    return to_openai_tools(mcp_tools)
+
+
+_DISCOVERY_NAME_PREFIXES = ("describe", "fetch", "find", "get", "inspect", "list", "lookup", "query", "read", "search")
+_MUTATION_NAME_PARTS = (
+    "add", "approve", "assign", "cancel", "close", "create", "delete", "insert",
+    "link", "notify", "patch", "reject", "remove", "resolve", "send", "set",
+    "unlink", "update", "write",
+)
+
+
+def _tool_name_parts(name: str) -> list[str]:
+    normalized = "".join(character if character.isalnum() else " " for character in name)
+    return [part.casefold() for part in re.findall(
+        r"[A-Z]+(?![a-z])|[A-Z]?[a-z]+|\d+", normalized,
+    )]
+
+
+def _is_read_only_discovery_tool(tool: dict[str, Any]) -> bool:
+    name = str(tool.get("name") or "")
+    parts = _tool_name_parts(name)
+    if any(part in _MUTATION_NAME_PARTS for part in parts):
+        return False
+    annotations = tool.get("annotations")
+    if isinstance(annotations, dict):
+        read_only = annotations.get("readOnlyHint")
+        if read_only is not None:
+            return read_only is True
+    return bool(parts and parts[0] in _DISCOVERY_NAME_PREFIXES)
+
+
+def _empty_result_value(value: Any) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, str):
+        if not value.strip():
+            return True
+        try:
+            return _empty_result_value(json.loads(value))
+        except (TypeError, ValueError):
+            return False
+    if isinstance(value, list):
+        if not value:
+            return True
+        return all(
+            _empty_result_value(item.get("text"))
+            if isinstance(item, dict) and item.get("type") == "text"
+            else False
+            for item in value
+        )
+    if isinstance(value, dict):
+        if value.get("isError") is True or value.get("error"):
+            return False
+        if "result" in value:
+            return _empty_result_value(value["result"])
+        if value.get("structuredContent") is not None:
+            structured_empty = _empty_result_value(value["structuredContent"])
+            if not structured_empty or "content" not in value:
+                return structured_empty
+        if "content" in value:
+            return _empty_result_value(value["content"])
+        for key in ("items", "results", "records", "entries", "data"):
+            if key in value:
+                count = value.get("count", value.get("total", 0))
+                return count in (None, 0) and _empty_result_value(value[key])
+        return not value
+    return False
+
+
+def _successful_empty_discovery(output: Any) -> bool:
+    return _empty_result_value(output)
+
+
+def _normalize_arguments(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {key: _normalize_arguments(value[key]) for key in sorted(value)}
+    if isinstance(value, list):
+        return [_normalize_arguments(item) for item in value]
+    if isinstance(value, str):
+        return value.strip().casefold()
+    return value
+
+
+def _argument_signature(name: str, arguments: dict[str, Any]) -> str:
+    return f"{name.casefold()}:{json.dumps(_normalize_arguments(arguments), sort_keys=True)}"
+
+
+def _search_recovery_observation(attempts: int, repeated: bool) -> str:
+    observation = (
+        "Search recovery observation: the preceding read-only discovery call succeeded "
+        "but returned no records. Preserve that raw tool evidence, but do not conclude "
+        "that the descriptive reference is unresolved yet. Remove inferred or conjunctive "
+        "filters, retry supplied descriptors independently across schema-supported fields, "
+        "avoid equivalent repeated queries, and use a bounded minimally constrained listing "
+        "when the schema permits it."
+    )
+    if repeated:
+        observation += " The latest arguments are equivalent to an earlier empty query; change the search shape."
+    if attempts > 1:
+        observation += (
+            " Before declaring no match after these repeated empty results, attempt at least "
+            "one bounded minimally constrained search when the schema permits it."
+        )
+    return observation + " Continue to honor policy and authorization, and stop on tool errors or unresolved ambiguity."
+
+
+@dataclass(frozen=True)
+class AgentConfig:
+    model: str = "gpt-5"
+    max_steps: int = 50
+    max_completion_tokens: int = 16_384
+    tool_result_chars: int = 4_000
+
+    def __post_init__(self) -> None:
+        if min(self.max_steps, self.max_completion_tokens, self.tool_result_chars) < 1:
+            raise ValueError("agent limits must be positive")
+
+
+@dataclass
+class AgentResult:
+    status: str = "running"
+    error: str | None = None
+    steps: int = 0
+    input_tokens: int = 0
+    output_tokens: int = 0
+    total_tokens: int = 0
+    latency_s: float = 0.0
+    final_message: str = ""
+    initial_messages: list[dict[str, Any]] = field(default_factory=list)
+    tools: list[dict[str, Any]] = field(default_factory=list)
+    events: list[dict[str, Any]] = field(default_factory=list)
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+class ReactAgent:
+    def __init__(self, config: AgentConfig, client: Any) -> None:
+        self.config = config
+        self.client = client
+
+    def run(self, task: Any) -> AgentResult:
+        result = AgentResult()
+        start = time.monotonic()
+        mcp = None
+        try:
+            if task.action_type != "mcp" or not task.mcp_servers:
+                raise ValueError("this agent requires an EOG MCP task")
+            mcp = task.mcp_session(task.mcp_servers[0])
+            mcp_tools = mcp.list_tools()
+            tools = _to_openai_tools(mcp_tools)
+            if not tools:
+                raise RuntimeError("task exposed no MCP tools")
+            discovery_tools = {
+                str(tool.get("name")) for tool in mcp_tools
+                if _is_read_only_discovery_tool(tool)
+            }
+            empty_discovery_attempts = 0
+            empty_discovery_signatures: set[str] = set()
+            system_context = task.system_prompt or ""
+            if system_context:
+                system_context += f"\n\n{MUTATION_FIDELITY_GUIDANCE}"
+            else:
+                system_context = MUTATION_FIDELITY_GUIDANCE
+            messages: list[dict[str, Any]] = [
+                {"role": "system", "content": system_context},
+                {"role": "user", "content": task.user_prompt or ""},
+            ]
+            result.initial_messages = [dict(message) for message in messages]
+            result.tools = tools
+            for step in range(1, self.config.max_steps + 1):
+                response = self.client.chat.completions.create(
+                    model=self.config.model,
+                    messages=messages,
+                    tools=tools,
+                    max_completion_tokens=self.config.max_completion_tokens,
+                )
+                if not response.choices:
+                    raise RuntimeError("model returned no choices")
+                choice = response.choices[0]
+                message = choice.message
+                usage = response.usage
+                if usage is not None:
+                    result.input_tokens += usage.prompt_tokens or 0
+                    result.output_tokens += usage.completion_tokens or 0
+                    result.total_tokens += usage.total_tokens or (
+                        (usage.prompt_tokens or 0) + (usage.completion_tokens or 0)
+                    )
+                result.steps = step
+                event: dict[str, Any] = {
+                    "step": step,
+                    "finish_reason": choice.finish_reason,
+                    "assistant": message.model_dump(exclude_none=True),
+                    "usage": usage.model_dump(exclude_none=True) if usage else None,
+                    "tool_results": [],
+                }
+                result.events.append(event)
+                messages.append(message.model_dump(exclude_none=True))
+                if choice.finish_reason == "length":
+                    result.status = "output_limit"
+                    break
+                if not message.tool_calls:
+                    result.final_message = message.content or ""
+                    if choice.finish_reason == "stop":
+                        result.status = "done"
+                    else:
+                        result.status = "error"
+                        result.error = f"unexpected model finish reason: {choice.finish_reason}"
+                    break
+                recovery_repeated = False
+                needs_search_recovery = False
+                for call in message.tool_calls:
+                    if call.type != "function":
+                        raise RuntimeError(f"unsupported tool call type: {call.type}")
+                    arguments = json.loads(call.function.arguments or "{}")
+                    if not isinstance(arguments, dict):
+                        raise ValueError("tool arguments must be a JSON object")
+                    output = mcp.call_tool(call.function.name, arguments)
+                    content = json.dumps(output, ensure_ascii=False, default=str)
+                    truncated = len(content) > self.config.tool_result_chars
+                    content = content[: self.config.tool_result_chars]
+                    event["tool_results"].append({
+                        "call_id": call.id,
+                        "name": call.function.name,
+                        "arguments": arguments,
+                        "content": content,
+                        "truncated": truncated,
+                    })
+                    messages.append({"role": "tool", "tool_call_id": call.id, "content": content})
+                    if (call.function.name in discovery_tools
+                            and _successful_empty_discovery(output)):
+                        empty_discovery_attempts += 1
+                        signature = _argument_signature(call.function.name, arguments)
+                        recovery_repeated = recovery_repeated or signature in empty_discovery_signatures
+                        empty_discovery_signatures.add(signature)
+                        needs_search_recovery = True
+                if needs_search_recovery:
+                    messages.append({
+                        "role": "system",
+                        "content": _search_recovery_observation(
+                            empty_discovery_attempts, recovery_repeated,
+                        ),
+                    })
+            else:
+                result.status = "step_limit"
+        except Exception as exc:  # Save partial trace; the runner treats this as an error.
+            result.status = "error"
+            result.error = f"{type(exc).__name__}: {exc}"
+        finally:
+            if mcp is not None:
+                try:
+                    mcp.close()
+                except Exception as exc:
+                    result.status = "error"
+                    result.error = f"MCP close failed: {type(exc).__name__}: {exc}"
+            result.latency_s = time.monotonic() - start
+        return result

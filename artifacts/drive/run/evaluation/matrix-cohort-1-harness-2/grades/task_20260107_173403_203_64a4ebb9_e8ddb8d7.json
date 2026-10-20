@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260107_173403_203_64a4ebb9_e8ddb8d7",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 4,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify Resolved Folder",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Resolved File",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Resolution Comment",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Original Cleared",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_1cdba611308f4044",
+    "task_id": "task_20260107_173403_203_64a4ebb9_e8ddb8d7",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 4,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify Resolved Folder",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Resolved File",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Resolution Comment",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Original Cleared",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 202.02250695228577,
+  "total_tokens": 208042,
+  "n_steps": 12,
+  "trace_path": "command-agent/tasks/eog-task_20260107_173403_203_64a4ebb9_e8ddb8d7-72129d26/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T13:50:30.616770+00:00",
+  "source": "checkpointed_evaluation"
+}

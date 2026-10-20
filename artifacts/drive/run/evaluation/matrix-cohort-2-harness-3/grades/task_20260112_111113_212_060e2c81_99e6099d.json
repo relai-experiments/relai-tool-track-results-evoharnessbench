@@ -1,0 +1,268 @@
+{
+  "task_id": "task_20260112_111113_212_060e2c81_99e6099d",
+  "score": 0.9090909090909091,
+  "solved": false,
+  "n_passed": 10,
+  "n_total": 11,
+  "per_verifier": [
+    {
+      "name": "Verify the \"Q4 Budget Report\" file exists and is not trashed",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 16,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify revision history exists for the file (at least one revision)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the latest revision is marked to keep forever",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify star removed from the original file",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify file description is changed",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the Backup Drive exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the Backup folder exists inside Backup Drive",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the backup file is created with the correct nam",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the backup file is located inside the Backup folder",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the Backup Drive color is updated to #FFFFFF",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the Backup Drive theme is updated to ocean",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_4c5716ccaca04fa9",
+    "task_id": "task_20260112_111113_212_060e2c81_99e6099d",
+    "overall_success": false,
+    "pass_rate": 0.9090909090909091,
+    "n_passed": 10,
+    "n_total": 11,
+    "per_verifier": [
+      {
+        "name": "Verify the \"Q4 Budget Report\" file exists and is not trashed",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 16,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify revision history exists for the file (at least one revision)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the latest revision is marked to keep forever",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify star removed from the original file",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify file description is changed",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the Backup Drive exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the Backup folder exists inside Backup Drive",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the backup file is created with the correct nam",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the backup file is located inside the Backup folder",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the Backup Drive color is updated to #FFFFFF",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the Backup Drive theme is updated to ocean",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 346.9074549674988,
+  "total_tokens": 388906,
+  "n_steps": 13,
+  "trace_path": "command-agent/tasks/eog-task_20260112_111113_212_060e2c81_99e6099d-f55eb743/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T03:21:54.735386+00:00",
+  "source": "checkpointed_evaluation"
+}

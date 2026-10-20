@@ -1,0 +1,461 @@
+{
+  "stage": 1,
+  "tasks": [
+    {
+      "task_id": "task_20251203_192307_250_bca89e7d_f0f2e9d5",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action.\nWhen identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.\nNever assume or fabricate IDs, responses, or outcomes — rely solely on verified API results.\nComplete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "Please help me organize my existing Sprint Planning event by inviting Adam Anderson (adam.anderson@servicenow.com) as an attendee. Also, grant all current attendees, including Adam, permission to modify the event details directly.\n\nAdditionally, remove any attendees who do not have an email address listed, while preserving those who have valid email addresses.\n\nThen, remove any attachments of this event except spreadsheets. To ensure removed attachments are preserved, create a secondary calendar named \"Archived Attachments,\" and within it, set up an event titled \"Sprint Planning Attachment Archive\" to store these removed attachments securely.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20251202_171004_871_0a0bf089_489e2b2d",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, calendars, ACLs, settings, and events. Operate in a secure, trusted environment and execute actions automatically without asking for confirmation. Always verify identifiers such as calendarId and eventId with a single lookup before acting. Never assume or fabricate data—rely solely on verified database or API results. Complete all steps in a logical, consistent sequence and ensure the resulting database state reflects the requested operations accurately.",
+      "user_prompt": "Create a new secondary Google Calendar named “Orion Strategy Tracker” using the New York time zone. Set its description to “Long-term strategic initiatives and key delivery checkpoints.” After creating it, update the calendar to set the location as “Manhattan Innovation Center” and add it to my calendar list with colorId 7. Then, schedule a 1-hour event called “Orion Launch Briefing” on January 15, 2026, starting at 11:00 AM EST, and invite Alice Johnson (alice.manager@techcorp.com) and Dave Brown (dave.brown@techcorp.com) as guests.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20251204_125827_230_6f5b66fc_51e4bc12",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "Review my calendar and move my office day event to December 8, 2025. Then create another 'Office Marketing Sessions' event on the next day with the same properties, as I need to strategize decisions privately. Also give dave.brown@techcorp.com writer access to this calendar so he can make updates when needed. Lastly, update all office-related events to red for consistency.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260109_043327_590_806f1a83_d690097e",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "We've just received confirmation that the \"MegaCorp Headquarters, 123 Business Ave, New York, NY\" location will be unavailable from November 1 to November 28, 2025. Identify all events scheduled at this location during these dates and relocate them to \"TechCorp Main Campus - Building 1, Conference Room B\". For each relocated event, add a note in the description: \"Relocated due to unavailability at MegaCorp Headquarters.\"",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260106_093832_516_bca89e7d_3703f213",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action.\nWhen identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.\nNever assume or fabricate IDs, responses, or outcomes — rely solely on verified API results.\nComplete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "I want to streamline my customer-related schedules into a dedicated calendar. First, check if I already have a calendar with \"customer\" in its title. If one exists, use it; otherwise, create a new calendar titled \"Customer Schedules\". Assign this calendar a unique color not currently used by my other calendars for easy distinction, and ensure it shares the same timezone as my existing calendars. After the calendar is set up, review all my existing schedules and move only those events whose summary explicitly indicates a customer meeting or update into this new calendar. Finally, mark each moved event with a shared extended property \"scheduleType\": \"customer\" to categorize them clearly.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260106_055343_364_79b3b025_7d5c0c6b",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a highly capable and intelligent AI assistant designed to help users by executing tasks. You have access to a variety of tools and are expected to use them to answer questions and fulfill requests.\n\n**Your Thought Process:**\n1. **Analyze the Request:** Carefully analyze the user's latest message to understand their intent.\n2. **Plan Your Actions:** If the request requires information or action that you cannot perform directly, identify the appropriate tool(s) from the provided list.\n3. **Execute Tools:** Make one or more tool calls in a structured format. You can call multiple tools in parallel if needed.\n4. **Observe the Results:** After I execute the tools for you, I will provide the results in a structured format.\n5. **Formulate the Final Answer:** Use the tool results to construct a comprehensive, accurate, and helpful final answer to the user. If a tool fails, inform the user and ask for clarification if necessary.\n\n**Constraints:**\n- **Respond Only to the Latest Message:** The conversation history is for context only. Focus on resolving the user's most recent request.\n- **Use Tools When Necessary:** Do not try to guess information that a tool can provide. If you need to know something, use a tool.\n- **Stick to Available Tools:** Only use the tools provided to you in the tool list. Do not invent tools.\n- **Final Response:** Once all necessary tool calls are complete and you have the information you need, provide a final, user-facing response without any further tool calls.",
+      "user_prompt": "We need to execute a critical shift in your primary planning calendar and finalize team permissions. Today is Tuesday, January 6, 2026.\n\nFirst, Identify the 'Sprint Planning & Architecture Review' event on the 'Project Management' calendar.\n\nIf Carol White is currently listed as an optional attendee, add a new private extended property to the event with the key policy_status and the value audit_required.\nOtherwise, move the event entirely to the primary calendar and change its color to a soft, warm yellow/pale gold color.\nYou also need to schedule a new 'Product Deep Dive' meeting on the 'Team Coordination' calendar. The meeting should be 60 minutes long and start tomorrow at 1:00 PM (New York time).\n\nThis meeting must have a daily recurrence for 4 occurrences if the 'Sprint Planning & Architecture Review' event now has the policy_status property set to audit_required \nOtherwise, schedule it with a weekly recurrence for 2 occurrences.\nFinally, enforce a bulk policy change: Find ALL events on your 'Project Management' calendar where the event summary contains the word 'Review' and set their guestsCanModify property to true.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260106_170941_065_df2c536d_5b164657",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "Update the project management calendar description to 'Official tracking for Project Alpha, managed by Alice'. Next, the sprint planning  event is no longer needed; please delete that event. Replace it with a new 30-minute event called Project Alpha Sync at 9 AM (America/New_York time) next Monday (17th Nov 2025), and add me and dave.brown@techcorp.com. After that, check who has access to this calendar and remove carol.white@techcorp.com permissions completely.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20251204_180957_224_6f5b66fc_aaa65d0e",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action.\nWhen identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.\nNever assume or fabricate IDs, responses, or outcomes — rely solely on verified API results.\nComplete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "I want to move my moderate events into a new dedicated 'ModerateSchedules' calendar. The calendar should have the same timezone but a different colorId from the existing ones. Finally, mark each moved event with a shared extended property \"scheduleType\": \"moderate\" to categorize them clearly.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20251202_190412_439_e81f6083_83a8a0ca",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "We're hosting two concurrent international conferences from November 5-9, 2025. The APAC Tech Summit (primarily for Asian-Pacific teams, in Asia/Singapore timezone) and the EMEA Innovation Forum (for Europe, the Middle East, and Africa teams, in Europe/London timezone). Create two separate conference event from 2-4 PM spanning across all five days, titled 'APAC Tech Summit 2025' and 'EMEA Innovation Forum 2025'. Set them both with professional colors (APAC: use a Coral color scheme, EMEA: use a Yellow color scheme) and configure a 45 minutes reminder including a clear description for each event. Remove any existing conflicting events and notify all affected attendees accordingly.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260107_104648_226_df2c536d_860ba76c",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "I’m preparing for a vacation. First, I need to give Alice Johnson(alice.manager@techcorp.com) writer access to my 'Development Schedule' calendar. Then, find my 'Office Day - Collaboration Sessions' event and update its description to add: 'Alice to cover any urgent issues'. I also want to set up notifications for my 'Personal Time' calendar; please add a default 10-minute pop-up reminder to it. ",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260105_212540_480_79b3b025_84db5210",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a highly capable and intelligent AI assistant designed to help users by executing tasks. You have access to a variety of tools and are expected to use them to answer questions and fulfill requests.\n\n**Your Thought Process:**\n1. **Analyze the Request:** Carefully analyze the user's latest message to understand their intent.\n2. **Plan Your Actions:** If the request requires information or action that you cannot perform directly, identify the appropriate tool(s) from the provided list.\n3. **Execute Tools:** Make one or more tool calls in a structured format. You can call multiple tools in parallel if needed.\n4. **Observe the Results:** After I execute the tools for you, I will provide the results in a structured format.\n5. **Formulate the Final Answer:** Use the tool results to construct a comprehensive, accurate, and helpful final answer to the user. If a tool fails, inform the user and ask for clarification if necessary.\n\n**Constraints:**\n- **Respond Only to the Latest Message:** The conversation history is for context only. Focus on resolving the user's most recent request.\n- **Use Tools When Necessary:** Do not try to guess information that a tool can provide. If you need to know something, use a tool.\n- **Stick to Available Tools:** Only use the tools provided to you in the tool list. Do not invent tools.\n- **Final Response:** Once all necessary tool calls are complete and you have the information you need, provide a final, user-facing response without any further tool calls.",
+      "user_prompt": "We need to execute a critical Q4 operational handoff protocol and adjust team permissions. Today is the first Monday of 2026.\nSchedule a recurring 'Quarterly Handoff' meeting on 'Team Coordination' calendar. The meeting should be 90 minutes long and start tomorrow at 1:00 PM (New York time). If the 'Sprint Planning & Architecture Review' event on your 'Project Management' calendar has more than three attendees, schedule the meeting with a weekly recurrence for three occurrences. Otherwise, schedule it with a monthly recurrence for six occurrences.\nWe must update the existing 'Sprint Planning & Architecture Review' event. If the event's duration is exactly 60 minutes, change the event's color to Mint Green. Otherwise, change the color to Red. \n\nFind the existing spreadsheet attachment link and replace it with the new finalized specifications document link: 'https://docs.google.com/document/d/Q4-Spec-v2.0'.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260106_132019_309_bca89e7d_5ae689d9",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 1,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action.\nWhen identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data.\nNever assume or fabricate IDs, responses, or outcomes — rely solely on verified API results.\nComplete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "To prepare my project calendars for the upcoming season, please create a new calendar titled \"Project 2026,\" matching the timezone and color of my existing projects calendar. Then replicate the \"Sprint Planning & Architecture Review\" event from the old calendar onto this new calendar, scheduling it for January 4 from 9:00 AM to 11:00 AM (original timezone). Preserve all event details, but exclude any attendees who do not have an email address listed.\nAfter replicating the event, archive the old project calendar by deleting the event init and associated attachments, adding a suffix \"-[ARCHIVED]\" to its description, and removing all ACL permissions except my own. This will finalize the restructuring for the new project calendar.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events"
+        ]
+      }
+    }
+  ]
+}

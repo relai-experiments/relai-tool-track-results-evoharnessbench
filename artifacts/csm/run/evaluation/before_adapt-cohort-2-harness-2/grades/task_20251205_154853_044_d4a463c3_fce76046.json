@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+  "score": 0.0,
+  "solved": false,
+  "n_passed": 0,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify Updated Installed Product",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Create New Case",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Notification Sent ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Notification Sent ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_69bd91acde5743a3",
+    "task_id": "task_20251205_154853_044_d4a463c3_fce76046",
+    "overall_success": false,
+    "pass_rate": 0.0,
+    "n_passed": 0,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify Updated Installed Product",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Create New Case",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Notification Sent ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Notification Sent ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 108.02033686637878,
+  "total_tokens": 31851,
+  "n_steps": 3,
+  "trace_path": "command-agent/tasks/eog-task_20251205_154853_044_d4a463c3_fce76046-ec896ef3/output/trace.json",
+  "agent_commit": "81dd0ccee6cbbf7fdafed8043afd4b59db4a53d3",
+  "graded_at": "2026-10-13T02:31:14.999633+00:00",
+  "source": "checkpointed_evaluation"
+}

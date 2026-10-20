@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251219_062202_346_66392a82_1d2065dd",
+  "score": 0.6666666666666666,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "New unified group created with correct properties",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Old support and infrastructure teams have been deactivated",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "All members from the old groups are now members of the new unified group",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_eddf09fd07eb4c96",
+    "task_id": "task_20251219_062202_346_66392a82_1d2065dd",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 2,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "New unified group created with correct properties",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Old support and infrastructure teams have been deactivated",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "All members from the old groups are now members of the new unified group",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 67.36120390892029,
+  "total_tokens": 85750,
+  "n_steps": 4,
+  "trace_path": "command-agent/tasks/eog-task_20251219_062202_346_66392a82_1d2065dd-d556b190/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T23:01:19.439589+00:00",
+  "source": "checkpointed_evaluation"
+}

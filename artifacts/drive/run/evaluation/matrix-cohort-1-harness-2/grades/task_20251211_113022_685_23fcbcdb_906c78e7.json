@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20251211_113022_685_23fcbcdb_906c78e7",
+  "score": 0.2,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Correct Drive Selected",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Only Overdue Proposals Processed",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Existing Permission Check Applied",
+      "passed": false,
+      "score": 0.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Accepted Proposals Have Correct Expiration",
+      "passed": false,
+      "score": 0.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Comment Added for Accepted Proposals",
+      "passed": false,
+      "score": 0.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_cc42778614e444f1",
+    "task_id": "task_20251211_113022_685_23fcbcdb_906c78e7",
+    "overall_success": false,
+    "pass_rate": 0.2,
+    "n_passed": 1,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Correct Drive Selected",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Only Overdue Proposals Processed",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Existing Permission Check Applied",
+        "passed": false,
+        "score": 0.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Accepted Proposals Have Correct Expiration",
+        "passed": false,
+        "score": 0.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Comment Added for Accepted Proposals",
+        "passed": false,
+        "score": 0.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 257.3455648422241,
+  "total_tokens": 265984,
+  "n_steps": 14,
+  "trace_path": "command-agent/tasks/eog-task_20251211_113022_685_23fcbcdb_906c78e7-ca359a82/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T13:35:00.185710+00:00",
+  "source": "checkpointed_evaluation"
+}

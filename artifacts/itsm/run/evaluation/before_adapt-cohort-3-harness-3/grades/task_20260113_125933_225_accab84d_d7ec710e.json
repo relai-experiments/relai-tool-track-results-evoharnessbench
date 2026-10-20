@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20260113_125933_225_accab84d_d7ec710e",
+  "score": 0.3333333333333333,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "verify_incident_created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_notification_isabella_sent",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_notification_resolver_sent",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_c96d453e0a554a49",
+    "task_id": "task_20260113_125933_225_accab84d_d7ec710e",
+    "overall_success": false,
+    "pass_rate": 0.3333333333333333,
+    "n_passed": 1,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "verify_incident_created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_notification_isabella_sent",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_notification_resolver_sent",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 463.8403151035309,
+  "total_tokens": 344569,
+  "n_steps": 14,
+  "trace_path": "command-agent/tasks/eog-task_20260113_125933_225_accab84d_d7ec710e-bf831b9c/output/trace.json",
+  "agent_commit": "7180ebdea71247bffb1ccea42d1384d1e43d670e",
+  "graded_at": "2026-10-19T15:06:58.319710+00:00",
+  "source": "checkpointed_evaluation"
+}

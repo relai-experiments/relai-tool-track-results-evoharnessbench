@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20251204_151109_029_ae7b45e2_1fa53dbc",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 2,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Project Plan Permission Count Validation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Alex Rodriguez Permission Removal Validation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_7bd4a54b9ee9438d",
+    "task_id": "task_20251204_151109_029_ae7b45e2_1fa53dbc",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 2,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Project Plan Permission Count Validation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Alex Rodriguez Permission Removal Validation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 774.0491008758545,
+  "total_tokens": 864992,
+  "n_steps": 27,
+  "trace_path": "command-agent/tasks/eog-task_20251204_151109_029_ae7b45e2_1fa53dbc-44e9630e/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T17:21:37.351984+00:00",
+  "source": "checkpointed_evaluation"
+}

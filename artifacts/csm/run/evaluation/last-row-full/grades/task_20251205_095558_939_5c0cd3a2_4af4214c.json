@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20251205_095558_939_5c0cd3a2_4af4214c",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Verifier for contact creation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 610,
+      "actual": 610,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verifier for new case creation",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1233,
+      "actual": [],
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_834e06ce77864cb7",
+    "task_id": "task_20251205_095558_939_5c0cd3a2_4af4214c",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 1,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Verifier for contact creation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 610,
+        "actual": 610,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verifier for new case creation",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1233,
+        "actual": [],
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 422.172101020813,
+  "total_tokens": 390945,
+  "n_steps": 18,
+  "trace_path": "command-agent/tasks/eog-task_20251205_095558_939_5c0cd3a2_4af4214c-d104be67/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T21:30:53.490766+00:00",
+  "source": "checkpointed_evaluation"
+}

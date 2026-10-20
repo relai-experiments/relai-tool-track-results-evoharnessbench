@@ -1,0 +1,37 @@
+{
+  "stage": 1,
+  "phase": "complete",
+  "started_at": "2026-10-12T15:50:07.944541+00:00",
+  "training_pool": "cumulative",
+  "harness_stage": 1,
+  "selected_tasks": [
+    "eog-tools::csm/v1/task_20251209_063042_139_66392a82_81ffc0b0",
+    "eog-tools::csm/v1/task_20251210_051952_801_99ba2325_a136867b",
+    "eog-tools::csm/v1/task_20260102_002012_363_00364ece_a3936446",
+    "eog-tools::csm/v1/task_20260106_070321_497_accab84d_6f4a8da8",
+    "eog-tools::csm/v1/task_20260106_133642_894_66392a82_3e083fa5"
+  ],
+  "optimizer_log": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261012T154955Z-95d47fda/command-agent/adaptation/stage-001/optimizer.log",
+  "optimizer_artifacts": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261012T154955Z-95d47fda/command-agent/adaptation/stage-001/optimizer-artifacts",
+  "selected_tasks_by_stage": {
+    "1": [
+      "eog-tools::csm/v1/task_20251209_063042_139_66392a82_81ffc0b0",
+      "eog-tools::csm/v1/task_20251210_051952_801_99ba2325_a136867b",
+      "eog-tools::csm/v1/task_20260102_002012_363_00364ece_a3936446",
+      "eog-tools::csm/v1/task_20260106_070321_497_accab84d_6f4a8da8",
+      "eog-tools::csm/v1/task_20260106_133642_894_66392a82_3e083fa5"
+    ]
+  },
+  "selected_task_counts_by_stage": {
+    "1": 5
+  },
+  "optimizer_result": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261012T154955Z-95d47fda/state/adapt-results/stage-1-91258e7b83144df6b7cb41f2166e1636.json",
+  "optimizer_pid": 1223,
+  "heartbeat_at": "2026-10-12T21:16:23.549981+00:00",
+  "elapsed_s": 19573,
+  "last_event_at": "2026-10-12T21:16:09.549507+00:00",
+  "optimizer_exit_code": 0,
+  "relai_status": "accepted",
+  "active_commit": "81dd0ccee6cbbf7fdafed8043afd4b59db4a53d3",
+  "completed_at": "2026-10-12T21:16:23.970201+00:00"
+}

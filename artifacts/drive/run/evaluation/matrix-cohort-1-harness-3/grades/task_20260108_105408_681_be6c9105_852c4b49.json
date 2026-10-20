@@ -1,0 +1,158 @@
+{
+  "task_id": "task_20260108_105408_681_be6c9105_852c4b49",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 6,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Verify Drive Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Dated Folder Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify All Files Moved to Archived Folder",
+      "passed": true,
+      "score": 1.0,
+      "expected": 7,
+      "actual": 7,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Archival Metadata Applied to All Files",
+      "passed": true,
+      "score": 1.0,
+      "expected": 7,
+      "actual": 7,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Audit Reports Folder Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Summary Report Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_db17397150ec4e3c",
+    "task_id": "task_20260108_105408_681_be6c9105_852c4b49",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 6,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Verify Drive Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Dated Folder Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify All Files Moved to Archived Folder",
+        "passed": true,
+        "score": 1.0,
+        "expected": 7,
+        "actual": 7,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Archival Metadata Applied to All Files",
+        "passed": true,
+        "score": 1.0,
+        "expected": 7,
+        "actual": 7,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Audit Reports Folder Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Summary Report Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 223.1593406200409,
+  "total_tokens": 790553,
+  "n_steps": 19,
+  "trace_path": "command-agent/tasks/eog-task_20260108_105408_681_be6c9105_852c4b49-05b602a1/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T01:11:50.914923+00:00",
+  "source": "checkpointed_evaluation"
+}

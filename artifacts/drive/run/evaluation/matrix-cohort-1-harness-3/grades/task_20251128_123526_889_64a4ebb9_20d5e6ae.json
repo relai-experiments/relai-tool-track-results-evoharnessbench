@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251128_123526_889_64a4ebb9_20d5e6ae",
+  "score": 0.3333333333333333,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Verify Permission Deleted",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": [],
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Audit Log Created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Comment Added",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_bb74927efca846f3",
+    "task_id": "task_20251128_123526_889_64a4ebb9_20d5e6ae",
+    "overall_success": false,
+    "pass_rate": 0.3333333333333333,
+    "n_passed": 1,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Verify Permission Deleted",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": [],
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Audit Log Created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Comment Added",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 214.49647998809814,
+  "total_tokens": 514641,
+  "n_steps": 17,
+  "trace_path": "command-agent/tasks/eog-task_20251128_123526_889_64a4ebb9_20d5e6ae-611e8043/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T02:24:09.877911+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,246 @@
+{
+  "task_id": "task_20251206_091748_833_a8eea1c0_7775ff15",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 10,
+  "n_total": 10,
+  "per_verifier": [
+    {
+      "name": "update_case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 177,
+      "actual": 177,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case",
+      "passed": true,
+      "score": 1.0,
+      "expected": "critical",
+      "actual": "critical",
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case",
+      "passed": true,
+      "score": 1.0,
+      "expected": "urgency",
+      "actual": "urgency",
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 18,
+      "actual": 18,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case",
+      "passed": true,
+      "score": 1.0,
+      "expected": "resolved",
+      "actual": "resolved",
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case_sla_details",
+      "passed": true,
+      "score": 1.0,
+      "expected": "completed",
+      "actual": "completed",
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case_sla_details",
+      "passed": true,
+      "score": 1.0,
+      "expected": "completed",
+      "actual": "completed",
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case_sla_details",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "update_case_sla_details",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_072a40ba9e6e4d17",
+    "task_id": "task_20251206_091748_833_a8eea1c0_7775ff15",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 10,
+    "n_total": 10,
+    "per_verifier": [
+      {
+        "name": "update_case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 177,
+        "actual": 177,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case",
+        "passed": true,
+        "score": 1.0,
+        "expected": "critical",
+        "actual": "critical",
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case",
+        "passed": true,
+        "score": 1.0,
+        "expected": "urgency",
+        "actual": "urgency",
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 18,
+        "actual": 18,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case",
+        "passed": true,
+        "score": 1.0,
+        "expected": "resolved",
+        "actual": "resolved",
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case_sla_details",
+        "passed": true,
+        "score": 1.0,
+        "expected": "completed",
+        "actual": "completed",
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case_sla_details",
+        "passed": true,
+        "score": 1.0,
+        "expected": "completed",
+        "actual": "completed",
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case_sla_details",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "update_case_sla_details",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 609.7204782962799,
+  "total_tokens": 299703,
+  "n_steps": 20,
+  "trace_path": "command-agent/tasks/eog-task_20251206_091748_833_a8eea1c0_7775ff15-04b0dd2f/output/trace.json",
+  "agent_commit": "e16f4716aa3c543c8bcc7891e11e0481b3ff96e4",
+  "graded_at": "2026-10-15T08:52:29.575490+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,13 @@
+{
+  "changes": [
+    {
+      "title": "Track operation completion and verification"
+    },
+    {
+      "title": "Add validated temporal interval calculations"
+    }
+  ],
+  "title": "Improve operation tracking and temporal calculations",
+  "summary": "Improved agent reliability for multi-resource operations and date calculations.\n\n- Added scope, completion, and verification tracking to execution and final-audit guidance.\n- Added a validated local temporal-interval tool with inclusive dates, exact conversions, structured errors, and collision protection.\n- Updated focused prompt-wiring and agent tests; tests were not run as instructed.",
+  "inconsistency": ""
+}

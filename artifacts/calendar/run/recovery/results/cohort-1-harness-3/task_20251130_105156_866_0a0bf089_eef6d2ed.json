@@ -1,0 +1,118 @@
+{
+  "task_id": "task_20251130_105156_866_0a0bf089_eef6d2ed",
+  "cohort": 1,
+  "at_stage": 3,
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-03T22:59:03.999659+00:00",
+  "pass_rate": 0.25,
+  "overall_success": false,
+  "n_passed": 1,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify event moved to Alice’s calendar",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify calendar title update",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify reader access for Bob and Carol",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify writer access for Dave Brown",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_177f8d422c5f4e87",
+    "task_id": "task_20251130_105156_866_0a0bf089_eef6d2ed",
+    "overall_success": false,
+    "pass_rate": 0.25,
+    "n_passed": 1,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify event moved to Alice’s calendar",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify calendar title update",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify reader access for Bob and Carol",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify writer access for Dave Brown",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 233.64194583892822,
+  "total_tokens": 425057,
+  "n_steps": 18,
+  "trace_path": "command-agent/tasks/eog-task_20251130_105156_866_0a0bf089_eef6d2ed-4b5120bc/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

@@ -1,0 +1,19 @@
+{
+  "changes": [
+    {
+      "title": "Add semantic decision guidance"
+    },
+    {
+      "title": "Recover truncated MCP results"
+    },
+    {
+      "title": "Strengthen inequality validation"
+    },
+    {
+      "title": "Gate completion on resolved objectives"
+    }
+  ],
+  "title": "Improve ReactAgent reliability and result recovery",
+  "summary": "Improved ReactAgent’s reliability across decision-making, retrieval, validation, and completion.\n\n- Added consistent semantic guidance throughout the agent loop.\n- Enabled run-local recovery and paging for truncated MCP results.\n- Preserved exact inequality operators and strengthened mutation validation.\n- Added an objective ledger that blocks premature completion and invalidates stale acceptance.\n\nFocused test assertions were updated, but tests were not run per instruction.",
+  "inconsistency": ""
+}

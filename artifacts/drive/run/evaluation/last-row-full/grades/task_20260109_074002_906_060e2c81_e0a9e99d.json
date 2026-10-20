@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20260109_074002_906_060e2c81_e0a9e99d",
+  "score": 0.6666666666666666,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Correct File Selected",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Newest Revision Frozen",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "File Description Updated",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_9ffb624b3b4949e5",
+    "task_id": "task_20260109_074002_906_060e2c81_e0a9e99d",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 2,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Correct File Selected",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Newest Revision Frozen",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "File Description Updated",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 166.58222675323486,
+  "total_tokens": 183735,
+  "n_steps": 8,
+  "trace_path": "command-agent/tasks/eog-task_20260109_074002_906_060e2c81_e0a9e99d-5fd38f1c/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T15:30:49.371887+00:00",
+  "source": "checkpointed_evaluation"
+}

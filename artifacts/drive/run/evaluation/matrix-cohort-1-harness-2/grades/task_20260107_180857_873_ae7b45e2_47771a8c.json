@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20260107_180857_873_ae7b45e2_47771a8c",
+  "score": 0.3333333333333333,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Verify Company Policies Document Exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Description Updated with Compliance Review ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Compliance Comment Added",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_01c2a18deb82407a",
+    "task_id": "task_20260107_180857_873_ae7b45e2_47771a8c",
+    "overall_success": false,
+    "pass_rate": 0.3333333333333333,
+    "n_passed": 1,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Verify Company Policies Document Exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Description Updated with Compliance Review ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Compliance Comment Added",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 113.46273112297058,
+  "total_tokens": 115674,
+  "n_steps": 7,
+  "trace_path": "command-agent/tasks/eog-task_20260107_180857_873_ae7b45e2_47771a8c-68d4a68e/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T13:24:31.565071+00:00",
+  "source": "checkpointed_evaluation"
+}

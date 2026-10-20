@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20251218_234602_633_391f1eff_09a746e7",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Report incident",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Notify updates",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Report incident",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Notify updates",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_2c7eb0ceaeda4c15",
+    "task_id": "task_20251218_234602_633_391f1eff_09a746e7",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 2,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Report incident",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Notify updates",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Report incident",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Notify updates",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 59.5810010433197,
+  "total_tokens": 77145,
+  "n_steps": 5,
+  "trace_path": "command-agent/tasks/eog-task_20251218_234602_633_391f1eff_09a746e7-e43e6717/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T05:03:33.628833+00:00",
+  "source": "checkpointed_evaluation"
+}

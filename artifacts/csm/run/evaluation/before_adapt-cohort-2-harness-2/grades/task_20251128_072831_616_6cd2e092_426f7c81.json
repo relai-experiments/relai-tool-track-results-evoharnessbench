@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20251128_072831_616_6cd2e092_426f7c81",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Is Case Priority High",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Is Case Assigned To Tier2",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Is Case POC Tonya Stevens",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Is SLA-High-No-Pause Linked And Running",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_13bcd32ec58b4928",
+    "task_id": "task_20251128_072831_616_6cd2e092_426f7c81",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Is Case Priority High",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Is Case Assigned To Tier2",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Is Case POC Tonya Stevens",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Is SLA-High-No-Pause Linked And Running",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 515.3496570587158,
+  "total_tokens": 354821,
+  "n_steps": 21,
+  "trace_path": "command-agent/tasks/eog-task_20251128_072831_616_6cd2e092_426f7c81-e8ab5b65/output/trace.json",
+  "agent_commit": "81dd0ccee6cbbf7fdafed8043afd4b59db4a53d3",
+  "graded_at": "2026-10-13T02:55:19.885083+00:00",
+  "source": "checkpointed_evaluation"
+}

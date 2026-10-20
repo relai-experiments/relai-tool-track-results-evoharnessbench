@@ -1,0 +1,140 @@
+{
+  "task_id": "task_20260107_093643_038_df2c536d_f90fd06e",
+  "cohort": 2,
+  "at_stage": 3,
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-04T00:06:40.969762+00:00",
+  "pass_rate": 0.6,
+  "overall_success": false,
+  "n_passed": 3,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "check_attendee",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "check_attendee",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "check_webhook_watch",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "check_event_creation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "check_calendar_settings",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_04b8bc501cb44909",
+    "task_id": "task_20260107_093643_038_df2c536d_f90fd06e",
+    "overall_success": false,
+    "pass_rate": 0.6,
+    "n_passed": 3,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "check_attendee",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "check_attendee",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "check_webhook_watch",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "check_event_creation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "check_calendar_settings",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 133.20838904380798,
+  "total_tokens": 124051,
+  "n_steps": 7,
+  "trace_path": "command-agent/tasks/eog-task_20260107_093643_038_df2c536d_f90fd06e-e19f0ebd/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

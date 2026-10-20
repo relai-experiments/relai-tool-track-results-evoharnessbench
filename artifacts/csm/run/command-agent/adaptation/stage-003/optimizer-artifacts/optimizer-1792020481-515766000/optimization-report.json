@@ -1,0 +1,22 @@
+{
+  "changes": [
+    {
+      "title": "Reconcile state after mutations"
+    },
+    {
+      "title": "Finalize responses after verification"
+    },
+    {
+      "title": "Strengthen mutation-safety prompts"
+    },
+    {
+      "title": "Normalize numeric grading values"
+    },
+    {
+      "title": "Review authority before read-only completion"
+    }
+  ],
+  "title": "Harden agent execution and grading",
+  "summary": "Improved agent reliability from mutation through final grading.\n\n- Reconciled and verified state after mutations, including dependent and provenance-sensitive values.\n- Added safer completion checks, clearer finalization, and stronger handling of optional or conditional relationships.\n- Normalized numeric grading values while preserving verifier details and errors.",
+  "inconsistency": ""
+}

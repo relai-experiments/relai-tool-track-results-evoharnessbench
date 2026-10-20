@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20251212_172511_458_e6427839_47076c15",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 4,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "Verify if the priority of the incident is set correctly.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the correct SLA is linked to the incident.",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the priority of the incident is set correctly.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the correct SLA is linked to the incident.",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the priority of the incident is set correctly.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the correct SLA is linked to the incident.",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the priority of the incident is set correctly.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the correct SLA is linked to the incident.",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": null,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": "HTTP 400: {\"detail\":\"(sqlite3.OperationalError) no such column: applies_to_priority\\n[SQL: SELECT COUNT(*) FROM incident_sla WHERE incident_id = 'INC_003' AND sla_def_id = 'SLA_002' AND applies_to_priority = 'high']\\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\"}"
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_3aaece9edddb48ad",
+    "task_id": "task_20251212_172511_458_e6427839_47076c15",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 4,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "Verify if the priority of the incident is set correctly.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the correct SLA is linked to the incident.",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the priority of the incident is set correctly.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the correct SLA is linked to the incident.",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the priority of the incident is set correctly.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the correct SLA is linked to the incident.",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the priority of the incident is set correctly.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the correct SLA is linked to the incident.",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": null,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": "HTTP 400: {\"detail\":\"(sqlite3.OperationalError) no such column: applies_to_priority\\n[SQL: SELECT COUNT(*) FROM incident_sla WHERE incident_id = 'INC_003' AND sla_def_id = 'SLA_002' AND applies_to_priority = 'high']\\n(Background on this error at: https://sqlalche.me/e/20/e3q8)\"}"
+      }
+    ]
+  },
+  "latency_s": 49.57388496398926,
+  "total_tokens": 44072,
+  "n_steps": 3,
+  "trace_path": "command-agent/tasks/eog-task_20251212_172511_458_e6427839_47076c15-c7bbc441/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T06:16:26.999502+00:00",
+  "source": "checkpointed_evaluation"
+}

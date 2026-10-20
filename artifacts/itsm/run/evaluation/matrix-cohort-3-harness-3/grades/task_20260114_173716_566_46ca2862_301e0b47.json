@@ -1,0 +1,158 @@
+{
+  "task_id": "task_20260114_173716_566_46ca2862_301e0b47",
+  "score": 0.8333333333333334,
+  "solved": false,
+  "n_passed": 5,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Verify SAP Knowledge Article Creation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Knowledge Links to All Incidents",
+      "passed": false,
+      "score": 0.0,
+      "expected": 4,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Windows 11 FAQ Published",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Windows 11 FAQ Has External Visibility",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Windows 11 Rollout Procedures Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Rollout Procedures References FAQ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_bf1acfce5af2441d",
+    "task_id": "task_20260114_173716_566_46ca2862_301e0b47",
+    "overall_success": false,
+    "pass_rate": 0.8333333333333334,
+    "n_passed": 5,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Verify SAP Knowledge Article Creation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Knowledge Links to All Incidents",
+        "passed": false,
+        "score": 0.0,
+        "expected": 4,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Windows 11 FAQ Published",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Windows 11 FAQ Has External Visibility",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Windows 11 Rollout Procedures Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Rollout Procedures References FAQ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 181.2310860157013,
+  "total_tokens": 270416,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20260114_173716_566_46ca2862_301e0b47-51b7ae4f/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T23:04:21.715492+00:00",
+  "source": "checkpointed_evaluation"
+}

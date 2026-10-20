@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251218_104259_233_66392a82_74b17170",
+  "score": 0.6666666666666666,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Munich Analytics Lab created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Node A exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Node B correctly updated to maintenance",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_b7de3508353b43a8",
+    "task_id": "task_20251218_104259_233_66392a82_74b17170",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 2,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Munich Analytics Lab created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Node A exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Node B correctly updated to maintenance",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 75.2726149559021,
+  "total_tokens": 126965,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20251218_104259_233_66392a82_74b17170-43e09aba/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-20T00:52:01.064352+00:00",
+  "source": "checkpointed_evaluation"
+}

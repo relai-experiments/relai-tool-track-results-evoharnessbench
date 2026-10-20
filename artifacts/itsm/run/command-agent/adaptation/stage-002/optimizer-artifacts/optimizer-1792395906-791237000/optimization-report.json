@@ -1,0 +1,13 @@
+{
+  "changes": [
+    {
+      "title": "Recover from empty discovery searches"
+    },
+    {
+      "title": "Enforce conservative mutation scope"
+    }
+  ],
+  "title": "Improve search recovery and mutation safety",
+  "summary": "Improved agent reliability for discovery and mutation workflows.\n\n- Added schema-aware recovery guidance for repeated empty read-only searches.\n- Added closed-world scope tracking and conservative mutation guidance.\n- Updated focused agent assertions and preserved existing regression scores.",
+  "inconsistency": "The second accepted change title was truncated, so its report title was derived from the complete summary."
+}

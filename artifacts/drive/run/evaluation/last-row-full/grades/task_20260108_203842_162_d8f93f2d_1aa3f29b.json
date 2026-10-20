@@ -1,0 +1,180 @@
+{
+  "task_id": "task_20260108_203842_162_d8f93f2d_1aa3f29b",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 7,
+  "n_total": 7,
+  "per_verifier": [
+    {
+      "name": "Count shortcut files pointing to the \"Marketing Presentation\" file ID have been deleted",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if permissions on \"Marketing Presentation\" file have been revoked for all users except the owner",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if \"Integrity Reports\" folder was created in the same drive as \"Marketing Presentation\"",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if the integrity report file \"Marketing_Presentation_Integrity_Report.txt\" was created in the \"Integrity Reports\" folder",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "This verifies that a comment was added to the report file and it mentions the email: john.smith@company.com and the domain: company.com",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if mike.chen@company.com has read permission on the integrity report file",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check if a comment was created on the integrity report file outlining failure messages due to permission restrictions",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_3fe1aa5be0384a68",
+    "task_id": "task_20260108_203842_162_d8f93f2d_1aa3f29b",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 7,
+    "n_total": 7,
+    "per_verifier": [
+      {
+        "name": "Count shortcut files pointing to the \"Marketing Presentation\" file ID have been deleted",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if permissions on \"Marketing Presentation\" file have been revoked for all users except the owner",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if \"Integrity Reports\" folder was created in the same drive as \"Marketing Presentation\"",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if the integrity report file \"Marketing_Presentation_Integrity_Report.txt\" was created in the \"Integrity Reports\" folder",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "This verifies that a comment was added to the report file and it mentions the email: john.smith@company.com and the domain: company.com",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if mike.chen@company.com has read permission on the integrity report file",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check if a comment was created on the integrity report file outlining failure messages due to permission restrictions",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 389.94159388542175,
+  "total_tokens": 487515,
+  "n_steps": 15,
+  "trace_path": "command-agent/tasks/eog-task_20260108_203842_162_d8f93f2d_1aa3f29b-c3928dce/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T13:05:26.331146+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,13 @@
+{
+  "changes": [
+    {
+      "title": "Strengthen discovery and objective verification"
+    },
+    {
+      "title": "Prioritize explicit objectives and constraints"
+    }
+  ],
+  "title": "Improve ReactAgent planning and verification",
+  "summary": "Improved ReactAgent prompts to make task execution more reliable.\n\n- Strengthened discovery, prerequisite handling, exact target validation, and final verification.\n- Prioritized explicit objectives, authorized prerequisites, and authoritative prohibitions.\n- Improved one motivating replay to full credit without regressing the tracked comparison.\n- Updated focused prompt-wiring tests; tests were not run per instruction.",
+  "inconsistency": ""
+}

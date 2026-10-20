@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20251202_052822_939_66392a82_0479926e",
+  "score": 0.8,
+  "solved": false,
+  "n_passed": 4,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Verify Lumina Healthcare Customer Account Creation",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Creation of Lumina Implementation Coordination Group",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Exactly Three Members Assigned to the New Coordination Group",
+      "passed": true,
+      "score": 1.0,
+      "expected": 3,
+      "actual": 3,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify One Manager from Installed Base Support Assigned",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Two Non-Managers from Installed Base Support Assigned",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_1642d295659649c3",
+    "task_id": "task_20251202_052822_939_66392a82_0479926e",
+    "overall_success": false,
+    "pass_rate": 0.8,
+    "n_passed": 4,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Verify Lumina Healthcare Customer Account Creation",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Creation of Lumina Implementation Coordination Group",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Exactly Three Members Assigned to the New Coordination Group",
+        "passed": true,
+        "score": 1.0,
+        "expected": 3,
+        "actual": 3,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify One Manager from Installed Base Support Assigned",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Two Non-Managers from Installed Base Support Assigned",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 246.91019415855408,
+  "total_tokens": 367083,
+  "n_steps": 19,
+  "trace_path": "command-agent/tasks/eog-task_20251202_052822_939_66392a82_0479926e-42e4e9b1/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T08:05:47.302873+00:00",
+  "source": "checkpointed_evaluation"
+}

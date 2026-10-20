@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20251219_144431_663_97d7df7d_a52988e5",
+  "score": 0.0,
+  "solved": false,
+  "n_passed": 0,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "verify_incident_created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_notification_created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_0a3481f7933544b0",
+    "task_id": "task_20251219_144431_663_97d7df7d_a52988e5",
+    "overall_success": false,
+    "pass_rate": 0.0,
+    "n_passed": 0,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "verify_incident_created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_notification_created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 211.23997402191162,
+  "total_tokens": 148562,
+  "n_steps": 9,
+  "trace_path": "command-agent/tasks/eog-task_20251219_144431_663_97d7df7d_a52988e5-1fedf8a9/output/trace.json",
+  "agent_commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+  "graded_at": "2026-10-19T06:53:55.218559+00:00",
+  "source": "checkpointed_evaluation"
+}

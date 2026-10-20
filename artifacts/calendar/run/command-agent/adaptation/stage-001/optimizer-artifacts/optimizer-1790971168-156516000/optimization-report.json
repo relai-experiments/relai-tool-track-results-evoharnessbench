@@ -1,0 +1,19 @@
+{
+  "changes": [
+    {
+      "title": "Add scoped chunk recovery and previews"
+    },
+    {
+      "title": "Add a one-time evidence audit"
+    },
+    {
+      "title": "Strengthen exact text verification"
+    },
+    {
+      "title": "Reconcile dates and time zones"
+    }
+  ],
+  "title": "Improve ReactAgent recovery and verification",
+  "summary": "Improved ReactAgent’s reliability when inspecting tool results and validating mutations.\n\n- Added run-scoped recovery and concise previews for chunked results.\n- Added evidence audits and corrective-call guidance.\n- Strengthened verification of exact text, dates, and persisted time zones.\n- Updated focused agent and prompt tests; tests were not run per instruction.",
+  "inconsistency": ""
+}

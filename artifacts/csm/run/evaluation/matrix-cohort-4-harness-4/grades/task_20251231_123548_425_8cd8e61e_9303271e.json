@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20251231_123548_425_8cd8e61e_9303271e",
+  "score": 0.0,
+  "solved": false,
+  "n_passed": 0,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Verify Interaction Final State",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the notification",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case-Knowledge Linkage",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_fa6db02d3c424fab",
+    "task_id": "task_20251231_123548_425_8cd8e61e_9303271e",
+    "overall_success": false,
+    "pass_rate": 0.0,
+    "n_passed": 0,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Verify Interaction Final State",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the notification",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case-Knowledge Linkage",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 199.38171577453613,
+  "total_tokens": 252332,
+  "n_steps": 13,
+  "trace_path": "command-agent/tasks/eog-task_20251231_123548_425_8cd8e61e_9303271e-eebcb10a/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T08:44:46.536391+00:00",
+  "source": "checkpointed_evaluation"
+}

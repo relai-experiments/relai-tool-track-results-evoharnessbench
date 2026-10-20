@@ -1,0 +1,96 @@
+{
+  "task_id": "task_20260108_142310_191_df2c536d_c6edcf9f",
+  "cohort": 2,
+  "at_stage": 3,
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-04T00:11:19.605963+00:00",
+  "pass_rate": 0.6666666666666666,
+  "overall_success": false,
+  "n_passed": 2,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "check_conference_room_resource",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "check_recurring_series",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "check_attendees",
+      "passed": true,
+      "score": 1.0,
+      "expected": 2,
+      "actual": 2,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_e637afbfd9004260",
+    "task_id": "task_20260108_142310_191_df2c536d_c6edcf9f",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 2,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "check_conference_room_resource",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "check_recurring_series",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "check_attendees",
+        "passed": true,
+        "score": 1.0,
+        "expected": 2,
+        "actual": 2,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 277.6980059146881,
+  "total_tokens": 215867,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20260108_142310_191_df2c536d_c6edcf9f-c7277a53/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20260114_073658_459_78a5b71e_cab5cc9f",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "verify_new_db_backup_alert_sent_to_sophie",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "verify_problem_assigned_to_incident_owner",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_23721134427f41be",
+    "task_id": "task_20260114_073658_459_78a5b71e_cab5cc9f",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 1,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "verify_new_db_backup_alert_sent_to_sophie",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "verify_problem_assigned_to_incident_owner",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 168.65020990371704,
+  "total_tokens": 234279,
+  "n_steps": 10,
+  "trace_path": "command-agent/tasks/eog-task_20260114_073658_459_78a5b71e_cab5cc9f-41b39841/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-20T02:16:30.560528+00:00",
+  "source": "checkpointed_evaluation"
+}

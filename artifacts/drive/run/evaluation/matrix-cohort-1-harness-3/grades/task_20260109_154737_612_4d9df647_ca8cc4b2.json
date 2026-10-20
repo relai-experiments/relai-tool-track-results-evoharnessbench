@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260109_154737_612_4d9df647_ca8cc4b2",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Team Retreat Agenda At least two comments containing \"Donald\"",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Team Photo.jpg  Comment contains luis.martinez@meta.com",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Product Launch Presentation Comment contains luis.martinez@meta.com",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "File with \"Feedback\" in name Creation & Label with Medium Priority ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_d5e8b6362c7149af",
+    "task_id": "task_20260109_154737_612_4d9df647_ca8cc4b2",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 2,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Team Retreat Agenda At least two comments containing \"Donald\"",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Team Photo.jpg  Comment contains luis.martinez@meta.com",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Product Launch Presentation Comment contains luis.martinez@meta.com",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "File with \"Feedback\" in name Creation & Label with Medium Priority ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 624.0148348808289,
+  "total_tokens": 757816,
+  "n_steps": 22,
+  "trace_path": "command-agent/tasks/eog-task_20260109_154737_612_4d9df647_ca8cc4b2-bbf1be2f/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T01:54:32.619537+00:00",
+  "source": "checkpointed_evaluation"
+}

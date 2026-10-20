@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20260102_165223_158_99ba2325_67a4a1e9",
+  "score": 0.0,
+  "solved": false,
+  "n_passed": 0,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Check contract price",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check phone of user",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_bb2a4c74fe50435b",
+    "task_id": "task_20260102_165223_158_99ba2325_67a4a1e9",
+    "overall_success": false,
+    "pass_rate": 0.0,
+    "n_passed": 0,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Check contract price",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check phone of user",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 225.226637840271,
+  "total_tokens": 78124,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20260102_165223_158_99ba2325_67a4a1e9-820daeec/output/trace.json",
+  "agent_commit": "e16f4716aa3c543c8bcc7891e11e0481b3ff96e4",
+  "graded_at": "2026-10-15T11:07:08.222052+00:00",
+  "source": "checkpointed_evaluation"
+}

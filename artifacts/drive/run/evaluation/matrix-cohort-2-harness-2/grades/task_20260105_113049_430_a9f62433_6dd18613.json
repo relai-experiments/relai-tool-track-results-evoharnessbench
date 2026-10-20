@@ -1,0 +1,136 @@
+{
+  "task_id": "task_20260105_113049_430_a9f62433_6dd18613",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 5,
+  "n_total": 5,
+  "per_verifier": [
+    {
+      "name": "Permission on \"Project Documents\" Folder",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Permission on \"Check-in document\" file",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "COMMENTS on Check-in document",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Notifcation created",
+      "passed": true,
+      "score": 1.0,
+      "expected": "check",
+      "actual": "checkin-doc-resource-001",
+      "comparison_type": "contains",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Check-in document exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_5009961b6e5547b9",
+    "task_id": "task_20260105_113049_430_a9f62433_6dd18613",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 5,
+    "n_total": 5,
+    "per_verifier": [
+      {
+        "name": "Permission on \"Project Documents\" Folder",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Permission on \"Check-in document\" file",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "COMMENTS on Check-in document",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Notifcation created",
+        "passed": true,
+        "score": 1.0,
+        "expected": "check",
+        "actual": "checkin-doc-resource-001",
+        "comparison_type": "contains",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Check-in document exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 289.327840089798,
+  "total_tokens": 185662,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20260105_113049_430_a9f62433_6dd18613-c1d86bcd/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T16:34:25.593463+00:00",
+  "source": "checkpointed_evaluation"
+}

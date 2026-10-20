@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20251206_114027_879_5c0cd3a2_904991cc",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Verify Updated Escalated Case for Juniper EX4300 Issue",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Knowledge Article Linked to Case",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_ccc1f5e9d0d1456d",
+    "task_id": "task_20251206_114027_879_5c0cd3a2_904991cc",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 1,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Verify Updated Escalated Case for Juniper EX4300 Issue",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Knowledge Article Linked to Case",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 79.85597705841064,
+  "total_tokens": 63498,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20251206_114027_879_5c0cd3a2_904991cc-5f11e3e1/output/trace.json",
+  "agent_commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+  "graded_at": "2026-10-14T21:38:10.814239+00:00",
+  "source": "checkpointed_evaluation"
+}

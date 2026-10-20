@@ -1,0 +1,322 @@
+{
+  "schema_version": "relai.optimizer_result.v1",
+  "run_id": "optimizer-1792373986-957869000",
+  "artifact_dir": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261019T013854Z-06abfff3/command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1792373986-957869000",
+  "optimizer_debug_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261019T013854Z-06abfff3/command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1792373986-957869000/optimizer_debug.json",
+  "pr_summary_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261019T013854Z-06abfff3/command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1792373986-957869000/pr-summary.json",
+  "pr_description_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261019T013854Z-06abfff3/command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1792373986-957869000/pr-description.md",
+  "optimization_report_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261019T013854Z-06abfff3/command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1792373986-957869000/optimization-report.json",
+  "source_workspace_path": "/Users/wangwenxiao/.relai/worktrees/active-fcc220a3793ea166-6ad574c4-2d476a58",
+  "worktree_code_path": "/Users/wangwenxiao/.relai/worktrees/active-fcc220a3793ea166-6ad574c4-2d476a58/",
+  "attempted_batches": 17,
+  "attempted_turns": 17,
+  "attempted_updates": 17,
+  "accepted_updates": 3,
+  "anchor_rejections": 5,
+  "scheduled_environment_count": 20,
+  "failed_environment_runs": 0,
+  "memory_writes_applied": 10,
+  "memory_compactions_performed": 4,
+  "memory_writes_skipped": 0,
+  "termination_requested": false,
+  "terminated_after_turn_index": null,
+  "early_stop_triggered": false,
+  "early_stop_reason": "",
+  "early_stop_aggregate_score": null,
+  "early_stop_min_environment_score": null,
+  "early_stop_covered_environment_count": 0,
+  "early_stop_total_environment_count": 20,
+  "early_stop_confirmation_turns_required": 2,
+  "early_stop_confirmation_turns_observed": 0,
+  "early_stop_ewma_alpha": 0.5,
+  "accepted_turn_indices": [
+    4,
+    6,
+    10
+  ],
+  "rejected_turn_indices": [
+    7,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17
+  ],
+  "status": "accepted",
+  "notes": [
+    "turn 1 explore no_change: No change is warranted: the sole end-to-end run scored 1.0, both evaluators passed, and the agent completed the task through its normal ReAct-to-MCP path.",
+    "turn 2 explore no_change: editor produced no file changes",
+    "turn 3 explore no_change: No change is justified. The agent successfully used its normal ReAct/MCP path to update the CI, create and link the incident and problem, and pass all three evaluators at 1.0. Prompt nudges, new reasoning capabilities, structural runtime changes, and wrapper shortcuts lack a demonstrated defect to address and would introduce unnecessary regression or overfitting risk.",
+    "turn 5 explore no_change: No agent-code change is justified yet: the task requires ownership by USER_004, but the exercised prompt and tool context provide no authenticated-user identity. The agent correctly avoided fabricating it.",
+    "Reject. Serialization improved anchor safety, but repeatedly caused the regression path to stop after overly narrow incident searches. The incumbent could issue broader parallel searches, identify INC_001, resolve it, and notify all recipients; the candidate consistently scored 0.0. This is authentic in-path logic but unacceptable regression spillover.",
+    "turn 8 explore no_change: No agent change is justified: the agent created INC_101 with the requested service SVC_020 and offering SVCOFF_025, while the evaluator incorrectly expects one row with missing or incorrect linkage.",
+    "turn 9 explore no_change: No code change is justified from this batch: the agent followed the authoritative request and policy, while the evaluator requires contradictory values. The request says the issue arrived by email, but expects channel=phone; the policy maps high impact plus high urgency to critical, but expects priority=high and SLA_002. Prompt strengthening, structured validation, and read-back would reinforce the agent's current choices rather than satisfy these conflicting checks.",
+    "Reject. The generic audit gate stayed on the normal ReactAgent/MCP path and was exercised during recheck, but produced no score improvement. It corrected some fields yet still accepted problem.original_task=INC_030 instead of propagating the new child ID INC_101, then falsely declared all postconditions satisfied. The broader scenario requires reliable multi-record relationship and provenance semantics, not merely an extra review turn.",
+    "Reject. The normal ReactAgent/MCP path consumed the ranked guidance and one-shot audit, but the agent still ignored INC_015's surfaced caller_id=USER_001, repeated the same identity refusal, performed no mutations, and remained at 0.0 on all three verifiers. The change is mechanism-level, reusable, and within the existing product design—not benchmark-shaped—but it did not improve the broader ITSM capability of grounding requester references and completing chained mutations.",
+    "Reject. The in-path, domain-neutral review mechanism was exercised, but score regressed from 0.5 to 0.0. Its contract omitted service/offering retirement, directed incidents past resolved to closed, and reinforced invented administrator/successor blockers for owner deactivation. This is a generalizable mechanism within the existing agent/MCP design, not a benchmark shortcut, but it made the broader ITSM workflow less reliable.",
+    "turn 14 explore no_change: No change is justified: the sole anchor run passed both evaluators through the normal ReAct/MCP path, with no demonstrated semantic, runtime, or contract defect.",
+    "Reject. The normal ReactAgent path consumed the generic audit in both after-runs, but it still omitted the distinct affected-CI relationship and reduced the score from 0.75 to 0.5 twice. The mechanism is in-scope, generalizable, and product-authentic, but was exercised and ineffective; it also destabilized previously passing record/status behavior.",
+    "Reject. The generic audit ran on the normal ReactAgent/MCP path, but the score and all six evaluator outcomes were unchanged at 0.5. It read back service=null yet incorrectly declared the incident complete and made no corrective mutation. The mechanism is product-authentic and generalizable rather than benchmark-shaped, but this implementation is consumed yet too weak, adds latency and step-limit risk, and does not improve the broader completion-integrity scenario.",
+    "insufficient rollout budget to complete regression validation: remaining=1, required=2",
+    "Stopped before turn 18: remaining rollout budget 1 is insufficient for anchor validation requiring 2 rollouts.",
+    "Skipped final touched-environment evaluation as requested."
+  ],
+  "warnings": [
+    "Environment .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_143555_095_97d7df7d_ece487bd appears lexically overconstrained: the recorded phrase \"until service is restored\" expresses the requested restoration outcome, but the verifier additionally requires the substring \"achieve.\" RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_171924_336_ad5a67e3_af252cf6 expects USER_004 as “me,” although the materialized prompt, transcript, and available tools expose no authenticated-user identity. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "In .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20260115_201951_323_391f1eff_659b9dae, the notification evaluator label expects an alert sent to Carlos, while the user explicitly requests notification of the assigned user, Elena; both runs followed the user request and failed that evaluator. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251219_081545_939_99ba2325_887f5580 passed because evaluators inspect final state, but its transcript contains a transient prohibited CI link and an inaccurate final claim that the link never occurred. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "In .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20260115_064627_351_66392a82_cd4009dd, the successful baseline used resolution_code=\"Solution Provided\" despite the policy enumerating only fixed, workaround, not_reproducible, and closed_by_caller, creating a policy/evaluator conflict. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "The evaluator for .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251219_111409_528_c5ca08eb_db61cf35 is polarity-inverted: its SQL counts missing or incorrect linkage and expects 1, although the tool result confirms correct linkage and therefore returns 0. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "The environment .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251220_074606_220_0be70e35_6bb33392 contains conflicting criteria: its request and policy support email, critical priority, and a critical-priority SLA, while its evaluators require phone, high priority, and SLA_002. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "The policy in .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251221_222834_884_97d7df7d_c088062a requires confirmed requester roles but supplies no visible requester identity, while also prohibiting clarification and expecting execution. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Benchmark eog, sample-0 expects USER_001 as the owner, but the supplied prompt and runtime expose no explicit authenticated requester identity; that expectation conflicts with the policy against assuming identities. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Optimizer compaction dropped 5 managed bullets from tag `eog-tools::domain.itsm` memory to fit its 2000-byte managed-section budget. Review it with `relai memory read tag eog-tools::domain.itsm`.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251223_153021_454_66392a82_0d6d8897 asks for incidents to be “closed,” while its evaluator requires status=resolved; the policy partially resolves this by reserving closure for an automatic 72-hour transition, but the wording remains misleading. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20260112_181636_272_c4ad7a70_c9cdfa29 has conflicting caller identity text: the evaluator description names USER_004, while its SQL requires USER_001. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20260113_151550_104_a8eea1c0_7e9733a5 is under-specified: the prompt says \"my phone\" without exposing an authenticated requester identity, while the evaluator requires Joanne Simpson; it also requires a specific short description not uniquely dictated by the prompt. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Optimizer compaction dropped 5 managed bullets from tag `eog-tools::domain.itsm` memory to fit its 2000-byte managed-section budget. Review it with `relai memory read tag eog-tools::domain.itsm`."
+  ],
+  "final_evaluation_summary": null,
+  "pr_summary": {
+    "run_id": "optimizer-1792373986-957869000",
+    "selector": "explicit-environments",
+    "accepted_updates": 3,
+    "accepted_turn_indices": [
+      4,
+      6,
+      10
+    ],
+    "summary": "Accepted optimizer changes improved the agent on the evaluated environments.",
+    "motivating_environment_paths": [
+      ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_143555_095_97d7df7d_ece487bd",
+      ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_193035_592_391f1eff_5293f595",
+      ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251221_222834_884_97d7df7d_c088062a"
+    ],
+    "regression_environment_paths": [
+      ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_055646_898_97d7df7d_be7218cc",
+      ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251219_081545_939_99ba2325_887f5580",
+      ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20260115_201951_323_391f1eff_659b9dae"
+    ],
+    "risks_or_open_questions": [],
+    "accepted_turns": [
+      {
+        "turn_index": 4,
+        "tags": [
+          "eog-tools::task.itsm.v1.task_20251218_143555_095_97d7df7d_ece487bd"
+        ],
+        "motivating_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_143555_095_97d7df7d_ece487bd"
+        ],
+        "targeted_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_143555_095_97d7df7d_ece487bd"
+        ],
+        "deferred_environment_paths": [],
+        "change_title": "Add persistent mutation-fidelity guidance",
+        "change_summary": "Added generic mutation-fidelity guidance to ReactAgent’s persistent system context before the user message. The runner calls ReactAgent.run, and every ReAct iteration reuses this context.\n\nUpdated prompt-assembly assertions to preserve prompt ordering and verify guidance delivery. Self-review matched the approved scope; tests were not run per instruction.",
+        "diagnosis_summary": "The active ReactAgent preserved most constraints but semantically compressed one user-specified outcome clause when constructing the problem statement. The mutation succeeded, yet omitted the distinct concept that restoration must be achieved.",
+        "chosen_plan_summary": "Augment ReactAgent's persistent system context with a concise execution protocol requiring it to retain a checklist of all user-specified constraints, preserve distinct clauses in generated free-text fields, and reread the original request before issuing each state-changing tool call.",
+        "anchor_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_143555_095_97d7df7d_ece487bd",
+              "environment_description": "",
+              "score_before": 1.0,
+              "score_after": 1.0,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.75,
+          "aggregate_score_after": 1.0,
+          "aggregate_score_delta": 0.25,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_target_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_055646_898_97d7df7d_be7218cc"
+        ],
+        "regression_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_055646_898_97d7df7d_be7218cc",
+              "environment_description": "",
+              "score_before": 0.5,
+              "score_after": 0.5,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.25,
+          "aggregate_score_after": 0.75,
+          "aggregate_score_delta": 0.5,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_selection_failure_reason": "",
+        "anchor_decision_summary": "Keep. The generic fidelity guidance was consumed on the active ReactAgent path, and the changed create_problem call preserved the previously omitted outcome clause, improving the initial anchor from 0.5 to 1.0. Recheck results were 1.0 for both versions, so causality is not definitive, but the aggregate favored the candidate. The change is in-scope, mechanism-level, reusable for multi-constraint mutations, and preserves the existing ReAct/MCP product and simulator structure.",
+        "regression_decision_summary": "Keep. The generic fidelity prompt is on the normal ReactAgent path and preserves product boundaries. The anchor improved from 0.5 to 1.0 and remained at 1.0 on recheck. The regression improved once and was unchanged at 0.5 on recheck, indicating volatility but no degradation. This plausibly supports broader multi-clause mutation fidelity, though causal efficacy remains uncertain.",
+        "risks_or_open_questions": []
+      },
+      {
+        "turn_index": 6,
+        "tags": [
+          "eog-tools::task.itsm.v1.task_20251218_193035_592_391f1eff_5293f595"
+        ],
+        "motivating_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_193035_592_391f1eff_5293f595"
+        ],
+        "targeted_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_193035_592_391f1eff_5293f595"
+        ],
+        "deferred_environment_paths": [],
+        "change_title": "Require mutation postcondition verification",
+        "change_summary": "Strengthened mutation guidance in `ReactAgent.run` to derive, apply, and verify policy-required postconditions before completion. The runner constructs/uses `ReactAgent`, which appends this guidance to the environment policy before the first model call.\n\nUpdated `tests/test_agent.py` to assert the full protocol and prompt placement. Self-review matched the approved scope; tests were not run per instruction.",
+        "diagnosis_summary": "The active ReAct agent executed the requested mutation but failed to enforce and verify a policy-derived dependent postcondition: after setting urgency to high, it observed priority remained high yet completed instead of correcting it to critical.",
+        "chosen_plan_summary": "Strengthen the in-path execution-fidelity guidance so the agent derives policy-implied postconditions, supplies writable dependent fields when necessary, compares mutation results against those postconditions, and performs a corrective mutation or read-back before completing.",
+        "anchor_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251218_193035_592_391f1eff_5293f595",
+              "environment_description": "",
+              "score_before": 0.0,
+              "score_after": 1.0,
+              "score_delta": 1.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.25,
+          "aggregate_score_after": 0.75,
+          "aggregate_score_delta": 0.5,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_target_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20260115_201951_323_391f1eff_659b9dae"
+        ],
+        "regression_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20260115_201951_323_391f1eff_659b9dae",
+              "environment_description": "",
+              "score_before": 0.0,
+              "score_after": 0.0,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.0,
+          "aggregate_score_after": 0.0,
+          "aggregate_score_delta": 0.0,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_selection_failure_reason": "",
+        "anchor_decision_summary": "Keep. The normal ReactAgent system prompt consumed the generic postcondition protocol, and both after-runs explicitly sent urgency=high with policy-derived priority=critical through update_incident, unlike both before-runs. The completed recheck passed all evaluators. This is an in-path, mechanism-level improvement to policy-consistent mutations, not a benchmark-specific subsystem, and it preserves the existing ReAct/MCP product structure.",
+        "regression_decision_summary": "Keep. The generic protocol was consumed on the normal ReactAgent path and durably fixed the anchor's policy-derived priority postcondition. The regression path already supplied priority=critical before and after, remained behaviorally equivalent at 0.0, and shows no attributable degradation. This authentically improves broader policy-compliant mutation reliability rather than adding a benchmark-specific subsystem.",
+        "risks_or_open_questions": []
+      },
+      {
+        "turn_index": 10,
+        "tags": [
+          "eog-tools::task.itsm.v1.task_20251221_222834_884_97d7df7d_c088062a"
+        ],
+        "motivating_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251221_222834_884_97d7df7d_c088062a"
+        ],
+        "targeted_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251221_222834_884_97d7df7d_c088062a"
+        ],
+        "deferred_environment_paths": [],
+        "change_title": "Clarify lookup and requester-role handling",
+        "change_summary": "- Added lookup-first ambiguity and requester-role guidance in `ReactAgent.run`’s appended system prompt.\n- This prompt is assembled on every simulator/runtime call, including cached-agent paths, so the model consumes it before acting.\n- Updated prompt-composition coverage. Self-review matched the approved scope; tests were not run as instructed.",
+        "diagnosis_summary": "The agent over-weighted policy ambiguity and requester-role language, refusing before any MCP lookup despite explicit instructions to resolve missing identifiers through tools.",
+        "chosen_plan_summary": "Revise the guidance appended by ReactAgent so safe, read-only discovery must precede ambiguity refusal, with explicit precedence rules for missing identifiers, descriptive references, and requester-role uncertainty.",
+        "anchor_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251221_222834_884_97d7df7d_c088062a",
+              "environment_description": "",
+              "score_before": 0.6666666666666666,
+              "score_after": 0.6666666666666666,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.3333333333333333,
+          "aggregate_score_after": 0.6666666666666666,
+          "aggregate_score_delta": 0.3333333333333333,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_target_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251219_081545_939_99ba2325_887f5580"
+        ],
+        "regression_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/itsm/v1/task_20251219_081545_939_99ba2325_887f5580",
+              "environment_description": "",
+              "score_before": 1.0,
+              "score_after": 1.0,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 1.0,
+          "aggregate_score_after": 1.0,
+          "aggregate_score_delta": 0.0,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_selection_failure_reason": "",
+        "anchor_decision_summary": "Keep. The in-path prompt change produced lookup-first behavior in both candidate runs, eliminating the observed premature refusal and yielding a stable 0.667 versus a volatile baseline aggregate. It is a general, mechanism-level ReAct guidance improvement within the existing product structure. The notification wording failure is residual and unchanged on recheck.",
+        "regression_decision_summary": "Keep. The normal ReAct prompt consumed the general lookup-first guidance, repeatedly removed the anchor’s premature refusal, and improved descriptive ITSM task execution. The regression remained 1.0: the agent performed lookups and compliant actions while still refusing the prohibited retired-CI link. The remaining anchor notification failure is unchanged semantic wording weakness, not regression spillover.",
+        "risks_or_open_questions": []
+      }
+    ]
+  },
+  "optimization_report": {
+    "changes": [
+      {
+        "title": "Add persistent mutation-fidelity guidance"
+      },
+      {
+        "title": "Require mutation postcondition verification"
+      },
+      {
+        "title": "Clarify lookup and requester-role handling"
+      }
+    ],
+    "title": "Strengthen ReactAgent execution guidance",
+    "summary": "Improved ReactAgent’s persistent system guidance to make tool-driven actions more reliable.\n\n- Reinforced mutation fidelity and verification of required postconditions.\n- Added lookup-first handling for ambiguity and requester roles.\n- Expanded prompt-composition assertions to verify guidance placement and delivery.\n\nThe changes improved the targeted failing outcome while preserving results in the other evaluated scenarios. Tests were not run as instructed.",
+    "inconsistency": ""
+  },
+  "pr_title": "Strengthen ReactAgent execution guidance",
+  "pr_description": "Accepted optimizer changes improved the agent on the evaluated environments.\n\n## Change 1 of 3: Add persistent mutation-fidelity guidance\n\n**Summary**\n\nAdded generic mutation-fidelity guidance to ReactAgent’s persistent system context before the user message. The runner calls ReactAgent.run, and every ReAct iteration reuses this context.\n\nUpdated prompt-assembly assertions to preserve prompt ordering and verify guidance delivery. Self-review matched the approved scope; tests were not run per instruction.\n\n**Training environments**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251218_143555_095_97d7df7d_ece487bd` |  | 100% | 100% | (+0%) |\n\n**Regression controls**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251218_055646_898_97d7df7d_be7218cc` |  | 50% | 50% | (+0%) |\n\n## Change 2 of 3: Require mutation postcondition verification\n\n**Summary**\n\nStrengthened mutation guidance in `ReactAgent.run` to derive, apply, and verify policy-required postconditions before completion. The runner constructs/uses `ReactAgent`, which appends this guidance to the environment policy before the first model call.\n\nUpdated `tests/test_agent.py` to assert the full protocol and prompt placement. Self-review matched the approved scope; tests were not run per instruction.\n\n**Training environments**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251218_193035_592_391f1eff_5293f595` |  | 0% | 100% | (+100%) |\n\n**Regression controls**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20260115_201951_323_391f1eff_659b9dae` |  | 0% | 0% | (+0%) |\n\n## Change 3 of 3: Clarify lookup and requester-role handling\n\n**Summary**\n\n- Added lookup-first ambiguity and requester-role guidance in `ReactAgent.run`’s appended system prompt.\n- This prompt is assembled on every simulator/runtime call, including cached-agent paths, so the model consumes it before acting.\n- Updated prompt-composition coverage. Self-review matched the approved scope; tests were not run as instructed.\n\n**Training environments**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251221_222834_884_97d7df7d_c088062a` |  | 67% | 67% | (+0%) |\n\n**Regression controls**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251219_081545_939_99ba2325_887f5580` |  | 100% | 100% | (+0%) |\n"
+}

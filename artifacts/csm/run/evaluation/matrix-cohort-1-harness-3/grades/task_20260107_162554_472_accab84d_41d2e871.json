@@ -1,0 +1,202 @@
+{
+  "task_id": "task_20260107_162554_472_accab84d_41d2e871",
+  "score": 0.0,
+  "solved": false,
+  "n_passed": 0,
+  "n_total": 8,
+  "per_verifier": [
+    {
+      "name": "Verify Case 1233 Created (David Ramirez - Tomcat 9 Variant 12)",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case 1234 Created (Alexis Torres - Tomcat 9 Variant 32)",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": " Verify Case 1233 Response SLA (SLA 2)",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case 1233 Resolution SLA (SLA 7)",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case 1234 Response SLA (SLA 2)",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case 1234 Resolution SLA (SLA 7)",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case 1233 Linked to KB 18",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Case 1234 Linked to KB 77",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_4bff585921a9464c",
+    "task_id": "task_20260107_162554_472_accab84d_41d2e871",
+    "overall_success": false,
+    "pass_rate": 0.0,
+    "n_passed": 0,
+    "n_total": 8,
+    "per_verifier": [
+      {
+        "name": "Verify Case 1233 Created (David Ramirez - Tomcat 9 Variant 12)",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case 1234 Created (Alexis Torres - Tomcat 9 Variant 32)",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": " Verify Case 1233 Response SLA (SLA 2)",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case 1233 Resolution SLA (SLA 7)",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case 1234 Response SLA (SLA 2)",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case 1234 Resolution SLA (SLA 7)",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case 1233 Linked to KB 18",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Case 1234 Linked to KB 77",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 559.141774892807,
+  "total_tokens": 395852,
+  "n_steps": 23,
+  "trace_path": "command-agent/tasks/eog-task_20260107_162554_472_accab84d_41d2e871-344ab79e/output/trace.json",
+  "agent_commit": "e16f4716aa3c543c8bcc7891e11e0481b3ff96e4",
+  "graded_at": "2026-10-15T08:02:51.314858+00:00",
+  "source": "checkpointed_evaluation"
+}

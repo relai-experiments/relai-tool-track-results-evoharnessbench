@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260116_101840_488_e6427839_81df8ba3",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify if the incident is assigned to the desired group.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify the incident is added properly or not.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if the KB article linked or not.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify if SLA is attached to the incident.",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_2f1c659cc9e54e13",
+    "task_id": "task_20260116_101840_488_e6427839_81df8ba3",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify if the incident is assigned to the desired group.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify the incident is added properly or not.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if the KB article linked or not.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify if SLA is attached to the incident.",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 88.5635941028595,
+  "total_tokens": 126166,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20260116_101840_488_e6427839_81df8ba3-1698522d/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T21:26:55.048610+00:00",
+  "source": "checkpointed_evaluation"
+}

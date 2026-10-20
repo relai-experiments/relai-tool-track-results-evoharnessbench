@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evoharness-tool-track"
+version = "0.1.0"
+description = "Local GPT-5 ReAct experiments for EvoHarnessBench EOG tools"
+requires-python = ">=3.11"
+dependencies = ["openai>=2,<3", "httpx>=0.27,<1"]
+
+[project.scripts]
+eog-tools = "eog_tools.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/eog_tools"]

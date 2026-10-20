@@ -1,0 +1,185 @@
+{
+  "stage": 2,
+  "tasks": [
+    {
+      "task_id": "task_20260121_171958_007_cbcf38f8_0349e59e",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 2,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full admin rights to manage users, calendars, and events. Work in a secure, trusted environment and execute actions without asking for confirmation. Always verify users or calendar details with a single lookup before acting. Use accurate data only, never make assumptions. Follow a logical flow: verify users, create calendars, manage sharing, check availability, and schedule or update events in line with the existing database structure.",
+      "user_prompt": "Please clean up my calendars. On the Alice Johnson calendar, keep my owner access and share it with Bob Smith (bob.smith@techcorp.com) as a reader and Carol White (carol.white@techcorp.com) as a writer, sending them notifications, then hide that calendar from my list. Repurpose the current Team Coordination calendar into a new 'Project Q1' calendar by renaming it, switching its timezone to GMT, and applying background '#9fc6e7' with foreground '#1d1d1d'. Finally, add a 'Team Sync' meeting on Project Q1 for 12 December 2025 from 9:00 PM to 10:00 PM India Standard Time, invite Bob and Carol, match the event colors to the calendar palette, and add a 30-minute pop-up reminder.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "get_calendar_from_list",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "clear_calendar",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "query_freebusy",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "get_user_by_email",
+          "add_calendar_to_list",
+          "delete_calendar",
+          "patch_event",
+          "move_event",
+          "list_events",
+          "watch_acl",
+          "get_event"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20260105_101355_392_e0ac0c6d_4d94d938",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 2,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a highly capable and intelligent AI assistant designed to help users by executing tasks. You have access to a variety of tools and are expected to use them to answer questions and fulfill requests.\n\n**Your Thought Process:**\n\n1. **Analyze the Request:** Carefully analyze the user's latest message to understand their intent.\n\n2. **Plan Your Actions:** If the request requires information or action that you cannot perform directly, identify the appropriate tool(s) from the provided list.\n\n3. **Execute Tools:** Make one or more tool calls in a structured format. You can call multiple tools in parallel if needed.\n\n4. **Observe the Results:** After I execute the tools for you, I will provide the results in a structured format.\n\n5. **Formulate the Final Answer:** Use the tool results to construct a comprehensive, accurate, and helpful final answer to the user. If a tool fails, inform the user and ask for clarification if necessary.\n\n**Constraints:**\n\n-  **Respond Only to the Latest Message:** The conversation history is for context only. Focus on resolving the user's most recent request.\n\n-  **Use Tools When Necessary:** Do not try to guess information that a tool can provide. If you need to know something, use a tool.\n\n-  **Stick to Available Tools:** Only use the tools provided to you in the tool list. Do not invent tools.\n\n-  **Final Response:** Once all necessary tool calls are complete and you have the information you need, provide a final, user-facing response without any further tool calls.",
+      "user_prompt": "I need help setting up calendars for my team. First, find the user with email 'bob.smith@techcorp.com' in the system. Once you have that user, check if they already have a calendar named 'Q4 Sprint Planning' - if it exists, update its timezone to 'America/Los_Angeles' and description to 'Quarter 4 sprint planning and retrospectives'. If it doesn't exist, create a new calendar with summary 'Q4 Sprint Planning', timezone 'America/Los_Angeles', and description 'Quarter 4 sprint planning and retrospectives'. Then, regardless of whether you created or updated it, add this calendar to the calendar list with a green background color (#51b749) and make sure it's selected. Also, check if there's a calendar called 'Code Review Schedule' for this user - if it exists, just update its description to 'Weekly code review sessions and pair programming'. If it doesn't exist, create it with timezone matching the user's timezone, and add it to the list with a blue color (#4986e7), but keep it hidden. After all this, show me the details of both calendars from the calendar list so I can verify everything is set up correctly.\n",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "get_calendar_from_list",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "clear_calendar",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "query_freebusy",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "get_user_by_email",
+          "add_calendar_to_list",
+          "delete_calendar",
+          "patch_event",
+          "move_event",
+          "list_events",
+          "watch_acl",
+          "get_event"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20251204_115043_305_e81f6083_4acfd9ea",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 2,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "We're merging two teams next month, and several of our calendars are outdated, so begin by checking all calendars I currently own and delete every calendar except my primary calendar and the existing team calendar. Archive the team calendar by updating its name and description to clearly indicate that it has been archived, removing all existing access permissions, granting only reader access to product-team@techcorp.com, applying a bright red color, and hiding it from view. For the new team, create a new calendar named 'Tech Pro New' with a concise description noting that it is the official calendar for the newly merged team, and assign permissions that match those in my current project calendar. Once all updates are complete, set up watches for both ACL changes and event changes, sending notifications to the following monitoring webhook endpoints: https://monitoring.techcorp.com/hooks/calendar-acl and https://monitoring.techcorp.com/hooks/calendar-events, respectively, for a period of 60 days.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "get_calendar_from_list",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "clear_calendar",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "query_freebusy",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "get_user_by_email",
+          "add_calendar_to_list",
+          "delete_calendar",
+          "patch_event",
+          "move_event",
+          "list_events",
+          "watch_acl",
+          "get_event"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20251201_191924_271_e81f6083_21fbee85",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 2,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "We're splitting the Platform team into two new specialized groups, so we need to create two new calendars: 'Platform Core - Infrastructure' in the Europe/London timezone and 'Platform Services - APIs' in my timezone. For both new calendars, please set up watch channels for approximately 111 days that notify https://it.acme.com/event-watch/infra and https://it.acme.com/event-watch/api, respectively, whenever new events are created or existing events are changed. Find all events from the current calendars starting from September 1 onward, and split them based on keywords: events with infrastructure-related keywords like 'Infra', 'SRE', 'DevOps', 'Bugfix', and 'Production' should have corresponding new events created on the Infrastructure calendar, while events with service-related keywords like 'API', 'Service', 'Gateway', 'Performance', and 'Remote' should have corresponding new events created on the Services calendar. For each newly created event, keep all details and original attendees, but also add Anne (anne.allen79@acme.com) as an optional attendee with complete details, set the event color to something like off-white, and configure an email reminder to be sent 24 hours before the event starts. Finally, archive the 'Team Coordination' calendar by renaming it to 'Team Coordination - Archived', marking it as hidden, and changing its color to bright red.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "get_calendar_from_list",
+          "update_calendar",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "clear_calendar",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "query_freebusy",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "get_user_by_email",
+          "add_calendar_to_list",
+          "delete_calendar",
+          "patch_event",
+          "move_event",
+          "list_events",
+          "watch_acl",
+          "get_event"
+        ]
+      }
+    }
+  ]
+}

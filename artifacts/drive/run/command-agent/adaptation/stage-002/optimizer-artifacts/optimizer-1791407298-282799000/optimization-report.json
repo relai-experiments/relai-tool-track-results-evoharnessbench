@@ -1,0 +1,13 @@
+{
+  "changes": [
+    {
+      "title": "Audit premature tool-free finalization"
+    },
+    {
+      "title": "Plan obligations and audit tool evidence"
+    }
+  ],
+  "title": "Improve ReactAgent planning and finalization",
+  "summary": "Strengthens `ReactAgent.run` to reduce premature or incomplete task completion.\n\n- Adds a bounded actionability audit and stronger resource discovery guidance.\n- Adds obligation and channel planning with dynamic tool-evidence audits, including corrective re-audits.\n- Improves one motivating task while preserving regression outcomes.\n- Adds focused regression coverage; tests were not run per instruction.",
+  "inconsistency": ""
+}

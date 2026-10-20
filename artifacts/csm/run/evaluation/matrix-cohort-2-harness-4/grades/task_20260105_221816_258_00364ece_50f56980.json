@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260105_221816_258_00364ece_50f56980",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Validating case count.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 5,
+      "actual": 4,
+      "comparison_type": "less_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating case reassignment. ",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating membership.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating notification.",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_c03959a457604040",
+    "task_id": "task_20260105_221816_258_00364ece_50f56980",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Validating case count.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 5,
+        "actual": 4,
+        "comparison_type": "less_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating case reassignment. ",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating membership.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating notification.",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 155.24965715408325,
+  "total_tokens": 178451,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20260105_221816_258_00364ece_50f56980-e2575687/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T04:14:36.838227+00:00",
+  "source": "checkpointed_evaluation"
+}

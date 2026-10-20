@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20251223_064316_340_01395ded_9c6f3e01",
+  "score": 0.25,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Payroll Outage Incident Created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Previous Ticket Resolved",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Regional Manager Notified",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Stephanie Notified Of Actions",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_89beed7456094ee8",
+    "task_id": "task_20251223_064316_340_01395ded_9c6f3e01",
+    "overall_success": false,
+    "pass_rate": 0.25,
+    "n_passed": 1,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Payroll Outage Incident Created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Previous Ticket Resolved",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Regional Manager Notified",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Stephanie Notified Of Actions",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 315.7647387981415,
+  "total_tokens": 166681,
+  "n_steps": 7,
+  "trace_path": "command-agent/tasks/eog-task_20251223_064316_340_01395ded_9c6f3e01-1f433adb/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-19T23:56:12.972524+00:00",
+  "source": "checkpointed_evaluation"
+}

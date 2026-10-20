@@ -1,0 +1,10 @@
+{
+  "domain": "csm",
+  "limit": null,
+  "matrix": true,
+  "total_rollouts": 50,
+  "training_pool": "cumulative",
+  "optimize_timeout_minutes": 20000,
+  "adapt_timeout_minutes": 20001,
+  "task_timeout_minutes": 30
+}

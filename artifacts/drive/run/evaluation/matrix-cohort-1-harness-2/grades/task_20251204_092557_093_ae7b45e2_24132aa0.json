@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20251204_092557_093_ae7b45e2_24132aa0",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify Technical Spec File Exists",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Alex Rodriguez Permission Updated to Writer",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Sarah Johnson Permission Updated to Writer",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify Audit Comments Added",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 5,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_4f85a0896b0c4f74",
+    "task_id": "task_20251204_092557_093_ae7b45e2_24132aa0",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify Technical Spec File Exists",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Alex Rodriguez Permission Updated to Writer",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Sarah Johnson Permission Updated to Writer",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify Audit Comments Added",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 5,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 160.44737005233765,
+  "total_tokens": 116743,
+  "n_steps": 8,
+  "trace_path": "command-agent/tasks/eog-task_20251204_092557_093_ae7b45e2_24132aa0-40ec4674/output/trace.json",
+  "agent_commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+  "graded_at": "2026-10-08T14:58:07.264727+00:00",
+  "source": "checkpointed_evaluation"
+}

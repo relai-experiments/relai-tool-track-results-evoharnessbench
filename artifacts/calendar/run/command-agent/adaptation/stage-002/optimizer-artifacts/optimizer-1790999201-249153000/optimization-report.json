@@ -1,0 +1,13 @@
+{
+  "changes": [
+    {
+      "title": "Add fallback for yearless date searches"
+    },
+    {
+      "title": "Reconcile ambiguous writes before retrying"
+    }
+  ],
+  "title": "Improve calendar search and write recovery",
+  "summary": "Improved calendar reliability while preserving existing behavior in regression checks.\n\n- Added a bounded alternate search when yearless-date retrievals return empty.\n- Added read-based reconciliation for ambiguous writes and lifecycle-field copy guidance before retries.\n- Updated focused prompt and agent-loop assertions; tests were not run as instructed.",
+  "inconsistency": ""
+}

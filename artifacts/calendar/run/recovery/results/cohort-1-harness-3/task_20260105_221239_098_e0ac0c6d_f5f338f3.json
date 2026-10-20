@@ -1,0 +1,162 @@
+{
+  "task_id": "task_20260105_221239_098_e0ac0c6d_f5f338f3",
+  "cohort": 1,
+  "at_stage": 3,
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-03T22:24:22.172642+00:00",
+  "pass_rate": 1.0,
+  "overall_success": true,
+  "n_passed": 6,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Calendar List Retrieved",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Project Management Calendar Visible and Selected",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Calendar Description Updated",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Q4 Hiring Kickoff Event Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Technical Screen Planning Event Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Hiring Pipeline Review Event Created",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_0c5babd52f4c419d",
+    "task_id": "task_20260105_221239_098_e0ac0c6d_f5f338f3",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 6,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Calendar List Retrieved",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Project Management Calendar Visible and Selected",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Calendar Description Updated",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Q4 Hiring Kickoff Event Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Technical Screen Planning Event Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Hiring Pipeline Review Event Created",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 65.81396508216858,
+  "total_tokens": 68951,
+  "n_steps": 4,
+  "trace_path": "command-agent/tasks/eog-task_20260105_221239_098_e0ac0c6d_f5f338f3-5efb347b/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

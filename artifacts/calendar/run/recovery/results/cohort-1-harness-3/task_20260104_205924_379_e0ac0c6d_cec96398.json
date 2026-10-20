@@ -1,0 +1,162 @@
+{
+  "task_id": "task_20260104_205924_379_e0ac0c6d_cec96398",
+  "cohort": 1,
+  "at_stage": 3,
+  "agent_commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+  "graded_at": "2026-10-03T23:46:33.093777+00:00",
+  "pass_rate": 0.5,
+  "overall_success": false,
+  "n_passed": 3,
+  "n_total": 6,
+  "per_verifier": [
+    {
+      "name": "Calendar List Retrieved",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 3,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Events Listed on Project Management Calendar",
+      "passed": false,
+      "score": 0.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Sprint Planning Event Moved to Primary Calendar",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Sprint Planning Description Updated",
+      "passed": true,
+      "score": 1.0,
+      "expected": 0,
+      "actual": 1,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Q4 Roadmap Review Meeting Created",
+      "passed": false,
+      "score": 0.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Team Sync-Up Event Listed Before Delete",
+      "passed": false,
+      "score": 0.0,
+      "expected": 0,
+      "actual": 0,
+      "comparison_type": "greater_than",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_5f79a1d99d894593",
+    "task_id": "task_20260104_205924_379_e0ac0c6d_cec96398",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 3,
+    "n_total": 6,
+    "per_verifier": [
+      {
+        "name": "Calendar List Retrieved",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 3,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Events Listed on Project Management Calendar",
+        "passed": false,
+        "score": 0.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Sprint Planning Event Moved to Primary Calendar",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Sprint Planning Description Updated",
+        "passed": true,
+        "score": 1.0,
+        "expected": 0,
+        "actual": 1,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Q4 Roadmap Review Meeting Created",
+        "passed": false,
+        "score": 0.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Team Sync-Up Event Listed Before Delete",
+        "passed": false,
+        "score": 0.0,
+        "expected": 0,
+        "actual": 0,
+        "comparison_type": "greater_than",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "execution_mode": null,
+  "agent_s": 251.936044216156,
+  "total_tokens": 241717,
+  "n_steps": 11,
+  "trace_path": "command-agent/tasks/eog-task_20260104_205924_379_e0ac0c6d_cec96398-bed8a06a/output/trace.json",
+  "source": "recovery_evaluation",
+  "exact": true
+}

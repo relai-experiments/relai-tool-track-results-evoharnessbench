@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260121_145409_648_1afb323a_4e203caa",
+  "score": 0.0,
+  "solved": false,
+  "n_passed": 0,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify Contract",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify SLA definitions response",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify entitlement",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify SLA definitions resolution",
+      "passed": false,
+      "score": 0.0,
+      "expected": "1",
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_0f6e4b99a09045f3",
+    "task_id": "task_20260121_145409_648_1afb323a_4e203caa",
+    "overall_success": false,
+    "pass_rate": 0.0,
+    "n_passed": 0,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify Contract",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify SLA definitions response",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify entitlement",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify SLA definitions resolution",
+        "passed": false,
+        "score": 0.0,
+        "expected": "1",
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 1185.0679168701172,
+  "total_tokens": 2407406,
+  "n_steps": 50,
+  "trace_path": "command-agent/tasks/eog-task_20260121_145409_648_1afb323a_4e203caa-48016eda/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T09:57:31.392117+00:00",
+  "source": "checkpointed_evaluation"
+}

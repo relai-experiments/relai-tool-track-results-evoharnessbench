@@ -1,0 +1,114 @@
+{
+  "task_id": "task_20260106_144651_681_4d9df647_72f9f11e",
+  "score": 0.75,
+  "solved": false,
+  "n_passed": 3,
+  "n_total": 4,
+  "per_verifier": [
+    {
+      "name": "Verify Access Proposal for \"Social Media Assets\" is ACCEPTED",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": " Verify Access Proposal for \"Product Designs\" is ACCEPTED ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Verify \"Marketing Strategy\" Label Updates (Workflow Status: in_progress)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": " Verify \"Engineering Diagram\" Label Updates (Security Classification: highly_confidential AND Region: Middle East)",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_5ed6c8233ba04031",
+    "task_id": "task_20260106_144651_681_4d9df647_72f9f11e",
+    "overall_success": false,
+    "pass_rate": 0.75,
+    "n_passed": 3,
+    "n_total": 4,
+    "per_verifier": [
+      {
+        "name": "Verify Access Proposal for \"Social Media Assets\" is ACCEPTED",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": " Verify Access Proposal for \"Product Designs\" is ACCEPTED ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Verify \"Marketing Strategy\" Label Updates (Workflow Status: in_progress)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": " Verify \"Engineering Diagram\" Label Updates (Security Classification: highly_confidential AND Region: Middle East)",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 171.38454389572144,
+  "total_tokens": 359544,
+  "n_steps": 10,
+  "trace_path": "command-agent/tasks/eog-task_20260106_144651_681_4d9df647_72f9f11e-c0ad761e/output/trace.json",
+  "agent_commit": "b7107a964f0a1127921387a828893d32ea10f511",
+  "graded_at": "2026-10-09T01:08:06.381361+00:00",
+  "source": "checkpointed_evaluation"
+}

@@ -1,0 +1,762 @@
+{
+  "schema_version": 1,
+  "benchmark": "EvoHarnessBench EOG tool track",
+  "metric": "mean per-task verifier fraction",
+  "runs": [
+    {
+      "domain": "calendar",
+      "run_id": "20261002T195831Z-59fddc8d",
+      "source_report": "recovery/report.json",
+      "imported_report": "artifacts/calendar/run/recovery/report.json",
+      "initial_commit": "6ddea6694ecbcbbe4da0ee1942aaefa26244d33c",
+      "initial_source_snapshot": "agent_versions/initial",
+      "stages": [
+        {
+          "stage": 1,
+          "commit": "e59de15f45c4a35780ce6a163e9111e80141db28",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1790971129"
+          ],
+          "selected_training_tasks": 12,
+          "training_tasks_by_stage": {
+            "1": 12
+          },
+          "status": "command-agent/adaptation/stage-001/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1790971168-156516000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-1-3b5ab445db1c4d58b0b0aa0676e59242.json",
+          "source_snapshot": "agent_versions/stage-001"
+        },
+        {
+          "stage": 2,
+          "commit": "3969c5186f50e6e1dadb9dc81a4d3ff4eec7bf00",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1790999179"
+          ],
+          "selected_training_tasks": 16,
+          "training_tasks_by_stage": {
+            "1": 12,
+            "2": 4
+          },
+          "status": "command-agent/adaptation/stage-002/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1790999201-249153000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-2-7c9a3a486db24a87a531a077d4e91174.json",
+          "source_snapshot": "agent_versions/stage-002"
+        },
+        {
+          "stage": 3,
+          "commit": "dcec6897c9598581a3d45c74642ad9fd605990a0",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1791035404"
+          ],
+          "selected_training_tasks": 18,
+          "training_tasks_by_stage": {
+            "1": 12,
+            "2": 4,
+            "3": 2
+          },
+          "status": "command-agent/adaptation/stage-003/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-003/optimizer-artifacts/optimizer-1791035426-823583000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-3-52550ec34eee46b9a2f7cdbf9a716df7.json",
+          "source_snapshot": "agent_versions/stage-003"
+        }
+      ],
+      "cells": [
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 1,
+          "n_tasks": 29,
+          "n_task_grades": 0,
+          "n_checkpoint_grades": 0,
+          "accuracy": 0.727,
+          "source": "interrupted_run_terminal",
+          "exact": false,
+          "precision": "rounded_to_0.001"
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 2,
+          "n_tasks": 29,
+          "n_task_grades": 0,
+          "n_checkpoint_grades": 0,
+          "accuracy": 0.723,
+          "source": "interrupted_run_terminal",
+          "exact": false,
+          "precision": "rounded_to_0.001"
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 10,
+          "n_task_grades": 0,
+          "n_checkpoint_grades": 0,
+          "accuracy": 0.643,
+          "source": "interrupted_run_terminal",
+          "exact": false,
+          "precision": "rounded_to_0.001"
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 3,
+          "n_tasks": 29,
+          "n_task_grades": 29,
+          "n_checkpoint_grades": 29,
+          "accuracy": 0.7001642036124794,
+          "source": "recovery_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 3,
+          "n_tasks": 10,
+          "n_task_grades": 10,
+          "n_checkpoint_grades": 10,
+          "accuracy": 0.7116666666666667,
+          "source": "recovery_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 4,
+          "n_task_grades": 4,
+          "n_checkpoint_grades": 4,
+          "accuracy": 0.8214285714285714,
+          "source": "recovery_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 10,
+          "n_task_grades": 0,
+          "n_checkpoint_grades": 0,
+          "accuracy": 0.612,
+          "source": "interrupted_run_terminal",
+          "exact": false,
+          "precision": "rounded_to_0.001"
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 4,
+          "n_task_grades": 0,
+          "n_checkpoint_grades": 0,
+          "accuracy": 0.821,
+          "source": "interrupted_run_terminal",
+          "exact": false,
+          "precision": "rounded_to_0.001"
+        },
+        {
+          "kind": "final",
+          "cohort": "full",
+          "at_stage": "full",
+          "n_tasks": 43,
+          "n_task_grades": 43,
+          "n_checkpoint_grades": 43,
+          "accuracy": 0.728516057585825,
+          "source": "recovery_evaluation",
+          "exact": true,
+          "precision": null
+        }
+      ],
+      "n_unique_traces": 86
+    },
+    {
+      "domain": "drive",
+      "run_id": "20261007T124934Z-54148b3e",
+      "source_report": "report.json",
+      "imported_report": "artifacts/drive/run/report.json",
+      "initial_commit": "6ddea6694ecbcbbe4da0ee1942aaefa26244d33c",
+      "initial_source_snapshot": "agent_versions/initial",
+      "stages": [
+        {
+          "stage": 1,
+          "commit": "ce221d5c12b53d606a5aa62fc4ba2f688a14203e",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1791377404"
+          ],
+          "selected_training_tasks": 13,
+          "training_tasks_by_stage": {
+            "1": 13
+          },
+          "status": "command-agent/adaptation/stage-001/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1791377442-755149000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-1-8f497a4f544048b0b5765a3585f6d49b.json",
+          "source_snapshot": "agent_versions/stage-001"
+        },
+        {
+          "stage": 2,
+          "commit": "4d7d68d793182efde19193fef52e6e1dd9b2ec97",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1791407269"
+          ],
+          "selected_training_tasks": 17,
+          "training_tasks_by_stage": {
+            "1": 13,
+            "2": 4
+          },
+          "status": "command-agent/adaptation/stage-002/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1791407298-282799000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-2-06a9d93b9d84417896a9bbdb0a88826d.json",
+          "source_snapshot": "agent_versions/stage-002"
+        },
+        {
+          "stage": 3,
+          "commit": "b7107a964f0a1127921387a828893d32ea10f511",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1791480748"
+          ],
+          "selected_training_tasks": 19,
+          "training_tasks_by_stage": {
+            "1": 13,
+            "2": 4,
+            "3": 2
+          },
+          "status": "command-agent/adaptation/stage-003/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-003/optimizer-artifacts/optimizer-1791480869-75777000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-3-6dcc85d8360245cc927b5d1abb3f8865.json",
+          "source_snapshot": "agent_versions/stage-003"
+        }
+      ],
+      "cells": [
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 1,
+          "n_tasks": 29,
+          "n_task_grades": 0,
+          "n_checkpoint_grades": 0,
+          "accuracy": 0.706,
+          "source": "terminal_rounded",
+          "exact": false,
+          "precision": "rounded_to_0.001"
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 2,
+          "n_tasks": 29,
+          "n_task_grades": 29,
+          "n_checkpoint_grades": 29,
+          "accuracy": 0.7419129720853859,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 10,
+          "n_task_grades": 10,
+          "n_checkpoint_grades": 10,
+          "accuracy": 0.7646753246753246,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 3,
+          "n_tasks": 29,
+          "n_task_grades": 29,
+          "n_checkpoint_grades": 29,
+          "accuracy": 0.695935960591133,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 3,
+          "n_tasks": 10,
+          "n_task_grades": 10,
+          "n_checkpoint_grades": 10,
+          "accuracy": 0.8566233766233766,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 6,
+          "n_task_grades": 6,
+          "n_checkpoint_grades": 6,
+          "accuracy": 0.9444444444444445,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 10,
+          "n_task_grades": 0,
+          "n_checkpoint_grades": 0,
+          "accuracy": 0.942,
+          "source": "terminal_rounded",
+          "exact": false,
+          "precision": "rounded_to_0.001"
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 6,
+          "n_task_grades": 6,
+          "n_checkpoint_grades": 6,
+          "accuracy": 0.9166666666666666,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "last_row",
+          "cohort": -1,
+          "at_stage": "full",
+          "n_tasks": 45,
+          "n_task_grades": 45,
+          "n_checkpoint_grades": 45,
+          "accuracy": 0.769954304954305,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        }
+      ],
+      "n_unique_traces": 135
+    },
+    {
+      "domain": "csm",
+      "run_id": "20261012T154955Z-95d47fda",
+      "source_report": "report.json",
+      "imported_report": "artifacts/csm/run/report.json",
+      "initial_commit": "6ddea6694ecbcbbe4da0ee1942aaefa26244d33c",
+      "initial_source_snapshot": "agent_versions/initial",
+      "stages": [
+        {
+          "stage": 1,
+          "commit": "81dd0ccee6cbbf7fdafed8043afd4b59db4a53d3",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1791820212",
+            "relai/optimizer/selected-agent-tests-1791863066"
+          ],
+          "selected_training_tasks": 5,
+          "training_tasks_by_stage": {
+            "1": 5
+          },
+          "status": "command-agent/adaptation/stage-001/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1791820228-892540000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-1-91258e7b83144df6b7cb41f2166e1636.json",
+          "source_snapshot": "agent_versions/stage-001"
+        },
+        {
+          "stage": 2,
+          "commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1791984109"
+          ],
+          "selected_training_tasks": 12,
+          "training_tasks_by_stage": {
+            "1": 5,
+            "2": 7
+          },
+          "status": "command-agent/adaptation/stage-002/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1791984131-847615000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-2-d29666c6a3ca43b88067c876e13dad69.json",
+          "source_snapshot": "agent_versions/stage-002"
+        },
+        {
+          "stage": 3,
+          "commit": "e16f4716aa3c543c8bcc7891e11e0481b3ff96e4",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1792020457"
+          ],
+          "selected_training_tasks": 21,
+          "training_tasks_by_stage": {
+            "1": 5,
+            "2": 7,
+            "3": 9
+          },
+          "status": "command-agent/adaptation/stage-003/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-003/optimizer-artifacts/optimizer-1792020481-515766000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-3-7b75041cc09f42a5badd14bab36bbc71.json",
+          "source_snapshot": "agent_versions/stage-003"
+        },
+        {
+          "stage": 4,
+          "commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1792086918"
+          ],
+          "selected_training_tasks": 31,
+          "training_tasks_by_stage": {
+            "1": 5,
+            "2": 7,
+            "3": 9,
+            "4": 10
+          },
+          "status": "command-agent/adaptation/stage-004/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-004/optimizer-artifacts/optimizer-1792086951-803795000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-4-e475969bb3c0497ca3744472c9cb6546.json",
+          "source_snapshot": "agent_versions/stage-004"
+        }
+      ],
+      "cells": [
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 1,
+          "n_tasks": 13,
+          "n_task_grades": 13,
+          "n_checkpoint_grades": 13,
+          "accuracy": 0.5923076923076923,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 2,
+          "n_tasks": 13,
+          "n_task_grades": 13,
+          "n_checkpoint_grades": 13,
+          "accuracy": 0.46153846153846156,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 15,
+          "n_task_grades": 15,
+          "n_checkpoint_grades": 15,
+          "accuracy": 0.6933333333333334,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 3,
+          "n_tasks": 13,
+          "n_task_grades": 13,
+          "n_checkpoint_grades": 13,
+          "accuracy": 0.49615384615384617,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 3,
+          "n_tasks": 15,
+          "n_task_grades": 15,
+          "n_checkpoint_grades": 15,
+          "accuracy": 0.6333333333333333,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 20,
+          "n_task_grades": 20,
+          "n_checkpoint_grades": 20,
+          "accuracy": 0.658968253968254,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 4,
+          "n_tasks": 13,
+          "n_task_grades": 13,
+          "n_checkpoint_grades": 13,
+          "accuracy": 0.4846153846153846,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 4,
+          "n_tasks": 15,
+          "n_task_grades": 15,
+          "n_checkpoint_grades": 15,
+          "accuracy": 0.5511111111111112,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 3,
+          "at_stage": 4,
+          "n_tasks": 20,
+          "n_task_grades": 20,
+          "n_checkpoint_grades": 20,
+          "accuracy": 0.7300793650793651,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 4,
+          "at_stage": 4,
+          "n_tasks": 24,
+          "n_task_grades": 24,
+          "n_checkpoint_grades": 24,
+          "accuracy": 0.681968652692337,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 15,
+          "n_task_grades": 15,
+          "n_checkpoint_grades": 15,
+          "accuracy": 0.6477777777777778,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 20,
+          "n_task_grades": 20,
+          "n_checkpoint_grades": 20,
+          "accuracy": 0.7123015873015872,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 4,
+          "at_stage": 4,
+          "n_tasks": 24,
+          "n_task_grades": 24,
+          "n_checkpoint_grades": 24,
+          "accuracy": 0.5816397053239158,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "last_row",
+          "cohort": -1,
+          "at_stage": "full",
+          "n_tasks": 72,
+          "n_task_grades": 72,
+          "n_checkpoint_grades": 72,
+          "accuracy": 0.6442001995730066,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        }
+      ],
+      "n_unique_traces": 292
+    },
+    {
+      "domain": "itsm",
+      "run_id": "20261019T013854Z-06abfff3",
+      "source_report": "report.json",
+      "imported_report": "artifacts/itsm/run/report.json",
+      "initial_commit": "abd4ab0fbaa016085b7fba2c3fe8b5e42de23b80",
+      "initial_source_snapshot": "agent_versions/initial",
+      "stages": [
+        {
+          "stage": 1,
+          "commit": "e8b45edf1a57b416833f3c81c2a630808c3da5dd",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1792373956"
+          ],
+          "selected_training_tasks": 20,
+          "training_tasks_by_stage": {
+            "1": 20
+          },
+          "status": "command-agent/adaptation/stage-001/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-001/optimizer-artifacts/optimizer-1792373986-957869000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-1-ce72ad2203df4c2ab89430bdcd588fd7.json",
+          "source_snapshot": "agent_versions/stage-001"
+        },
+        {
+          "stage": 2,
+          "commit": "7180ebdea71247bffb1ccea42d1384d1e43d670e",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1792395880"
+          ],
+          "selected_training_tasks": 25,
+          "training_tasks_by_stage": {
+            "1": 20,
+            "2": 5
+          },
+          "status": "command-agent/adaptation/stage-002/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1792395906-791237000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-2-a1584c4c008e4590b8e6a141b70118c5.json",
+          "source_snapshot": "agent_versions/stage-002"
+        },
+        {
+          "stage": 3,
+          "commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+          "branches": [
+            "relai/optimizer/selected-agent-tests-1792423640"
+          ],
+          "selected_training_tasks": 30,
+          "training_tasks_by_stage": {
+            "1": 20,
+            "2": 5,
+            "3": 5
+          },
+          "status": "command-agent/adaptation/stage-003/status.json",
+          "optimizer_report": "command-agent/adaptation/stage-003/optimizer-artifacts/optimizer-1792423674-280641000/optimization-report.json",
+          "optimizer_result": "state/adapt-results/stage-3-5ae1d44232ca411e934fcc10a0c24f1b.json",
+          "source_snapshot": "agent_versions/stage-003"
+        }
+      ],
+      "cells": [
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 1,
+          "n_tasks": 48,
+          "n_task_grades": 48,
+          "n_checkpoint_grades": 48,
+          "accuracy": 0.6434854497354497,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 2,
+          "n_tasks": 48,
+          "n_task_grades": 48,
+          "n_checkpoint_grades": 48,
+          "accuracy": 0.596916335978836,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 12,
+          "n_task_grades": 12,
+          "n_checkpoint_grades": 12,
+          "accuracy": 0.5740079365079365,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 1,
+          "at_stage": 3,
+          "n_tasks": 48,
+          "n_task_grades": 48,
+          "n_checkpoint_grades": 48,
+          "accuracy": 0.703629298941799,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 2,
+          "at_stage": 3,
+          "n_tasks": 12,
+          "n_task_grades": 12,
+          "n_checkpoint_grades": 12,
+          "accuracy": 0.7186507936507937,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "matrix",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 13,
+          "n_task_grades": 13,
+          "n_checkpoint_grades": 13,
+          "accuracy": 0.5368131868131868,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 2,
+          "at_stage": 2,
+          "n_tasks": 12,
+          "n_task_grades": 12,
+          "n_checkpoint_grades": 12,
+          "accuracy": 0.6255952380952381,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "before_adapt",
+          "cohort": 3,
+          "at_stage": 3,
+          "n_tasks": 13,
+          "n_task_grades": 13,
+          "n_checkpoint_grades": 13,
+          "accuracy": 0.49010989010989015,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        },
+        {
+          "kind": "last_row",
+          "cohort": -1,
+          "at_stage": "full",
+          "n_tasks": 73,
+          "n_task_grades": 73,
+          "n_checkpoint_grades": 73,
+          "accuracy": 0.6118286584040009,
+          "source": "checkpointed_evaluation",
+          "exact": true,
+          "precision": null
+        }
+      ],
+      "n_unique_traces": 279
+    }
+  ]
+}

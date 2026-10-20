@@ -1,0 +1,16 @@
+{
+  "changes": [
+    {
+      "title": "Add persistent mutation-fidelity guidance"
+    },
+    {
+      "title": "Require mutation postcondition verification"
+    },
+    {
+      "title": "Clarify lookup and requester-role handling"
+    }
+  ],
+  "title": "Strengthen ReactAgent execution guidance",
+  "summary": "Improved ReactAgent’s persistent system guidance to make tool-driven actions more reliable.\n\n- Reinforced mutation fidelity and verification of required postconditions.\n- Added lookup-first handling for ambiguity and requester roles.\n- Expanded prompt-composition assertions to verify guidance placement and delivery.\n\nThe changes improved the targeted failing outcome while preserving results in the other evaluated scenarios. Tests were not run as instructed.",
+  "inconsistency": ""
+}

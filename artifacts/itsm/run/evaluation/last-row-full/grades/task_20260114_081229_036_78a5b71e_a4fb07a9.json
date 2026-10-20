@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20260114_081229_036_78a5b71e_a4fb07a9",
+  "score": 0.5,
+  "solved": false,
+  "n_passed": 1,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Existing Change Updated with Additional CI",
+      "passed": false,
+      "score": 0.0,
+      "expected": 1,
+      "actual": 0,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Change Moved Out of Implementation Phase",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_75e6ac2685ba406e",
+    "task_id": "task_20260114_081229_036_78a5b71e_a4fb07a9",
+    "overall_success": false,
+    "pass_rate": 0.5,
+    "n_passed": 1,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Existing Change Updated with Additional CI",
+        "passed": false,
+        "score": 0.0,
+        "expected": 1,
+        "actual": 0,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Change Moved Out of Implementation Phase",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 205.96474289894104,
+  "total_tokens": 139343,
+  "n_steps": 6,
+  "trace_path": "command-agent/tasks/eog-task_20260114_081229_036_78a5b71e_a4fb07a9-4244a555/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-20T02:27:41.666776+00:00",
+  "source": "checkpointed_evaluation"
+}

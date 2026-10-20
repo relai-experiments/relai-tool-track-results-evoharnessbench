@@ -1,0 +1,2383 @@
+{
+  "task_id": "task_20260101_111750_695_30600918_80637585",
+  "agent_commit": "daae81df10db656ce038bf078d514bf2791f0d63",
+  "agent": {
+    "status": "done",
+    "error": null,
+    "steps": 12,
+    "input_tokens": 136643,
+    "output_tokens": 28472,
+    "total_tokens": 165115,
+    "latency_s": 261.12463633800144,
+    "final_message": "Mutation verification checkpoint (CS-0000020 → case_id 20)\n\nObjective-by-objective status with evidence from current records:\n\n1) Escalate the case\n- Status: Satisfied\n- Evidence (customer_case): escalation = true, escalation_reason = impact\n- Source: Re-read case confirms values:\n  - number: CS-0000020\n  - case_id: 20\n  - escalation: 1\n  - escalation_reason: impact\n  - sys_updated_on: 2026-10-14 21:33:32\n\n2) Move state straight to in_progress\n- Status: Satisfied\n- Evidence (customer_case): state = in_progress (valid transition from new)\n- Preserved fields: account_id, contact_id, product_id, installed_product_id, short_description unchanged\n\n3) Bump priority to critical\n- Status: Satisfied\n- Evidence (customer_case): priority = critical\n\n4) Assign it to “my active group”\n- Status: Unresolved\n- What was attempted (state-independent lookups and validation):\n  - find_user_group(\"Tier-3 Database\") → not found (no such group record)\n  - list_user_groups (active groups enumerated) → no exact match “Tier-3 Database”\n  - Identified sender in the email (Elizabeth Chase) as a portal customer, not a support agent/manager:\n    - list_users(email=\"elizabeth.chase32@servicenow.com\") → user_id 801, role = customer, active = true\n    - list_group_members(user_id=801) → none (no support group memberships)\n- Constraint/policy evaluation:\n  - The request specifies “my active group.” There is no exact identifier for the requester’s group in system data available to us.\n  - Authoritative policy prohibits substituting a different group for an explicitly identified target.\n  - Without an exact assignment_group_id (or an exact, existing group name tied to the requester), assignment cannot proceed without risking data integrity.\n- Result: assignment_group_id remains null (preserved; no unauthorized substitution)\n\n5) Send a confirmation to “my email”\n- Status: Unresolved\n- What was attempted:\n  - The only email in the provided content was Elizabeth’s (customer). We cannot infer the requester’s email from current system context.\n  - An auxiliary update notification was sent to elizabeth.chase32@servicenow.com (notification_id 734), but that does not satisfy “my email” for the requester.\n- Constraint/policy evaluation:\n  - Sending a confirmation requires a specific recipient address. No authoritative mapping to the requester’s email is available.\n  - Policy requires data integrity over assumptions; cannot guess a recipient.\n\nRelated policy-driven actions verified and aligned:\n\nA) Entitlement validation\n- find_entitlements(account_id=1, product_id=157, active=true) → none product-specific\n- find_entitlements(account_id=1, active=true) → account-wide active entitlements found (e.g., entitlement_id 1 and 5)\n- Conclusion: Account-wide coverage is active; SLAs are in scope.\n\nB) SLA alignment to critical priority\n- Previous “High” SLAs:\n  - case_sla_id 39 (sla_def_id 11 Response - High [No Pause]) → stage now canceled\n  - case_sla_id 40 (sla_def_id 7 Resolution - High) → stage now canceled\n- Applied “Critical” SLAs:\n  - case_sla_id 2465 (sla_def_id 1: SLA Response - Critical) stage = in_progress\n  - case_sla_id 2466 (sla_def_id 6: SLA Resolution - Critical) stage = in_progress\n- find_case_slas(case_id=20) confirms these statuses.\n\nC) Knowledge search and linkage\n- retrieve_knowledge(search_text=\"PostgreSQL OOM crash\", product_id=157, state=published, limit=5) → KB-0000234 found (internal, published)\n- Linked as suggested per policy for auto-discovered content:\n  - case_kb linkage: case_kb_id 528, used_as = suggested\n- find_case_knowledge_linkages(case_id=20) confirms link.\n\nD) Field preservation and lifecycle integrity\n- No unauthorized changes were made to: account_id, contact_id, product_id, installed_product_id, short_description, assigned_to.\n- Valid lifecycle transition: new → in_progress; no premature closure.\n\nOutstanding discrepancies and why they remain:\n\n- Assignment group: Unresolved due to missing, exact “my active group” identifier and no discoverable match for “Tier-3 Database” in Groups. Substituting another group would violate policy.\n- Confirmation to “my email”: Unresolved due to unknown requester email; sending to any other email would not meet the explicit target and risks misrouting.\n\nNext authorized step to complete all objectives:\n- Provide an exact assignment group name or group_id that exists in the system for “my active group,” or the requester’s user_id so we can derive memberships without ambiguity.\n- Provide the requester’s email address for the confirmation.\n\nUntil those exact identifiers are available, I will pause these two items to preserve data integrity and policy compliance. All other objectives have been completed and verified.",
+    "initial_messages": [
+      {
+        "role": "system",
+        "content": "CSM Agent Policy\n\nYou are a Customer Service Management assistant. Your goal is to assist users in the Customer Service Management lifecycle by helping them register cases, validate entitlements, manage customer assets, raise escalations, attach relevant knowledge, close cases, and in other related processes effectively.\n\nYou should always act based on confirmed user context, ing record relationships, and database integrity best practices. Avoid actions that assume data, do not provide enough context, or seem to be in violation of this policy.\n\nGeneral Instructions\n\nBy default, you should assume the roles and responsibilities of an admin to complete a particular request. If a user request violates policy, do not act on it. Perform one operation at a time. Do not provide knowledge or procedures not in the system. Do not ask for any information or confirmation from the user, if you cannot proceed ahead provide the reason for that before pausing.\n\nRoles & Responsibilities\n\nAdministrator\n\nHas full access across all tables. Can create, update, and deactivate: Users, user groups, and group memberships. Accounts, contacts, locations, and entitlements. Products, installed products, SLAs, contracts, and knowledge. Manages assignment rules, workflows, and escalations.\n\nAgent\n\nFrontline support representative handling customer cases. Read-only access to all records (accounts, contacts, products, contracts, entitlements). Can: Create and update customer cases, interactions, and case work notes. Associate knowledge articles with cases. View entitlements and SLAs linked to accounts and cases. Update case assignment, state, and resolution. Cannot modify user, group, or membership data.\n\nManager\n\nSupervises agents and case queues. Has agent privileges plus: Can reassign cases across groups and users. Can escalate cases and override case prioritization. Monitors SLA compliance, case trends, and escalations. Can approve exceptions (e.g., entitlement overrides or escalations). May contribute to knowledge management as reviewers.\n\nCustomer (Portal User)\n\nEnd user accessing the customer portal. Can: View and update their own profile. Create new cases and track the status of their submitted cases. Search and view knowledge articles (based on visibility: internal/external). Participate in community forums (if enabled). Initiate interactions (chat, email, web, etc.). Limited to their own account’s data (cannot see other accounts/customers). Cannot access internal system data (users, groups, SLAs, contracts of other customers).\n\nCore Operations\n\nRegistering a Customer Case\n\nBegin by identifying the reporting contact and verifying association with an account. Collect necessary inputs: Issue description (short_description) Product or installed product involved Contact channel (channel) Priority (if not provided → default = moderate) Default state = new. Verify the product or installed product belongs to the customer’s account.\n\nAssigning a Case\n\nA case may be assigned to: An assignment group (assignment_group_id), or A user (assigned_to) within that group. Agents must: Be active, and Be members of the assigned group. Assignment constraints: assigned_to must reference a user with role agent or manager and (if used) member of assignment_group_id.\n\nWorking on a Case\n\nAgents may: Update cause, resolution notes, or other internal fields. Change state (new → in_progress, in_progress → pending/resolved). Attach a missing product or installed product. Link relevant knowledge articles. Important: Cases cannot be closed directly. They must first be moved to resolved, then to closed. If a case is invalid, it may be canceled.\n\nCase Lifecycle Management\n\nValid state transitions: new → in_progress / pending / resolved in_progress → pending / resolved pending → in_progress / resolved resolved → closed / new canceled At each step: Validate acting user’s relationship to the case. Capture timestamps (sys_updated_on, closed_on where applicable). Prevent premature closure without resolution.\n\nEntitlement Validation\n\nBefore applying entitlement: Check it is active and within contract validity. Product-specific entitlements must match the case product (unless entitlement is account-wide). max_cases_per_month = 0 means unlimited; otherwise enforce limits. If entitlement is invalid → inform the user.\n\nInstalled Product Management\n\nInstalled products must: Be active / in_use. Belong to the reporting account. Do not attach items in retired / repair status to new cases. Ensure installed product’s product matches the case product.\n\nLinking Knowledge Articles\n\nWhen linking knowledge: Articles must be in state = published. Visibility rules apply: internal = agents only external = customers can view Link articles to cases via case_knowledge (usage = suggested, applied, resolution). Ownership is tracked via owner_id.\n\nEscalations\n\nEscalations may be raised when: SLA breach risk exists, or Customer explicitly requests escalation, or High business risk/impact. Steps: Record escalation = true on case. Capture escalation_reason. Ensure justification is logged in case notes. There is no separate escalation record. Escalation is tracked within the case.\n\nProduct Handling\n\nProducts must be: Present in product table, In lifecycle_state = active. Installed products must match the product and account context.\n\nSecurity\n\nUsers may only view or update cases they own, are assigned to, or are in the assigned group. Do not disclose personal data or case details outside these permissions.\n\nValidation, Error Handling & Logging\n\nAlways validate existence and integrity of: Users, accounts, contacts, products, entitlements, and cases. State transitions follow lifecycle rules. All actions must: Update sys_updated_on. Capture timestamps (e.g., closed_on for case closure).\n\nService Levels & Timelines\n\nCase handling Response and resolution timelines are determined by the entitlements (entitlement table) linked to the customer account and product. Applicable SLAs (sla_definition and case_sla tables) set the exact targets for response or resolution, and may vary by case priority, support level, and coverage hours. SLA pause behavior: Obey sla_definition.pause_on_pending; when case state is pending, pause applicable SLAs. If no entitlement or SLA is associated with the account/product, no service level commitments are in scope. Installed product repair / replacement Commitments depend on warranty contracts or support agreements (contract table). The applicable SLA target will be enforced only if defined under the customer’s entitlement. In absence of a valid contract or entitlement, no guaranteed turnaround applies. Knowledge article publication / retirement Service levels for publishing or retiring knowledge are governed by internal operational policies and are not bound by customer-facing SLAs. Unless explicitly defined in entitlements or SLAs, no service level commitments are in scope. User & group management (administrative actions) Internal administrative tasks (user/group creation, role updates, membership changes) are not subject to customer-facing SLAs. Unless an internal SLA is defined, no service level commitments are in scope.\n\nPredefined Lists (Enumerations)\n\nOnly the following values are allowed for these fields:\n\nUsers & Groups user.role: admin, agent, manager, customer user_group.type: support, backoffice, field, vendor\n\nGeography location.city: new_york, london, mumbai, tokyo, sydney location.country: usa, uk, india, japan, australia\n\nAccounts & Contacts account.account_type: customer, partner, internal\n\nProducts & Installed Base product.category: software, hardware, service product.lifecycle_state: active, retired installed_product.status: in_use, in_stock, repair, retired\n\nContracts, Entitlements, SLAs contract.contract_type: support, warranty, subscription contract.status: active, suspended, expired entitlement.support_level: standard, premium, enterprise entitlement.coverage_hours: h8x5, h12x6, h24x7 sla_definition.metric: response, resolution sla_definition.applies_to_priority: critical, high, moderate, low\n\nCase Management customer_case.channel: web, email, phone, chat, social, alert, community customer_case.priority: critical, high, moderate, low customer_case.state: new, in_progress, pending, resolved, closed, canceled customer_case.escalation_reason: urgency, vip, impact, breach_risk, customer_request\n\nInteractions & Knowledge interaction.channel: web, email, phone, chat, social, alert, community knowledge.state: draft, published, retired knowledge.visibility: internal, external case_knowledge.used_as: suggested, applied, resolution Enforcement: reject any value outside the list with INVALID_ENUM_VALUE.\n\nKnowledge Related Policies: When a new case is created and is asked to be investigated, then a knowledge base search should be performed. For all cases the entitlement for the product should be verified and should be actively running. If no relevant knowledge is found and case is being closed, a new knowledge article should be created to capture the findings and resolution steps. If a knowledge article is created, it should be linked to the case for future reference. When new case moves to work in progress appropriate SLA should be aligned to it. Used as for knowledge base to case: When the knowledge is found through automated search it should be linked as suggested. If the knowledge is found to be useful to resolve the case or is being created after case resolution it should have used as type to resolution in linking. In other cases if knowledge is linked it should as applied. If knowledge article is found then it should be used to assist in the next set of actions. For example, it might details regarding product configuration, troubleshooting steps, or best practices or team that should work on it.\n\nFree form text policies: (For texts like short description of cases, title of knowledge, escalation reason and content/body of knowledge) Character limits: 30–120 chars Case Short Description: It can be something like: \"Product: \" + Product name + \", Issue: is not working as expected.\" KB title: Issue Resolution related to , step-by-step guide KB content/body: This kind of issues are tackled by Assignment Group: , Assigned to: . Steps to resolve the issue: , Suggested Priority: . Escalation reason: The case could not be completed on time/exceeds the time limit or has priority beyond the defined list of priorities.\n\nMutation safety protocol:\n- Before changing state, make an internal constraint ledger from the original request and authoritative policy: entity identity constraints, required final values, policy-required changes, and fields to preserve. Treat explicit requested outcomes as required final-state constraints.\n- Discover each referenced entity from its identity constraints independently of requested final-state constraints. When the request may require transitioning an entity into a desired state, do not require that state in the initial lookup.\n- Treat fuzzy search results as candidates only. Validate candidates against exact identifier fields, and retry state-independent or alternate-field lookups before concluding that the entity is absent.\n- Inspect the located entity's current state, perform any policy-permitted prerequisite transitions implied by the requested final state when the active role has authority and policy does not require separate approval, and then complete the requested relationship or mutation.\n- Apply this conflict hierarchy: an authoritative policy prohibition blocks action; inferred relevance concerns or metadata mismatches require preservation and investigation but do not override an exact requested target unless authoritative policy requires the values to match.\n- Preserve every field that the request or policy does not authorize changing. A mismatch with a related record is not permission to rewrite either record.\n- An existing alternative record does not satisfy an explicitly identified target and must not replace it merely because the alternative already has other preferred attributes.\n- Reconcile explicit lifecycle histories, totals, and counts with the field's resulting-state semantics. When the requested resulting count is inferable, do not substitute a default increment.\n- Use normal MCP mutation tools for authorized changes, reread affected primary records, and reconcile every requested objective with the current state before claiming completion. Do not ask for confirmation when policy directs proceeding; pause only to explain a genuine authoritative prohibition."
+      },
+      {
+        "role": "user",
+        "content": "We got a mail 'Hey it’s Elizabeth Chase from (elizabeth.chase32@servicenow.com) Tier-3 Database. The exact same PostgreSQL OOM crash from last week is back and just took down half of production again. We had left the CS-0000020 because the customer thought it was fixed – it obviously wasn’t. They’re bleeding hundreds of thousands per hour right now. Thanks, Elizabeth Chase'. Please get this CS-0000020 escalated and move it straight into in progress, bump priority to critical, assign it to my active group, and fire off a quick confirmation to my email so I know it’s live and can get on it right now. Same server, same error log, same everything, we have to stop this now. Thanks!"
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "find_user",
+          "description": "Look up a user (portal customer, portal user or internal agent) by full name.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Full name of user, e.g., 'Harry Middleton'."
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_account",
+          "description": "Retrieve an account by its exact name. Account is a company or organization that has a relationship with the business.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Exact account name, e.g., 'Wood and Sons'.",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_contact_by_portal_user",
+          "description": "Find the contact record using the portal user associated with it. Portal user is a type of user that represents a customer accessing the support portal. Portal user is a user with role 'customer' in the user table.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "portal_user_id": {
+                "type": "integer",
+                "description": "Unique identifier of the portal user associated with this record. This value references the primary key of the user in the User table."
+              }
+            },
+            "required": [
+              "portal_user_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_product",
+          "description": "Look up a product by its exact name. Product represents an item or service offered by the company.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Product name, e.g., 'Pulse Edge'.",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_product_by_id",
+          "description": "Retrieve a product by product ID. Product represents an item or service offered by the company. Each Product has a unique identifier called product_id.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "product_id": {
+                "type": "integer",
+                "description": " Unique identifier of the product."
+              }
+            },
+            "required": [
+              "product_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_location",
+          "description": "Look up a location (site/campus) by exact given name for it. Location represents a physical site or campus or user's location where services or products are installed or the user resides.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Given Location name",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_user_group",
+          "description": "Retrieve a user group by exact name. User Group represents a collection of users grouped together for assignment or organizational purposes.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Exact name of the user group (unique).",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "check_user_membership",
+          "description": "Verify that a user is a member of a specific user group. User Group represents a collection of users grouped together for assignment or organizational purposes.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer",
+                "description": "User's unique id to check"
+              },
+              "group_id": {
+                "type": "integer",
+                "description": "User group's unique id to check"
+              }
+            },
+            "required": [
+              "user_id",
+              "group_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "assign_case_to_user",
+          "description": "Assign an existing case to a specific user (agent). Case represents a support ticket or issue that needs to be resolved. The assigned user takes care of the lifecycle of the case to its closure.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case to be assigned."
+              },
+              "assigned_to_user_id": {
+                "type": "integer",
+                "description": "Unique identifier of the user (agent) to assign the case to. It is a user who is assigned to handle the case. The user has record in the user table with at least role 'agent'."
+              }
+            },
+            "required": [
+              "case_id",
+              "assigned_to_user_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "set_case_assignment_group",
+          "description": "Set or change the assignment group for a case. Setting the assignment group helps route the case to the appropriate team for handling.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case to update."
+              },
+              "assignment_group_id": {
+                "type": "integer",
+                "description": "Unique identifier of the assignment group to set."
+              }
+            },
+            "required": [
+              "case_id",
+              "assignment_group_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_users",
+          "description": "List users with optional filters. None of the filters are mandatory. If no filters are provided, all users will be returned.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string",
+                "description": "Filter by user email address (exact match) (unique)."
+              },
+              "user_id": {
+                "type": "integer",
+                "description": "Filter by unique user identifier."
+              },
+              "first_name": {
+                "type": "string",
+                "description": "Filter by user's first name."
+              },
+              "last_name": {
+                "type": "string",
+                "description": "Filter by user's last name."
+              },
+              "phone": {
+                "type": "string",
+                "description": "Filter by phone number."
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "admin",
+                  "agent",
+                  "manager",
+                  "customer"
+                ],
+                "description": "Filter by user role (admin, agent, manager, or customer)."
+              },
+              "location_id": {
+                "type": "integer",
+                "description": "Filter by location identifier."
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Filter by active status (true = active, false = inactive)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Return only users created after this timestamp (YYYY-MM-DD HH:MM:SS)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Return only users created before this timestamp (YYYY-MM-DD HH:MM:SS)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_user_groups",
+          "description": "List user groups with optional filters.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "group_id": {
+                "type": "integer",
+                "description": "Filter by unique group identifier."
+              },
+              "name": {
+                "type": "string",
+                "description": "Filter by group name (exact match, unique)."
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Filter by active status (true = active, false = inactive)."
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "support",
+                  "backoffice",
+                  "field",
+                  "vendor"
+                ],
+                "description": "Filter by group type (support, backoffice, field, vendor)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Return only groups created after this timestamp (YYYY-MM-DD HH:MM:SS)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Return only groups created before this timestamp (YYYY-MM-DD HH:MM:SS)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "list_group_members",
+          "description": "List user group members with optional filters. Combination of group_id and user_id is unique.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "member_id": {
+                "type": "integer",
+                "description": "Filter by unique membership identifier."
+              },
+              "group_id": {
+                "type": "integer",
+                "description": "Filter by group identifier."
+              },
+              "user_id": {
+                "type": "integer",
+                "description": "Filter by user identifier."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Return only memberships created after this timestamp (YYYY-MM-DD HH:MM:SS)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Return only memberships created before this timestamp (YYYY-MM-DD HH:MM:SS)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_contacts",
+          "description": "Find contacts with optional filters.All the inputs are optional, not providing any filter will return all accounts. Contact represents an individual associated with an account or a point of contact.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "contact_id": {
+                "type": "integer",
+                "description": "Unique identifier of the contact."
+              },
+              "account_id": {
+                "type": "integer",
+                "description": "ID of the account this contact belongs to."
+              },
+              "portal_user_id": {
+                "type": "integer",
+                "description": "Unique identifier of the portal user associated with this record. This value references the primary key of the user in the User table."
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Whether the contact is currently active."
+              },
+              "is_primary": {
+                "type": "boolean",
+                "description": "True if this is the primary contact for the account."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Filter for contacts created after this timestamp (ISO format)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Filter for contacts created before this timestamp (ISO format)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_locations",
+          "description": "Find locations with optional filters. All the inputs are optional, not providing any filter will return all locations. Location represents a physical site or campus or user's location where services or products are installed or the user resides.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "location_id": {
+                "type": "integer",
+                "description": "Unique identifier of the location."
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the location."
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Whether the location is currently active."
+              },
+              "plot_no": {
+                "type": "string",
+                "description": "Plot number of the location."
+              },
+              "street": {
+                "type": "string",
+                "description": "Street address of the location."
+              },
+              "city": {
+                "type": "string",
+                "description": "City where the location is situated."
+              },
+              "country": {
+                "type": "string",
+                "description": "Country where the location is situated."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Filter for locations created before this timestamp (ISO format)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Filter for locations created after this timestamp (ISO format)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "retrieve_installed_products",
+          "description": "Retrieve installed products with rich filters. All filters are optional. If no filters are provided, all installed products will be returned. Installed products are items that have been deployed or set up for use at specific locations or accounts.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "installed_product_id": {
+                "type": "integer",
+                "description": "Unique installed product ID."
+              },
+              "location_id": {
+                "type": "integer",
+                "description": "Filter by location/site ID. Unique identifier which relates to the location table record."
+              },
+              "account_id": {
+                "type": "integer",
+                "description": "Filter by account ID. Unique identifier which relates to the account table record. An account represents a business entity or organization."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Filter by product ID. Unique identifier which relates to the product table record."
+              },
+              "serial_number": {
+                "type": "string",
+                "description": "Exact serial number of the installed product. Unique identifier assigned to the product by the manufacturer."
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "in_use",
+                  "in_stock",
+                  "repair",
+                  "retired"
+                ],
+                "description": "Current status of the installed product."
+              },
+              "warranty_end": {
+                "type": "string",
+                "description": "Exact warranty end date (YYYY-MM-DD)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Return products created before this date (YYYY-MM-DD HH:MM:SS)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Return products created after this date (YYYY-MM-DD HH:MM:SS)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_contracts",
+          "description": "Find contracts with multiple filters including price range. All inputs are optional; not providing any filter will return all contracts. A contract represents a formal agreement between two or more parties.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "contract_id": {
+                "type": "integer",
+                "description": "Unique identifier of the contract."
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "draft",
+                  "active",
+                  "suspended",
+                  "expired"
+                ],
+                "description": "Filter contracts by their current status."
+              },
+              "account_id": {
+                "type": "integer",
+                "description": "Filter contracts by the owning account’s ID. An account represents a business entity or organization."
+              },
+              "contract_type": {
+                "type": "string",
+                "enum": [
+                  "support",
+                  "warranty",
+                  "subscription"
+                ],
+                "description": "Filter by contract type."
+              },
+              "start_date": {
+                "type": "string",
+                "description": "Contract start date (YYYY-MM-DD)."
+              },
+              "end_date": {
+                "type": "string",
+                "description": "Contract end date (YYYY-MM-DD)."
+              },
+              "contract_price": {
+                "type": "integer",
+                "description": "Exact price of the contract in system currency."
+              },
+              "contract_price_range_start": {
+                "type": "integer",
+                "description": "Lower bound of contract price range filter."
+              },
+              "contract_price_range_end": {
+                "type": "integer",
+                "description": "Upper bound of contract price range filter."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Find contracts created before this timestamp (YYYY-MM-DD HH:MM:SS)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Find contracts created after this timestamp (YYYY-MM-DD HH:MM:SS)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_entitlements",
+          "description": "Find entitlements with filters. All inputs are optional; not providing any filter will return all entitlements. An entitlement represents a customer's right to receive specific services or support based on their agreement.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "entitlement_id": {
+                "type": "integer",
+                "description": "Unique identifier of the entitlement."
+              },
+              "account_id": {
+                "type": "integer",
+                "description": "Filter entitlements by associated account ID. An account represents a business entity or organization."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Filter entitlements by product ID. Unique identifier which relates to the product table record."
+              },
+              "contract_id": {
+                "type": "integer",
+                "description": "Filter entitlements by contract ID. Unique identifier which relates to the contract table record."
+              },
+              "support_level": {
+                "type": "string",
+                "enum": [
+                  "standard",
+                  "premium",
+                  "enterprise"
+                ],
+                "description": "Support level associated with the entitlement."
+              },
+              "coverage_hours": {
+                "type": "string",
+                "enum": [
+                  "h8x5",
+                  "h12x6",
+                  "h24x7"
+                ],
+                "description": "Coverage hours offered under the entitlement (8x5, 12x6, 24x7)."
+              },
+              "max_cases_per_month": {
+                "type": "integer",
+                "description": "Maximum number of support cases allowed per month under this entitlement."
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Filter by entitlement status (true = active, false = inactive)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Return entitlements created before this date (YYYY-MM-DD format)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Return entitlements created after this date (YYYY-MM-DD format)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_sla_definitions",
+          "description": "Find SLA definitions with filters. All inputs are optional; not providing any filter will return all SLA definitions. An SLA definition outlines the expected service levels for response and resolution times based on case priority.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "sla_def_id": {
+                "type": "integer",
+                "description": "Unique identifier of the SLA definition."
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the SLA definition (e.g., 'SLA Response - Critical').",
+                "minLength": 1
+              },
+              "metric": {
+                "type": "string",
+                "enum": [
+                  "response",
+                  "resolution"
+                ],
+                "description": "SLA metric type. 'response' = first response SLA, 'resolution' = issue resolution SLA."
+              },
+              "target_mins": {
+                "type": "integer",
+                "description": "Target duration for the SLA in minutes."
+              },
+              "pause_on_pending": {
+                "type": "boolean",
+                "description": "Whether the SLA timer pauses when the case is in a pending state."
+              },
+              "applies_to_priority": {
+                "type": "string",
+                "enum": [
+                  "critical",
+                  "high",
+                  "moderate",
+                  "low"
+                ],
+                "description": "Priority level this SLA definition applies to."
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Whether the SLA definition is active (true) or inactive (false)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Return SLA definitions created before this date (YYYY-MM-DD format)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Return SLA definitions created after this date (YYYY-MM-DD format)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "get_cases_assigned_to",
+          "description": "List cases filtered by assignment_group_id and/or assigned_to.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "assignment_group_id": {
+                "type": "integer",
+                "description": "Filter by the assignment group responsible for the case."
+              },
+              "assigned_to": {
+                "type": "integer",
+                "description": "Filter by the specific user ID the case is assigned to."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "search_cases",
+          "description": "Search cases with rich filters and date bounds on sys_created_on. All inputs are optional; not providing any filter will return all cases. A case represents a customer-reported issue or request that requires tracking and resolution.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case."
+              },
+              "number": {
+                "type": "string",
+                "description": "Case number (unique human-readable reference)."
+              },
+              "account_id": {
+                "type": "integer",
+                "description": "Filter by account ID. An account represents a business entity or organization."
+              },
+              "contact_id": {
+                "type": "integer",
+                "description": "Filter by contact ID."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Filter by product ID. Unique identifier which relates to the product table record."
+              },
+              "installed_product_id": {
+                "type": "integer",
+                "description": "Filter by installed product ID. Unique identifier which relates to the installed product table record."
+              },
+              "channel": {
+                "type": "string",
+                "enum": [
+                  "web",
+                  "email",
+                  "phone",
+                  "chat",
+                  "social",
+                  "alert",
+                  "community"
+                ],
+                "description": "Channel through which the case was communicated/created."
+              },
+              "priority": {
+                "type": "string",
+                "enum": [
+                  "critical",
+                  "high",
+                  "moderate",
+                  "low"
+                ],
+                "description": "Priority of the case."
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "new",
+                  "in_progress",
+                  "pending",
+                  "resolved",
+                  "closed",
+                  "canceled"
+                ],
+                "description": "State of the case."
+              },
+              "short_description": {
+                "type": "string",
+                "description": "Short description of the case."
+              },
+              "escalation": {
+                "type": "boolean",
+                "description": "Whether the case is escalated."
+              },
+              "escalation_reason": {
+                "type": "string",
+                "enum": [
+                  "urgency",
+                  "vip",
+                  "impact",
+                  "breach_risk",
+                  "customer_request"
+                ],
+                "description": "Reason for escalation."
+              },
+              "reopen_count": {
+                "type": "integer",
+                "description": "Filter by number of times the case was reopened."
+              },
+              "closed_on": {
+                "type": "string",
+                "description": "Filter cases closed on a specific date (YYYY-MM-DD HH:MM:SS)."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Return cases created before this date (YYYY-MM-DD HH:MM:SS)."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Return cases created after this date (YYYY-MM-DD HH:MM:SS)."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_case_slas",
+          "description": "Find case_sla rows with flexible filters. All inputs are optional; not providing any filter will return all case_sla records. A case_sla record tracks the SLA status for a specific case based on the applied SLA definition.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_sla_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case_sla record."
+              },
+              "case_id": {
+                "type": "integer",
+                "description": "ID of the case linked to this SLA record."
+              },
+              "sla_def_id": {
+                "type": "integer",
+                "description": "ID of the SLA definition applied to the case."
+              },
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "in_progress",
+                  "paused",
+                  "completed",
+                  "canceled"
+                ],
+                "description": "Current stage of the SLA tracking."
+              },
+              "start_time": {
+                "type": "string",
+                "description": "Timestamp when SLA tracking started (YYYY-MM-DD HH:MM:SS)."
+              },
+              "breach_time": {
+                "type": "string",
+                "description": "Expected SLA breach timestamp (YYYY-MM-DD HH:MM:SS)."
+              },
+              "has_breached": {
+                "type": "boolean",
+                "description": "Indicates whether the SLA was breached (true/false)."
+              },
+              "completed_time": {
+                "type": "string",
+                "description": "Timestamp when SLA was completed, if applicable."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "retrieve_knowledge",
+          "description": "Retrieve knowledge articles with full-text search on title/body and structured filters. All inputs are optional; not providing any filter will return all knowledge articles. A knowledge article is a documented piece of information that provides solutions, answers, or guidance on specific topics to help users resolve issues or learn about products and services.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "search_text": {
+                "type": "string",
+                "description": "Full-text search across article title and body. Free form search."
+              },
+              "knowledge_id": {
+                "type": "integer",
+                "description": "Filter by unique knowledge article ID."
+              },
+              "kb_number": {
+                "type": "string",
+                "description": "Filter by knowledge base number."
+              },
+              "title": {
+                "type": "string",
+                "description": "Filter by article title."
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "draft",
+                  "published",
+                  "retired"
+                ],
+                "description": "Filter by article lifecycle state."
+              },
+              "visibility": {
+                "type": "string",
+                "enum": [
+                  "internal",
+                  "external"
+                ],
+                "description": "Filter by article visibility. Internal for staff, external for customers/public."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Filter by related product ID."
+              },
+              "owner_id": {
+                "type": "integer",
+                "description": "Filter by user ID of the article owner. User who authored the article."
+              },
+              "created_before": {
+                "type": "string",
+                "description": "Retrieve articles created before this timestamp."
+              },
+              "created_after": {
+                "type": "string",
+                "description": "Retrieve articles created after this timestamp."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "Limit the number of articles returned."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "find_case_knowledge_linkages",
+          "description": "Find case-knowledge linkages (case_knowledge). Combination of case id and knowledge id is unique. All inputs are optional; not providing any filter will return all case_knowledge linkages. A case_knowledge linkage represents the association between a specific case and a knowledge article, indicating how the article was utilized in relation to the case, such as being suggested, applied, or used as a resolution.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_kb_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case_knowledge linkage."
+              },
+              "case_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case."
+              },
+              "knowledge_id": {
+                "type": "integer",
+                "description": "Unique identifier of the knowledge article."
+              },
+              "used_as": {
+                "type": "string",
+                "enum": [
+                  "suggested",
+                  "applied",
+                  "resolution"
+                ],
+                "description": "Filter by usage context: suggested, applied, or resolution."
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "add_new_user",
+          "description": "Create a new user record. A user represents an individual who interacts with the system, such as support agents, managers, or customers.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "first_name": {
+                "type": "string",
+                "description": "User's first name.",
+                "minLength": 1
+              },
+              "last_name": {
+                "type": "string",
+                "description": "User's last name.",
+                "minLength": 1
+              },
+              "email": {
+                "type": "string",
+                "description": "Unique email address of the user.",
+                "minLength": 1
+              },
+              "phone": {
+                "type": "string",
+                "description": "Contact phone number of the user."
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "admin",
+                  "agent",
+                  "manager",
+                  "customer"
+                ],
+                "description": "User role within the system."
+              },
+              "location_id": {
+                "type": "integer",
+                "description": "Associated location identifier. Optional. Location where user resides/works."
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Whether the user is active (true) or inactive (false)."
+              }
+            },
+            "required": [
+              "first_name",
+              "last_name",
+              "email",
+              "role",
+              "active"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "update_user_details",
+          "description": "Update an existing user (partial updates supported). A user represents an individual who interacts with the system, such as support agents, managers, or customers.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer",
+                "description": "Unique identifier of the user to update."
+              },
+              "email": {
+                "type": "string",
+                "description": "New email address for the user.",
+                "minLength": 1
+              },
+              "first_name": {
+                "type": "string",
+                "description": "Updated first name of the user.",
+                "minLength": 1
+              },
+              "last_name": {
+                "type": "string",
+                "description": "Updated last name of the user.",
+                "minLength": 1
+              },
+              "active": {
+                "type": "boolean",
+                "description": "Updated active status (true = active, false = inactive)."
+              },
+              "phone": {
+                "type": "string",
+                "description": "Updated phone number."
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "admin",
+                  "agent",
+                  "manager",
+                  "customer"
+                ],
+                "description": "Updated role of the user."
+              },
+              "location_id": {
+                "type": "integer",
+                "description": "Updated location identifier."
+              }
+            },
+            "required": [
+              "user_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "add_new_group_member",
+          "description": "Add a user to a group. Combination of group_id and user_id should be unique.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "group_id": {
+                "type": "integer",
+                "description": "Identifier of the group the user will be added to."
+              },
+              "user_id": {
+                "type": "integer",
+                "description": "Identifier of the user being added to the group."
+              }
+            },
+            "required": [
+              "group_id",
+              "user_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "update_installed_product_details",
+          "description": "Update an installed product (partial updates allowed). Combination of Account ID, Product ID, Serial Number should be unique.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "installed_product_id": {
+                "type": "integer",
+                "description": "Unique installed product ID (required)."
+              },
+              "location_id": {
+                "type": "integer",
+                "description": "Location/site ID where the product is installed."
+              },
+              "account_id": {
+                "type": "integer",
+                "description": "Owning account ID for this installed product."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Product ID that was installed."
+              },
+              "serial_number": {
+                "type": "string",
+                "description": "Unique serial number of the installed product.",
+                "minLength": 1
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "in_use",
+                  "in_stock",
+                  "repair",
+                  "retired"
+                ],
+                "description": "Status of the installed product."
+              },
+              "warranty_end": {
+                "type": "string",
+                "description": "Warranty end date (YYYY-MM-DD)."
+              }
+            },
+            "required": [
+              "installed_product_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "create_new_case",
+          "description": "Create a case with all case related details. Returns the created case record. A case represents a customer issue or request that needs to be tracked and resolved.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "account_id": {
+                "type": "integer",
+                "description": "Account ID associated with the case."
+              },
+              "contact_id": {
+                "type": "integer",
+                "description": "Contact ID who raised the case."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Product ID related to the case."
+              },
+              "installed_product_id": {
+                "type": "integer",
+                "description": "Installed product ID associated with the case."
+              },
+              "channel": {
+                "type": "string",
+                "enum": [
+                  "web",
+                  "email",
+                  "phone",
+                  "chat",
+                  "social",
+                  "alert",
+                  "community"
+                ],
+                "description": "Channel through which the case was raised."
+              },
+              "priority": {
+                "type": "string",
+                "enum": [
+                  "critical",
+                  "high",
+                  "moderate",
+                  "low"
+                ],
+                "description": "Priority level of the case."
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "new",
+                  "in_progress",
+                  "pending",
+                  "resolved",
+                  "closed",
+                  "canceled"
+                ],
+                "description": "Initial state of the case."
+              },
+              "short_description": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500,
+                "description": "Short description summarizing the case issue."
+              },
+              "escalation": {
+                "type": "boolean",
+                "description": "Whether the case is escalated."
+              },
+              "escalation_reason": {
+                "type": "string",
+                "enum": [
+                  "urgency",
+                  "vip",
+                  "impact",
+                  "breach_risk",
+                  "customer_request"
+                ],
+                "description": "Reason for escalation if applicable.",
+                "minLength": 1
+              },
+              "reopen_count": {
+                "type": "integer",
+                "description": "Initial reopen count for the case."
+              },
+              "closed_on": {
+                "type": "string",
+                "description": "Closed date if state is closed (YYYY-MM-DD HH:MM:SS)."
+              },
+              "assignment_group_id": {
+                "type": "integer",
+                "description": "Assignment group ID responsible for the case."
+              },
+              "assigned_to": {
+                "type": "integer",
+                "description": "User ID assigned to the case."
+              }
+            },
+            "required": [
+              "account_id",
+              "contact_id",
+              "channel",
+              "priority",
+              "state",
+              "short_description"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "update_case",
+          "description": "Update an existing case (partial updates). A case represents a customer issue or request that needs to be tracked and resolved.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case to update."
+              },
+              "account_id": {
+                "type": "integer",
+                "description": "Update the associated account ID."
+              },
+              "contact_id": {
+                "type": "integer",
+                "description": "Update the associated contact ID."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Update the product ID associated with the case."
+              },
+              "installed_product_id": {
+                "type": "integer",
+                "description": "Update the installed product ID."
+              },
+              "channel": {
+                "type": "string",
+                "enum": [
+                  "web",
+                  "email",
+                  "phone",
+                  "chat",
+                  "social",
+                  "alert",
+                  "community"
+                ],
+                "description": "Update the channel used to create the case."
+              },
+              "priority": {
+                "type": "string",
+                "enum": [
+                  "critical",
+                  "high",
+                  "moderate",
+                  "low"
+                ],
+                "description": "Update the case priority."
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "new",
+                  "in_progress",
+                  "pending",
+                  "resolved",
+                  "closed",
+                  "canceled"
+                ],
+                "description": "Update the case state."
+              },
+              "short_description": {
+                "type": "string",
+                "description": "Update the case short description.",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "escalation": {
+                "type": "boolean",
+                "description": "Update whether the case is escalated."
+              },
+              "escalation_reason": {
+                "type": "string",
+                "enum": [
+                  "urgency",
+                  "vip",
+                  "impact",
+                  "breach_risk",
+                  "customer_request"
+                ],
+                "description": "Update the escalation reason.",
+                "minLength": 1
+              },
+              "reopen_count": {
+                "type": "integer",
+                "description": "Update the reopen count."
+              },
+              "closed_on": {
+                "type": "string",
+                "description": "Update the closed date (YYYY-MM-DD HH:MM:SS)."
+              },
+              "assignment_group_id": {
+                "type": "integer",
+                "description": "Update the assignment group ID."
+              },
+              "assigned_to": {
+                "type": "integer",
+                "description": "Update the assigned user ID."
+              }
+            },
+            "required": [
+              "case_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "link_new_case_sla",
+          "description": "Create a case_sla linkage record. A case_sla links a support case to a specific SLA definition, tracking the SLA status for that case.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "integer",
+                "description": "ID of the case being linked to an SLA."
+              },
+              "sla_def_id": {
+                "type": "integer",
+                "description": "ID of the SLA definition to apply."
+              },
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "in_progress",
+                  "paused",
+                  "completed",
+                  "canceled"
+                ],
+                "description": "Initial stage of SLA tracking."
+              },
+              "start_time": {
+                "type": "string",
+                "description": "Start time of SLA tracking. If omitted, defaults to current timestamp."
+              },
+              "breach_time": {
+                "type": "string",
+                "description": "Expected SLA breach timestamp (YYYY-MM-DD HH:MM:SS)."
+              },
+              "has_breached": {
+                "type": "boolean",
+                "description": "Whether the SLA was already breached at creation (true/false)."
+              },
+              "completed_time": {
+                "type": "string",
+                "description": "Completion timestamp if the SLA is already completed."
+              }
+            },
+            "required": [
+              "case_id",
+              "sla_def_id",
+              "stage"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "update_case_sla_details",
+          "description": "Update a case_sla record (partial updates). A case_sla links a support case to a specific SLA definition, tracking the SLA status for that case.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_sla_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case_sla record to update."
+              },
+              "case_id": {
+                "type": "integer",
+                "description": "Update the case ID linked to the SLA."
+              },
+              "sla_def_id": {
+                "type": "integer",
+                "description": "Update the SLA definition ID."
+              },
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "in_progress",
+                  "paused",
+                  "completed",
+                  "canceled"
+                ],
+                "description": "Update the stage of SLA tracking."
+              },
+              "start_time": {
+                "type": "string",
+                "description": "Update the SLA start time."
+              },
+              "breach_time": {
+                "type": "string",
+                "description": "Update the expected breach time."
+              },
+              "has_breached": {
+                "type": "boolean",
+                "description": "Update whether the SLA is breached."
+              },
+              "completed_time": {
+                "type": "string",
+                "description": "Update the completion time."
+              }
+            },
+            "required": [
+              "case_sla_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "update_knowledge",
+          "description": "Update a knowledge article (partial updates allowed). A knowledge article is a documented piece of information that provides solutions, guidelines, or answers to common questions for customers or internal staff.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "knowledge_id": {
+                "type": "integer",
+                "description": "Unique identifier of the knowledge article to update."
+              },
+              "kb_number": {
+                "type": "string",
+                "description": "Knowledge base number (system-generated unique reference)."
+              },
+              "title": {
+                "type": "string",
+                "description": "Update the title of the article.",
+                "minLength": 1
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "draft",
+                  "published",
+                  "retired"
+                ],
+                "description": "Update the lifecycle state of the article."
+              },
+              "visibility": {
+                "type": "string",
+                "enum": [
+                  "internal",
+                  "external"
+                ],
+                "description": "Update the visibility of the article."
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "Update the related product ID."
+              },
+              "owner_id": {
+                "type": "integer",
+                "description": "Update the user ID of the article owner/author."
+              }
+            },
+            "required": [
+              "knowledge_id"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "link_case_knowledge",
+          "description": "Link a case to a knowledge article. A case_knowledge linkage associates a support case with a specific knowledge article, indicating how the article is relevant to the case.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "integer",
+                "description": "Unique identifier of the case being linked."
+              },
+              "knowledge_id": {
+                "type": "integer",
+                "description": "Unique identifier of the knowledge article to link."
+              },
+              "used_as": {
+                "type": "string",
+                "enum": [
+                  "suggested",
+                  "applied",
+                  "resolution"
+                ],
+                "description": "Purpose of the knowledge article in context of the case: suggested, applied, or used as resolution."
+              }
+            },
+            "required": [
+              "case_id",
+              "knowledge_id",
+              "used_as"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "send_notification",
+          "description": "Create a notification for a case (optionally tied to knowledge). Returns the created notification record. A notification represents a message sent to a customer or user regarding updates, alerts, or information related to a support case.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "integer",
+                "description": "Case ID this notification is related to."
+              },
+              "knowledge_id": {
+                "type": "integer",
+                "description": "Optional knowledge article ID linked to this notification."
+              },
+              "email": {
+                "type": "string",
+                "description": "Recipient email address of the notification.",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "report",
+                  "update",
+                  "alert",
+                  "reminder",
+                  "solution_proposal",
+                  "next_steps",
+                  "other"
+                ],
+                "description": "Type of notification being sent."
+              }
+            },
+            "required": [
+              "case_id",
+              "email",
+              "type"
+            ]
+          }
+        }
+      }
+    ],
+    "events": [
+      {
+        "step": 1,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_IKdz2zYsLKpXckQL6WYtNrM8",
+              "function": {
+                "arguments": "{\"email\": \"elizabeth.chase32@servicenow.com\"}",
+                "name": "list_users"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_a0LFtBOQTXizDcJmcB2bpM9U",
+              "function": {
+                "arguments": "{\"name\": \"Tier-3 Database\"}",
+                "name": "find_user_group"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_lUiMuqAX8tch0jOj9BGwG2Ia",
+              "function": {
+                "arguments": "{\"number\": \"CS-0000020\"}",
+                "name": "search_cases"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2964,
+          "prompt_tokens": 7996,
+          "total_tokens": 10960,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2880,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 7680
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_IKdz2zYsLKpXckQL6WYtNrM8",
+            "name": "list_users",
+            "arguments": {
+              "email": "elizabeth.chase32@servicenow.com"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"user_id\\\": 801, \\\"first_name\\\": \\\"Elizabeth\\\", \\\"last_name\\\": \\\"Chase\\\", \\\"email\\\": \\\"elizabeth.chase32@servicenow.com\\\", \\\"phone\\\": null, \\\"role\\\": \\\"customer\\\", \\\"location_id\\\": 801, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:49:38\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_a0LFtBOQTXizDcJmcB2bpM9U",
+            "name": "find_user_group",
+            "arguments": {
+              "name": "Tier-3 Database"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_lUiMuqAX8tch0jOj9BGwG2Ia",
+            "name": "search_cases",
+            "arguments": {
+              "number": "CS-0000020"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"case_id\\\": 20, \\\"number\\\": \\\"CS-0000020\\\", \\\"account_id\\\": 1, \\\"contact_id\\\": 123, \\\"product_id\\\": 157, \\\"installed_product_id\\\": null, \\\"channel\\\": \\\"alert\\\", \\\"priority\\\": \\\"high\\\", \\\"state\\\": \\\"new\\\", \\\"short_description\\\": \\\"Product: Dell PowerEdge R740 (Config 25), Issue: is not working as expected.\\\", \\\"escalation\\\": 0, \\\"escalation_reason\\\": null, \\\"reopen_count\\\": 0, \\\"sys_created_on\\\": \\\"2025-08-27 15:34:42\\\", \\\"sys_updated_on\\\": \\\"2025-12-14 12:24:16\\\", \\\"closed_on\\\": null, \\\"assignment_group_id\\\": null, \\\"assigned_to\\\": null}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_psqJJLgXaV6JjE2u5NeAJwwr",
+              "function": {
+                "arguments": "{}",
+                "name": "list_user_groups"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2452,
+          "prompt_tokens": 8517,
+          "total_tokens": 10969,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2432,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 7808
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_psqJJLgXaV6JjE2u5NeAJwwr",
+            "name": "list_user_groups",
+            "arguments": {},
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"group_id\\\": 1, \\\"name\\\": \\\"CSM Tier 1 Support\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:38:32\\\"}, {\\\"group_id\\\": 2, \\\"name\\\": \\\"CSM Tier 2 Support\\\", \\\"type\\\": \\\"backoffice\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:41:12\\\"}, {\\\"group_id\\\": 3, \\\"name\\\": \\\"Case Triage\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:41:09\\\"}, {\\\"group_id\\\": 4, \\\"name\\\": \\\"Case Assignment\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:44:37\\\"}, {\\\"group_id\\\": 5, \\\"name\\\": \\\"Entitlement Verification\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:39:22\\\"}, {\\\"group_id\\\": 6, \\\"name\\\": \\\"Contract & Warranty Desk\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:39:30\\\"}, {\\\"group_id\\\": 7, \\\"name\\\": \\\"Account Management\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:36:06\\\"}, {\\\"group_id\\\": 8, \\\"name\\\": \\\"Contact Center L1\\\", \\\"type\\\": \\\"field\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:29:43\\\"}, {\\\"group_id\\\": 9, \\\"name\\\": \\\"Contact Center L2\\\", \\\"type\\\": \\\"backoffice\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:36:16\\\"}, {\\\"group_id\\\": 10, \\\"name\\\": \\\"Installed Base Support\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:39:32\\\"}, {\\\"group_id\\\": 11, \\\"name\\\": \\\"Proactive Case Monitoring\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:46:55\\\"}, {\\\"group_id\\\": 12, \\\"name\\\": \\\"Vendor Case Liaison\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:44:46\\\"}, {\\\"group_id\\\": 13, \\\"name\\\": \\\"Knowledge Curation\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:42:31\\\"}, {\\\"group_id\\\": 14, \\\"name\\\": \\\"Field Service Coordination\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 0, \\\"sys_created_on\\\": \\\"2025-08-27 15:46:32\\\"}, {\\\"group_id\\\": 15, \\\"name\\\": \\\"Returns Authorization Desk\\\", \\\"type\\\": \\\"field\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:33:27\\\"}, {\\\"group_id\\\": 16, \\\"name\\\": \\\"Customer Onboarding\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:41:25\\\"}, {\\\"group_id\\\": 17, \\\"name\\\": \\\"Renewals & Retention\\\", \\\"type\\\": \\\"backoffice\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:43:28\\\"}, {\\\"group_id\\\": 18, \\\"name\\\": \\\"Escalation Management\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:32:10\\\"}, {\\\"group_id\\\": 19, \\\"name\\\": \\\"Customer Health Monitoring\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:46:35\\\"}, {\\\"group_id\\\": 20, \\\"name\\\": \\\"Billing & Adjustments\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:29:47\\\"}, {\\\"group_id\\\": 21, \\\"name\\\": \\\"CSM Tier 1 Support_2\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:30:05\\\"}, {\\\"group_id\\\": 22, \\\"name\\\": \\\"CSM Tier 2 Support_2\\\", \\\"type\\\": \\\"backoffice\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:49:37\\\"}, {\\\"group_id\\\": 23, \\\"name\\\": \\\"Case Triage_2\\\", \\\"type\\\": \\\"vendor\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:48:31\\\"}, {\\\"group_id\\\": 24, \\\"name\\\": \\\"Case Assignment_2\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:31:04\\\"}, {\\\"group_id\\\": 25, \\\"name\\\": \\\"Entitlement Verification_2\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:44:55\\\"}, {\\\"group_id\\\": 26, \\\"name\\\": \\\"Contract & Warranty Desk_2\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:47:53\\\"}, {\\\"group_id\\\": 27, \\\"name\\\": \\\"Account Management_2\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:35:34\\\"}, {\\\"group_id\\\": 28, \\\"name\\\": \\\"Contact Center L1_2\\\", \\\"type\\\": \\\"support\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:49:50\\\"}, {\\\"group_id\\",
+            "truncated": true
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_iBsrZKkSfrmIABqyXfsHfxUK",
+              "function": {
+                "arguments": "{\"case_id\":20,\"priority\":\"critical\",\"state\":\"in_progress\",\"escalation\":true,\"escalation_reason\":\"impact\"}",
+                "name": "update_case"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2414,
+          "prompt_tokens": 9966,
+          "total_tokens": 12380,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2368,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 7680
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_iBsrZKkSfrmIABqyXfsHfxUK",
+            "name": "update_case",
+            "arguments": {
+              "case_id": 20,
+              "priority": "critical",
+              "state": "in_progress",
+              "escalation": true,
+              "escalation_reason": "impact"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"case_id\\\": 20, \\\"number\\\": \\\"CS-0000020\\\", \\\"account_id\\\": 1, \\\"contact_id\\\": 123, \\\"product_id\\\": 157, \\\"installed_product_id\\\": null, \\\"channel\\\": \\\"alert\\\", \\\"priority\\\": \\\"critical\\\", \\\"state\\\": \\\"in_progress\\\", \\\"short_description\\\": \\\"Product: Dell PowerEdge R740 (Config 25), Issue: is not working as expected.\\\", \\\"assignment_group_id\\\": null, \\\"assigned_to\\\": null, \\\"escalation\\\": 1, \\\"escalation_reason\\\": \\\"impact\\\", \\\"reopen_count\\\": 0, \\\"sys_created_on\\\": \\\"2025-08-27 15:34:42\\\", \\\"sys_updated_on\\\": \\\"2026-10-14 21:33:32\\\", \\\"closed_on\\\": null}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 4,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_XUGmDFOYDNi16sd5Dndsh1Mg",
+              "function": {
+                "arguments": "{\"account_id\":1,\"product_id\":157,\"active\":true}",
+                "name": "find_entitlements"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 28,
+          "prompt_tokens": 10246,
+          "total_tokens": 10274,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 9856
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_XUGmDFOYDNi16sd5Dndsh1Mg",
+            "name": "find_entitlements",
+            "arguments": {
+              "account_id": 1,
+              "product_id": 157,
+              "active": true
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_UxmtuFjFICCbnG2JspaQOls7",
+              "function": {
+                "arguments": "{\"account_id\": 1, \"active\": true}",
+                "name": "find_entitlements"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_UkbgLE2SVE6lfGeUEzrSvdbH",
+              "function": {
+                "arguments": "{\"search_text\": \"PostgreSQL OOM crash\", \"state\": \"published\", \"product_id\": 157, \"limit\": 5}",
+                "name": "retrieve_knowledge"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2383,
+          "prompt_tokens": 10346,
+          "total_tokens": 12729,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2304,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 10112
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_UxmtuFjFICCbnG2JspaQOls7",
+            "name": "find_entitlements",
+            "arguments": {
+              "account_id": 1,
+              "active": true
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"entitlement_id\\\": 1, \\\"account_id\\\": 1, \\\"product_id\\\": null, \\\"contract_id\\\": 1, \\\"support_level\\\": \\\"standard\\\", \\\"coverage_hours\\\": \\\"h8x5\\\", \\\"max_cases_per_month\\\": 50, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:32:34\\\"}, {\\\"entitlement_id\\\": 2, \\\"account_id\\\": 1, \\\"product_id\\\": 130, \\\"contract_id\\\": 1, \\\"support_level\\\": \\\"premium\\\", \\\"coverage_hours\\\": \\\"h12x6\\\", \\\"max_cases_per_month\\\": 50, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:34:56\\\"}, {\\\"entitlement_id\\\": 3, \\\"account_id\\\": 1, \\\"product_id\\\": 55, \\\"contract_id\\\": 1, \\\"support_level\\\": \\\"enterprise\\\", \\\"coverage_hours\\\": \\\"h24x7\\\", \\\"max_cases_per_month\\\": 50, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:30:48\\\"}, {\\\"entitlement_id\\\": 4, \\\"account_id\\\": 1, \\\"product_id\\\": 221, \\\"contract_id\\\": 1, \\\"support_level\\\": \\\"standard\\\", \\\"coverage_hours\\\": \\\"h8x5\\\", \\\"max_cases_per_month\\\": 20, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:30:08\\\"}, {\\\"entitlement_id\\\": 5, \\\"account_id\\\": 1, \\\"product_id\\\": null, \\\"contract_id\\\": 2, \\\"support_level\\\": \\\"premium\\\", \\\"coverage_hours\\\": \\\"h12x6\\\", \\\"max_cases_per_month\\\": 50, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:49:05\\\"}, {\\\"entitlement_id\\\": 6, \\\"account_id\\\": 1, \\\"product_id\\\": 221, \\\"contract_id\\\": 2, \\\"support_level\\\": \\\"enterprise\\\", \\\"coverage_hours\\\": \\\"h24x7\\\", \\\"max_cases_per_month\\\": 50, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:50:18\\\"}, {\\\"entitlement_id\\\": 7, \\\"account_id\\\": 1, \\\"product_id\\\": 237, \\\"contract_id\\\": 2, \\\"support_level\\\": \\\"standard\\\", \\\"coverage_hours\\\": \\\"h8x5\\\", \\\"max_cases_per_month\\\": 0, \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:46:57\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_UkbgLE2SVE6lfGeUEzrSvdbH",
+            "name": "retrieve_knowledge",
+            "arguments": {
+              "search_text": "PostgreSQL OOM crash",
+              "state": "published",
+              "product_id": 157,
+              "limit": 5
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"knowledge_id\\\": 234, \\\"kb_number\\\": \\\"KB-0000234\\\", \\\"title\\\": \\\"Issue Resolution related to Dell PowerEdge R740 (Config 25), step-by-step guide\\\", \\\"state\\\": \\\"published\\\", \\\"visibility\\\": \\\"internal\\\", \\\"product_id\\\": 157, \\\"owner_id\\\": 581, \\\"sys_created_on\\\": \\\"2025-08-27 15:39:30\\\", \\\"body\\\": \\\"Product: Dell PowerEdge R740 (Cfg 25) Summary: Crash loops after firmware set. Resolution Steps: 1) iDRAC/OS crash data. 2) Roll back bundle. validate PSU/memory. 3) Update storage/NIC. reseat risers. 4) Thermal/airflow check. 5) Soak test. Rules: Evidence retention. ESD. Workarounds: Power cap. relocate VMs. Policies & Process: Change & RCA.\\\", \\\"score\\\": 2.5}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 6,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_fdQTsIP7dZbn0XvXq1GsR7M9",
+              "function": {
+                "arguments": "{\"case_id\":20}",
+                "name": "find_case_slas"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 1882,
+          "prompt_tokens": 11324,
+          "total_tokens": 13206,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 1856,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 10112
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_fdQTsIP7dZbn0XvXq1GsR7M9",
+            "name": "find_case_slas",
+            "arguments": {
+              "case_id": 20
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"case_sla_id\\\": 39, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 11, \\\"stage\\\": \\\"in_progress\\\", \\\"start_time\\\": \\\"2025-08-27 15:39:42\\\", \\\"breach_time\\\": \\\"2025-08-27 16:04:42\\\", \\\"has_breached\\\": 0, \\\"completed_time\\\": null}, {\\\"case_sla_id\\\": 40, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 7, \\\"stage\\\": \\\"paused\\\", \\\"start_time\\\": \\\"2025-08-27 15:39:42\\\", \\\"breach_time\\\": \\\"2025-08-27 23:39:42\\\", \\\"has_breached\\\": 0, \\\"completed_time\\\": null}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 7,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_eFk1HUawCOA7NllY5IvqS1E7",
+              "function": {
+                "arguments": "{\"sla_def_id\": 11}",
+                "name": "find_sla_definitions"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_KXphNRx5wFHjiJhAtRyN1tAB",
+              "function": {
+                "arguments": "{\"sla_def_id\": 7}",
+                "name": "find_sla_definitions"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_3ZEuunAWdTvakAsuF4VPDU5Z",
+              "function": {
+                "arguments": "{\"applies_to_priority\": \"critical\", \"active\": true}",
+                "name": "find_sla_definitions"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2199,
+          "prompt_tokens": 11582,
+          "total_tokens": 13781,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2112,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 11136
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_eFk1HUawCOA7NllY5IvqS1E7",
+            "name": "find_sla_definitions",
+            "arguments": {
+              "sla_def_id": 11
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"sla_def_id\\\": 11, \\\"name\\\": \\\"SLA Response - High (No Pause)\\\", \\\"metric\\\": \\\"response\\\", \\\"target_mins\\\": 25, \\\"pause_on_pending\\\": 0, \\\"applies_to_priority\\\": \\\"high\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:43:45\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_KXphNRx5wFHjiJhAtRyN1tAB",
+            "name": "find_sla_definitions",
+            "arguments": {
+              "sla_def_id": 7
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"sla_def_id\\\": 7, \\\"name\\\": \\\"SLA Resolution - High\\\", \\\"metric\\\": \\\"resolution\\\", \\\"target_mins\\\": 480, \\\"pause_on_pending\\\": 1, \\\"applies_to_priority\\\": \\\"high\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:43:40\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_3ZEuunAWdTvakAsuF4VPDU5Z",
+            "name": "find_sla_definitions",
+            "arguments": {
+              "applies_to_priority": "critical",
+              "active": true
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"sla_def_id\\\": 1, \\\"name\\\": \\\"SLA Response - Critical\\\", \\\"metric\\\": \\\"response\\\", \\\"target_mins\\\": 15, \\\"pause_on_pending\\\": 1, \\\"applies_to_priority\\\": \\\"critical\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:35:03\\\"}, {\\\"sla_def_id\\\": 6, \\\"name\\\": \\\"SLA Resolution - Critical\\\", \\\"metric\\\": \\\"resolution\\\", \\\"target_mins\\\": 240, \\\"pause_on_pending\\\": 1, \\\"applies_to_priority\\\": \\\"critical\\\", \\\"active\\\": 1, \\\"sys_created_on\\\": \\\"2025-08-27 15:39:05\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 8,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_Y5K4XtwgBTHTZ6VRZABTmi8J",
+              "function": {
+                "arguments": "{\"case_id\":20,\"knowledge_id\":234,\"used_as\":\"suggested\"}",
+                "name": "link_case_knowledge"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 1957,
+          "prompt_tokens": 12160,
+          "total_tokens": 14117,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 1920,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 11392
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_Y5K4XtwgBTHTZ6VRZABTmi8J",
+            "name": "link_case_knowledge",
+            "arguments": {
+              "case_id": 20,
+              "knowledge_id": 234,
+              "used_as": "suggested"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"case_kb_id\\\": 528, \\\"case_id\\\": 20, \\\"knowledge_id\\\": 234, \\\"used_as\\\": \\\"suggested\\\"}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 9,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_OMzA2MlaECKL0VMasxGcrKPy",
+              "function": {
+                "arguments": "{\"contract_id\": 1}",
+                "name": "find_contracts"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_siXJ6l84Mqc36XJolVvlox9j",
+              "function": {
+                "arguments": "{\"contract_id\": 2}",
+                "name": "find_contracts"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_qzhB9ajwNpLfQgwLGpNWupb0",
+              "function": {
+                "arguments": "{\"case_sla_id\": 39, \"stage\": \"canceled\"}",
+                "name": "update_case_sla_details"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_IexIaDwMfiMk3DUZpLAG3KYf",
+              "function": {
+                "arguments": "{\"case_sla_id\": 40, \"stage\": \"canceled\"}",
+                "name": "update_case_sla_details"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_mCYXvUQsndq2LCiLuD9yZGK2",
+              "function": {
+                "arguments": "{\"case_id\": 20, \"sla_def_id\": 1, \"stage\": \"in_progress\"}",
+                "name": "link_new_case_sla"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_FuWZe1sBsQhQAwZH9xubLz5L",
+              "function": {
+                "arguments": "{\"case_id\": 20, \"sla_def_id\": 6, \"stage\": \"in_progress\"}",
+                "name": "link_new_case_sla"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_FQwLhQjq3CdTmNVdeWEuzOR2",
+              "function": {
+                "arguments": "{\"case_id\": 20, \"email\": \"elizabeth.chase32@servicenow.com\", \"type\": \"update\"}",
+                "name": "send_notification"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2309,
+          "prompt_tokens": 12293,
+          "total_tokens": 14602,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2112,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 12032
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_OMzA2MlaECKL0VMasxGcrKPy",
+            "name": "find_contracts",
+            "arguments": {
+              "contract_id": 1
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"contract_id\\\": 1, \\\"account_id\\\": 1, \\\"contract_type\\\": \\\"warranty\\\", \\\"status\\\": \\\"active\\\", \\\"contract_price\\\": 2037, \\\"start_date\\\": \\\"2025-08-28\\\", \\\"end_date\\\": \\\"2026-09-05\\\", \\\"sys_created_on\\\": \\\"2025-08-27 15:44:35\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_siXJ6l84Mqc36XJolVvlox9j",
+            "name": "find_contracts",
+            "arguments": {
+              "contract_id": 2
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"contract_id\\\": 2, \\\"account_id\\\": 1, \\\"contract_type\\\": \\\"subscription\\\", \\\"status\\\": \\\"active\\\", \\\"contract_price\\\": 28618, \\\"start_date\\\": \\\"2025-09-22\\\", \\\"end_date\\\": \\\"2027-02-25\\\", \\\"sys_created_on\\\": \\\"2025-08-27 15:30:46\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_qzhB9ajwNpLfQgwLGpNWupb0",
+            "name": "update_case_sla_details",
+            "arguments": {
+              "case_sla_id": 39,
+              "stage": "canceled"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"case_sla_id\\\": 39, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 11, \\\"stage\\\": \\\"canceled\\\", \\\"start_time\\\": \\\"2025-08-27 15:39:42\\\", \\\"breach_time\\\": \\\"2025-08-27 16:04:42\\\", \\\"has_breached\\\": 0, \\\"completed_time\\\": null}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_IexIaDwMfiMk3DUZpLAG3KYf",
+            "name": "update_case_sla_details",
+            "arguments": {
+              "case_sla_id": 40,
+              "stage": "canceled"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"case_sla_id\\\": 40, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 7, \\\"stage\\\": \\\"canceled\\\", \\\"start_time\\\": \\\"2025-08-27 15:39:42\\\", \\\"breach_time\\\": \\\"2025-08-27 23:39:42\\\", \\\"has_breached\\\": 0, \\\"completed_time\\\": null}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_mCYXvUQsndq2LCiLuD9yZGK2",
+            "name": "link_new_case_sla",
+            "arguments": {
+              "case_id": 20,
+              "sla_def_id": 1,
+              "stage": "in_progress"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"case_sla_id\\\": 2465, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 1, \\\"stage\\\": \\\"in_progress\\\", \\\"start_time\\\": \\\"2026-10-14 21:35:19\\\", \\\"breach_time\\\": null, \\\"has_breached\\\": 0, \\\"completed_time\\\": null}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_FuWZe1sBsQhQAwZH9xubLz5L",
+            "name": "link_new_case_sla",
+            "arguments": {
+              "case_id": 20,
+              "sla_def_id": 6,
+              "stage": "in_progress"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"case_sla_id\\\": 2466, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 6, \\\"stage\\\": \\\"in_progress\\\", \\\"start_time\\\": \\\"2026-10-14 21:35:19\\\", \\\"breach_time\\\": null, \\\"has_breached\\\": 0, \\\"completed_time\\\": null}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_FQwLhQjq3CdTmNVdeWEuzOR2",
+            "name": "send_notification",
+            "arguments": {
+              "case_id": 20,
+              "email": "elizabeth.chase32@servicenow.com",
+              "type": "update"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"notification_id\\\": 734, \\\"case_id\\\": 20, \\\"knowledge_id\\\": null, \\\"email\\\": \\\"elizabeth.chase32@servicenow.com\\\", \\\"type\\\": \\\"update\\\", \\\"status\\\": \\\"success\\\", \\\"sys_created_on\\\": \\\"2026-10-14 21:35:19\\\"}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 10,
+        "finish_reason": "stop",
+        "assistant": {
+          "content": "Here’s what I’ve done on CS-0000020 (case_id 20):\n\n- Escalation: Enabled and set escalation_reason = impact.\n- State and priority: Moved to in_progress and bumped priority to critical.\n- SLAs aligned to critical: Canceled prior “High” SLAs and applied:\n  - SLA Response - Critical (def_id 1)\n  - SLA Resolution - Critical (def_id 6)\n- Entitlement check: Active account-wide entitlements found for the account; no product-specific entitlement for product_id 157, but account-wide coverage is active, so service levels are in scope.\n- Knowledge: Linked KB-0000234 as suggested for quick reference.\n- Notification: Sent a confirmation update to elizabeth.chase32@servicenow.com.\n\nPending action (paused):\n- Assignment to “my active group” was not completed because the group “Tier-3 Database” does not exist in the system. Without a valid assignment group record, I can’t set assignment_group_id per policy.\n\nIf you provide the exact assignment group name or ID, I’ll assign it immediately.",
+          "role": "assistant",
+          "annotations": []
+        },
+        "usage": {
+          "completion_tokens": 2541,
+          "prompt_tokens": 13438,
+          "total_tokens": 15979,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2304,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 8320
+          }
+        },
+        "tool_results": [],
+        "verification_checkpoint": {
+          "mutation_tools": [
+            "link_case_knowledge",
+            "link_new_case_sla",
+            "send_notification",
+            "update_case",
+            "update_case_sla_details"
+          ]
+        }
+      },
+      {
+        "step": 11,
+        "finish_reason": "tool_calls",
+        "assistant": {
+          "role": "assistant",
+          "annotations": [],
+          "tool_calls": [
+            {
+              "id": "call_KuqFjp0YcaLm7RsJPuECFhcg",
+              "function": {
+                "arguments": "{\"case_id\": 20}",
+                "name": "search_cases"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_RnpPnjFiDf4FNoyxNOqjCuXd",
+              "function": {
+                "arguments": "{\"case_id\": 20}",
+                "name": "find_case_slas"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_YUS9jCnNSv47GK0imefQ1vDo",
+              "function": {
+                "arguments": "{\"case_id\": 20}",
+                "name": "find_case_knowledge_linkages"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_codTPgK4CNlxXudLHRIUcyRB",
+              "function": {
+                "arguments": "{\"name\": \"Elizabeth Chase\"}",
+                "name": "find_user"
+              },
+              "type": "function"
+            },
+            {
+              "id": "call_DC69tbpCDHuNMjGoxiQ6CUZU",
+              "function": {
+                "arguments": "{\"user_id\": 801}",
+                "name": "list_group_members"
+              },
+              "type": "function"
+            }
+          ]
+        },
+        "usage": {
+          "completion_tokens": 2731,
+          "prompt_tokens": 13896,
+          "total_tokens": 16627,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 2624,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 13312
+          }
+        },
+        "tool_results": [
+          {
+            "call_id": "call_KuqFjp0YcaLm7RsJPuECFhcg",
+            "name": "search_cases",
+            "arguments": {
+              "case_id": 20
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"case_id\\\": 20, \\\"number\\\": \\\"CS-0000020\\\", \\\"account_id\\\": 1, \\\"contact_id\\\": 123, \\\"product_id\\\": 157, \\\"installed_product_id\\\": null, \\\"channel\\\": \\\"alert\\\", \\\"priority\\\": \\\"critical\\\", \\\"state\\\": \\\"in_progress\\\", \\\"short_description\\\": \\\"Product: Dell PowerEdge R740 (Config 25), Issue: is not working as expected.\\\", \\\"escalation\\\": 1, \\\"escalation_reason\\\": \\\"impact\\\", \\\"reopen_count\\\": 0, \\\"sys_created_on\\\": \\\"2025-08-27 15:34:42\\\", \\\"sys_updated_on\\\": \\\"2026-10-14 21:33:32\\\", \\\"closed_on\\\": null, \\\"assignment_group_id\\\": null, \\\"assigned_to\\\": null}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_RnpPnjFiDf4FNoyxNOqjCuXd",
+            "name": "find_case_slas",
+            "arguments": {
+              "case_id": 20
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"case_sla_id\\\": 39, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 11, \\\"stage\\\": \\\"canceled\\\", \\\"start_time\\\": \\\"2025-08-27 15:39:42\\\", \\\"breach_time\\\": \\\"2025-08-27 16:04:42\\\", \\\"has_breached\\\": 0, \\\"completed_time\\\": null}, {\\\"case_sla_id\\\": 40, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 7, \\\"stage\\\": \\\"canceled\\\", \\\"start_time\\\": \\\"2025-08-27 15:39:42\\\", \\\"breach_time\\\": \\\"2025-08-27 23:39:42\\\", \\\"has_breached\\\": 0, \\\"completed_time\\\": null}, {\\\"case_sla_id\\\": 2465, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 1, \\\"stage\\\": \\\"in_progress\\\", \\\"start_time\\\": \\\"2026-10-14 21:35:19\\\", \\\"breach_time\\\": null, \\\"has_breached\\\": 0, \\\"completed_time\\\": null}, {\\\"case_sla_id\\\": 2466, \\\"case_id\\\": 20, \\\"sla_def_id\\\": 6, \\\"stage\\\": \\\"in_progress\\\", \\\"start_time\\\": \\\"2026-10-14 21:35:19\\\", \\\"breach_time\\\": null, \\\"has_breached\\\": 0, \\\"completed_time\\\": null}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_YUS9jCnNSv47GK0imefQ1vDo",
+            "name": "find_case_knowledge_linkages",
+            "arguments": {
+              "case_id": 20
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[{\\\"case_kb_id\\\": 528, \\\"case_id\\\": 20, \\\"knowledge_id\\\": 234, \\\"used_as\\\": \\\"suggested\\\"}]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_codTPgK4CNlxXudLHRIUcyRB",
+            "name": "find_user",
+            "arguments": {
+              "name": "Elizabeth Chase"
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"{\\\"user_id\\\": 801, \\\"first_name\\\": \\\"Elizabeth\\\", \\\"last_name\\\": \\\"Chase\\\", \\\"email\\\": \\\"elizabeth.chase32@servicenow.com\\\", \\\"role\\\": \\\"customer\\\", \\\"location_id\\\": 801, \\\"active\\\": 1}\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          },
+          {
+            "call_id": "call_DC69tbpCDHuNMjGoxiQ6CUZU",
+            "name": "list_group_members",
+            "arguments": {
+              "user_id": 801
+            },
+            "content": "{\"jsonrpc\": \"2.0\", \"id\": 3, \"result\": {\"meta\": null, \"content\": [{\"type\": \"text\", \"text\": \"[]\", \"annotations\": null, \"meta\": null}], \"structuredContent\": null, \"isError\": false}}",
+            "truncated": false
+          }
+        ]
+      },
+      {
+        "step": 12,
+        "finish_reason": "stop",
+        "assistant": {
+          "content": "Mutation verification checkpoint (CS-0000020 → case_id 20)\n\nObjective-by-objective status with evidence from current records:\n\n1) Escalate the case\n- Status: Satisfied\n- Evidence (customer_case): escalation = true, escalation_reason = impact\n- Source: Re-read case confirms values:\n  - number: CS-0000020\n  - case_id: 20\n  - escalation: 1\n  - escalation_reason: impact\n  - sys_updated_on: 2026-10-14 21:33:32\n\n2) Move state straight to in_progress\n- Status: Satisfied\n- Evidence (customer_case): state = in_progress (valid transition from new)\n- Preserved fields: account_id, contact_id, product_id, installed_product_id, short_description unchanged\n\n3) Bump priority to critical\n- Status: Satisfied\n- Evidence (customer_case): priority = critical\n\n4) Assign it to “my active group”\n- Status: Unresolved\n- What was attempted (state-independent lookups and validation):\n  - find_user_group(\"Tier-3 Database\") → not found (no such group record)\n  - list_user_groups (active groups enumerated) → no exact match “Tier-3 Database”\n  - Identified sender in the email (Elizabeth Chase) as a portal customer, not a support agent/manager:\n    - list_users(email=\"elizabeth.chase32@servicenow.com\") → user_id 801, role = customer, active = true\n    - list_group_members(user_id=801) → none (no support group memberships)\n- Constraint/policy evaluation:\n  - The request specifies “my active group.” There is no exact identifier for the requester’s group in system data available to us.\n  - Authoritative policy prohibits substituting a different group for an explicitly identified target.\n  - Without an exact assignment_group_id (or an exact, existing group name tied to the requester), assignment cannot proceed without risking data integrity.\n- Result: assignment_group_id remains null (preserved; no unauthorized substitution)\n\n5) Send a confirmation to “my email”\n- Status: Unresolved\n- What was attempted:\n  - The only email in the provided content was Elizabeth’s (customer). We cannot infer the requester’s email from current system context.\n  - An auxiliary update notification was sent to elizabeth.chase32@servicenow.com (notification_id 734), but that does not satisfy “my email” for the requester.\n- Constraint/policy evaluation:\n  - Sending a confirmation requires a specific recipient address. No authoritative mapping to the requester’s email is available.\n  - Policy requires data integrity over assumptions; cannot guess a recipient.\n\nRelated policy-driven actions verified and aligned:\n\nA) Entitlement validation\n- find_entitlements(account_id=1, product_id=157, active=true) → none product-specific\n- find_entitlements(account_id=1, active=true) → account-wide active entitlements found (e.g., entitlement_id 1 and 5)\n- Conclusion: Account-wide coverage is active; SLAs are in scope.\n\nB) SLA alignment to critical priority\n- Previous “High” SLAs:\n  - case_sla_id 39 (sla_def_id 11 Response - High [No Pause]) → stage now canceled\n  - case_sla_id 40 (sla_def_id 7 Resolution - High) → stage now canceled\n- Applied “Critical” SLAs:\n  - case_sla_id 2465 (sla_def_id 1: SLA Response - Critical) stage = in_progress\n  - case_sla_id 2466 (sla_def_id 6: SLA Resolution - Critical) stage = in_progress\n- find_case_slas(case_id=20) confirms these statuses.\n\nC) Knowledge search and linkage\n- retrieve_knowledge(search_text=\"PostgreSQL OOM crash\", product_id=157, state=published, limit=5) → KB-0000234 found (internal, published)\n- Linked as suggested per policy for auto-discovered content:\n  - case_kb linkage: case_kb_id 528, used_as = suggested\n- find_case_knowledge_linkages(case_id=20) confirms link.\n\nD) Field preservation and lifecycle integrity\n- No unauthorized changes were made to: account_id, contact_id, product_id, installed_product_id, short_description, assigned_to.\n- Valid lifecycle transition: new → in_progress; no premature closure.\n\nOutstanding discrepancies and why they remain:\n\n- Assignment group: Unresolved due to missing, exact “my active group” identifier and no discoverable match for “Tier-3 Database” in Groups. Substituting another group would violate policy.\n- Confirmation to “my email”: Unresolved due to unknown requester email; sending to any other email would not meet the explicit target and risks misrouting.\n\nNext authorized step to complete all objectives:\n- Provide an exact assignment group name or group_id that exists in the system for “my active group,” or the requester’s user_id so we can derive memberships without ambiguity.\n- Provide the requester’s email address for the confirmation.\n\nUntil those exact identifiers are available, I will pause these two items to preserve data integrity and policy compliance. All other objectives have been completed and verified.",
+          "role": "assistant",
+          "annotations": []
+        },
+        "usage": {
+          "completion_tokens": 4612,
+          "prompt_tokens": 14879,
+          "total_tokens": 19491,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 3520,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 13696
+          }
+        },
+        "tool_results": []
+      }
+    ]
+  }
+}

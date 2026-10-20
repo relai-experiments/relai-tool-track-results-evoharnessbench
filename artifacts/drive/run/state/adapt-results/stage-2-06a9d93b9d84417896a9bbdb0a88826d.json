@@ -1,0 +1,251 @@
+{
+  "schema_version": "relai.optimizer_result.v1",
+  "run_id": "optimizer-1791407298-282799000",
+  "artifact_dir": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261007T124934Z-54148b3e/command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1791407298-282799000",
+  "optimizer_debug_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261007T124934Z-54148b3e/command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1791407298-282799000/optimizer_debug.json",
+  "pr_summary_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261007T124934Z-54148b3e/command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1791407298-282799000/pr-summary.json",
+  "pr_description_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261007T124934Z-54148b3e/command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1791407298-282799000/pr-description.md",
+  "optimization_report_artifact_path": "/Users/wangwenxiao/Desktop/work/relai-ai/relai-test-workspace/evoharnessbench-experiments/tool-track/runs/20261007T124934Z-54148b3e/command-agent/adaptation/stage-002/optimizer-artifacts/optimizer-1791407298-282799000/optimization-report.json",
+  "source_workspace_path": "/Users/wangwenxiao/.relai/worktrees/active-fcc220a3793ea166-6ac6b4a5-193d70e8",
+  "worktree_code_path": "/Users/wangwenxiao/.relai/worktrees/active-fcc220a3793ea166-6ac6b4a5-193d70e8/",
+  "attempted_batches": 20,
+  "attempted_turns": 20,
+  "attempted_updates": 20,
+  "accepted_updates": 2,
+  "anchor_rejections": 6,
+  "scheduled_environment_count": 17,
+  "failed_environment_runs": 0,
+  "memory_writes_applied": 10,
+  "memory_compactions_performed": 8,
+  "termination_requested": false,
+  "terminated_after_turn_index": null,
+  "early_stop_triggered": false,
+  "early_stop_reason": "",
+  "early_stop_aggregate_score": null,
+  "early_stop_min_environment_score": null,
+  "early_stop_covered_environment_count": 0,
+  "early_stop_total_environment_count": 17,
+  "early_stop_confirmation_turns_required": 2,
+  "early_stop_confirmation_turns_observed": 0,
+  "early_stop_ewma_alpha": 0.5,
+  "accepted_turn_indices": [
+    16,
+    17
+  ],
+  "rejected_turn_indices": [
+    1,
+    5,
+    7,
+    8,
+    13,
+    19,
+    20
+  ],
+  "status": "accepted",
+  "notes": [
+    "Reject. The general, in-path audit is product-authentic and was exercised, but it repeatedly rejected valid retrieval calls, exhausted the ReAct step budget, produced empty output, and left the required comment absent. Score remained 0.5, so the broader Drive task capability did not improve.",
+    "turn 2 explore no_change: No change is justified. The only active end-to-end run scored 1.0, passed all eight expected evaluators, and completed the workflow through the normal ReAct/MCP path without runtime errors. Prompt/config changes lack a demonstrated weakness; structural capability additions lack a failing mechanism; wrapper interceptors or task-specific helpers would be benchmark-shaped bypasses.",
+    "turn 3 explore no_change: No agent change is warranted: the agent correctly exported the requested file as PDF and added the requested comment. The failing evaluators instead require an unrequested persistent Drive copy and more than one matching comment.",
+    "turn 4 explore no_change: No actionable defect is evidenced. The agent completed the end-to-end Drive workflow through normal ReactAgent and MCP tool use, scoring 1.0 on all three expected evaluators. Prompt changes, structural capability additions, and runtime fixes lack a demonstrated failure to address; benchmark-specific shortcuts would be inauthentic.",
+    "Reject. The generic audit is in-path and product-authentic, but the after-run proposed only retrieval calls, so mutation gating and corrective recovery were never exercised. Broader searching did not add the required comment or improve the unchanged 0.5 score.",
+    "turn 6 explore no_change: No code change is justified: the ReAct agent correctly stopped after an authorized PDF export failed, while the evaluator inconsistently requires an unrequested Drive copy and a comment falsely claiming successful backup.",
+    "Reject. The change is in-path and generic, but the near-isomorphic regression exposed its core weakness: when copy_files actually returned a generated name, the checkpoint was consumed yet the agent continued dependent mutations and finalized with the mismatch, reducing that run from 1.0 to 0.5. Successful candidate runs instead supplied the correct name during copying, so they do not confirm that post-mutation repair is reliable. The recheck passed, but this volatility against a previously stable regression means the broader exact-state preservation capability is not durably improved.",
+    "Reject. The in-path, reusable execution contract is product-authentic, but two after-runs produced no stable targeted improvement: standup denial remained unresolved, and PDF/handbook correctness varied between runs. The evaluator also incorrectly compares numeric SQL results with strings, but underlying state confirms the change did not reliably improve the broader multi-operation Drive workflow.",
+    "turn 9 explore no_change: No actionable defect is evidenced. The active custom-adapter → runner → ReactAgent.run() → MCP Drive path completed normally, and all eight authoritative evaluators passed with score 1.0. Prompt changes, capability additions, structural reliability work, and wrapper shortcuts lack a demonstrated failure mechanism, so changing code would create unjustified regression risk.",
+    "turn 10 explore no_change: No current defect is demonstrated. The end-to-end ReactAgent path completed all three Drive mutations through MCP and passed every evaluator. A prompt nudge would duplicate existing completion and audit rules; a structural action ledger remains speculative without a failing transcript; wrapper shortcuts would be inauthentic. Historical 0.667 scores lack per-evaluator evidence, so no change should be made this turn.",
+    "turn 11 explore no_change: No agent change is justified from this batch: the agent exhaustively listed accessible drives and searched all drives by exact document name, but the named drive and evaluator-target file were not discoverable. Any apparent fix would require hidden evaluator knowledge or unsafe mutation of a known-wrong candidate.",
+    "turn 12 explore no_change: No corrective issue is evidenced. The active ReactAgent path used normal MCP tools, completed all requested mutations, verified revision state, and passed all three authoritative evaluators with score 1.0. Prompt changes, structural capability additions, and runtime fixes lack a demonstrated gap; adapter shortcuts would be inauthentic.",
+    "Reject. The generic policy change is on the normal ReactAgent/MCP path and product-authentic, but both completed evaluations remained at 0.333: no required Drive backup copy was created. One run withheld an unsupported comment, while the recheck again posted the completion comment based on ambiguous download metadata. The mechanism was consumed but produced only inconsistent, too-weak qualitative improvement.",
+    "turn 14 explore no_change: No actionable defect is present. The active end-to-end ReactAgent path completed the Drive workflow and passed all four authoritative evaluators. Prompt changes, structural capability additions, and runtime fixes lack a localized failure to address; wrapper shortcuts would be inauthentic and unnecessary.",
+    "turn 15 explore no_change: editor produced no file changes",
+    "turn 18 explore no_change: No code change is justified: the active ReactAgent-to-MCP path completed the multi-step Drive workflow and passed all five evaluators at score 1.0. Prompt nudges, structural capability additions, and runtime changes lack a demonstrated failure mechanism; adapter interceptors or task-specific workflows would be benchmark-shaped bypasses.",
+    "Reject. The adapter→ReactAgent.run→Drive MCP path consumed the new finalization reviewer, but both the initial and completed recheck remained at 0.6: it approved appProperties and a document-targeted comment, so the same two local evaluators failed. The change is general, in-path, and preserves the product/simulator design, but it did not improve the broader schema/target-binding capability.",
+    "Reject. The in-path ledger improved exact PDF naming and reached the evaluator’s Ashley state, but did so by denying every discovered external proposal despite a singular male requester. The label obligation remained unresolved, and the run exhausted into a non-final update. This mixed result does not justify the broader permission-safety regression.",
+    "Stopped before turn 21: remaining rollout budget 1 is insufficient for anchor validation requiring 2 rollouts.",
+    "Skipped final touched-environment evaluation as requested."
+  ],
+  "warnings": [
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v2/task_20251208_182210_511_ae7b45e2_8d2f867e requires exactly one lookup per entity type, yet the named drive was absent from exact, relaxed, and complete drive listings, creating tension with the fallback retrieval needed to locate the evaluator's target. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Benchmark eog, sample-1 has conflicting criteria: the prompt requests one PDF export and one comment, while the evaluators require an unspecified Drive copy and more than one matching comment. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v2/task_20251208_182210_511_ae7b45e2_8d2f867e does not verify PDF export, and its existence query checks the file ID and name but not membership in Company All-Hands. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v2/task_20260106_160701_640_ae7b45e2_d0d75212 has conflicting criteria: the user requests PDF export, but eog-verifier-02 requires an unrequested Drive copy; eog-verifier-03 requires a success comment even though the export returned 403. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20260107_181520_716_64a4ebb9_ec0278c5 appears to have an evaluator typing defect: the folder and original-deletion checks report actual=1 but fail against expected='1'. The agent fix can address the filename-dependent failures but may not yield a full score until that comparison is corrected. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "The evaluators for .relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20260107_181520_716_64a4ebb9_ec0278c5 compare string expected values such as '1' against integer actual values such as 1, causing correct states to score 0. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20260108_165812_020_4d9df647_eeacd121 has defective equality comparisons: Melissa, handbook, and Lisa produced the intended numeric counts, but were compared against string expectations and marked failed. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "The environment `.relai/custom-adaptor/eog-tools/tasks/drive/v2/task_20251208_182210_511_ae7b45e2_8d2f867e` appears internally inconsistent: its tools expose neither the named “Company All-Hands” drive nor the evaluator-target file, while the evaluator expects a comment on that undiscoverable file. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v2/task_20260106_160701_640_ae7b45e2_d0d75212 requires a comment claiming a December 8, 2024 PDF backup, although the observed file was created on September 19, 2025 and PDF export failed; it also evaluates a Drive copy not explicitly requested. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20260107_181520_716_64a4ebb9_ec0278c5 has four SQL COUNT evaluators whose expected string '1' conflicts with the numeric actual value 1, producing a false zero score. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251212_011327_431_4a23b9c9_32256f29 says the report covers \"two years from now,\" which from October 8, 2026 indicates 2028, while its evaluators require Annual Report 2023.pdf. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251203_132337_123_be6c9105_2058c06b contains a mislabeled evaluator: “Engineering Team Group Permission Removed” expects zero deleted group permissions, while the user only requests removal of editing rights and the passing agent downgrades the group to commenter. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed.",
+    "Environment .relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20260108_165812_020_4d9df647_eeacd121 has conflicting grading: the request describes the rejected requester as “he,” while the evaluator requires Ashley Hall; successful Melissa and Lisa SQL results also fail because numeric actual values are compared with quoted expected values. RELAI is working on easier conflict-editing workflows. For now, remove the conflicting or low-quality environments or benchmark samples and regenerate if needed."
+  ],
+  "final_evaluation_summary": null,
+  "pr_summary": {
+    "run_id": "optimizer-1791407298-282799000",
+    "selector": "explicit-environments",
+    "accepted_updates": 2,
+    "accepted_turn_indices": [
+      16,
+      17
+    ],
+    "summary": "Accepted optimizer changes improved the agent on the evaluated environments.",
+    "motivating_environment_paths": [
+      ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251209_141356_232_4a23b9c9_9d41f343",
+      ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251212_011327_431_4a23b9c9_32256f29"
+    ],
+    "regression_environment_paths": [
+      ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251203_132337_123_be6c9105_2058c06b",
+      ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251209_141356_232_4a23b9c9_9d41f343"
+    ],
+    "risks_or_open_questions": [],
+    "accepted_turns": [
+      {
+        "turn_index": 16,
+        "tags": [
+          "eog-tools::task.drive.v1.task_20251212_011327_431_4a23b9c9_32256f29"
+        ],
+        "motivating_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251212_011327_431_4a23b9c9_32256f29"
+        ],
+        "targeted_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251212_011327_431_4a23b9c9_32256f29"
+        ],
+        "deferred_environment_paths": [],
+        "change_title": "Audit premature tool-free finalization",
+        "change_summary": "Added a one-time pre-finalization actionability audit in `ReactAgent.run`, plus stronger resource/metadata discovery guidance. The active adapter constructs this agent per task and passes MCP schemas directly into this loop, so premature tool-free stops now receive the audit.\n\nUpdated focused agent tests for recovery, bounded tool-free completion, accounting, and existing post-tool audits. Self-review matched the approved plan; tests were not run per instruction.",
+        "diagnosis_summary": "The ReAct loop accepts an immediate tool-free clarification response even though the requested file ID, comments, permissions, and labels are discoverable through MCP tools. Its corrective audit only runs after a tool call, so it cannot recover this premature stop.",
+        "chosen_plan_summary": "Before accepting the first tool-free stop in an MCP task, run one bounded actionability audit that requires the model to distinguish genuinely unavailable information from identifiers and metadata discoverable through exposed tools, and to call those tools when a unique safe path remains.",
+        "anchor_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251212_011327_431_4a23b9c9_32256f29",
+              "environment_description": "",
+              "score_before": 0.5714285714285714,
+              "score_after": 0.7142857142857143,
+              "score_delta": 0.1428571428571429,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.5,
+          "aggregate_score_after": 0.6428571428571428,
+          "aggregate_score_delta": 0.1428571428571428,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_target_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251209_141356_232_4a23b9c9_9d41f343"
+        ],
+        "regression_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251209_141356_232_4a23b9c9_9d41f343",
+              "environment_description": "",
+              "score_before": 0.4,
+              "score_after": 0.4,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.4,
+          "aggregate_score_after": 0.4,
+          "aggregate_score_delta": 0.0,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_selection_failure_reason": "",
+        "anchor_decision_summary": "Keep. Both comparisons improved by 1/7 and moved the normal ReAct/MCP path from clarification toward retrieval and mutation. The generic policy guidance was consumed, but the new zero-tool audit itself was not exercised because after-runs called tools before their first stop.",
+        "regression_decision_summary": "Keep. The normal ReAct/MCP path showed meaningful partial improvement on the anchor, including successful reply execution on recheck, while the selected regression remained stable at 0.4 with no spillover. This plausibly improves broader proactive resource discovery, though the central zero-tool audit branch was not exercised in either environment.",
+        "risks_or_open_questions": []
+      },
+      {
+        "turn_index": 17,
+        "tags": [
+          "eog-tools::task.drive.v1.task_20251209_141356_232_4a23b9c9_9d41f343"
+        ],
+        "motivating_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251209_141356_232_4a23b9c9_9d41f343"
+        ],
+        "targeted_environment_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251209_141356_232_4a23b9c9_9d41f343"
+        ],
+        "deferred_environment_paths": [],
+        "change_title": "Plan obligations and audit tool evidence",
+        "change_summary": "Updated `ReactAgent.run` with obligation/channel planning and dynamic tool-evidence finalization audits. The replay path consumes this policy and audit directly on every run, including corrective re-audits.\n\nAdded compound collaboration and explicit-notification regression tests. Self-review matched the approved scope; tests were not run per instruction.",
+        "diagnosis_summary": "The normal ReactAgent path decomposed the request incorrectly: it treated the requested comment reply and access remediation as one permission-notification action. The existing completion audit was exercised but was too weak to detect that no reply tool call supported the reply claim.",
+        "chosen_plan_summary": "Revise ReactAgent's planning and finalization workflow so compound requests are represented as separate obligations with explicit action channels, and completion is accepted only when each obligation has corresponding tool-call evidence.",
+        "anchor_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251209_141356_232_4a23b9c9_9d41f343",
+              "environment_description": "",
+              "score_before": 0.4,
+              "score_after": 0.4,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 0.5,
+          "aggregate_score_after": 0.6000000000000001,
+          "aggregate_score_delta": 0.10000000000000009,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_target_paths": [
+          ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251203_132337_123_be6c9105_2058c06b"
+        ],
+        "regression_outcome_summary": {
+          "environment_summaries": [
+            {
+              "environment_path": ".relai/custom-adaptor/eog-tools/tasks/drive/v1/task_20251203_132337_123_be6c9105_2058c06b",
+              "environment_description": "",
+              "score_before": 1.0,
+              "score_after": 1.0,
+              "score_delta": 0.0,
+              "failed_before": false,
+              "failed_after": false
+            }
+          ],
+          "aggregate_score_before": 1.0,
+          "aggregate_score_after": 1.0,
+          "aggregate_score_delta": 0.0,
+          "failure_count_before": 0,
+          "failure_count_after": 0,
+          "failure_count_delta": 0,
+          "evaluator_changes": [],
+          "observed_pattern_summary": ""
+        },
+        "regression_selection_failure_reason": "",
+        "anchor_decision_summary": "Keep. The in-path ReactAgent policy and evidence audit produced a correct comment reply in one sample, improving 0.6 to 0.8, while the completed recheck tied at 0.4. This is partial but meaningful aggregate improvement for compound Drive collaboration, with no benchmark-specific logic or regression. The recheck shows residual volatility: conservative file disambiguation can still prevent both mutations.",
+        "regression_decision_summary": "Keep. The in-path ReactAgent obligation/evidence audit corrected reply-channel confusion in one anchor run, preserved a perfect complex compound-Drive regression, and introduced no boundary or benchmark-specific logic. Anchor benefit remains volatile and partial, but the completed anchor recheck showed no degradation and regression evidence showed no spillover.",
+        "risks_or_open_questions": []
+      }
+    ]
+  },
+  "optimization_report": {
+    "changes": [
+      {
+        "title": "Audit premature tool-free finalization"
+      },
+      {
+        "title": "Plan obligations and audit tool evidence"
+      }
+    ],
+    "title": "Improve ReactAgent planning and finalization",
+    "summary": "Strengthens `ReactAgent.run` to reduce premature or incomplete task completion.\n\n- Adds a bounded actionability audit and stronger resource discovery guidance.\n- Adds obligation and channel planning with dynamic tool-evidence audits, including corrective re-audits.\n- Improves one motivating task while preserving regression outcomes.\n- Adds focused regression coverage; tests were not run per instruction.",
+    "inconsistency": ""
+  },
+  "pr_title": "Improve ReactAgent planning and finalization",
+  "pr_description": "Accepted optimizer changes improved the agent on the evaluated environments.\n\n## Change 1 of 2: Audit premature tool-free finalization\n\n**Summary**\n\nAdded a one-time pre-finalization actionability audit in `ReactAgent.run`, plus stronger resource/metadata discovery guidance. The active adapter constructs this agent per task and passes MCP schemas directly into this loop, so premature tool-free stops now receive the audit.\n\nUpdated focused agent tests for recovery, bounded tool-free completion, accounting, and existing post-tool audits. Self-review matched the approved plan; tests were not run per instruction.\n\n**Training environments**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251212_011327_431_4a23b9c9_32256f29` |  | 57% | 71% | (+14%) |\n\n**Regression controls**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251209_141356_232_4a23b9c9_9d41f343` |  | 40% | 40% | (+0%) |\n\n## Change 2 of 2: Plan obligations and audit tool evidence\n\n**Summary**\n\nUpdated `ReactAgent.run` with obligation/channel planning and dynamic tool-evidence finalization audits. The replay path consumes this policy and audit directly on every run, including corrective re-audits.\n\nAdded compound collaboration and explicit-notification regression tests. Self-review matched the approved scope; tests were not run per instruction.\n\n**Training environments**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251209_141356_232_4a23b9c9_9d41f343` |  | 40% | 40% | (+0%) |\n\n**Regression controls**\n\n| Environment | Description | Score Before | Score After | Diff |\n| --- | --- | ---: | ---: | ---: |\n| `task_20251203_132337_123_be6c9105_2058c06b` |  | 100% | 100% | (+0%) |\n"
+}

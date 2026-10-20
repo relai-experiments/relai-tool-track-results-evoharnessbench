@@ -1,0 +1,92 @@
+{
+  "task_id": "task_20260105_191634_257_2aa6b0ad_ea0bbd82",
+  "score": 0.6666666666666666,
+  "solved": false,
+  "n_passed": 2,
+  "n_total": 3,
+  "per_verifier": [
+    {
+      "name": "Validating case CS-0000280 assignment.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating William Wyatt's group membership.",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Validating remind notification. ",
+      "passed": false,
+      "score": 0.0,
+      "expected": 2,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_57f51f270ba44935",
+    "task_id": "task_20260105_191634_257_2aa6b0ad_ea0bbd82",
+    "overall_success": false,
+    "pass_rate": 0.6666666666666666,
+    "n_passed": 2,
+    "n_total": 3,
+    "per_verifier": [
+      {
+        "name": "Validating case CS-0000280 assignment.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating William Wyatt's group membership.",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Validating remind notification. ",
+        "passed": false,
+        "score": 0.0,
+        "expected": 2,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 301.6708641052246,
+  "total_tokens": 270920,
+  "n_steps": 16,
+  "trace_path": "command-agent/tasks/eog-task_20260105_191634_257_2aa6b0ad_ea0bbd82-9b550ae6/output/trace.json",
+  "agent_commit": "4ba5417938f7cdc8e4032e2dde6cc21a7029e2c3",
+  "graded_at": "2026-10-16T14:12:06.289180+00:00",
+  "source": "checkpointed_evaluation"
+}

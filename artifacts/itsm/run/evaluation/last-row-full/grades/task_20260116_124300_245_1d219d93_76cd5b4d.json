@@ -1,0 +1,70 @@
+{
+  "task_id": "task_20260116_124300_245_1d219d93_76cd5b4d",
+  "score": 1.0,
+  "solved": true,
+  "n_passed": 2,
+  "n_total": 2,
+  "per_verifier": [
+    {
+      "name": "Printer CI registration – London Development Center",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "Printer performance incident creation and L1 routing",
+      "passed": true,
+      "score": 1.0,
+      "expected": 1,
+      "actual": 1,
+      "comparison_type": "equals",
+      "description": "",
+      "details": null,
+      "error": null
+    }
+  ],
+  "grade_raw": {
+    "session_id": "sess_819182d5cc0646b1",
+    "task_id": "task_20260116_124300_245_1d219d93_76cd5b4d",
+    "overall_success": true,
+    "pass_rate": 1.0,
+    "n_passed": 2,
+    "n_total": 2,
+    "per_verifier": [
+      {
+        "name": "Printer CI registration – London Development Center",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      },
+      {
+        "name": "Printer performance incident creation and L1 routing",
+        "passed": true,
+        "score": 1.0,
+        "expected": 1,
+        "actual": 1,
+        "comparison_type": "equals",
+        "description": "",
+        "details": null,
+        "error": null
+      }
+    ]
+  },
+  "latency_s": 121.88214087486267,
+  "total_tokens": 110734,
+  "n_steps": 5,
+  "trace_path": "command-agent/tasks/eog-task_20260116_124300_245_1d219d93_76cd5b4d-4714857e/output/trace.json",
+  "agent_commit": "a7ed955c65a44804baf2cb57c50b74a6dbb93937",
+  "graded_at": "2026-10-20T00:03:35.647533+00:00",
+  "source": "checkpointed_evaluation"
+}

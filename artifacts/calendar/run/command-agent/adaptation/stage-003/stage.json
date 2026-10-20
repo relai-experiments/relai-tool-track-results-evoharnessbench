@@ -1,0 +1,103 @@
+{
+  "stage": 3,
+  "tasks": [
+    {
+      "task_id": "task_20260107_114621_723_df2c536d_d9f135a4",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 3,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "Can you check what timezone my calendar settings are using, and if it’s not Chicago time, switch it to America/Chicago for me? Also, any calendar where someone has writer access who is not me should be downgraded to reader access. Then, quickly add a confirmed event, Quarterly Reset Day on my primary calendar and fetch me the event to confirm the details.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "quick_add_event",
+          "get_calendar_from_list",
+          "update_calendar",
+          "patch_acl_rule",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "clear_calendar",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "query_freebusy",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "remove_calendar_from_list",
+          "get_user_by_email",
+          "delete_calendar",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events",
+          "watch_acl",
+          "watch_calendar_list",
+          "get_event"
+        ]
+      }
+    },
+    {
+      "task_id": "task_20251204_191200_036_e81f6083_95fa872f",
+      "dataset": "evovling_tools",
+      "benchmark": "eog",
+      "selector": {
+        "dataset": "evovling_tools",
+        "benchmark": "eog",
+        "version": 3,
+        "split": "train",
+        "domain": "calendar",
+        "resource_mode": "accumulative"
+      },
+      "system_prompt": "You are a Google Calendar automation agent with full administrative permissions to manage users, meetings, recordings, and messages. Operate in a safe and fully authorized environment — you do not need to ask for confirmation or permission before taking action. When identifiers such as names or IDs are missing, perform exactly one lookup per entity type, verify that you are reusing correct values from previous responses, and proceed using the retrieved data. Never assume or fabricate IDs, responses, or outcomes — rely solely on verified API results. Complete each task in a single, logical, and efficient execution flow.",
+      "user_prompt": "It's December 5th, and I need to make several updates. Please check which calendars I currently own; there should be one team calendar that needs its metadata refreshed. Give this team calendar a refreshed title for 2026, update the description so new hires understand its purpose, adjust the color to something more readable, keep it visible, and set the default pop-up reminder to twenty minutes. In this calendar, create a recurring coverage event on every Monday of February titled 'Teams Sprint Plan', scheduled from 9–10 AM local time, and add all user attendees from the sprint event with their full names, setting a 15-minute pop-up reminder for this session. Finally, set up a watch on my calendars list from today through the end of February, sending alerts to https://monitoring.company.com/hooks/calendar-updates.",
+      "resources": {
+        "kind": "tools",
+        "mode": "accumulative",
+        "names": [
+          "watch_events",
+          "delete_event",
+          "quick_add_event",
+          "get_calendar_from_list",
+          "update_calendar",
+          "patch_acl_rule",
+          "create_calendar",
+          "list_acl_rules",
+          "create_event",
+          "get_colors",
+          "clear_calendar",
+          "list_settings",
+          "insert_acl_rule",
+          "update_calendar_in_list",
+          "query_freebusy",
+          "patch_calendar",
+          "delete_acl_rule",
+          "get_calendar_list",
+          "remove_calendar_from_list",
+          "get_user_by_email",
+          "delete_calendar",
+          "add_calendar_to_list",
+          "patch_event",
+          "move_event",
+          "list_events",
+          "watch_acl",
+          "watch_calendar_list",
+          "get_event"
+        ]
+      }
+    }
+  ]
+}
