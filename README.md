@@ -17,7 +17,7 @@ Values above are rounded only after aggregation. The exact saved figures explain
 
 ## Stage-score plots
 
-These plots compare RELAI with the six cumulative EOG tool systems for which the [EvoHarnessBench results](https://mas-orchestra.salesforceresearch.ai/evoharness/#results) publish per-domain, per-stage scores. The blue RELAI line is one local run; each other line is the website mean of three runs, with whiskers showing ±1 population standard deviation. Hollow blue markers indicate RELAI stage scores that include terminal-rounded evaluation cells. All plots use the same 30–80% vertical scale. The separate final full evaluations in the table above are separate trials and are not plotted.
+These plots compare RELAI with the six cumulative EOG tool systems for which the [EvoHarnessBench results](https://mas-orchestra.salesforceresearch.ai/evoharness/#results) publish per-domain, per-stage scores. The blue RELAI line is one local run; each other line is the website mean of three runs, with whiskers showing ±1 population standard deviation. Earlier RELAI points use the weighted matrix scores in the table. Its **final point is the arithmetic mean of the unrounded final-stage weighted matrix score and the separate final full-evaluation score**: 72.13% for calendar, 76.74% for drive, 63.83% for CSM, and 64.41% for ITSM. The table retains both source scores. Hollow blue markers indicate RELAI stage scores that include terminal-rounded evaluation cells. All plots use the same 30–80% vertical scale.
 
 ### Calendar
 

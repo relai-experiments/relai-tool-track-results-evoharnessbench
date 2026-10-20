@@ -78,8 +78,9 @@ def validate_baselines(data: dict, manifest: dict) -> None:
 
 def plot_domain(entry: dict, baselines: dict, output_dir: Path) -> None:
     domain = entry["domain"]
-    stage_scores, _, _, _ = analyze_run(entry, check=False)
+    stage_scores, final_score, _, _ = analyze_run(entry, check=False)
     relai_scores = [100 * value for value in stage_scores]
+    relai_scores[-1] = 100 * (stage_scores[-1] + final_score) / 2
     stages = list(range(1, len(relai_scores) + 1))
     report = load_json(ROOT / entry["imported_report"])
     relai_counts, rounded = stage_counts(report, len(stages))
@@ -135,18 +136,19 @@ def plot_domain(entry: dict, baselines: dict, output_dir: Path) -> None:
     fig.legend(handles, [h.get_label() for h in handles], loc="lower center",
                bbox_to_anchor=(0.5, 0.125), ncol=4, frameon=False,
                columnspacing=1.4, handlelength=2.2, fontsize=9)
-    notes = ["Baseline whiskers: ±1 SD over 3 runs. RELAI: one run."]
+    notes = ["Baseline whiskers: ±1 SD over 3 runs. RELAI final point: mean of matrix and full eval."]
     if any(rounded):
         notes.append("Hollow RELAI markers include terminal-rounded evaluation cells.")
     differences = [(stage, website, local) for stage, website, local in zip(stages, site_counts, relai_counts)
                    if website != local]
     if differences:
         notes.append(f"Website stage {differences[-1][0]}: {differences[-1][1]} tasks; RELAI: {differences[-1][2]} tasks.")
-    fig.text(0.5, 0.055, "  ".join(notes), ha="center", va="center", fontsize=8.2, color="#4B5563")
+    fig.text(0.5, 0.055, "\n".join(notes), ha="center", va="center", fontsize=8.2,
+             linespacing=1.5, color="#4B5563")
 
     output_dir.mkdir(parents=True, exist_ok=True)
     metadata = {"Title": f"{domain.upper()} RELAI vs EvoHarnessBench tool baselines",
-                "Description": "Score by cumulative harness stage; baseline error bars are one population standard deviation."}
+                "Description": "Score by cumulative harness stage; RELAI final point averages matrix and full evaluation; baseline error bars show one population standard deviation."}
     svg_path = output_dir / f"{domain}.svg"
     fig.savefig(svg_path, metadata=metadata)
     svg_path.write_text(re.sub(r"[ \t]+(?=\n)", "", svg_path.read_text(encoding="utf-8")),
