@@ -2,6 +2,34 @@
 
 This repository records four local **self-evolving** experiments on the EnterpriseOps-Gym (EOG) tools track of [EvoHarnessBench](https://mas-orchestra.salesforceresearch.ai/evoharness/). A GPT-5 ReAct agent adapted its code with RELAI as each domain's tool pool grew. The four selected runs cover calendar, drive, customer service management (CSM), and IT service management (ITSM). Each domain was run once; the baseline figures below are extracted from the EvoHarnessBench team's published multi-run results for context.
 
+## Overview
+
+The tables rank methods by **Score** (partial credit from task verifiers). The all-stage average gives each of the 13 plotted domain-stage points equal weight, including four CSM stages and three stages in each other domain.
+
+| Rank | Method | Average across all stages |
+| ---: | --- | ---: |
+| **1** | **RELAI** | **66.73%** |
+| 2 | Raw Memory | 64.67% |
+| 3 | GEPA | 64.32% |
+| 4 | Reasoning Bank | 63.90% |
+| 5 | MemToolAgent | 63.07% |
+| 6 | Meta-Harness | 62.84% |
+| 7 | ReAct/Codex deployment | 59.66% |
+
+The final-stage average gives each domain one point and equal weight. For RELAI, each final point is the mean of its final-stage matrix score and separate final full-evaluation score.
+
+| Rank | Method | Average across final stages |
+| ---: | --- | ---: |
+| **1** | **RELAI** | **69.28%** |
+| 2 | GEPA | 67.67% |
+| 3 | Reasoning Bank | 67.58% |
+| 4 | Raw Memory | 66.99% |
+| 5 | MemToolAgent | 66.55% |
+| 6 | Meta-Harness | 65.47% |
+| 7 | ReAct/Codex deployment | 61.30% |
+
+These are descriptive comparisons: RELAI has one run per domain, the published baselines are three-run means, and the CSM test-task counts differ from stage 2 onward.
+
 ## Results
 
 **Score** is a task's fraction of verifiers passed, averaged over tasks. It gives partial credit and is distinct from strict pass rate, which requires every verifier to pass. Each “stage” value below weights the matrix cells at that harness stage by their test-task counts. The separate “final full eval” is a fresh evaluation of the final agent on all test cohorts with the final tool pool; it need not equal the weighted final-stage matrix value. All values are percentages. Run IDs link to the copied source reports.
