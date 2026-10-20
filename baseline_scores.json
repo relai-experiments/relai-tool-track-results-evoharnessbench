@@ -1,0 +1,959 @@
+{
+  "schema_version": 1,
+  "source_url": "https://mas-orchestra.salesforceresearch.ai/evoharness/static/baselines/data.js",
+  "source_sha256": "a1ea84cfbccbedf721acb6e1ef37b2b026361696db477821ef11b6ebf0f81e06",
+  "source_schema": 3,
+  "source_snapshot": "August 2026",
+  "metric": "Score: mean fraction of task verifiers passed, percent",
+  "uncertainty": "Population standard deviation over three runs",
+  "domains": [
+    "calendar",
+    "drive",
+    "csm",
+    "itsm"
+  ],
+  "systems": [
+    {
+      "source_id": "tools-react",
+      "name": "ReAct/Codex deployment",
+      "stages": {
+        "calendar": [
+          {
+            "stage": 1,
+            "score": 72.151069,
+            "score_sd": 0.469252,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 70.429385,
+            "score_sd": 1.239004,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 68.30934,
+            "score_sd": 1.400331,
+            "runs": 3,
+            "tasks_per_run": [
+              43,
+              43,
+              43
+            ]
+          }
+        ],
+        "drive": [
+          {
+            "stage": 1,
+            "score": 59.986315,
+            "score_sd": 2.254523,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 65.425501,
+            "score_sd": 2.113866,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 72.3747,
+            "score_sd": 2.570701,
+            "runs": 3,
+            "tasks_per_run": [
+              45,
+              45,
+              45
+            ]
+          }
+        ],
+        "csm": [
+          {
+            "stage": 1,
+            "score": 47.948718,
+            "score_sd": 4.714045,
+            "runs": 3,
+            "tasks_per_run": [
+              13,
+              13,
+              13
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 56.378601,
+            "score_sd": 3.227371,
+            "runs": 3,
+            "tasks_per_run": [
+              27,
+              27,
+              27
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 60.898909,
+            "score_sd": 3.446882,
+            "runs": 3,
+            "tasks_per_run": [
+              47,
+              47,
+              47
+            ]
+          },
+          {
+            "stage": 4,
+            "score": 61.763545,
+            "score_sd": 1.262643,
+            "runs": 3,
+            "tasks_per_run": [
+              71,
+              71,
+              71
+            ]
+          }
+        ],
+        "itsm": [
+          {
+            "stage": 1,
+            "score": 50.142196,
+            "score_sd": 0.160762,
+            "runs": 3,
+            "tasks_per_run": [
+              48,
+              48,
+              48
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 47.089946,
+            "score_sd": 3.263127,
+            "runs": 3,
+            "tasks_per_run": [
+              60,
+              60,
+              60
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 42.732658,
+            "score_sd": 3.576298,
+            "runs": 3,
+            "tasks_per_run": [
+              73,
+              73,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_id": "tools-raw-memory",
+      "name": "Raw Memory",
+      "stages": {
+        "calendar": [
+          {
+            "stage": 1,
+            "score": 70.541871,
+            "score_sd": 1.884032,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 72.568175,
+            "score_sd": 1.553556,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 73.445926,
+            "score_sd": 1.031787,
+            "runs": 3,
+            "tasks_per_run": [
+              43,
+              43,
+              43
+            ]
+          }
+        ],
+        "drive": [
+          {
+            "stage": 1,
+            "score": 70.749863,
+            "score_sd": 1.180446,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 69.871613,
+            "score_sd": 1.316573,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 73.824357,
+            "score_sd": 1.945414,
+            "runs": 3,
+            "tasks_per_run": [
+              45,
+              45,
+              45
+            ]
+          }
+        ],
+        "csm": [
+          {
+            "stage": 1,
+            "score": 48.974356,
+            "score_sd": 5.894648,
+            "runs": 3,
+            "tasks_per_run": [
+              13,
+              13,
+              13
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 53.806584,
+            "score_sd": 0.209836,
+            "runs": 3,
+            "tasks_per_run": [
+              27,
+              27,
+              27
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 60.835867,
+            "score_sd": 5.070382,
+            "runs": 3,
+            "tasks_per_run": [
+              47,
+              47,
+              47
+            ]
+          },
+          {
+            "stage": 4,
+            "score": 60.27871,
+            "score_sd": 0.787831,
+            "runs": 3,
+            "tasks_per_run": [
+              71,
+              71,
+              71
+            ]
+          }
+        ],
+        "itsm": [
+          {
+            "stage": 1,
+            "score": 64.702932,
+            "score_sd": 2.461876,
+            "runs": 3,
+            "tasks_per_run": [
+              48,
+              48,
+              48
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 60.646826,
+            "score_sd": 1.160354,
+            "runs": 3,
+            "tasks_per_run": [
+              60,
+              60,
+              60
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 60.405343,
+            "score_sd": 1.431258,
+            "runs": 3,
+            "tasks_per_run": [
+              73,
+              73,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_id": "tools-reasoning-bank",
+      "name": "Reasoning Bank",
+      "stages": {
+        "calendar": [
+          {
+            "stage": 1,
+            "score": 71.691298,
+            "score_sd": 0.1877,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 70.693936,
+            "score_sd": 0.447581,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 72.798081,
+            "score_sd": 1.449157,
+            "runs": 3,
+            "tasks_per_run": [
+              43,
+              43,
+              43
+            ]
+          }
+        ],
+        "drive": [
+          {
+            "stage": 1,
+            "score": 70.754424,
+            "score_sd": 1.219524,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 71.381674,
+            "score_sd": 0.862405,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 76.451421,
+            "score_sd": 2.179638,
+            "runs": 3,
+            "tasks_per_run": [
+              45,
+              45,
+              45
+            ]
+          }
+        ],
+        "csm": [
+          {
+            "stage": 1,
+            "score": 42.820513,
+            "score_sd": 3.459163,
+            "runs": 3,
+            "tasks_per_run": [
+              13,
+              13,
+              13
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 51.934157,
+            "score_sd": 1.691502,
+            "runs": 3,
+            "tasks_per_run": [
+              27,
+              27,
+              27
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 59.766972,
+            "score_sd": 3.813371,
+            "runs": 3,
+            "tasks_per_run": [
+              47,
+              47,
+              47
+            ]
+          },
+          {
+            "stage": 4,
+            "score": 62.932038,
+            "score_sd": 1.776931,
+            "runs": 3,
+            "tasks_per_run": [
+              71,
+              71,
+              71
+            ]
+          }
+        ],
+        "itsm": [
+          {
+            "stage": 1,
+            "score": 59.771551,
+            "score_sd": 3.335199,
+            "runs": 3,
+            "tasks_per_run": [
+              48,
+              48,
+              48
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 61.503528,
+            "score_sd": 0.781153,
+            "runs": 3,
+            "tasks_per_run": [
+              60,
+              60,
+              60
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 58.153402,
+            "score_sd": 2.072178,
+            "runs": 3,
+            "tasks_per_run": [
+              73,
+              73,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_id": "tools-memtoolagent",
+      "name": "MemToolAgent",
+      "stages": {
+        "calendar": [
+          {
+            "stage": 1,
+            "score": 70.541872,
+            "score_sd": 1.137873,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 70.089543,
+            "score_sd": 3.206806,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 72.967886,
+            "score_sd": 0.509315,
+            "runs": 3,
+            "tasks_per_run": [
+              43,
+              43,
+              43
+            ]
+          }
+        ],
+        "drive": [
+          {
+            "stage": 1,
+            "score": 69.53202,
+            "score_sd": 1.920491,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 73.170349,
+            "score_sd": 1.70218,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 74.747637,
+            "score_sd": 1.885783,
+            "runs": 3,
+            "tasks_per_run": [
+              45,
+              45,
+              45
+            ]
+          }
+        ],
+        "csm": [
+          {
+            "stage": 1,
+            "score": 35.128203,
+            "score_sd": 0.725238,
+            "runs": 3,
+            "tasks_per_run": [
+              13,
+              13,
+              13
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 54.650206,
+            "score_sd": 2.24289,
+            "runs": 3,
+            "tasks_per_run": [
+              27,
+              27,
+              27
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 59.967917,
+            "score_sd": 2.988885,
+            "runs": 3,
+            "tasks_per_run": [
+              47,
+              47,
+              47
+            ]
+          },
+          {
+            "stage": 4,
+            "score": 61.323498,
+            "score_sd": 1.153239,
+            "runs": 3,
+            "tasks_per_run": [
+              71,
+              71,
+              71
+            ]
+          }
+        ],
+        "itsm": [
+          {
+            "stage": 1,
+            "score": 62.189706,
+            "score_sd": 0.727298,
+            "runs": 3,
+            "tasks_per_run": [
+              48,
+              48,
+              48
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 58.392858,
+            "score_sd": 1.188863,
+            "runs": 3,
+            "tasks_per_run": [
+              60,
+              60,
+              60
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 57.161883,
+            "score_sd": 1.965108,
+            "runs": 3,
+            "tasks_per_run": [
+              73,
+              73,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_id": "tools-gepa",
+      "name": "GEPA",
+      "stages": {
+        "calendar": [
+          {
+            "stage": 1,
+            "score": 71.652984,
+            "score_sd": 1.260297,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 69.770044,
+            "score_sd": 0.766258,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 70.954227,
+            "score_sd": 1.299616,
+            "runs": 3,
+            "tasks_per_run": [
+              43,
+              43,
+              43
+            ]
+          }
+        ],
+        "drive": [
+          {
+            "stage": 1,
+            "score": 66.918445,
+            "score_sd": 1.27647,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 73.010322,
+            "score_sd": 1.114274,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 76.056279,
+            "score_sd": 1.769397,
+            "runs": 3,
+            "tasks_per_run": [
+              45,
+              45,
+              45
+            ]
+          }
+        ],
+        "csm": [
+          {
+            "stage": 1,
+            "score": 45.128208,
+            "score_sd": 2.264554,
+            "runs": 3,
+            "tasks_per_run": [
+              13,
+              13,
+              13
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 53.209878,
+            "score_sd": 1.152633,
+            "runs": 3,
+            "tasks_per_run": [
+              27,
+              27,
+              27
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 62.402906,
+            "score_sd": 1.911168,
+            "runs": 3,
+            "tasks_per_run": [
+              47,
+              47,
+              47
+            ]
+          },
+          {
+            "stage": 4,
+            "score": 62.316866,
+            "score_sd": 1.099373,
+            "runs": 3,
+            "tasks_per_run": [
+              71,
+              71,
+              71
+            ]
+          }
+        ],
+        "itsm": [
+          {
+            "stage": 1,
+            "score": 61.956018,
+            "score_sd": 4.112123,
+            "runs": 3,
+            "tasks_per_run": [
+              48,
+              48,
+              48
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 61.491845,
+            "score_sd": 0.748811,
+            "runs": 3,
+            "tasks_per_run": [
+              60,
+              60,
+              60
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 61.347032,
+            "score_sd": 2.807095,
+            "runs": 3,
+            "tasks_per_run": [
+              73,
+              73,
+              73
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_id": "tools-meta-harness",
+      "name": "Meta-Harness",
+      "stages": {
+        "calendar": [
+          {
+            "stage": 1,
+            "score": 70.125892,
+            "score_sd": 1.543708,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 69.004886,
+            "score_sd": 2.394569,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 70.402361,
+            "score_sd": 0.913498,
+            "runs": 3,
+            "tasks_per_run": [
+              43,
+              43,
+              43
+            ]
+          }
+        ],
+        "drive": [
+          {
+            "stage": 1,
+            "score": 65.76902,
+            "score_sd": 3.305269,
+            "runs": 3,
+            "tasks_per_run": [
+              29,
+              29,
+              29
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 72.692124,
+            "score_sd": 0.928046,
+            "runs": 3,
+            "tasks_per_run": [
+              39,
+              39,
+              39
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 77.046339,
+            "score_sd": 2.206624,
+            "runs": 3,
+            "tasks_per_run": [
+              45,
+              45,
+              45
+            ]
+          }
+        ],
+        "csm": [
+          {
+            "stage": 1,
+            "score": 45.384613,
+            "score_sd": 2.018976,
+            "runs": 3,
+            "tasks_per_run": [
+              13,
+              13,
+              13
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 51.707819,
+            "score_sd": 0.434542,
+            "runs": 3,
+            "tasks_per_run": [
+              27,
+              27,
+              27
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 59.278398,
+            "score_sd": 3.504475,
+            "runs": 3,
+            "tasks_per_run": [
+              47,
+              47,
+              47
+            ]
+          },
+          {
+            "stage": 4,
+            "score": 56.449438,
+            "score_sd": 1.318866,
+            "runs": 3,
+            "tasks_per_run": [
+              71,
+              71,
+              71
+            ]
+          }
+        ],
+        "itsm": [
+          {
+            "stage": 1,
+            "score": 61.628363,
+            "score_sd": 2.813213,
+            "runs": 3,
+            "tasks_per_run": [
+              48,
+              48,
+              48
+            ]
+          },
+          {
+            "stage": 2,
+            "score": 59.423282,
+            "score_sd": 3.365026,
+            "runs": 3,
+            "tasks_per_run": [
+              60,
+              60,
+              60
+            ]
+          },
+          {
+            "stage": 3,
+            "score": 57.989237,
+            "score_sd": 1.304232,
+            "runs": 3,
+            "tasks_per_run": [
+              73,
+              73,
+              73
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
