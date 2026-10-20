@@ -8,6 +8,7 @@ RELAI stage scores from the copied evaluation reports. No service access needed.
 from __future__ import annotations
 
 import json
+import math
 import os
 import re
 from pathlib import Path
@@ -21,6 +22,7 @@ import matplotlib  # noqa: E402
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
+from matplotlib.ticker import MultipleLocator  # noqa: E402
 
 from analyze import analyze_run, load_json  # noqa: E402
 
@@ -102,12 +104,15 @@ def plot_domain(entry: dict, baselines: dict, output_dir: Path) -> None:
     fig.patch.set_facecolor("white")
     ax.set_facecolor("white")
     handles = []
+    visible_scores = relai_scores.copy()
     for system in baselines["systems"]:
         rows = system["stages"][domain]
         name = system["name"]
         color = BASELINE_COLORS[name]
         means = [row["score"] for row in rows]
         deviations = [row["score_sd"] for row in rows]
+        visible_scores.extend(mean + offset * sd for mean, sd in zip(means, deviations)
+                              for offset in (-1, 1))
         ax.errorbar(stages, means, yerr=deviations, fmt="none", color=color,
                     alpha=0.43, capsize=2.5, elinewidth=1.0, zorder=2)
         line, = ax.plot(stages, means, label=name, color=color, linewidth=1.6, marker="o",
@@ -126,8 +131,10 @@ def plot_domain(entry: dict, baselines: dict, output_dir: Path) -> None:
     ax.set_ylabel("Score (%)", labelpad=8)
     ax.set_xticks(stages, [f"v{stage}" for stage in stages])
     ax.set_xlim(0.82, stages[-1] + 0.18)
-    ax.set_ylim(30, 80)
-    ax.set_yticks(range(30, 81, 10))
+    y_min = math.floor(min(visible_scores) - 2)
+    y_max = math.ceil(max(visible_scores) + 2)
+    ax.set_ylim(y_min, y_max)
+    ax.yaxis.set_major_locator(MultipleLocator(2 if y_max - y_min <= 16 else 5))
     ax.grid(axis="y", color="#DDE2EA", linewidth=0.8)
     ax.set_axisbelow(True)
     ax.tick_params(axis="both", length=0, pad=7)
@@ -136,7 +143,8 @@ def plot_domain(entry: dict, baselines: dict, output_dir: Path) -> None:
     fig.legend(handles, [h.get_label() for h in handles], loc="lower center",
                bbox_to_anchor=(0.5, 0.125), ncol=4, frameon=False,
                columnspacing=1.4, handlelength=2.2, fontsize=9)
-    notes = ["Baseline whiskers: ±1 SD over 3 runs. RELAI final point: mean of matrix and full eval."]
+    notes = ["Baseline whiskers: ±1 SD over 3 runs. RELAI final point: mean of matrix and full eval.",
+             "Y-axis range fitted to each domain; compare values across plots."]
     if any(rounded):
         notes.append("Hollow RELAI markers include terminal-rounded evaluation cells.")
     differences = [(stage, website, local) for stage, website, local in zip(stages, site_counts, relai_counts)
