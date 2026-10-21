@@ -4,7 +4,7 @@ This repository records four local **self-evolving** experiments on the Enterpri
 
 ## Overview
 
-The tables rank methods by **Score** (partial credit from task verifiers). The all-stage average gives each of the 13 plotted domain-stage points equal weight, including four CSM stages and three stages in each other domain.
+The tables rank methods by **Score** (partial credit from task verifiers). The all-stage average gives each of the 13 domain-stage scores equal weight, including four CSM stages and three stages in each other domain.
 
 | Rank | Method | Average across all stages |
 | ---: | --- | ---: |
@@ -16,7 +16,7 @@ The tables rank methods by **Score** (partial credit from task verifiers). The a
 | 6 | Meta-Harness | 62.84% |
 | 7 | ReAct/Codex deployment | 59.66% |
 
-The final-stage average gives each domain one point and equal weight. For RELAI, each final point is the mean of its final-stage matrix score and separate final full-evaluation score.
+The final-stage average gives each domain one score and equal weight. For RELAI, each final-stage score is the mean of its final-stage matrix score and separate final full-evaluation score: calendar 72.13%, drive 76.74%, CSM 63.83%, and ITSM 64.41%.
 
 | Rank | Method | Average across final stages |
 | ---: | --- | ---: |
@@ -42,28 +42,6 @@ These are descriptive comparisons: RELAI has one run per domain, the published b
 | ITSM | 64.35 | 59.23 | 67.64 | — | 61.18 | 73 | [`20261019T013854Z-06abfff3`](artifacts/itsm/run/report.json) |
 
 Values above are rounded only after aggregation. The exact saved figures explain small differences from the original notes: Calendar's recovered full evaluation is 72.8516%, while ITSM's weighted stage 3 score is 67.6392%. Calendar's first two stage scores and Drive's first stage score depend partly or wholly on terminal-rounded cells, so extra digits in their weighted aggregates do not imply extra measurement precision.
-
-## Stage-score plots
-
-These plots compare RELAI with the six cumulative EOG tool systems for which the [EvoHarnessBench results](https://mas-orchestra.salesforceresearch.ai/evoharness/#results) publish per-domain, per-stage scores. The blue RELAI line is one local run; each other line is the website mean of three runs, with whiskers showing ±1 population standard deviation. Earlier RELAI points use the weighted matrix scores in the table. Its **final point is the arithmetic mean of the unrounded final-stage weighted matrix score and the separate final full-evaluation score**: 72.13% for calendar, 76.74% for drive, 63.83% for CSM, and 64.41% for ITSM. The table retains both source scores. Hollow blue markers indicate RELAI stage scores that include terminal-rounded evaluation cells. Each plot's y-axis fits that domain's scores and error bars with at least two percentage points of padding; check the tick labels when comparing domains.
-
-### Calendar
-
-![Calendar stage scores](plots/calendar.svg) [PNG](plots/calendar.png)
-
-### Drive
-
-![Drive stage scores](plots/drive.svg) [PNG](plots/drive.png)
-
-### CSM
-
-![CSM stage scores](plots/csm.svg) [PNG](plots/csm.png)
-
-### ITSM
-
-![ITSM stage scores](plots/itsm.svg) [PNG](plots/itsm.png)
-
-The website's CSM task counts are 13, 27, 47, and 71 through stages 1–4; this RELAI run's counts are 13, 28, 48, and 72. The CSM lines therefore do not summarize identical test sets from stage 2 onward. The cause of the difference is not established by these artifacts. Counts match in calendar, drive, and ITSM.
 
 ## Baseline data
 
@@ -95,6 +73,8 @@ The website's baseline **Score** figures below are means ± population standard 
 | ITSM | MemToolAgent | 62.2 ± 0.7, 58.4 ± 1.2, 57.2 ± 2.0 |
 | ITSM | GEPA | 62.0 ± 4.1, 61.5 ± 0.7, 61.3 ± 2.8 |
 | ITSM | MetaHarness | 61.6 ± 2.8, 59.4 ± 3.4, 58.0 ± 1.3 |
+
+The website's CSM task counts are 13, 27, 47, and 71 through stages 1–4; this RELAI run's counts are 13, 28, 48, and 72. The scores therefore do not summarize identical CSM test sets from stage 2 onward. The cause of the difference is not established by these artifacts. Counts match in calendar, drive, and ITSM.
 
 These are useful reference points, but they are not a controlled estimate of RELAI's advantage over another method: the RELAI runs used a local agent implementation, a cumulative task pool for adaptation, and one run per domain. The website results come from the benchmark team's system configurations and three repeats. The CSM task-count difference further limits direct comparison there.
 
@@ -128,9 +108,6 @@ analyze.py                              recomputes scores; no external dependenc
 import_runs.py                          regenerates this archive from local source runs
 baseline_scores.json                    pinned website baseline summary
 refresh_baselines.py                    fetches and verifies that website source
-plot_results.py                         regenerates four domain plots
-plots/<domain>.svg, .png                rendered comparison figures
-pyproject.toml, uv.lock                 locked matplotlib plotting dependency
 ```
 
 Recompute the RELAI results and validate all imported grades, trace links, and checksums:
@@ -139,7 +116,7 @@ Recompute the RELAI results and validate all imported grades, trace links, and c
 python3 analyze.py --check
 ```
 
-Regenerate the figures from the copied results and pinned baseline summary with `uv run --locked python plot_results.py`. To compare the website source with the pinned snapshot, run `python3 refresh_baselines.py --check` (requires network access). A changed upstream source hash requires an explicit review before updating the local summary.
+To compare the website source with the pinned snapshot, run `python3 refresh_baselines.py --check` (requires network access). A changed upstream source hash requires an explicit review before updating the local summary.
 
 If the original tool-track checkout and runs are available, regenerate the imported artifacts with:
 
